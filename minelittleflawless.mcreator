@@ -1,0 +1,101 @@
+{
+  "mod_elements": [
+    {
+      "name": "Bartleby",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bartleby",
+      "metadata": {
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/entity/BartlebyEntity.java",
+          "src/main/resources/assets/minelittleflawless/items/bartleby_spawn_egg.json",
+          "src/main/java/org/projectflawless/minelittleflawless/client/renderer/BartlebyRenderer.java"
+        ]
+      }
+    },
+    {
+      "name": "Flawless",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flawless",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/minelittleflawless/items/flawless_spawn_egg.json",
+          "src/main/java/org/projectflawless/minelittleflawless/client/renderer/FlawlessRenderer.java",
+          "src/main/java/org/projectflawless/minelittleflawless/entity/FlawlessEntity.java",
+          "src/main/resources/data/minelittleflawless/neoforge/biome_modifier/flawless_biome_modifier.json"
+        ]
+      }
+    },
+    {
+      "name": "FlawlessRightClickedOnEntity",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flawless_right_clicked_on_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/procedures/FlawlessRightClickedOnEntityProcedure.java"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "tag_elements": {},
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "entity.minelittleflawless.bartleby": "Bartleby",
+      "entity.minelittleflawless.flawless": "Flawless"
+    }
+  },
+  "metadata": {
+    "files": [
+      "src/main/resources/META-INF/neoforge.mods.toml",
+      "src/main/java/org/projectflawless/minelittleflawless/init/MinelittleflawlessModModels.java",
+      "src/main/java/org/projectflawless/minelittleflawless/MinelittleflawlessMod.java",
+      "src/main/resources/pack.mcmeta",
+      "src/main/java/org/projectflawless/minelittleflawless/init/MinelittleflawlessModEntities.java",
+      "src/main/java/org/projectflawless/minelittleflawless/init/MinelittleflawlessModEntityRenderers.java"
+    ]
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "minelittleflawless",
+    "modName": "Mine Little Flawless",
+    "version": "0.1.0",
+    "description": "In this Minecraft mod, you will experience the ways that you can make friends, defeat foes, and conquer your Minecraft world with Mine Little Flawless!",
+    "author": "SymphonyDawn3",
+    "websiteURL": "https://github.com/SymphonyDawn3/MineLittleFlawless",
+    "license": "MIT License",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "neoforge-1.21.8",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "org.projectflawless.minelittleflawless"
+  },
+  "mcreatorVersion": 202500342611
+}
