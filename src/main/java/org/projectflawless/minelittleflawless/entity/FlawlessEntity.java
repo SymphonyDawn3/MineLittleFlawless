@@ -64,17 +64,17 @@ public class FlawlessEntity extends TamableAnimal {
 
 	@Override
 	public SoundEvent getAmbientSound() {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.cat.ambient"));
+		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("minelittleflawless:flawless.imflawless"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.cat.hurt"));
+		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("minelittleflawless:flawless.ow"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.cat.death"));
+		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("minelittleflawless:flawless.noooo"));
 	}
 
 	@Override

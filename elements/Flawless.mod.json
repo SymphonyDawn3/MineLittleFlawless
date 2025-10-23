@@ -106,13 +106,13 @@
       "value": ""
     },
     "livingSound": {
-      "value": "entity.cat.ambient"
+      "value": "CUSTOM:flawless.imflawless"
     },
     "hurtSound": {
-      "value": "entity.cat.hurt"
+      "value": "CUSTOM:flawless.ow"
     },
     "deathSound": {
-      "value": "entity.cat.death"
+      "value": "CUSTOM:flawless.noooo"
     },
     "stepSound": {
       "value": ""

@@ -1,0 +1,29 @@
+{
+  "flawless.imflawless": {
+    "subtitle": "subtitles.flawless.imflawless",
+    "sounds": [
+      {
+        "name": "minelittleflawless:entity.flawless.imflawless",
+        "stream": false
+      }
+    ]
+  },
+  "flawless.ow": {
+    "subtitle": "subtitles.flawless.ow",
+    "sounds": [
+      {
+        "name": "minelittleflawless:entity.flawless.ow",
+        "stream": false
+      }
+    ]
+  },
+  "flawless.noooo": {
+    "subtitle": "subtitles.flawless.noooo",
+    "sounds": [
+      {
+        "name": "minelittleflawless:entity.flawless.noooo",
+        "stream": false
+      }
+    ]
+  }
+}

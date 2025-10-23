@@ -1,4 +1,8 @@
 {
   "entity.minelittleflawless.bartleby": "Bartleby",
-  "entity.minelittleflawless.flawless": "Flawless"
+  "entity.minelittleflawless.flawless": "Flawless",
+  "subtitles.im_flawless": "Flawless speaks",
+  "subtitles.flawless.imflawless": "Flawless speaks",
+  "subtitles.flawless.ow": "Flawless hurts",
+  "subtitles.flawless.noooo": "Flawless dies"
 }

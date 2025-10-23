@@ -57,19 +57,50 @@
     }
   ],
   "variable_elements": [],
-  "sound_elements": [],
+  "sound_elements": [
+    {
+      "name": "flawless.imflawless",
+      "files": [
+        "entity.flawless.imflawless"
+      ],
+      "category": "ambient",
+      "subtitle": "Flawless speaks"
+    },
+    {
+      "name": "flawless.ow",
+      "files": [
+        "entity.flawless.ow"
+      ],
+      "category": "ambient",
+      "subtitle": "Flawless hurts"
+    },
+    {
+      "name": "flawless.noooo",
+      "files": [
+        "entity.flawless.noooo"
+      ],
+      "category": "ambient",
+      "subtitle": "Flawless dies"
+    }
+  ],
   "tag_elements": {},
   "tab_element_order": {},
   "language_map": {
     "en_us": {
       "entity.minelittleflawless.bartleby": "Bartleby",
-      "entity.minelittleflawless.flawless": "Flawless"
+      "entity.minelittleflawless.flawless": "Flawless",
+      "subtitles.im_flawless": "Flawless speaks",
+      "subtitles.flawless.imflawless": "Flawless speaks",
+      "subtitles.flawless.ow": "Flawless hurts",
+      "subtitles.flawless.noooo": "Flawless dies"
     }
   },
   "metadata": {
     "files": [
+      "src/main/resources/assets/minelittleflawless/sounds.json",
       "src/main/resources/META-INF/neoforge.mods.toml",
       "src/main/java/org/projectflawless/minelittleflawless/init/MinelittleflawlessModModels.java",
+      "src/main/java/org/projectflawless/minelittleflawless/init/MinelittleflawlessModSounds.java",
       "src/main/java/org/projectflawless/minelittleflawless/MinelittleflawlessMod.java",
       "src/main/resources/pack.mcmeta",
       "src/main/java/org/projectflawless/minelittleflawless/init/MinelittleflawlessModEntities.java",

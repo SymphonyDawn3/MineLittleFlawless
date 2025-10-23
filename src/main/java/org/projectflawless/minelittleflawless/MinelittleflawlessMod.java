@@ -1,5 +1,6 @@
 package org.projectflawless.minelittleflawless;
 
+import org.projectflawless.minelittleflawless.init.MinelittleflawlessModSounds;
 import org.projectflawless.minelittleflawless.init.MinelittleflawlessModEntities;
 
 import org.apache.logging.log4j.Logger;
@@ -45,6 +46,7 @@ public class MinelittleflawlessMod {
 		// End of user code block mod constructor
 		NeoForge.EVENT_BUS.register(this);
 		modEventBus.addListener(this::registerNetworking);
+		MinelittleflawlessModSounds.REGISTRY.register(modEventBus);
 
 		MinelittleflawlessModEntities.REGISTRY.register(modEventBus);
 
