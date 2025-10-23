@@ -27,6 +27,8 @@ account, as well as other things on your computer.
 
 If you are contributing for the mod, you need [Git](https://git-scm.com/) installed.
 
+By the way, you also need [Git LFS](https://git-lfs.com/) installed to handle the assets that the mod needs, before you clone the repository.
+
 Just `git clone` the repository link and make some changes on it. I will be working on an issue and pull request system soon if people wanted to contribute with 
 this mod. :)
 
