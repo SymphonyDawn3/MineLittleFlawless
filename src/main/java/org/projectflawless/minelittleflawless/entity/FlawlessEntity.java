@@ -1,5 +1,6 @@
 package org.projectflawless.minelittleflawless.entity;
 
+import org.projectflawless.minelittleflawless.procedures.NoFriendlyFireProcedure;
 import org.projectflawless.minelittleflawless.procedures.FlawlessRightClickedOnEntityProcedure;
 import org.projectflawless.minelittleflawless.init.MinelittleflawlessModEntities;
 
@@ -48,7 +49,17 @@ public class FlawlessEntity extends TamableAnimal {
 	protected void registerGoals() {
 		super.registerGoals();
 		this.goalSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
-		this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
+		this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this) {
+			@Override
+			public boolean canUse() {
+				double x = FlawlessEntity.this.getX();
+				double y = FlawlessEntity.this.getY();
+				double z = FlawlessEntity.this.getZ();
+				Entity entity = FlawlessEntity.this;
+				Level world = FlawlessEntity.this.level();
+				return super.canUse() && NoFriendlyFireProcedure.execute(entity);
+			}
+		});
 		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Monster.class, false, false));
 		this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.2, false) {
 			@Override

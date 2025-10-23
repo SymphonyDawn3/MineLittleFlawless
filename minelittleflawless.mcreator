@@ -54,6 +54,25 @@
           "src/main/java/org/projectflawless/minelittleflawless/procedures/FlawlessRightClickedOnEntityProcedure.java"
         ]
       }
+    },
+    {
+      "name": "NoFriendlyFire",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "no_friendly_fire",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/procedures/NoFriendlyFireProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [],
