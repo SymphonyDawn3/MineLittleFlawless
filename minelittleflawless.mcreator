@@ -30,32 +30,6 @@
       }
     },
     {
-      "name": "FlawlessRightClickedOnEntity",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "flawless_right_clicked_on_entity",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ],
-        "files": [
-          "src/main/java/org/projectflawless/minelittleflawless/procedures/FlawlessRightClickedOnEntityProcedure.java"
-        ]
-      }
-    },
-    {
       "name": "NoFriendlyFire",
       "type": "procedure",
       "compiles": true,
