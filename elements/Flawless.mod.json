@@ -21,7 +21,17 @@
     "boundingBoxScale": {
       "fixedValue": 1.0
     },
-    "modelLayers": [],
+    "modelLayers": [
+      {
+        "model": "ModelFriendshipBow",
+        "texture": "friendship_bow.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "IfFlawlessIsTamed"
+        }
+      }
+    ],
     "animations": [],
     "modelWidth": 0.8125,
     "modelHeight": 2.0,
