@@ -33,7 +33,7 @@
       "name": "NoFriendlyFire",
       "type": "procedure",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "no_friendly_fire",
       "metadata": {
         "dependencies": [
