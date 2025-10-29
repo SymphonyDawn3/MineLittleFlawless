@@ -22,6 +22,7 @@
       "registry_name": "flawless",
       "metadata": {
         "files": [
+          "src/main/resources/assets/minelittleflawless/models/item/flawless_spawn_egg.json",
           "src/main/resources/assets/minelittleflawless/items/flawless_spawn_egg.json",
           "src/main/java/org/projectflawless/minelittleflawless/client/renderer/FlawlessRenderer.java",
           "src/main/java/org/projectflawless/minelittleflawless/entity/FlawlessEntity.java",
@@ -75,7 +76,8 @@
   "language_map": {
     "en_us": {
       "entity.minelittleflawless.bartleby": "Bartleby",
-      "entity.minelittleflawless.flawless": "Flawless"
+      "entity.minelittleflawless.flawless": "Flawless",
+      "item.minelittleflawless.flawless_spawn_egg": "Flawless Spawn Egg"
     }
   },
   "metadata": {
@@ -83,7 +85,9 @@
       "src/main/resources/META-INF/neoforge.mods.toml",
       "src/main/java/org/projectflawless/minelittleflawless/init/MinelittleflawlessModModels.java",
       "src/main/java/org/projectflawless/minelittleflawless/MinelittleflawlessMod.java",
+      "src/main/java/org/projectflawless/minelittleflawless/init/MinelittleflawlessModTabs.java",
       "src/main/resources/pack.mcmeta",
+      "src/main/java/org/projectflawless/minelittleflawless/init/MinelittleflawlessModItems.java",
       "src/main/java/org/projectflawless/minelittleflawless/init/MinelittleflawlessModEntities.java",
       "src/main/java/org/projectflawless/minelittleflawless/init/MinelittleflawlessModEntityRenderers.java"
     ]
