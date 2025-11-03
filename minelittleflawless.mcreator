@@ -398,6 +398,25 @@
       "Items.POTATO",
       "Blocks.NETHER_WART",
       "Items.DYE#3"
+    ],
+    "ITEMS:minelittleflawless:flawless_food": [
+      "Items.CAKE",
+      "Items.PUMPKIN_PIE",
+      "Items.BEETROOT_SOUP",
+      "Items.MUSHROOM_STEW",
+      "Items.GOLDEN_CARROT",
+      "Items.HONEY_BOTTLE",
+      "Items.BAKED_POTATO",
+      "Items.BREAD",
+      "Items.APPLE",
+      "Items.CARROT",
+      "Items.COOKIE",
+      "Items.GLOW_BERRIES",
+      "Items.MELON",
+      "Items.SWEET_BERRIES",
+      "Items.BEETROOT",
+      "Items.DRIED_KELP",
+      "Items.POTATO"
     ]
   },
   "tab_element_order": {},

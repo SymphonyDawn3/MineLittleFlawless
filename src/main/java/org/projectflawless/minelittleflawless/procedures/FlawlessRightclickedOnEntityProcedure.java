@@ -9,13 +9,16 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.multiplayer.PlayerInfo;
 import net.minecraft.client.Minecraft;
@@ -76,6 +79,29 @@ public class FlawlessRightclickedOnEntityProcedure {
 						});
 					}
 				}
+			}
+		}
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) < (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) && itemstack.is(ItemTags.create(ResourceLocation.parse("minelittleflawless:flawless_food")))) {
+			if (entity instanceof LivingEntity _entity)
+				_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + (itemstack.has(DataComponents.FOOD) ? itemstack.get(DataComponents.FOOD).nutrition() : 0) * 10);
+			if (itemstack.getItem() == Items.BEETROOT_SOUP || itemstack.getItem() == Items.MUSHROOM_STEW) {
+				if (sourceentity instanceof LivingEntity _entity) {
+					ItemStack _setstack32 = new ItemStack(Items.BOWL).copy();
+					_setstack32.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack32);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+			} else if (itemstack.getItem() == Items.HONEY_BOTTLE) {
+				if (sourceentity instanceof LivingEntity _entity) {
+					ItemStack _setstack35 = new ItemStack(Items.GLASS_BOTTLE).copy();
+					_setstack35.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack35);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+			} else {
+				itemstack.shrink(1);
 			}
 		}
 	}
