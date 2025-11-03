@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "aaa",
+    "bbb",
+    "ccc"
+  ],
+  "key": {
+    "a": "minecraft:black_carpet",
+    "b": "minecraft:purple_carpet",
+    "c": "minecraft:black_wool"
+  },
+  "result": {
+    "id": "minelittleflawless:flawless_magician_clothing",
+    "count": 1
+  }
+}
