@@ -1,9 +1,12 @@
 package org.projectflawless.minelittleflawless.client.renderer;
 
+import org.projectflawless.minelittleflawless.procedures.TuxedoDisplayConditionProcedure;
+import org.projectflawless.minelittleflawless.procedures.PajamasDisplayConditionProcedure;
 import org.projectflawless.minelittleflawless.procedures.IfFlawlessIsTamedProcedure;
+import org.projectflawless.minelittleflawless.procedures.FlawlessMagicianClothingDisplayConditionProcedure;
+import org.projectflawless.minelittleflawless.procedures.FarmerDisplayConditionProcedure;
 import org.projectflawless.minelittleflawless.entity.FlawlessEntity;
-import org.projectflawless.minelittleflawless.client.model.ModelFriendshipBow;
-import org.projectflawless.minelittleflawless.client.model.ModelFlawless;
+import org.projectflawless.minelittleflawless.client.model.*;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.resources.ResourceLocation;
@@ -37,6 +40,74 @@ public class FlawlessRenderer extends MobRenderer<FlawlessEntity, LivingEntityRe
 				if (IfFlawlessIsTamedProcedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
 					EntityModel model = new ModelFriendshipBow(Minecraft.getInstance().getEntityModels().bakeLayer(ModelFriendshipBow.LAYER_LOCATION));
+					model.setupAnim(state);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(state, 0));
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<>(this) {
+			final ResourceLocation LAYER_TEXTURE = ResourceLocation.parse("minelittleflawless:textures/entities/flawless_magician_clothing.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, LivingEntityRenderState state, float headYaw, float headPitch) {
+				Level world = entity.level();
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (FlawlessMagicianClothingDisplayConditionProcedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new ModelFlawlessMagicianClothing(Minecraft.getInstance().getEntityModels().bakeLayer(ModelFlawlessMagicianClothing.LAYER_LOCATION));
+					model.setupAnim(state);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(state, 0));
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<>(this) {
+			final ResourceLocation LAYER_TEXTURE = ResourceLocation.parse("minelittleflawless:textures/entities/tuxedo.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, LivingEntityRenderState state, float headYaw, float headPitch) {
+				Level world = entity.level();
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (TuxedoDisplayConditionProcedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new ModelTuxedo(Minecraft.getInstance().getEntityModels().bakeLayer(ModelTuxedo.LAYER_LOCATION));
+					model.setupAnim(state);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(state, 0));
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<>(this) {
+			final ResourceLocation LAYER_TEXTURE = ResourceLocation.parse("minelittleflawless:textures/entities/farmer.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, LivingEntityRenderState state, float headYaw, float headPitch) {
+				Level world = entity.level();
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (FarmerDisplayConditionProcedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new ModelFarmer(Minecraft.getInstance().getEntityModels().bakeLayer(ModelFarmer.LAYER_LOCATION));
+					model.setupAnim(state);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(state, 0));
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<>(this) {
+			final ResourceLocation LAYER_TEXTURE = ResourceLocation.parse("minelittleflawless:textures/entities/pajamas.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, LivingEntityRenderState state, float headYaw, float headPitch) {
+				Level world = entity.level();
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (PajamasDisplayConditionProcedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.eyes(LAYER_TEXTURE));
+					EntityModel model = new ModelPajamas(Minecraft.getInstance().getEntityModels().bakeLayer(ModelPajamas.LAYER_LOCATION));
 					model.setupAnim(state);
 					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(state, 0));
 				}

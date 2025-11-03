@@ -1,5 +1,9 @@
 {
   "entity.minelittleflawless.bartleby": "Bartleby",
   "entity.minelittleflawless.flawless": "Flawless",
-  "item.minelittleflawless.flawless_spawn_egg": "Flawless Spawn Egg"
+  "item.minelittleflawless.flawless_spawn_egg": "Flawless Spawn Egg",
+  "item.minelittleflawless.flawless_magician_clothing": "Flawless Magician Clothing",
+  "item.minelittleflawless.tuxedo": "Tuxedo",
+  "item.minelittleflawless.farmer": "Farmer",
+  "item.minelittleflawless.pajamas": "Pajamas"
 }
