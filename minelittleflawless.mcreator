@@ -378,6 +378,58 @@
           "src/main/java/org/projectflawless/minelittleflawless/procedures/PajamasDisplayConditionProcedure.java"
         ]
       }
+    },
+    {
+      "name": "FlawlessMagicianClothingRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flawless_magician_clothing_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minelittleflawless/recipe/flawless_magician_clothing.json",
+          "src/main/resources/data/minelittleflawless/advancement/recipes/flawless_magician_clothing_recipe.json"
+        ]
+      }
+    },
+    {
+      "name": "TuxedoRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tuxedo_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minelittleflawless/advancement/recipes/tuxedo_recipe.json",
+          "src/main/resources/data/minelittleflawless/recipe/tuxedo.json"
+        ]
+      }
+    },
+    {
+      "name": "FarmerRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "farmer_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minelittleflawless/recipe/farmer.json",
+          "src/main/resources/data/minelittleflawless/advancement/recipes/farmer_recipe.json"
+        ]
+      }
+    },
+    {
+      "name": "PajamasRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pajamas_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minelittleflawless/recipe/pajamas_recipe.json",
+          "src/main/resources/data/minelittleflawless/advancement/recipes/pajamas_recipe.json"
+        ]
+      }
     }
   ],
   "variable_elements": [],

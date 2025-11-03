@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": "minecraft:white_carpet",
+    "b": "#minecraft:candles"
+  },
+  "result": {
+    "id": "minelittleflawless:pajamas",
+    "count": 1
+  }
+}
