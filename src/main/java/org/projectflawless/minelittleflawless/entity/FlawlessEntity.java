@@ -1,11 +1,15 @@
 package org.projectflawless.minelittleflawless.entity;
 
 import org.projectflawless.minelittleflawless.procedures.NoFriendlyFireProcedure;
+import org.projectflawless.minelittleflawless.procedures.FlawlessRightclickedOnEntityProcedure;
+import org.projectflawless.minelittleflawless.procedures.FlawlessEntityIsHurtProcedure;
 import org.projectflawless.minelittleflawless.init.MinelittleflawlessModEntities;
 
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.event.EventHooks;
 
+import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -30,14 +34,25 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.component.DataComponents;
 
 public class FlawlessEntity extends TamableAnimal {
+	public static final EntityDataAccessor<String> DATA_flawlessClothing = SynchedEntityData.defineId(FlawlessEntity.class, EntityDataSerializers.STRING);
+
 	public FlawlessEntity(EntityType<FlawlessEntity> type, Level world) {
 		super(type, world);
 		xpReward = 0;
 		setNoAi(false);
+	}
+
+	@Override
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+		super.defineSynchedData(builder);
+		builder.define(DATA_flawlessClothing, "");
 	}
 
 	@Override
@@ -85,6 +100,32 @@ public class FlawlessEntity extends TamableAnimal {
 	}
 
 	@Override
+	public boolean hurtServer(ServerLevel level, DamageSource damagesource, float amount) {
+		double x = this.getX();
+		double y = this.getY();
+		double z = this.getZ();
+		Level world = this.level();
+		Entity entity = this;
+		Entity sourceentity = damagesource.getEntity();
+		Entity immediatesourceentity = damagesource.getDirectEntity();
+		if (!FlawlessEntityIsHurtProcedure.execute(damagesource, entity))
+			return false;
+		return super.hurtServer(level, damagesource, amount);
+	}
+
+	@Override
+	public void addAdditionalSaveData(ValueOutput valueOutput) {
+		super.addAdditionalSaveData(valueOutput);
+		valueOutput.putString("DataflawlessClothing", this.entityData.get(DATA_flawlessClothing));
+	}
+
+	@Override
+	public void readAdditionalSaveData(ValueInput valueInput) {
+		super.readAdditionalSaveData(valueInput);
+		this.entityData.set(DATA_flawlessClothing, valueInput.getStringOr("DataflawlessClothing", ""));
+	}
+
+	@Override
 	public InteractionResult mobInteract(Player sourceentity, InteractionHand hand) {
 		ItemStack itemstack = sourceentity.getItemInHand(hand);
 		InteractionResult retval = InteractionResult.SUCCESS;
@@ -126,6 +167,13 @@ public class FlawlessEntity extends TamableAnimal {
 					this.setPersistenceRequired();
 			}
 		}
+		double x = this.getX();
+		double y = this.getY();
+		double z = this.getZ();
+		Entity entity = this;
+		Level world = this.level();
+
+		FlawlessRightclickedOnEntityProcedure.execute(world, x, y, z, entity, sourceentity, itemstack);
 		return retval;
 	}
 

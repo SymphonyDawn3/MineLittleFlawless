@@ -67,17 +67,349 @@
           "src/main/java/org/projectflawless/minelittleflawless/procedures/IfFlawlessIsTamedProcedure.java"
         ]
       }
+    },
+    {
+      "name": "FlawlessMagicianClothing",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flawless_magician_clothing",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/minelittleflawless/items/flawless_magician_clothing.json",
+          "src/main/java/org/projectflawless/minelittleflawless/item/FlawlessMagicianClothingItem.java",
+          "src/main/resources/assets/minelittleflawless/models/item/flawless_magician_clothing.json"
+        ]
+      }
+    },
+    {
+      "name": "FlawlessMagicianClothingDisplayCondition",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flawless_magician_clothing_display_condition",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/procedures/FlawlessMagicianClothingDisplayConditionProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "FlawlessRightclickedOnEntity",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flawless_rightclicked_on_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/procedures/FlawlessRightclickedOnEntityProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "IfFlawlessBecomesTamed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "if_flawless_becomes_tamed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/procedures/IfFlawlessBecomesTamedProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "Tuxedo",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tuxedo",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/minelittleflawless/models/item/tuxedo.json",
+          "src/main/java/org/projectflawless/minelittleflawless/item/TuxedoItem.java",
+          "src/main/resources/assets/minelittleflawless/items/tuxedo.json"
+        ]
+      }
+    },
+    {
+      "name": "TuxedoDisplayCondition",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tuxedo_display_condition",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/procedures/TuxedoDisplayConditionProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "FlawlessEntityIsHurt",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flawless_entity_is_hurt",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "damagesource",
+            "type": "damagesource"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/procedures/FlawlessEntityIsHurtProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "Farmer",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "farmer",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/minelittleflawless/models/item/farmer.json",
+          "src/main/resources/assets/minelittleflawless/items/farmer.json",
+          "src/main/java/org/projectflawless/minelittleflawless/item/FarmerItem.java"
+        ]
+      }
+    },
+    {
+      "name": "FarmerDisplayCondition",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "farmer_display_condition",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/procedures/FarmerDisplayConditionProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "FlawlessWearClothing",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flawless_wear_clothing",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/procedures/FlawlessWearClothingProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "FlawlessOffClothing",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flawless_off_clothing",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/procedures/FlawlessOffClothingProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "IfFlawlessIsAttacking",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "if_flawless_is_attacking",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/procedures/IfFlawlessIsAttackingProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "IfPlayerWakesUp",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "if_player_wakes_up",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/procedures/IfPlayerWakesUpProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "Pajamas",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pajamas",
+      "metadata": {
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/item/PajamasItem.java",
+          "src/main/resources/assets/minelittleflawless/models/item/pajamas.json",
+          "src/main/resources/assets/minelittleflawless/items/pajamas.json"
+        ]
+      }
+    },
+    {
+      "name": "PajamasDisplayCondition",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pajamas_display_condition",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/procedures/PajamasDisplayConditionProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
-  "tag_elements": {},
+  "tag_elements": {
+    "ITEMS:minelittleflawless:flawless_clothing": [
+      "CUSTOM:FlawlessMagicianClothing",
+      "CUSTOM:Tuxedo",
+      "CUSTOM:Farmer",
+      "CUSTOM:Pajamas"
+    ],
+    "ITEMS:minelittleflawless:farmer_gifts": [
+      "Items.WHEAT_SEEDS",
+      "Items.MELON_SEEDS",
+      "Items.PUMPKIN_SEEDS",
+      "Items.BEETROOT_SEEDS",
+      "Items.CARROT",
+      "Items.POTATO",
+      "Blocks.NETHER_WART",
+      "Items.DYE#3"
+    ]
+  },
   "tab_element_order": {},
   "language_map": {
     "en_us": {
       "entity.minelittleflawless.bartleby": "Bartleby",
       "entity.minelittleflawless.flawless": "Flawless",
-      "item.minelittleflawless.flawless_spawn_egg": "Flawless Spawn Egg"
+      "item.minelittleflawless.flawless_spawn_egg": "Flawless Spawn Egg",
+      "item.minelittleflawless.flawless_magician_clothing": "Flawless Magician Clothing",
+      "item.minelittleflawless.tuxedo": "Tuxedo",
+      "item.minelittleflawless.farmer": "Farmer",
+      "item.minelittleflawless.pajamas": "Pajamas"
     }
   },
   "metadata": {

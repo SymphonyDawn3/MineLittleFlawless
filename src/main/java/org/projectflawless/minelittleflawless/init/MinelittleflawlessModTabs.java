@@ -22,6 +22,11 @@ public class MinelittleflawlessModTabs {
 	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
 		if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
 			tabData.accept(MinelittleflawlessModItems.FLAWLESS_SPAWN_EGG.get());
+		} else if (tabData.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+			tabData.accept(MinelittleflawlessModItems.FLAWLESS_MAGICIAN_CLOTHING.get());
+			tabData.accept(MinelittleflawlessModItems.TUXEDO.get());
+			tabData.accept(MinelittleflawlessModItems.FARMER.get());
+			tabData.accept(MinelittleflawlessModItems.PAJAMAS.get());
 		}
 	}
 }
