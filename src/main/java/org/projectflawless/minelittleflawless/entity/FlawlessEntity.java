@@ -2,6 +2,7 @@ package org.projectflawless.minelittleflawless.entity;
 
 import org.projectflawless.minelittleflawless.procedures.NoFriendlyFireProcedure;
 import org.projectflawless.minelittleflawless.procedures.FlawlessRightclickedOnEntityProcedure;
+import org.projectflawless.minelittleflawless.procedures.FlawlessOnInitialEntitySpawnProcedure;
 import org.projectflawless.minelittleflawless.procedures.FlawlessEntityIsHurtProcedure;
 import org.projectflawless.minelittleflawless.init.MinelittleflawlessModEntities;
 
@@ -11,6 +12,7 @@ import net.neoforged.neoforge.event.EventHooks;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.SpawnEggItem;
@@ -30,6 +32,7 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerLevel;
@@ -39,6 +42,8 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.component.DataComponents;
+
+import javax.annotation.Nullable;
 
 public class FlawlessEntity extends TamableAnimal {
 	public static final EntityDataAccessor<String> DATA_flawlessClothing = SynchedEntityData.defineId(FlawlessEntity.class, EntityDataSerializers.STRING);
@@ -111,6 +116,13 @@ public class FlawlessEntity extends TamableAnimal {
 		if (!FlawlessEntityIsHurtProcedure.execute(damagesource, entity))
 			return false;
 		return super.hurtServer(level, damagesource, amount);
+	}
+
+	@Override
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, EntitySpawnReason reason, @Nullable SpawnGroupData livingdata) {
+		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata);
+		FlawlessOnInitialEntitySpawnProcedure.execute(this);
+		return retval;
 	}
 
 	@Override

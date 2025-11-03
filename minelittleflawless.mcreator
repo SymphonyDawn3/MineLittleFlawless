@@ -430,6 +430,24 @@
           "src/main/resources/data/minelittleflawless/advancement/recipes/pajamas_recipe.json"
         ]
       }
+    },
+    {
+      "name": "FlawlessOnInitialEntitySpawn",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flawless_on_initial_entity_spawn",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/procedures/FlawlessOnInitialEntitySpawnProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [],
