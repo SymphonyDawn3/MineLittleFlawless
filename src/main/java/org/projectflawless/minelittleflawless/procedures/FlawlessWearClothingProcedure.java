@@ -27,5 +27,19 @@ public class FlawlessWearClothingProcedure {
 				}
 			}
 		}
+		if (itemstack.getItem() == MinelittleflawlessModItems.SCHOOLGIRL.get()) {
+			if (entity instanceof LivingEntity _entity) {
+				AttributeModifier modifier = new AttributeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"), 1, AttributeModifier.Operation.ADD_VALUE);
+				if (!_entity.getAttribute(Attributes.KNOCKBACK_RESISTANCE).hasModifier(modifier.id())) {
+					_entity.getAttribute(Attributes.KNOCKBACK_RESISTANCE).addPermanentModifier(modifier);
+				}
+			}
+			if (entity instanceof LivingEntity _entity) {
+				AttributeModifier modifier = new AttributeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"), 1, AttributeModifier.Operation.ADD_VALUE);
+				if (!_entity.getAttribute(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).hasModifier(modifier.id())) {
+					_entity.getAttribute(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).addPermanentModifier(modifier);
+				}
+			}
+		}
 	}
 }

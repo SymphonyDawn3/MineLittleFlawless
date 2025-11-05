@@ -22,5 +22,15 @@ public class FlawlessOffClothingProcedure {
 				}
 			}
 		}
+		if (itemstack.getItem() == MinelittleflawlessModItems.SCHOOLGIRL.get()) {
+			if (entity instanceof LivingEntity _livingEntity7 && _livingEntity7.getAttribute(Attributes.FALL_DAMAGE_MULTIPLIER).hasModifier(ResourceLocation.parse("minelittleflawless:clothing_power"))) {
+				if (entity instanceof LivingEntity _entity) {
+					_entity.getAttribute(Attributes.KNOCKBACK_RESISTANCE).removeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"));
+				}
+				if (entity instanceof LivingEntity _entity) {
+					_entity.getAttribute(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).removeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"));
+				}
+			}
+		}
 	}
 }
