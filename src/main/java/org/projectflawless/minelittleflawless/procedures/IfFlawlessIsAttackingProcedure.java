@@ -39,6 +39,14 @@ public class IfFlawlessIsAttackingProcedure {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 200, 1));
 			}
+			if ((flawlessClothing).equals(BuiltInRegistries.ITEM.getKey(MinelittleflawlessModItems.FARMER.get()).toString())) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 200, 1));
+			}
+			if ((flawlessClothing).equals(BuiltInRegistries.ITEM.getKey(MinelittleflawlessModItems.SCHOOLGIRL.get()).toString())) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 200, 1));
+			}
 		}
 	}
 }

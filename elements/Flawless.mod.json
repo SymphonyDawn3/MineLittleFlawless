@@ -66,6 +66,15 @@
         "condition": {
           "name": "PajamasDisplayCondition"
         }
+      },
+      {
+        "model": "ModelSchoolgirl",
+        "texture": "schoolgirl.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "SchoolgirlDisplayCondition"
+        }
       }
     ],
     "animations": [],

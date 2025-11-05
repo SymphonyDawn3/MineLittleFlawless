@@ -4,6 +4,7 @@
 package org.projectflawless.minelittleflawless.init;
 
 import org.projectflawless.minelittleflawless.item.TuxedoItem;
+import org.projectflawless.minelittleflawless.item.SchoolgirlItem;
 import org.projectflawless.minelittleflawless.item.PajamasItem;
 import org.projectflawless.minelittleflawless.item.FlawlessMagicianClothingItem;
 import org.projectflawless.minelittleflawless.item.FarmerItem;
@@ -24,6 +25,7 @@ public class MinelittleflawlessModItems {
 	public static final DeferredItem<Item> TUXEDO = register("tuxedo", TuxedoItem::new);
 	public static final DeferredItem<Item> FARMER = register("farmer", FarmerItem::new);
 	public static final DeferredItem<Item> PAJAMAS = register("pajamas", PajamasItem::new);
+	public static final DeferredItem<Item> SCHOOLGIRL = register("schoolgirl", SchoolgirlItem::new);
 
 	// Start of user code block custom items
 	// End of user code block custom items

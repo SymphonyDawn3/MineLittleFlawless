@@ -1,10 +1,6 @@
 package org.projectflawless.minelittleflawless.client.renderer;
 
-import org.projectflawless.minelittleflawless.procedures.TuxedoDisplayConditionProcedure;
-import org.projectflawless.minelittleflawless.procedures.PajamasDisplayConditionProcedure;
-import org.projectflawless.minelittleflawless.procedures.IfFlawlessIsTamedProcedure;
-import org.projectflawless.minelittleflawless.procedures.FlawlessMagicianClothingDisplayConditionProcedure;
-import org.projectflawless.minelittleflawless.procedures.FarmerDisplayConditionProcedure;
+import org.projectflawless.minelittleflawless.procedures.*;
 import org.projectflawless.minelittleflawless.entity.FlawlessEntity;
 import org.projectflawless.minelittleflawless.client.model.*;
 
@@ -108,6 +104,23 @@ public class FlawlessRenderer extends MobRenderer<FlawlessEntity, LivingEntityRe
 				if (PajamasDisplayConditionProcedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.eyes(LAYER_TEXTURE));
 					EntityModel model = new ModelPajamas(Minecraft.getInstance().getEntityModels().bakeLayer(ModelPajamas.LAYER_LOCATION));
+					model.setupAnim(state);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(state, 0));
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<>(this) {
+			final ResourceLocation LAYER_TEXTURE = ResourceLocation.parse("minelittleflawless:textures/entities/schoolgirl.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, LivingEntityRenderState state, float headYaw, float headPitch) {
+				Level world = entity.level();
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (SchoolgirlDisplayConditionProcedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new ModelSchoolgirl(Minecraft.getInstance().getEntityModels().bakeLayer(ModelSchoolgirl.LAYER_LOCATION));
 					model.setupAnim(state);
 					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(state, 0));
 				}

@@ -448,6 +448,52 @@
           "src/main/java/org/projectflawless/minelittleflawless/procedures/FlawlessOnInitialEntitySpawnProcedure.java"
         ]
       }
+    },
+    {
+      "name": "Schoolgirl",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "schoolgirl",
+      "metadata": {
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/item/SchoolgirlItem.java",
+          "src/main/resources/assets/minelittleflawless/items/schoolgirl.json",
+          "src/main/resources/assets/minelittleflawless/models/item/schoolgirl.json"
+        ]
+      }
+    },
+    {
+      "name": "SchoolgirlDisplayCondition",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "schoolgirl_display_condition",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/procedures/SchoolgirlDisplayConditionProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "SchoolgirlRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "schoolgirl_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minelittleflawless/advancement/recipes/schoolgirl_recipe.json",
+          "src/main/resources/data/minelittleflawless/recipe/schoolgirl.json"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -457,7 +503,8 @@
       "CUSTOM:FlawlessMagicianClothing",
       "CUSTOM:Tuxedo",
       "CUSTOM:Farmer",
-      "CUSTOM:Pajamas"
+      "CUSTOM:Pajamas",
+      "CUSTOM:Schoolgirl"
     ],
     "ITEMS:minelittleflawless:farmer_gifts": [
       "Items.WHEAT_SEEDS",
@@ -498,7 +545,8 @@
       "item.minelittleflawless.flawless_magician_clothing": "Flawless Magician Clothing",
       "item.minelittleflawless.tuxedo": "Tuxedo",
       "item.minelittleflawless.farmer": "Farmer",
-      "item.minelittleflawless.pajamas": "Pajamas"
+      "item.minelittleflawless.pajamas": "Pajamas",
+      "item.minelittleflawless.schoolgirl": "Schoolgirl"
     }
   },
   "metadata": {

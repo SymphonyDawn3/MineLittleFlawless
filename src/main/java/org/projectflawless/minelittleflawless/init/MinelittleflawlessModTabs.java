@@ -27,6 +27,7 @@ public class MinelittleflawlessModTabs {
 			tabData.accept(MinelittleflawlessModItems.TUXEDO.get());
 			tabData.accept(MinelittleflawlessModItems.FARMER.get());
 			tabData.accept(MinelittleflawlessModItems.PAJAMAS.get());
+			tabData.accept(MinelittleflawlessModItems.SCHOOLGIRL.get());
 		}
 	}
 }
