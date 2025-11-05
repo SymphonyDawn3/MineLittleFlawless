@@ -17,7 +17,6 @@ public class MinelittleflawlessModModels {
 		event.registerLayerDefinition(ModelPajamas.LAYER_LOCATION, ModelPajamas::createBodyLayer);
 		event.registerLayerDefinition(ModelFarmer.LAYER_LOCATION, ModelFarmer::createBodyLayer);
 		event.registerLayerDefinition(ModelFlawlessMagicianClothing.LAYER_LOCATION, ModelFlawlessMagicianClothing::createBodyLayer);
-		event.registerLayerDefinition(ModelFriendshipBow.LAYER_LOCATION, ModelFriendshipBow::createBodyLayer);
 		event.registerLayerDefinition(ModelBartleby.LAYER_LOCATION, ModelBartleby::createBodyLayer);
 		event.registerLayerDefinition(ModelSchoolgirl.LAYER_LOCATION, ModelSchoolgirl::createBodyLayer);
 		event.registerLayerDefinition(ModelTuxedo.LAYER_LOCATION, ModelTuxedo::createBodyLayer);
