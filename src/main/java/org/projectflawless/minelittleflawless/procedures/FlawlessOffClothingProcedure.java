@@ -13,23 +13,24 @@ public class FlawlessOffClothingProcedure {
 		if (entity == null)
 			return;
 		if (itemstack.getItem() == MinelittleflawlessModItems.FLAWLESS_MAGICIAN_CLOTHING.get()) {
-			if (entity instanceof LivingEntity _livingEntity2 && _livingEntity2.getAttribute(Attributes.FALL_DAMAGE_MULTIPLIER).hasModifier(ResourceLocation.parse("minelittleflawless:clothing_power"))) {
-				if (entity instanceof LivingEntity _entity) {
-					_entity.getAttribute(Attributes.FALL_DAMAGE_MULTIPLIER).removeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"));
-				}
-				if (entity instanceof LivingEntity _entity) {
-					_entity.getAttribute(Attributes.ATTACK_KNOCKBACK).removeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"));
-				}
+			if (entity instanceof LivingEntity _entity) {
+				_entity.getAttribute(Attributes.FALL_DAMAGE_MULTIPLIER).removeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"));
+			}
+			if (entity instanceof LivingEntity _entity) {
+				_entity.getAttribute(Attributes.ATTACK_KNOCKBACK).removeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"));
 			}
 		}
 		if (itemstack.getItem() == MinelittleflawlessModItems.SCHOOLGIRL.get()) {
-			if (entity instanceof LivingEntity _livingEntity7 && _livingEntity7.getAttribute(Attributes.FALL_DAMAGE_MULTIPLIER).hasModifier(ResourceLocation.parse("minelittleflawless:clothing_power"))) {
-				if (entity instanceof LivingEntity _entity) {
-					_entity.getAttribute(Attributes.KNOCKBACK_RESISTANCE).removeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"));
-				}
-				if (entity instanceof LivingEntity _entity) {
-					_entity.getAttribute(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).removeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"));
-				}
+			if (entity instanceof LivingEntity _entity) {
+				_entity.getAttribute(Attributes.KNOCKBACK_RESISTANCE).removeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"));
+			}
+			if (entity instanceof LivingEntity _entity) {
+				_entity.getAttribute(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).removeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"));
+			}
+		}
+		if (itemstack.getItem() == MinelittleflawlessModItems.ROCKSTAR.get()) {
+			if (entity instanceof LivingEntity _entity) {
+				_entity.getAttribute(Attributes.MOVEMENT_SPEED).removeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"));
 			}
 		}
 	}

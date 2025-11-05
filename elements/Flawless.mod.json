@@ -75,6 +75,15 @@
         "condition": {
           "name": "SchoolgirlDisplayCondition"
         }
+      },
+      {
+        "model": "ModelRockstar",
+        "texture": "rockstar.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "RockstarDisplayCondition"
+        }
       }
     ],
     "animations": [],
