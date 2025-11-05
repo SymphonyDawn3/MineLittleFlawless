@@ -41,5 +41,13 @@ public class FlawlessWearClothingProcedure {
 				}
 			}
 		}
+		if (itemstack.getItem() == MinelittleflawlessModItems.ROCKSTAR.get()) {
+			if (entity instanceof LivingEntity _entity) {
+				AttributeModifier modifier = new AttributeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"), 0.1, AttributeModifier.Operation.ADD_VALUE);
+				if (!_entity.getAttribute(Attributes.MOVEMENT_SPEED).hasModifier(modifier.id())) {
+					_entity.getAttribute(Attributes.MOVEMENT_SPEED).addPermanentModifier(modifier);
+				}
+			}
+		}
 	}
 }

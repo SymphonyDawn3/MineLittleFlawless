@@ -21,6 +21,7 @@ public class MinelittleflawlessModModels {
 		event.registerLayerDefinition(ModelBartleby.LAYER_LOCATION, ModelBartleby::createBodyLayer);
 		event.registerLayerDefinition(ModelSchoolgirl.LAYER_LOCATION, ModelSchoolgirl::createBodyLayer);
 		event.registerLayerDefinition(ModelTuxedo.LAYER_LOCATION, ModelTuxedo::createBodyLayer);
+		event.registerLayerDefinition(ModelRockstar.LAYER_LOCATION, ModelRockstar::createBodyLayer);
 		event.registerLayerDefinition(ModelFlawless.LAYER_LOCATION, ModelFlawless::createBodyLayer);
 	}
 }
