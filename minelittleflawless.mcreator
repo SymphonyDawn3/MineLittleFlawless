@@ -847,6 +847,7 @@
     "websiteURL": "https://github.com/SymphonyDawn3/MineLittleFlawless",
     "license": "MIT License",
     "serverSideOnly": false,
+    "modPicture": "mine_little_flawless",
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
