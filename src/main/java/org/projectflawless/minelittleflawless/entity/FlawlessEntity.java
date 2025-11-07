@@ -85,9 +85,10 @@ public class FlawlessEntity extends TamableAnimal {
 			}
 		});
 		this.goalSelector.addGoal(6, new FollowOwnerGoal(this, 1, (float) 10, (float) 2));
-		this.goalSelector.addGoal(7, new RandomStrollGoal(this, 1));
-		this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(9, new FloatGoal(this));
+		this.goalSelector.addGoal(7, new TemptGoal(this, 1, Ingredient.of(Items.SUGAR), false));
+		this.goalSelector.addGoal(8, new RandomStrollGoal(this, 1));
+		this.goalSelector.addGoal(9, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(10, new FloatGoal(this));
 	}
 
 	@Override
@@ -217,6 +218,7 @@ public class FlawlessEntity extends TamableAnimal {
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 15);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
 		builder = builder.add(Attributes.STEP_HEIGHT, 0.6);
+		builder = builder.add(Attributes.TEMPT_RANGE, 10);
 		return builder;
 	}
 }
