@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "minelittleflawless:rockstar"
+    },
+    "title": {
+      "translate": "advancements.flawless_fan_club.title"
+    },
+    "description": {
+      "translate": "advancements.flawless_fan_club.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "flawless_fan_club_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 500
+  },
+  "parent": "minelittleflawless:flawless_enchilada"
+}

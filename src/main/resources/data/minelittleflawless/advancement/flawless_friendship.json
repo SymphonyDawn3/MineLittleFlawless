@@ -1,0 +1,23 @@
+{
+  "display": {
+    "background": "minecraft:block/stone",
+    "icon": {
+      "id": "minelittleflawless:flawless_magician_clothing"
+    },
+    "title": {
+      "translate": "advancements.flawless_friendship.title"
+    },
+    "description": {
+      "translate": "advancements.flawless_friendship.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "flawless_friendship_0": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

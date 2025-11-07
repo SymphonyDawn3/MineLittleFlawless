@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "minelittleflawless:farmer"
+    },
+    "title": {
+      "translate": "advancements.flawless_buddies.title"
+    },
+    "description": {
+      "translate": "advancements.flawless_buddies.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "flawless_buddies_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "minelittleflawless:flawless_friendship"
+}
