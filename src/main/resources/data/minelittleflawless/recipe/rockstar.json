@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " a ",
+    " b ",
+    "c c"
+  ],
+  "key": {
+    "a": "minecraft:string",
+    "b": "#minecraft:planks",
+    "c": "minecraft:iron_ingot"
+  },
+  "result": {
+    "id": "minelittleflawless:rockstar",
+    "count": 1
+  }
+}
