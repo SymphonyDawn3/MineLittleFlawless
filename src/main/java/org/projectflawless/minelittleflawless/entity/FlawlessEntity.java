@@ -84,11 +84,12 @@ public class FlawlessEntity extends TamableAnimal {
 				return this.isTimeToAttack() && this.mob.distanceToSqr(entity) < (this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth()) && this.mob.getSensing().hasLineOfSight(entity);
 			}
 		});
-		this.goalSelector.addGoal(6, new FollowOwnerGoal(this, 1, (float) 10, (float) 2));
-		this.goalSelector.addGoal(7, new TemptGoal(this, 1, Ingredient.of(Items.SUGAR), false));
-		this.goalSelector.addGoal(8, new RandomStrollGoal(this, 1));
-		this.goalSelector.addGoal(9, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(10, new FloatGoal(this));
+		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, (float) 6));
+		this.goalSelector.addGoal(7, new FollowOwnerGoal(this, 1, (float) 10, (float) 2));
+		this.goalSelector.addGoal(8, new TemptGoal(this, 1, Ingredient.of(Items.SUGAR), false));
+		this.goalSelector.addGoal(9, new RandomStrollGoal(this, 1));
+		this.goalSelector.addGoal(10, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(11, new FloatGoal(this));
 	}
 
 	@Override
