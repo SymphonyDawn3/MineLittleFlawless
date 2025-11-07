@@ -14,9 +14,6 @@ public class FlawlessOffClothingProcedure {
 			return;
 		if (itemstack.getItem() == MinelittleflawlessModItems.FLAWLESS_MAGICIAN_CLOTHING.get()) {
 			if (entity instanceof LivingEntity _entity) {
-				_entity.getAttribute(Attributes.FALL_DAMAGE_MULTIPLIER).removeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"));
-			}
-			if (entity instanceof LivingEntity _entity) {
 				_entity.getAttribute(Attributes.ATTACK_KNOCKBACK).removeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"));
 			}
 		}

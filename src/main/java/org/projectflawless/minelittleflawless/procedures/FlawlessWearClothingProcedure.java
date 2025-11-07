@@ -15,12 +15,6 @@ public class FlawlessWearClothingProcedure {
 			return;
 		if (itemstack.getItem() == MinelittleflawlessModItems.FLAWLESS_MAGICIAN_CLOTHING.get()) {
 			if (entity instanceof LivingEntity _entity) {
-				AttributeModifier modifier = new AttributeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"), (-1), AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
-				if (!_entity.getAttribute(Attributes.FALL_DAMAGE_MULTIPLIER).hasModifier(modifier.id())) {
-					_entity.getAttribute(Attributes.FALL_DAMAGE_MULTIPLIER).addPermanentModifier(modifier);
-				}
-			}
-			if (entity instanceof LivingEntity _entity) {
 				AttributeModifier modifier = new AttributeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"), 5, AttributeModifier.Operation.ADD_VALUE);
 				if (!_entity.getAttribute(Attributes.ATTACK_KNOCKBACK).hasModifier(modifier.id())) {
 					_entity.getAttribute(Attributes.ATTACK_KNOCKBACK).addPermanentModifier(modifier);
