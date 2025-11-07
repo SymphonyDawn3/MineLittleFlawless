@@ -135,6 +135,26 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ],
         "files": [
@@ -537,6 +557,204 @@
           "src/main/resources/data/minelittleflawless/advancement/recipes/rockstar_recipe.json"
         ]
       }
+    },
+    {
+      "name": "FlawlessFriendship",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flawless_friendship",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minelittleflawless/advancement/flawless_friendship.json"
+        ]
+      }
+    },
+    {
+      "name": "FashionableFlawless",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fashionable_flawless",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minelittleflawless/advancement/fashionable_flawless.json"
+        ]
+      }
+    },
+    {
+      "name": "FlawlessBuddies",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flawless_buddies",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minelittleflawless/advancement/flawless_buddies.json"
+        ]
+      }
+    },
+    {
+      "name": "FlawlessEnchilada",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flawless_enchilada",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minelittleflawless/advancement/flawless_enchilada.json"
+        ]
+      }
+    },
+    {
+      "name": "FlawlessFanClub",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flawless_fan_club",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minelittleflawless/advancement/flawless_fan_club.json"
+        ]
+      }
+    },
+    {
+      "name": "FlawlessFriendshipCondition",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flawless_friendship_condition",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/procedures/FlawlessFriendshipConditionProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "FashionableFlawlessCondition",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fashionable_flawless_condition",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/procedures/FashionableFlawlessConditionProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "FlawlessBuddiesCondition",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flawless_buddies_condition",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/procedures/FlawlessBuddiesConditionProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "FlawlessEnchiladaCondition",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flawless_enchilada_condition",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/procedures/FlawlessEnchiladaConditionProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "FlawlessFanClubCondition",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flawless_fan_club_condition",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/procedures/FlawlessFanClubConditionProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -591,7 +809,17 @@
       "item.minelittleflawless.farmer": "Farmer",
       "item.minelittleflawless.pajamas": "Pajamas",
       "item.minelittleflawless.schoolgirl": "Schoolgirl",
-      "item.minelittleflawless.rockstar": "Rockstar"
+      "item.minelittleflawless.rockstar": "Rockstar",
+      "advancements.flawless_friendship.title": "Flawless Friendship!",
+      "advancements.flawless_friendship.descr": "Tame a Flawless!",
+      "advancements.fashionable_flawless.title": "Fashionable Flawless",
+      "advancements.fashionable_flawless.descr": "Dress up a tamed Flawless with any clothing!",
+      "advancements.flawless_buddies.descr": "Tame more than one Flawless!",
+      "advancements.flawless_buddies.title": "Flawless Buddies!",
+      "advancements.flawless_enchilada.title": "Flawless Enchilada!",
+      "advancements.flawless_enchilada.descr": "Tame 6 Flawlesses!",
+      "advancements.flawless_fan_club.title": "Flawless Fan Club!",
+      "advancements.flawless_fan_club.descr": "Have every tamed Flawless wear a different clothing!"
     }
   },
   "metadata": {

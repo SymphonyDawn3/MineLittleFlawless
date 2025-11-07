@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "minelittleflawless:tuxedo"
+    },
+    "title": {
+      "translate": "advancements.fashionable_flawless.title"
+    },
+    "description": {
+      "translate": "advancements.fashionable_flawless.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "fashionable_flawless_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "minelittleflawless:flawless_friendship"
+}

@@ -9,6 +9,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.InteractionHand;
@@ -49,6 +50,10 @@ public class FlawlessRightclickedOnEntityProcedure {
 				}
 				if (entity instanceof FlawlessEntity _datEntSetS)
 					_datEntSetS.getEntityData().set(FlawlessEntity.DATA_flawlessClothing, flawlessClothing);
+				if (entity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false) {
+					FashionableFlawlessConditionProcedure.execute(sourceentity);
+				}
+				FlawlessFanClubConditionProcedure.execute(world, x, y, z, sourceentity);
 			}
 		}
 		if (itemInHand.getItem() == Items.SHEARS) {
@@ -86,17 +91,17 @@ public class FlawlessRightclickedOnEntityProcedure {
 				_entity.setHealth((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + (itemstack.has(DataComponents.FOOD) ? itemstack.get(DataComponents.FOOD).nutrition() : 0) * 10);
 			if (itemstack.getItem() == Items.BEETROOT_SOUP || itemstack.getItem() == Items.MUSHROOM_STEW) {
 				if (sourceentity instanceof LivingEntity _entity) {
-					ItemStack _setstack32 = new ItemStack(Items.BOWL).copy();
-					_setstack32.setCount(1);
-					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack32);
+					ItemStack _setstack33 = new ItemStack(Items.BOWL).copy();
+					_setstack33.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack33);
 					if (_entity instanceof Player _player)
 						_player.getInventory().setChanged();
 				}
 			} else if (itemstack.getItem() == Items.HONEY_BOTTLE) {
 				if (sourceentity instanceof LivingEntity _entity) {
-					ItemStack _setstack35 = new ItemStack(Items.GLASS_BOTTLE).copy();
-					_setstack35.setCount(1);
-					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack35);
+					ItemStack _setstack36 = new ItemStack(Items.GLASS_BOTTLE).copy();
+					_setstack36.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack36);
 					if (_entity instanceof Player _player)
 						_player.getInventory().setChanged();
 				}
