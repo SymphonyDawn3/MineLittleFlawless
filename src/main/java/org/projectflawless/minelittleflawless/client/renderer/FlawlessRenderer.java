@@ -126,6 +126,23 @@ public class FlawlessRenderer extends MobRenderer<FlawlessEntity, LivingEntityRe
 				}
 			}
 		});
+		this.addLayer(new RenderLayer<>(this) {
+			final ResourceLocation LAYER_TEXTURE = ResourceLocation.parse("minelittleflawless:textures/entities/rockstar.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, LivingEntityRenderState state, float headYaw, float headPitch) {
+				Level world = entity.level();
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (RockstarDisplayConditionProcedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new ModelRockstar(Minecraft.getInstance().getEntityModels().bakeLayer(ModelRockstar.LAYER_LOCATION));
+					model.setupAnim(state);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(state, 0));
+				}
+			}
+		});
 	}
 
 	@Override

@@ -309,6 +309,22 @@
           {
             "name": "sourceentity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ],
         "files": [
@@ -494,6 +510,52 @@
           "src/main/resources/data/minelittleflawless/recipe/schoolgirl.json"
         ]
       }
+    },
+    {
+      "name": "Rockstar",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rockstar",
+      "metadata": {
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/item/RockstarItem.java",
+          "src/main/resources/assets/minelittleflawless/items/rockstar.json",
+          "src/main/resources/assets/minelittleflawless/models/item/rockstar.json"
+        ]
+      }
+    },
+    {
+      "name": "RockstarDisplayCondition",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rockstar_display_condition",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "logic",
+        "files": [
+          "src/main/java/org/projectflawless/minelittleflawless/procedures/RockstarDisplayConditionProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "RockstarRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rockstar_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minelittleflawless/recipe/rockstar.json",
+          "src/main/resources/data/minelittleflawless/advancement/recipes/rockstar_recipe.json"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -504,7 +566,8 @@
       "CUSTOM:Tuxedo",
       "CUSTOM:Farmer",
       "CUSTOM:Pajamas",
-      "CUSTOM:Schoolgirl"
+      "CUSTOM:Schoolgirl",
+      "CUSTOM:Rockstar"
     ],
     "ITEMS:minelittleflawless:farmer_gifts": [
       "Items.WHEAT_SEEDS",
@@ -546,7 +609,8 @@
       "item.minelittleflawless.tuxedo": "Tuxedo",
       "item.minelittleflawless.farmer": "Farmer",
       "item.minelittleflawless.pajamas": "Pajamas",
-      "item.minelittleflawless.schoolgirl": "Schoolgirl"
+      "item.minelittleflawless.schoolgirl": "Schoolgirl",
+      "item.minelittleflawless.rockstar": "Rockstar"
     }
   },
   "metadata": {
