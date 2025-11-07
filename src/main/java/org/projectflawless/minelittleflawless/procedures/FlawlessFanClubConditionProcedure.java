@@ -30,12 +30,6 @@ public class FlawlessFanClubConditionProcedure {
 		Entity flawlessOwner = null;
 		if (!(entity instanceof ServerPlayer _plr0 && _plr0.level() instanceof ServerLevel _serverLevel0
 				&& _plr0.getAdvancements().getOrStartProgress(_serverLevel0.getServer().getAdvancements().get(ResourceLocation.parse("minelittleflawless:flawless_fan_club"))).isDone())) {
-			hasMagicianClothing = false;
-			hasTuxedoClothing = false;
-			hasFarmerClothing = false;
-			hasPajamasClothing = false;
-			hasSchoolgirlClothing = false;
-			hasRockstarClothing = false;
 			{
 				final Vec3 _center = new Vec3(x, y, z);
 				for (Entity entityiterator : world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(64 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
