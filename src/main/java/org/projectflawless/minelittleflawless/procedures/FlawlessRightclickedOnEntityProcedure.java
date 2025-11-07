@@ -52,8 +52,8 @@ public class FlawlessRightclickedOnEntityProcedure {
 					_datEntSetS.getEntityData().set(FlawlessEntity.DATA_flawlessClothing, flawlessClothing);
 				if (entity instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false) {
 					FashionableFlawlessConditionProcedure.execute(sourceentity);
+					FlawlessFanClubConditionProcedure.execute(world, x, y, z, sourceentity);
 				}
-				FlawlessFanClubConditionProcedure.execute(world, x, y, z, sourceentity);
 			}
 		}
 		if (itemInHand.getItem() == Items.SHEARS) {
