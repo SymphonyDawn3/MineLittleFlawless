@@ -50,25 +50,6 @@
       }
     },
     {
-      "name": "IfFlawlessIsTamed",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "if_flawless_is_tamed",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ],
-        "return_type": "logic",
-        "files": [
-          "src/main/java/org/projectflawless/minelittleflawless/procedures/IfFlawlessIsTamedProcedure.java"
-        ]
-      }
-    },
-    {
       "name": "FlawlessMagicianClothing",
       "type": "item",
       "compiles": true,

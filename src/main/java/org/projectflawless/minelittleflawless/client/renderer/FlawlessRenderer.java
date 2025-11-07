@@ -25,23 +25,6 @@ public class FlawlessRenderer extends MobRenderer<FlawlessEntity, LivingEntityRe
 	public FlawlessRenderer(EntityRendererProvider.Context context) {
 		super(context, new ModelFlawless(context.bakeLayer(ModelFlawless.LAYER_LOCATION)), 0.5f);
 		this.addLayer(new RenderLayer<>(this) {
-			final ResourceLocation LAYER_TEXTURE = ResourceLocation.parse("minelittleflawless:textures/entities/friendship_bow.png");
-
-			@Override
-			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, LivingEntityRenderState state, float headYaw, float headPitch) {
-				Level world = entity.level();
-				double x = entity.getX();
-				double y = entity.getY();
-				double z = entity.getZ();
-				if (IfFlawlessIsTamedProcedure.execute(entity)) {
-					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					EntityModel model = new ModelFriendshipBow(Minecraft.getInstance().getEntityModels().bakeLayer(ModelFriendshipBow.LAYER_LOCATION));
-					model.setupAnim(state);
-					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(state, 0));
-				}
-			}
-		});
-		this.addLayer(new RenderLayer<>(this) {
 			final ResourceLocation LAYER_TEXTURE = ResourceLocation.parse("minelittleflawless:textures/entities/flawless_magician_clothing.png");
 
 			@Override
