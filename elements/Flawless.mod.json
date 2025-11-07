@@ -23,15 +23,6 @@
     },
     "modelLayers": [
       {
-        "model": "ModelFriendshipBow",
-        "texture": "friendship_bow.png",
-        "disableHurtOverlay": false,
-        "glow": false,
-        "condition": {
-          "name": "IfFlawlessIsTamed"
-        }
-      },
-      {
         "model": "ModelFlawlessMagicianClothing",
         "texture": "flawless_magician_clothing.png",
         "disableHurtOverlay": false,
