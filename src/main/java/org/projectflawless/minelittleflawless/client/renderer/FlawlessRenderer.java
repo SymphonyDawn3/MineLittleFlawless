@@ -4,7 +4,6 @@ import org.projectflawless.minelittleflawless.procedures.*;
 import org.projectflawless.minelittleflawless.entity.FlawlessEntity;
 import org.projectflawless.minelittleflawless.client.model.*;
 
-import net.minecraft.world.level.Level;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
@@ -29,10 +28,6 @@ public class FlawlessRenderer extends MobRenderer<FlawlessEntity, LivingEntityRe
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, LivingEntityRenderState state, float headYaw, float headPitch) {
-				Level world = entity.level();
-				double x = entity.getX();
-				double y = entity.getY();
-				double z = entity.getZ();
 				if (FlawlessMagicianClothingDisplayConditionProcedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
 					EntityModel model = new ModelFlawlessMagicianClothing(Minecraft.getInstance().getEntityModels().bakeLayer(ModelFlawlessMagicianClothing.LAYER_LOCATION));
@@ -46,10 +41,6 @@ public class FlawlessRenderer extends MobRenderer<FlawlessEntity, LivingEntityRe
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, LivingEntityRenderState state, float headYaw, float headPitch) {
-				Level world = entity.level();
-				double x = entity.getX();
-				double y = entity.getY();
-				double z = entity.getZ();
 				if (TuxedoDisplayConditionProcedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
 					EntityModel model = new ModelTuxedo(Minecraft.getInstance().getEntityModels().bakeLayer(ModelTuxedo.LAYER_LOCATION));
@@ -63,10 +54,6 @@ public class FlawlessRenderer extends MobRenderer<FlawlessEntity, LivingEntityRe
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, LivingEntityRenderState state, float headYaw, float headPitch) {
-				Level world = entity.level();
-				double x = entity.getX();
-				double y = entity.getY();
-				double z = entity.getZ();
 				if (FarmerDisplayConditionProcedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
 					EntityModel model = new ModelFarmer(Minecraft.getInstance().getEntityModels().bakeLayer(ModelFarmer.LAYER_LOCATION));
@@ -80,10 +67,6 @@ public class FlawlessRenderer extends MobRenderer<FlawlessEntity, LivingEntityRe
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, LivingEntityRenderState state, float headYaw, float headPitch) {
-				Level world = entity.level();
-				double x = entity.getX();
-				double y = entity.getY();
-				double z = entity.getZ();
 				if (PajamasDisplayConditionProcedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.eyes(LAYER_TEXTURE));
 					EntityModel model = new ModelPajamas(Minecraft.getInstance().getEntityModels().bakeLayer(ModelPajamas.LAYER_LOCATION));
@@ -97,10 +80,6 @@ public class FlawlessRenderer extends MobRenderer<FlawlessEntity, LivingEntityRe
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, LivingEntityRenderState state, float headYaw, float headPitch) {
-				Level world = entity.level();
-				double x = entity.getX();
-				double y = entity.getY();
-				double z = entity.getZ();
 				if (SchoolgirlDisplayConditionProcedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
 					EntityModel model = new ModelSchoolgirl(Minecraft.getInstance().getEntityModels().bakeLayer(ModelSchoolgirl.LAYER_LOCATION));
@@ -114,10 +93,6 @@ public class FlawlessRenderer extends MobRenderer<FlawlessEntity, LivingEntityRe
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, LivingEntityRenderState state, float headYaw, float headPitch) {
-				Level world = entity.level();
-				double x = entity.getX();
-				double y = entity.getY();
-				double z = entity.getZ();
 				if (RockstarDisplayConditionProcedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
 					EntityModel model = new ModelRockstar(Minecraft.getInstance().getEntityModels().bakeLayer(ModelRockstar.LAYER_LOCATION));
