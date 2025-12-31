@@ -1,5 +1,11 @@
 package org.projectflawless.minelittleflawless.entity;
 
+import static org.projectflawless.minelittleflawless.init.MinelittleflawlessModEntities.BARTLEBY;
+
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
@@ -17,6 +23,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.BuiltInRegistries;
 
+@EventBusSubscriber
 public class BartlebyEntity extends Monster {
 	public BartlebyEntity(EntityType<BartlebyEntity> type, Level world) {
 		super(type, world);
@@ -70,4 +77,9 @@ public class BartlebyEntity extends Monster {
 		builder = builder.add(Attributes.STEP_HEIGHT, 0.6);
 		return builder;
 	}
+
+    @SubscribeEvent
+    public static void registerAttributes(EntityAttributeCreationEvent event) {
+        event.put(BARTLEBY.get(), createAttributes().build());
+    }
 }
