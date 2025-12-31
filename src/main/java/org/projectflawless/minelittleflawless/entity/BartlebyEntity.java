@@ -1,7 +1,5 @@
 package org.projectflawless.minelittleflawless.entity;
 
-import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
-
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
@@ -60,9 +58,6 @@ public class BartlebyEntity extends Monster {
 	@Override
 	public SoundEvent getDeathSound() {
 		return BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.vindicator.death"));
-	}
-
-	public static void init(RegisterSpawnPlacementsEvent event) {
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

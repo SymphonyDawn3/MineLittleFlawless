@@ -6,6 +6,8 @@ import org.projectflawless.minelittleflawless.procedures.FlawlessOnInitialEntity
 import org.projectflawless.minelittleflawless.procedures.FlawlessEntityIsHurtProcedure;
 import org.projectflawless.minelittleflawless.init.MinelittleflawlessModEntities;
 
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.event.EventHooks;
 
@@ -46,6 +48,7 @@ import net.minecraft.core.component.DataComponents;
 
 import javax.annotation.Nullable;
 
+@EventBusSubscriber
 public class FlawlessEntity extends TamableAnimal {
 	public static final EntityDataAccessor<String> DATA_flawlessClothing = SynchedEntityData.defineId(FlawlessEntity.class, EntityDataSerializers.STRING);
 
@@ -206,6 +209,7 @@ public class FlawlessEntity extends TamableAnimal {
 		return Ingredient.of(Items.SUGAR).test(stack);
 	}
 
+    @SubscribeEvent
 	public static void init(RegisterSpawnPlacementsEvent event) {
 		event.register(MinelittleflawlessModEntities.FLAWLESS.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
 				(entityType, world, reason, pos, random) -> (world.getBlockState(pos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON) && world.getRawBrightness(pos, 0) > 8), RegisterSpawnPlacementsEvent.Operation.REPLACE);
