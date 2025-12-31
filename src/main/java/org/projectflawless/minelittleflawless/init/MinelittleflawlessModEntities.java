@@ -1,6 +1,3 @@
-/*
- *    MCreator note: This file will be REGENERATED on each build.
- */
 package org.projectflawless.minelittleflawless.init;
 
 import org.projectflawless.minelittleflawless.entity.FlawlessEntity;
@@ -33,11 +30,9 @@ public class MinelittleflawlessModEntities {
 
 					.sized(0.8125f, 2f));
 
-	// Start of user code block custom entities
-	// End of user code block custom entities
-	private static <T extends Entity> DeferredHolder<EntityType<?>, EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
-		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MinelittleflawlessMod.MODID, registryname))));
-	}
+    private static <T extends Entity> DeferredHolder<EntityType<?>, EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
+        return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MinelittleflawlessMod.MODID, registryname))));
+    }
 
 	@SubscribeEvent
 	public static void init(RegisterSpawnPlacementsEvent event) {

@@ -7,7 +7,5 @@ gradle-app.setting
 .gradletasknamecache
 .project
 .classpath
-.eclipse
 .idea
-.mcreator
 run
