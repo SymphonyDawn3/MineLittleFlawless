@@ -6,7 +6,6 @@ import org.projectflawless.minelittleflawless.MinelittleflawlessMod;
 
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -39,12 +38,6 @@ public class MinelittleflawlessModEntities {
     private static <T extends Entity> DeferredHolder<EntityType<?>, EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
         return REGISTRY.register(registryname, () -> entityTypeBuilder.build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MinelittleflawlessMod.MODID, registryname))));
     }
-
-	@SubscribeEvent
-	public static void init(RegisterSpawnPlacementsEvent event) {
-		BartlebyEntity.init(event);
-		FlawlessEntity.init(event);
-	}
 
 	@SubscribeEvent
 	public static void registerAttributes(EntityAttributeCreationEvent event) {
