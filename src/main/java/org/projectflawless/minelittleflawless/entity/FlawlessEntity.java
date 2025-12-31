@@ -1,5 +1,7 @@
 package org.projectflawless.minelittleflawless.entity;
 
+import static org.projectflawless.minelittleflawless.init.MinelittleflawlessModEntities.FLAWLESS;
+
 import org.projectflawless.minelittleflawless.procedures.NoFriendlyFireProcedure;
 import org.projectflawless.minelittleflawless.procedures.FlawlessRightclickedOnEntityProcedure;
 import org.projectflawless.minelittleflawless.procedures.FlawlessOnInitialEntitySpawnProcedure;
@@ -8,6 +10,7 @@ import org.projectflawless.minelittleflawless.init.MinelittleflawlessModEntities
 
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import net.neoforged.neoforge.event.EventHooks;
 
@@ -226,4 +229,9 @@ public class FlawlessEntity extends TamableAnimal {
 		builder = builder.add(Attributes.TEMPT_RANGE, 10);
 		return builder;
 	}
+
+    @SubscribeEvent
+    public static void registerAttributes(EntityAttributeCreationEvent event) {
+        event.put(FLAWLESS.get(), createAttributes().build());
+    }
 }

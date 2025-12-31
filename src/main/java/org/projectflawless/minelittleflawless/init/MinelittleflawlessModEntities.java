@@ -6,9 +6,6 @@ import org.projectflawless.minelittleflawless.MinelittleflawlessMod;
 
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.bus.api.SubscribeEvent;
 
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.EntityType;
@@ -17,7 +14,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
 
-@EventBusSubscriber
 public class MinelittleflawlessModEntities {
 	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(Registries.ENTITY_TYPE, MinelittleflawlessMod.MODID);
 
@@ -38,10 +34,4 @@ public class MinelittleflawlessModEntities {
     private static <T extends Entity> DeferredHolder<EntityType<?>, EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
         return REGISTRY.register(registryname, () -> entityTypeBuilder.build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MinelittleflawlessMod.MODID, registryname))));
     }
-
-	@SubscribeEvent
-	public static void registerAttributes(EntityAttributeCreationEvent event) {
-		event.put(BARTLEBY.get(), BartlebyEntity.createAttributes().build());
-		event.put(FLAWLESS.get(), FlawlessEntity.createAttributes().build());
-	}
 }
