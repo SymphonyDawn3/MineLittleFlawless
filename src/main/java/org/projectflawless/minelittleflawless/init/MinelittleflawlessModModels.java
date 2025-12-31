@@ -1,6 +1,3 @@
-/*
- *    MCreator note: This file will be REGENERATED on each build.
- */
 package org.projectflawless.minelittleflawless.init;
 
 import org.projectflawless.minelittleflawless.client.model.*;
