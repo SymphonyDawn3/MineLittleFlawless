@@ -21,17 +21,23 @@ import net.minecraft.core.registries.Registries;
 @EventBusSubscriber
 public class MinelittleflawlessModEntities {
 	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(Registries.ENTITY_TYPE, MinelittleflawlessMod.MODID);
-	public static final DeferredHolder<EntityType<?>, EntityType<BartlebyEntity>> BARTLEBY = register("bartleby",
-			EntityType.Builder.<BartlebyEntity>of(BartlebyEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
+    public static final DeferredHolder<EntityType<?>, EntityType<BartlebyEntity>> BARTLEBY = register("bartleby",
+			EntityType.Builder.of(BartlebyEntity::new, MobCategory.MONSTER)
+                    .setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64)
+                    .setUpdateInterval(3)
 					.sized(0.75f, 3.125f));
-	public static final DeferredHolder<EntityType<?>, EntityType<FlawlessEntity>> FLAWLESS = register("flawless",
-			EntityType.Builder.<FlawlessEntity>of(FlawlessEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 
+    public static final DeferredHolder<EntityType<?>, EntityType<FlawlessEntity>> FLAWLESS = register("flawless",
+			EntityType.Builder.of(FlawlessEntity::new, MobCategory.CREATURE)
+                    .setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64)
+                    .setUpdateInterval(3)
 					.sized(0.8125f, 2f));
 
     private static <T extends Entity> DeferredHolder<EntityType<?>, EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
-        return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MinelittleflawlessMod.MODID, registryname))));
+        return REGISTRY.register(registryname, () -> entityTypeBuilder.build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(MinelittleflawlessMod.MODID, registryname))));
     }
 
 	@SubscribeEvent
