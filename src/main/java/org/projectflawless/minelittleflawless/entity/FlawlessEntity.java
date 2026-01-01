@@ -2,7 +2,6 @@ package org.projectflawless.minelittleflawless.entity;
 
 import static org.projectflawless.minelittleflawless.init.MinelittleflawlessModEntities.FLAWLESS;
 
-import org.projectflawless.minelittleflawless.procedures.NoFriendlyFireProcedure;
 import org.projectflawless.minelittleflawless.procedures.FlawlessRightclickedOnEntityProcedure;
 import org.projectflawless.minelittleflawless.procedures.FlawlessOnInitialEntitySpawnProcedure;
 import org.projectflawless.minelittleflawless.procedures.FlawlessEntityIsHurtProcedure;
@@ -72,24 +71,9 @@ public class FlawlessEntity extends TamableAnimal {
 		super.registerGoals();
 		this.goalSelector.addGoal(1, new BreedGoal(this, 1));
 		this.goalSelector.addGoal(2, new OwnerHurtByTargetGoal(this));
-		this.targetSelector.addGoal(3, new OwnerHurtTargetGoal(this) {
-			@Override
-			public boolean canUse() {
-				double x = FlawlessEntity.this.getX();
-				double y = FlawlessEntity.this.getY();
-				double z = FlawlessEntity.this.getZ();
-				Entity entity = FlawlessEntity.this;
-				Level world = FlawlessEntity.this.level();
-				return super.canUse() && NoFriendlyFireProcedure.execute(entity);
-			}
-		});
-		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, Monster.class, false, false));
-		this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.2, false) {
-			@Override
-			protected boolean canPerformAttack(LivingEntity entity) {
-				return this.isTimeToAttack() && this.mob.distanceToSqr(entity) < (this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth()) && this.mob.getSensing().hasLineOfSight(entity);
-			}
-		});
+		this.targetSelector.addGoal(3, new OwnerHurtTargetGoal(this));
+		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Monster.class, false, false));
+		this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.2, false));
 		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, (float) 6));
 		this.goalSelector.addGoal(7, new FollowOwnerGoal(this, 1, (float) 10, (float) 2));
 		this.goalSelector.addGoal(8, new TemptGoal(this, 1, Ingredient.of(Items.SUGAR), false));
@@ -211,6 +195,11 @@ public class FlawlessEntity extends TamableAnimal {
 	public boolean isFood(ItemStack stack) {
 		return Ingredient.of(Items.SUGAR).test(stack);
 	}
+
+    @Override
+    public boolean canAttackType(EntityType<?> entityType) {
+        return !(this.getType() == entityType);
+    }
 
     @SubscribeEvent
 	public static void init(RegisterSpawnPlacementsEvent event) {
