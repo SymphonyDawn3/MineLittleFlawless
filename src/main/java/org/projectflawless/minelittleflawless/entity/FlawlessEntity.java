@@ -2,9 +2,9 @@ package org.projectflawless.minelittleflawless.entity;
 
 import static org.projectflawless.minelittleflawless.init.MinelittleflawlessModEntities.FLAWLESS;
 
+import org.projectflawless.minelittleflawless.init.MinelittleflawlessModItems;
 import org.projectflawless.minelittleflawless.procedures.FlawlessRightclickedOnEntityProcedure;
 import org.projectflawless.minelittleflawless.procedures.FlawlessOnInitialEntitySpawnProcedure;
-import org.projectflawless.minelittleflawless.procedures.FlawlessEntityIsHurtProcedure;
 import org.projectflawless.minelittleflawless.init.MinelittleflawlessModEntities;
 
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -39,6 +39,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -99,17 +100,17 @@ public class FlawlessEntity extends TamableAnimal {
 
 	@Override
 	public boolean hurtServer(ServerLevel level, DamageSource damagesource, float amount) {
-		double x = this.getX();
-		double y = this.getY();
-		double z = this.getZ();
-		Level world = this.level();
-		Entity entity = this;
-		Entity sourceentity = damagesource.getEntity();
-		Entity immediatesourceentity = damagesource.getDirectEntity();
-		if (!FlawlessEntityIsHurtProcedure.execute(damagesource, entity))
-			return false;
+        String flawlessClothing = getEntityData().get(FlawlessEntity.DATA_flawlessClothing);
+
+        if (damagesource.is(DamageTypeTags.IS_FIRE)) {
+            if (flawlessClothing.equals(MinelittleflawlessModItems.TUXEDO.get().toString())) {
+                return false;
+            }
+        }
+
 		if (damagesource.is(DamageTypes.FALL))
 			return false;
+
 		return super.hurtServer(level, damagesource, amount);
 	}
 
