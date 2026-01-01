@@ -1,5 +1,7 @@
 package org.projectflawless.minelittleflawless.client.model;
 
+import org.projectflawless.minelittleflawless.client.renderer.state.FlawlessEntityRenderState;
+
 import net.minecraft.util.Mth;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
@@ -16,7 +18,7 @@ import net.minecraft.client.model.EntityModel;
 // Made with Blockbench 5.0.2
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
-public class ModelFlawless extends EntityModel<LivingEntityRenderState> {
+public class ModelFlawless extends EntityModel<FlawlessEntityRenderState> {
 	// This layer location should be baked with EntityRendererProvider.Context in
 	// the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("minelittleflawless", "model_flawless"), "main");
@@ -93,7 +95,7 @@ public class ModelFlawless extends EntityModel<LivingEntityRenderState> {
 		return LayerDefinition.create(meshdefinition, 128, 128);
 	}
 
-	public void setupAnim(LivingEntityRenderState state) {
+	public void setupAnim(FlawlessEntityRenderState state) {
 		float limbSwing = state.walkAnimationPos;
 		float limbSwingAmount = state.walkAnimationSpeed;
 		float ageInTicks = state.ageInTicks;
