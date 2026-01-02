@@ -4,7 +4,7 @@ import static org.projectflawless.minelittleflawless.init.MinelittleflawlessModE
 
 import org.projectflawless.minelittleflawless.init.MinelittleflawlessModItems;
 import org.projectflawless.minelittleflawless.procedures.FlawlessRightclickedOnEntityProcedure;
-import org.projectflawless.minelittleflawless.procedures.FlawlessOnInitialEntitySpawnProcedure;
+import org.projectflawless.minelittleflawless.procedures.FlawlessWearClothingProcedure;
 import org.projectflawless.minelittleflawless.init.MinelittleflawlessModEntities;
 
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -40,6 +40,8 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -117,7 +119,24 @@ public class FlawlessEntity extends TamableAnimal {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, EntitySpawnReason reason, @Nullable SpawnGroupData livingdata) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata);
-		FlawlessOnInitialEntitySpawnProcedure.execute(this);
+
+        String flawlessClothing;
+        ItemStack randomFlawlessClothing;
+
+        if (Math.random() < 0.5) {
+            flawlessClothing = "";
+        } else {
+            randomFlawlessClothing = new ItemStack(
+                    BuiltInRegistries.ITEM.getRandomElementOf(
+                            ItemTags.create(
+                                    ResourceLocation.parse("minelittleflawless:flawless_clothing")), RandomSource.create())
+                            .orElseThrow());
+            flawlessClothing = randomFlawlessClothing.getItem().toString();
+            FlawlessWearClothingProcedure.execute(this, randomFlawlessClothing);
+        }
+
+        this.getEntityData().set(DATA_flawlessClothing, flawlessClothing);
+
 		return retval;
 	}
 
