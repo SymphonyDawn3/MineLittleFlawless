@@ -2,6 +2,8 @@ package org.projectflawless.minelittleflawless.entity;
 
 import static org.projectflawless.minelittleflawless.init.MinelittleflawlessModEntities.FLAWLESS;
 
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import org.projectflawless.minelittleflawless.init.MinelittleflawlessModItems;
 import org.projectflawless.minelittleflawless.procedures.*;
 import org.projectflawless.minelittleflawless.init.MinelittleflawlessModEntities;
@@ -233,6 +235,26 @@ public class FlawlessEntity extends TamableAnimal implements IShearable {
     }
 
     @Override
+    public boolean doHurtTarget(ServerLevel level, Entity source) {
+        String flawlessClothing = this.getEntityData().get(FlawlessEntity.DATA_flawlessClothing);
+
+        if (flawlessClothing.equals(MinelittleflawlessModItems.PAJAMAS.get().toString())) {
+            if (source instanceof LivingEntity livingSource)
+                livingSource.addEffect(new MobEffectInstance(MobEffects.GLOWING, 200, 1));
+        }
+        if (flawlessClothing.equals(MinelittleflawlessModItems.FARMER.get().toString())) {
+            if (source instanceof LivingEntity livingSource)
+                livingSource.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 200, 1));
+        }
+        if (flawlessClothing.equals(MinelittleflawlessModItems.SCHOOLGIRL.get().toString())) {
+            if (source instanceof LivingEntity livingSource)
+                livingSource.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 200, 1));
+        }
+
+        return super.doHurtTarget(level, source);
+    }
+
+    @Override
     public List<ItemStack> onSheared(@Nullable Player player, ItemStack item, Level level, BlockPos pos) {
         level.playSound(null, this.blockPosition(), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("item.saddle.unequip")), SoundSource.AMBIENT, 1, 1);
         String flawlessClothing = this.getEntityData().get(DATA_flawlessClothing);
@@ -244,6 +266,13 @@ public class FlawlessEntity extends TamableAnimal implements IShearable {
         IShearable.super.spawnShearedDrop(level, pos, drop);
         this.getEntityData().set(DATA_flawlessClothing, "");
         this.offClothing(drop);
+    }
+
+    @Override
+    protected void playAttackSound() {
+        if (this.getEntityData().get(DATA_flawlessClothing).equals(MinelittleflawlessModItems.ROCKSTAR.get().toString())) {
+            this.level().playSound(null, this.blockPosition(), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("block.note_block.guitar")), SoundSource.AMBIENT, 5, (float) (Math.random() * 2));
+        }
     }
 
     private void wearClothing(ItemStack itemstack) {
