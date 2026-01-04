@@ -35,7 +35,7 @@ public class FlawlessBuddiesConditionProcedure {
 					}
 				}
 			}
-			if (tamedFlawlessCount >= 1) {
+			if (tamedFlawlessCount > 1) {
 				if (entity instanceof ServerPlayer _player && _player.level() instanceof ServerLevel _level) {
 					AdvancementHolder _adv = _level.getServer().getAdvancements().get(ResourceLocation.parse("minelittleflawless:flawless_buddies"));
 					if (_adv != null) {

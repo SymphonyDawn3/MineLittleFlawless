@@ -174,6 +174,14 @@ public class FlawlessEntity extends TamableAnimal implements IShearable {
                 if (this.random.nextInt(3) == 0 && !EventHooks.onAnimalTame(this, sourceentity)) {
                     this.tame(sourceentity);
                     this.level().broadcastEntityEvent(this, (byte) 7);
+
+                    if (!this.getEntityData().get(FlawlessEntity.DATA_flawlessClothing).isEmpty()) {
+                        FashionableFlawlessConditionProcedure.execute(sourceentity);
+                    }
+                    FlawlessFriendshipConditionProcedure.execute(sourceentity);
+                    FlawlessBuddiesConditionProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), sourceentity);
+                    FlawlessEnchiladaConditionProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), sourceentity);
+                    FlawlessFanClubConditionProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), sourceentity);
                 } else {
                     this.level().broadcastEntityEvent(this, (byte) 6);
                 }
