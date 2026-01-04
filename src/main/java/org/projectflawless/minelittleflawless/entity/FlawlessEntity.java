@@ -2,8 +2,6 @@ package org.projectflawless.minelittleflawless.entity;
 
 import static org.projectflawless.minelittleflawless.init.MinelittleflawlessModEntities.FLAWLESS;
 
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import org.projectflawless.minelittleflawless.init.MinelittleflawlessModItems;
 import org.projectflawless.minelittleflawless.procedures.*;
 import org.projectflawless.minelittleflawless.init.MinelittleflawlessModEntities;
@@ -12,6 +10,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerWakeUpEvent;
 import net.neoforged.neoforge.event.EventHooks;
 import net.neoforged.neoforge.common.IShearable;
 
@@ -26,6 +25,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
@@ -36,6 +36,10 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.DifficultyInstance;
@@ -54,6 +58,7 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundSource;
 
+import java.util.Comparator;
 import java.util.List;
 import javax.annotation.Nullable;
 
@@ -327,5 +332,30 @@ public class FlawlessEntity extends TamableAnimal implements IShearable {
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(FLAWLESS.get(), createAttributes().build());
+    }
+
+    @SubscribeEvent
+    public static void whenPlayerWakesUp(PlayerWakeUpEvent event) {
+        Player player = event.getEntity();
+        String flawlessClothing = "";
+        {
+            final Vec3 _center = new Vec3(player.getX(), player.getY(), player.getZ());
+            for (FlawlessEntity entityiterator : player.level().getEntitiesOfClass(FlawlessEntity.class, new AABB(_center, _center).inflate(16 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
+                if (entityiterator.isTame() && entityiterator.isOwnedBy(player)) {
+                    flawlessClothing = entityiterator.getEntityData().get(DATA_flawlessClothing);
+
+                    if (flawlessClothing.equals(MinelittleflawlessModItems.FARMER.get().toString())) {
+                        ItemEntity entityToSpawn = new ItemEntity(player.level(), entityiterator.getX(), entityiterator.getY(), entityiterator.getZ(),
+                                new ItemStack(
+                                (BuiltInRegistries.ITEM.getRandomElementOf(
+                                        ItemTags.create(
+                                                ResourceLocation.parse("minelittleflawless:farmer_gifts")), RandomSource.create())
+                                        .orElseThrow())));
+                        entityToSpawn.setPickUpDelay(10);
+                        player.level().addFreshEntity(entityToSpawn);
+                    }
+                }
+            }
+        }
     }
 }
