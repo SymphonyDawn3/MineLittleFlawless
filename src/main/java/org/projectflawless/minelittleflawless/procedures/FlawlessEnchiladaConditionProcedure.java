@@ -35,7 +35,7 @@ public class FlawlessEnchiladaConditionProcedure {
 					}
 				}
 			}
-			if (tamedFlawlessCount >= 5) {
+			if (tamedFlawlessCount > 5) {
 				if (entity instanceof ServerPlayer _player && _player.level() instanceof ServerLevel _level) {
 					AdvancementHolder _adv = _level.getServer().getAdvancements().get(ResourceLocation.parse("minelittleflawless:flawless_enchilada"));
 					if (_adv != null) {
