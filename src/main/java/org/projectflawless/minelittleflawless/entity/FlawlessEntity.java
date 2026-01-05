@@ -2,8 +2,8 @@ package org.projectflawless.minelittleflawless.entity;
 
 import static org.projectflawless.minelittleflawless.init.MinelittleflawlessModEntities.FLAWLESS;
 
+import org.projectflawless.minelittleflawless.FlawlessAdvancements;
 import org.projectflawless.minelittleflawless.init.MinelittleflawlessModItems;
-import org.projectflawless.minelittleflawless.procedures.*;
 import org.projectflawless.minelittleflawless.init.MinelittleflawlessModEntities;
 
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -49,6 +49,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -182,13 +183,15 @@ public class FlawlessEntity extends TamableAnimal implements IShearable {
                     this.tame(sourceentity);
                     this.level().broadcastEntityEvent(this, (byte) 7);
 
-                    if (!this.getEntityData().get(FlawlessEntity.DATA_flawlessClothing).isEmpty()) {
-                        FashionableFlawlessConditionProcedure.execute(sourceentity);
+                    if (sourceentity instanceof ServerPlayer serverPlayer) {
+                        if (!this.getEntityData().get(FlawlessEntity.DATA_flawlessClothing).isEmpty()) {
+                            FlawlessAdvancements.fashionableFlawless(serverPlayer);
+                        }
+                        FlawlessAdvancements.flawlessFriendship(serverPlayer);
+                        FlawlessAdvancements.flawlessBuddles(serverPlayer);
+                        FlawlessAdvancements.flawlessEnchilada(serverPlayer);
+                        FlawlessAdvancements.flawlessFanClub(serverPlayer);
                     }
-                    FlawlessFriendshipConditionProcedure.execute(sourceentity);
-                    FlawlessBuddiesConditionProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), sourceentity);
-                    FlawlessEnchiladaConditionProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), sourceentity);
-                    FlawlessFanClubConditionProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), sourceentity);
                 } else {
                     this.level().broadcastEntityEvent(this, (byte) 6);
                 }
@@ -205,8 +208,10 @@ public class FlawlessEntity extends TamableAnimal implements IShearable {
                 this.getEntityData().set(DATA_flawlessClothing, flawlessClothing);
 
                 if (this.isTame()) {
-                    FashionableFlawlessConditionProcedure.execute(sourceentity);
-                    FlawlessFanClubConditionProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), sourceentity);
+                    if (sourceentity instanceof ServerPlayer serverPlayer) {
+                        FlawlessAdvancements.fashionableFlawless(serverPlayer);
+                        FlawlessAdvancements.flawlessFanClub(serverPlayer);
+                    }
                 }
 
                 retval = InteractionResult.SUCCESS;
