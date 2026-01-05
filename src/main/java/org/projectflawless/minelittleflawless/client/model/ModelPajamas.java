@@ -4,7 +4,6 @@ import org.projectflawless.minelittleflawless.client.renderer.state.FlawlessEnti
 
 import net.minecraft.util.Mth;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
@@ -84,9 +83,9 @@ public class ModelPajamas extends EntityModel<FlawlessEntityRenderState> {
 
 		this.head.yRot = netHeadYaw / (180F / (float) Math.PI);
 		this.head.xRot = headPitch / (180F / (float) Math.PI);
-		this.rightLeg.xRot = Mth.cos(limbSwing * 1.0F) * 1.0F * limbSwingAmount;
+		this.rightLeg.xRot = Mth.cos(limbSwing) * 1.0F * limbSwingAmount;
 		this.rightArm.xRot = Mth.cos(limbSwing * 0.6662F + (float) Math.PI) * limbSwingAmount;
 		this.leftArm.xRot = Mth.cos(limbSwing * 0.6662F) * limbSwingAmount;
-		this.leftLeg.xRot = Mth.cos(limbSwing * 1.0F) * -1.0F * limbSwingAmount;
+		this.leftLeg.xRot = Mth.cos(limbSwing) * -1.0F * limbSwingAmount;
 	}
 }

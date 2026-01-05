@@ -58,9 +58,11 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.sounds.SoundEvents;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 import javax.annotation.Nullable;
 
 @EventBusSubscriber
@@ -201,7 +203,7 @@ public class FlawlessEntity extends TamableAnimal implements IShearable {
         } else if (itemstack.is(ItemTags.create(ResourceLocation.parse("minelittleflawless:flawless_clothing")))) {
             if (this.getEntityData().get(DATA_flawlessClothing).isEmpty()) {
                 String flawlessClothing = itemstack.getItem().toString();
-                this.level().playSound(null, this.blockPosition(), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("entity.horse.saddle")), SoundSource.AMBIENT, 1, 1);
+                this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.HORSE_SADDLE, SoundSource.AMBIENT, 1, 1);
 
                 this.wearClothing(itemstack);
                 this.usePlayerItem(sourceentity, hand, itemstack);
@@ -230,8 +232,10 @@ public class FlawlessEntity extends TamableAnimal implements IShearable {
 	@Override
 	public AgeableMob getBreedOffspring(ServerLevel serverWorld, AgeableMob ageable) {
 		FlawlessEntity retval = MinelittleflawlessModEntities.FLAWLESS.get().create(serverWorld, EntitySpawnReason.BREEDING);
-		retval.finalizeSpawn(serverWorld, serverWorld.getCurrentDifficultyAt(retval.blockPosition()), EntitySpawnReason.BREEDING, null);
-		return retval;
+        if (retval != null) {
+            retval.finalizeSpawn(serverWorld, serverWorld.getCurrentDifficultyAt(retval.blockPosition()), EntitySpawnReason.BREEDING, null);
+        }
+        return retval;
 	}
 
 	@Override
@@ -266,7 +270,7 @@ public class FlawlessEntity extends TamableAnimal implements IShearable {
 
     @Override
     public List<ItemStack> onSheared(@Nullable Player player, ItemStack item, Level level, BlockPos pos) {
-        level.playSound(null, this.blockPosition(), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("item.saddle.unequip")), SoundSource.AMBIENT, 1, 1);
+        level.playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.SADDLE_UNEQUIP, SoundSource.AMBIENT, 1, 1);
         String flawlessClothing = this.getEntityData().get(DATA_flawlessClothing);
         return List.of(new ItemStack(BuiltInRegistries.ITEM.getValue(ResourceLocation.parse(flawlessClothing))));
     }
@@ -281,7 +285,7 @@ public class FlawlessEntity extends TamableAnimal implements IShearable {
     @Override
     protected void playAttackSound() {
         if (this.getEntityData().get(DATA_flawlessClothing).equals(MinelittleflawlessModItems.ROCKSTAR.get().toString())) {
-            this.level().playSound(null, this.blockPosition(), BuiltInRegistries.SOUND_EVENT.getValue(ResourceLocation.parse("block.note_block.guitar")), SoundSource.AMBIENT, 5, (float) (Math.random() * 2));
+            this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.NOTE_BLOCK_GUITAR, SoundSource.AMBIENT, 5, (float) (Math.random() * 2));
         }
     }
 
@@ -290,29 +294,29 @@ public class FlawlessEntity extends TamableAnimal implements IShearable {
 
         if (itemstack.getItem() == MinelittleflawlessModItems.FLAWLESS_MAGICIAN_CLOTHING.get()) {
             modifier = new AttributeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"), 5, AttributeModifier.Operation.ADD_VALUE);
-            this.getAttribute(Attributes.ATTACK_KNOCKBACK).addPermanentModifier(modifier);
+            Objects.requireNonNull(this.getAttribute(Attributes.ATTACK_KNOCKBACK)).addPermanentModifier(modifier);
         }
         if (itemstack.getItem() == MinelittleflawlessModItems.SCHOOLGIRL.get()) {
             modifier = new AttributeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"), 1, AttributeModifier.Operation.ADD_VALUE);
-            this.getAttribute(Attributes.KNOCKBACK_RESISTANCE).addPermanentModifier(modifier);
-            this.getAttribute(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).addPermanentModifier(modifier);
+            Objects.requireNonNull(this.getAttribute(Attributes.KNOCKBACK_RESISTANCE)).addPermanentModifier(modifier);
+            Objects.requireNonNull(this.getAttribute(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE)).addPermanentModifier(modifier);
         }
         if (itemstack.getItem() == MinelittleflawlessModItems.ROCKSTAR.get()) {
             modifier = new AttributeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"), 0.1, AttributeModifier.Operation.ADD_VALUE);
-            this.getAttribute(Attributes.MOVEMENT_SPEED).addPermanentModifier(modifier);
+            Objects.requireNonNull(this.getAttribute(Attributes.MOVEMENT_SPEED)).addPermanentModifier(modifier);
         }
     }
 
     private void offClothing(ItemStack itemstack) {
         if (itemstack.getItem() == MinelittleflawlessModItems.FLAWLESS_MAGICIAN_CLOTHING.get()) {
-            this.getAttribute(Attributes.ATTACK_KNOCKBACK).removeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"));
+            Objects.requireNonNull(this.getAttribute(Attributes.ATTACK_KNOCKBACK)).removeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"));
         }
         if (itemstack.getItem() == MinelittleflawlessModItems.SCHOOLGIRL.get()) {
-            this.getAttribute(Attributes.KNOCKBACK_RESISTANCE).removeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"));
-            this.getAttribute(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE).removeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"));
+            Objects.requireNonNull(this.getAttribute(Attributes.KNOCKBACK_RESISTANCE)).removeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"));
+            Objects.requireNonNull(this.getAttribute(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE)).removeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"));
         }
         if (itemstack.getItem() == MinelittleflawlessModItems.ROCKSTAR.get()) {
-            this.getAttribute(Attributes.MOVEMENT_SPEED).removeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"));
+            Objects.requireNonNull(this.getAttribute(Attributes.MOVEMENT_SPEED)).removeModifier(ResourceLocation.parse("minelittleflawless:clothing_power"));
         }
     }
 
@@ -342,7 +346,7 @@ public class FlawlessEntity extends TamableAnimal implements IShearable {
     @SubscribeEvent
     public static void whenPlayerWakesUp(PlayerWakeUpEvent event) {
         Player player = event.getEntity();
-        String flawlessClothing = "";
+        String flawlessClothing;
         {
             final Vec3 _center = new Vec3(player.getX(), player.getY(), player.getZ());
             for (FlawlessEntity entityiterator : player.level().getEntitiesOfClass(FlawlessEntity.class, new AABB(_center, _center).inflate(16 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
