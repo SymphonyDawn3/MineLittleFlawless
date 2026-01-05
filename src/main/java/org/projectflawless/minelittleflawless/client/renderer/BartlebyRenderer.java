@@ -9,8 +9,6 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
 public class BartlebyRenderer extends MobRenderer<BartlebyEntity, LivingEntityRenderState, ModelBartleby> {
-	private BartlebyEntity entity = null;
-
 	public BartlebyRenderer(EntityRendererProvider.Context context) {
 		super(context, new ModelBartleby(context.bakeLayer(ModelBartleby.LAYER_LOCATION)), 1f);
 	}
@@ -23,7 +21,6 @@ public class BartlebyRenderer extends MobRenderer<BartlebyEntity, LivingEntityRe
 	@Override
 	public void extractRenderState(BartlebyEntity entity, LivingEntityRenderState state, float partialTicks) {
 		super.extractRenderState(entity, state, partialTicks);
-		this.entity = entity;
 	}
 
 	@Override

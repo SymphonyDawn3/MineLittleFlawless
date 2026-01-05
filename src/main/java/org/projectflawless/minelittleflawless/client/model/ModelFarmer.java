@@ -3,7 +3,6 @@ package org.projectflawless.minelittleflawless.client.model;
 import org.projectflawless.minelittleflawless.client.renderer.state.FlawlessEntityRenderState;
 
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.LayerDefinition;

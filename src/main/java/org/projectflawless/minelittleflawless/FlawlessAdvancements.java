@@ -15,20 +15,21 @@ import java.util.stream.Stream;
 
 public class FlawlessAdvancements {
     private static class InternalFlawlessAdvancement {
-        ServerPlayer serverPlayer;
-        ResourceLocation advancementResource;
-        PlayerAdvancements playerAdvancements;
-        MinecraftServer minecraftServer;
-        AdvancementHolder advHolder;
-        AdvancementProgress progress;
+        final private ServerPlayer serverPlayer;
+        final private PlayerAdvancements playerAdvancements;
+        private AdvancementHolder advHolder;
+        private AdvancementProgress progress;
 
         private InternalFlawlessAdvancement(ServerPlayer serverPlayer, ResourceLocation advancementResource) {
             this.serverPlayer = serverPlayer;
-            this.advancementResource = advancementResource;
             this.playerAdvancements = serverPlayer.getAdvancements();
-            this.minecraftServer = serverPlayer.getServer();
-            this.advHolder = this.minecraftServer.getAdvancements().get(this.advancementResource);
-            this.progress = this.playerAdvancements.getOrStartProgress(this.advHolder);
+            MinecraftServer minecraftServer = serverPlayer.getServer();
+            if (minecraftServer != null) {
+                this.advHolder = minecraftServer.getAdvancements().get(advancementResource);
+                if (this.advHolder != null) {
+                    this.progress = this.playerAdvancements.getOrStartProgress(this.advHolder);
+                }
+            }
         }
 
         private void processAdvancement(long flawlessMaxCount, boolean needsToBeClothed) {

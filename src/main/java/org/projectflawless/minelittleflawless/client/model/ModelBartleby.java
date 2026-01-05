@@ -63,8 +63,8 @@ public class ModelBartleby extends EntityModel<LivingEntityRenderState> {
 
 		this.head.yRot = netHeadYaw / (180F / (float) Math.PI);
 		this.head.xRot = headPitch / (180F / (float) Math.PI);
-		this.r_leg.zRot = Mth.cos(limbSwing * 1.0F) * 1.0F * limbSwingAmount;
-		this.l_leg.zRot = Mth.cos(limbSwing * 1.0F) * -1.0F * limbSwingAmount;
+		this.r_leg.zRot = Mth.cos(limbSwing) * 1.0F * limbSwingAmount;
+		this.l_leg.zRot = Mth.cos(limbSwing) * -1.0F * limbSwingAmount;
 		this.l_arm.zRot = Mth.cos(limbSwing * 0.6662F) * limbSwingAmount;
 		this.r_arm.zRot = Mth.cos(limbSwing * 0.6662F + (float) Math.PI) * limbSwingAmount;
 	}

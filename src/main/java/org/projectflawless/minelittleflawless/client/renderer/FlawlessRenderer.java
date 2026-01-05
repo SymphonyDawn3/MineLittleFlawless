@@ -24,13 +24,14 @@ import java.util.function.Function;
 
 public class FlawlessRenderer extends MobRenderer<FlawlessEntity, FlawlessEntityRenderState, ModelFlawless> {
 	private FlawlessEntity entity = null;
-    private List<FlawlessClothingRenderLayer> flawlessClothingRenderLayers =
-            List.of(new FlawlessMagicianClothingRenderLayer(), new TuxedoRenderLayer(), new FarmerRenderLayer(),
-                    new PajamasRenderLayer(), new SchoolgirlRenderLayer(), new RockstarRenderLayer());
 
-	public FlawlessRenderer(EntityRendererProvider.Context context) {
+    public FlawlessRenderer(EntityRendererProvider.Context context) {
 		super(context, new ModelFlawless(context.bakeLayer(ModelFlawless.LAYER_LOCATION)), 0.5f);
-        this.flawlessClothingRenderLayers.forEach(this::addLayer);
+
+        List<FlawlessClothingRenderLayer> flawlessClothingRenderLayers = List.of(new FlawlessMagicianClothingRenderLayer(), new TuxedoRenderLayer(), new FarmerRenderLayer(),
+                new PajamasRenderLayer(), new SchoolgirlRenderLayer(), new RockstarRenderLayer());
+
+        flawlessClothingRenderLayers.forEach(this::addLayer);
 	}
 
 	@Override
