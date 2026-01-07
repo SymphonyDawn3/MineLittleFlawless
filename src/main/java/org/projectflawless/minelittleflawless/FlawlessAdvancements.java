@@ -39,12 +39,13 @@ public class FlawlessAdvancements {
                 List<FlawlessEntity> flawlesses = serverPlayer.level().getEntitiesOfClass(FlawlessEntity.class, new AABB(_center, _center).inflate(64 / 2d),
                         flawless ->
                             flawless.isTame()
-                                    && flawless.isOwnedBy(this.serverPlayer)
-                                    && (!needsToBeClothed || !flawless.getEntityData().get(FlawlessEntity.DATA_flawlessClothing).isEmpty()));
+                                    && flawless.isOwnedBy(this.serverPlayer));
 
-                Stream<FlawlessEntity> flawlessStream = flawlesses.stream();
+                Stream<String> flawlessClothingStream = flawlesses.stream()
+                        .map(flawless -> flawless.getEntityData().get(FlawlessEntity.DATA_flawlessClothing))
+                        .filter(flawlessClothing -> needsToBeClothed != flawlessClothing.isEmpty());
 
-                long flawlessCount = needsToBeClothed ? flawlessStream.distinct().count() : flawlessStream.count();
+                long flawlessCount = needsToBeClothed ? flawlessClothingStream.distinct().count() : flawlessClothingStream.count();
 
                 if (flawlessCount >= flawlessMaxCount) {
                     for (String criteria : this.progress.getRemainingCriteria())

@@ -189,11 +189,11 @@ public class FlawlessEntity extends TamableAnimal implements IShearable {
                     if (sourceentity instanceof ServerPlayer serverPlayer) {
                         if (!this.getEntityData().get(FlawlessEntity.DATA_flawlessClothing).isEmpty()) {
                             FlawlessAdvancements.fashionableFlawless(serverPlayer);
+                            FlawlessAdvancements.flawlessFanClub(serverPlayer);
                         }
                         FlawlessAdvancements.flawlessFriendship(serverPlayer);
                         FlawlessAdvancements.flawlessBuddles(serverPlayer);
                         FlawlessAdvancements.flawlessEnchilada(serverPlayer);
-                        FlawlessAdvancements.flawlessFanClub(serverPlayer);
                     }
                 } else {
                     this.level().broadcastEntityEvent(this, (byte) 6);
