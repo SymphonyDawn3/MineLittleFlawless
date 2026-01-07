@@ -8,7 +8,7 @@ import net.minecraft.server.PlayerAdvancements;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import org.projectflawless.minelittleflawless.entity.FlawlessEntity;
+import org.projectflawless.minelittleflawless.entity.Flawless;
 
 import java.util.List;
 import java.util.stream.Stream;
@@ -36,13 +36,13 @@ public class FlawlessAdvancements {
             if (!this.progress.isDone()) {
                 final Vec3 _center = new Vec3(this.serverPlayer.getX(), this.serverPlayer.getY(), this.serverPlayer.getZ());
 
-                List<FlawlessEntity> flawlesses = serverPlayer.level().getEntitiesOfClass(FlawlessEntity.class, new AABB(_center, _center).inflate(64 / 2d),
+                List<Flawless> flawlesses = serverPlayer.level().getEntitiesOfClass(Flawless.class, new AABB(_center, _center).inflate(64 / 2d),
                         flawless ->
                             flawless.isTame()
                                     && flawless.isOwnedBy(this.serverPlayer));
 
                 Stream<String> flawlessClothingStream = flawlesses.stream()
-                        .map(flawless -> flawless.getEntityData().get(FlawlessEntity.DATA_flawlessClothing))
+                        .map(flawless -> flawless.getEntityData().get(Flawless.DATA_flawlessClothing))
                         .filter(flawlessClothing -> needsToBeClothed != flawlessClothing.isEmpty());
 
                 long flawlessCount = needsToBeClothed ? flawlessClothingStream.distinct().count() : flawlessClothingStream.count();

@@ -11,12 +11,12 @@ import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import org.projectflawless.minelittleflawless.entity.BartlebyEntity;
+import org.projectflawless.minelittleflawless.entity.Bartleby;
 
 // Made with Blockbench 5.0.2
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
-public class ModelBartleby extends HierarchicalModel<BartlebyEntity> {
+public class BartlebyModel extends HierarchicalModel<Bartleby> {
 	// This layer location should be baked with EntityRendererProvider.Context in
 	// the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("minelittleflawless", "model_bartleby"), "main");
@@ -29,7 +29,7 @@ public class ModelBartleby extends HierarchicalModel<BartlebyEntity> {
 	public final ModelPart l_leg;
 	public final ModelPart r_leg;
 
-	public ModelBartleby(ModelPart root) {
+	public BartlebyModel(ModelPart root) {
 		this.root = root;
 		this.body = root.getChild("body");
 		this.head = this.body.getChild("head");
@@ -62,7 +62,7 @@ public class ModelBartleby extends HierarchicalModel<BartlebyEntity> {
     }
 
     @Override
-	public void setupAnim(BartlebyEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void setupAnim(Bartleby entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.head.yRot = netHeadYaw / (180F / (float) Math.PI);
 		this.head.xRot = headPitch / (180F / (float) Math.PI);
 		this.r_leg.zRot = Mth.cos(limbSwing) * 1.0F * limbSwingAmount;

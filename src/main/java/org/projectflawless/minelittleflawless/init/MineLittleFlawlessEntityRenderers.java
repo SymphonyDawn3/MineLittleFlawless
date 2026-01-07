@@ -9,10 +9,10 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.api.distmarker.Dist;
 
 @EventBusSubscriber(Dist.CLIENT)
-public class MinelittleflawlessModEntityRenderers {
+public class MineLittleFlawlessEntityRenderers {
 	@SubscribeEvent
 	public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-		event.registerEntityRenderer(MinelittleflawlessModEntities.BARTLEBY.get(), BartlebyRenderer::new);
-		event.registerEntityRenderer(MinelittleflawlessModEntities.FLAWLESS.get(), FlawlessRenderer::new);
+		event.registerEntityRenderer(MineLittleFlawlessEntities.BARTLEBY.get(), BartlebyRenderer::new);
+		event.registerEntityRenderer(MineLittleFlawlessEntities.FLAWLESS.get(), FlawlessRenderer::new);
 	}
 }

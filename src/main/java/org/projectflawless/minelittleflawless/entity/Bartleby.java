@@ -1,6 +1,6 @@
 package org.projectflawless.minelittleflawless.entity;
 
-import static org.projectflawless.minelittleflawless.init.MinelittleflawlessModEntities.BARTLEBY;
+import static org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities.BARTLEBY;
 
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -23,8 +23,8 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 
 @EventBusSubscriber
-public class BartlebyEntity extends Monster {
-	public BartlebyEntity(EntityType<BartlebyEntity> type, Level world) {
+public class Bartleby extends Monster {
+	public Bartleby(EntityType<Bartleby> type, Level world) {
 		super(type, world);
 		xpReward = 0;
 		setNoAi(false);

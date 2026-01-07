@@ -11,12 +11,12 @@ import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import org.projectflawless.minelittleflawless.entity.FlawlessEntity;
+import org.projectflawless.minelittleflawless.entity.Flawless;
 
 // Made with Blockbench 5.0.3
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
-public class ModelFarmer extends AgeableHierarchicalModel<FlawlessEntity> {
+public class FarmerModel extends AgeableHierarchicalModel<Flawless> {
 	// This layer location should be baked with EntityRendererProvider.Context in
 	// the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("minelittleflawless", "model_farmer"), "main");
@@ -29,7 +29,7 @@ public class ModelFarmer extends AgeableHierarchicalModel<FlawlessEntity> {
 	public final ModelPart body;
 	public final ModelPart jacket;
 
-	public ModelFarmer(ModelPart root) {
+	public FarmerModel(ModelPart root) {
         super(0.5f, 21.2086f);
         this.root = root;
 		this.head = root.getChild("head");
@@ -63,7 +63,7 @@ public class ModelFarmer extends AgeableHierarchicalModel<FlawlessEntity> {
     }
 
     @Override
-	public void setupAnim(FlawlessEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+	public void setupAnim(Flawless entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.head.yRot = netHeadYaw / (180F / (float) Math.PI);
 		this.head.xRot = headPitch / (180F / (float) Math.PI);
 	}

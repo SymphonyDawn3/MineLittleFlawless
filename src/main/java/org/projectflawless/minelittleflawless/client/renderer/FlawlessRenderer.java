@@ -1,7 +1,7 @@
 package org.projectflawless.minelittleflawless.client.renderer;
 
-import org.projectflawless.minelittleflawless.init.MinelittleflawlessModItems;
-import org.projectflawless.minelittleflawless.entity.FlawlessEntity;
+import org.projectflawless.minelittleflawless.entity.Flawless;
+import org.projectflawless.minelittleflawless.init.MineLittleFlawlessItems;
 import org.projectflawless.minelittleflawless.client.model.*;
 
 import net.minecraft.resources.ResourceLocation;
@@ -19,11 +19,11 @@ import com.mojang.blaze3d.vertex.PoseStack;
 
 import java.util.List;
 
-public class FlawlessRenderer extends MobRenderer<FlawlessEntity, ModelFlawless> {
-	private FlawlessEntity entity = null;
+public class FlawlessRenderer extends MobRenderer<Flawless, FlawlessModel> {
+	private Flawless entity = null;
 
     public FlawlessRenderer(EntityRendererProvider.Context context) {
-		super(context, new ModelFlawless(context.bakeLayer(ModelFlawless.LAYER_LOCATION)), 0.5f);
+		super(context, new FlawlessModel(context.bakeLayer(FlawlessModel.LAYER_LOCATION)), 0.5f);
 
         List<FlawlessClothingRenderLayer> flawlessClothingRenderLayers = List.of(new FlawlessMagicianClothingRenderLayer(), new TuxedoRenderLayer(), new FarmerRenderLayer(),
                 new PajamasRenderLayer(), new SchoolgirlRenderLayer(), new RockstarRenderLayer());
@@ -32,19 +32,19 @@ public class FlawlessRenderer extends MobRenderer<FlawlessEntity, ModelFlawless>
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(FlawlessEntity entity) {
+	public ResourceLocation getTextureLocation(Flawless entity) {
 		return ResourceLocation.parse("minelittleflawless:textures/entities/flawless.png");
 	}
 
-    public class FlawlessClothingRenderLayer extends RenderLayer<FlawlessEntity, ModelFlawless> {
+    public class FlawlessClothingRenderLayer extends RenderLayer<Flawless, FlawlessModel> {
         final protected static EntityModelSet entityModels = Minecraft.getInstance().getEntityModels();
         final public ResourceLocation layerTexture;
-        final public AgeableHierarchicalModel<FlawlessEntity> model;
+        final public AgeableHierarchicalModel<Flawless> model;
         final public String flawlessClothing;
         public VertexConsumer vertexConsumer;
 
         public FlawlessClothingRenderLayer(
-                ResourceLocation layerTexture, AgeableHierarchicalModel<FlawlessEntity> model, String flawlessClothing) {
+                ResourceLocation layerTexture, AgeableHierarchicalModel<Flawless> model, String flawlessClothing) {
             super(FlawlessRenderer.this);
             this.layerTexture = layerTexture;
             this.model = model;
@@ -56,21 +56,21 @@ public class FlawlessRenderer extends MobRenderer<FlawlessEntity, ModelFlawless>
                 PoseStack poseStack,
                 MultiBufferSource bufferSource,
                 int light,
-                FlawlessEntity entity,
+                Flawless entity,
                 float limbSwing,
                 float limbSwingAmount,
                 float partialTick,
                 float ageInTicks,
                 float netHeadYaw,
                 float headPitch) {
-            if (entity.getEntityData().get(FlawlessEntity.DATA_flawlessClothing).equals(this.flawlessClothing)) {
+            if (entity.getEntityData().get(Flawless.DATA_flawlessClothing).equals(this.flawlessClothing)) {
                 this.vertexConsumer = bufferSource.getBuffer(this.model.renderType(this.layerTexture));
                 this.renderClothing(entity, poseStack, light, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
             }
         }
 
         protected void renderClothing(
-                FlawlessEntity entity,
+                Flawless entity,
                 PoseStack poseStack,
                 int light,
                 float limbSwing,
@@ -88,8 +88,8 @@ public class FlawlessRenderer extends MobRenderer<FlawlessEntity, ModelFlawless>
         public FlawlessMagicianClothingRenderLayer() {
             super(
                     ResourceLocation.parse("minelittleflawless:textures/entities/flawless_magician_clothing.png"),
-                    new ModelFlawlessMagicianClothing(entityModels.bakeLayer(ModelFlawlessMagicianClothing.LAYER_LOCATION)),
-                    MinelittleflawlessModItems.FLAWLESS_MAGICIAN_CLOTHING.get().toString()
+                    new FlawlessMagicianClothingModel(entityModels.bakeLayer(FlawlessMagicianClothingModel.LAYER_LOCATION)),
+                    MineLittleFlawlessItems.FLAWLESS_MAGICIAN_CLOTHING.get().toString()
             );
         }
     }
@@ -98,8 +98,8 @@ public class FlawlessRenderer extends MobRenderer<FlawlessEntity, ModelFlawless>
         public TuxedoRenderLayer() {
             super(
                     ResourceLocation.parse("minelittleflawless:textures/entities/tuxedo.png"),
-                    new ModelTuxedo(entityModels.bakeLayer(ModelTuxedo.LAYER_LOCATION)),
-                    MinelittleflawlessModItems.TUXEDO.get().toString()
+                    new TuxedoModel(entityModels.bakeLayer(TuxedoModel.LAYER_LOCATION)),
+                    MineLittleFlawlessItems.TUXEDO.get().toString()
             );
         }
     }
@@ -108,8 +108,8 @@ public class FlawlessRenderer extends MobRenderer<FlawlessEntity, ModelFlawless>
         public FarmerRenderLayer() {
             super(
                     ResourceLocation.parse("minelittleflawless:textures/entities/farmer.png"),
-                    new ModelFarmer(entityModels.bakeLayer(ModelFarmer.LAYER_LOCATION)),
-                    MinelittleflawlessModItems.FARMER.get().toString()
+                    new FarmerModel(entityModels.bakeLayer(FarmerModel.LAYER_LOCATION)),
+                    MineLittleFlawlessItems.FARMER.get().toString()
             );
         }
     }
@@ -118,8 +118,8 @@ public class FlawlessRenderer extends MobRenderer<FlawlessEntity, ModelFlawless>
         public PajamasRenderLayer() {
             super(
                     ResourceLocation.parse("minelittleflawless:textures/entities/pajamas.png"),
-                    new ModelPajamas(entityModels.bakeLayer(ModelPajamas.LAYER_LOCATION)),
-                    MinelittleflawlessModItems.PAJAMAS.get().toString()
+                    new PajamasModel(entityModels.bakeLayer(PajamasModel.LAYER_LOCATION)),
+                    MineLittleFlawlessItems.PAJAMAS.get().toString()
             );
         }
     }
@@ -128,8 +128,8 @@ public class FlawlessRenderer extends MobRenderer<FlawlessEntity, ModelFlawless>
         public SchoolgirlRenderLayer() {
             super(
                     ResourceLocation.parse("minelittleflawless:textures/entities/schoolgirl.png"),
-                    new ModelSchoolgirl(entityModels.bakeLayer(ModelSchoolgirl.LAYER_LOCATION)),
-                    MinelittleflawlessModItems.SCHOOLGIRL.get().toString()
+                    new SchoolgirlModel(entityModels.bakeLayer(SchoolgirlModel.LAYER_LOCATION)),
+                    MineLittleFlawlessItems.SCHOOLGIRL.get().toString()
             );
         }
     }
@@ -138,8 +138,8 @@ public class FlawlessRenderer extends MobRenderer<FlawlessEntity, ModelFlawless>
         public RockstarRenderLayer() {
             super(
                     ResourceLocation.parse("minelittleflawless:textures/entities/rockstar.png"),
-                    new ModelRockstar(entityModels.bakeLayer(ModelRockstar.LAYER_LOCATION)),
-                    MinelittleflawlessModItems.ROCKSTAR.get().toString()
+                    new RockstarModel(entityModels.bakeLayer(RockstarModel.LAYER_LOCATION)),
+                    MineLittleFlawlessItems.ROCKSTAR.get().toString()
             );
         }
     }
