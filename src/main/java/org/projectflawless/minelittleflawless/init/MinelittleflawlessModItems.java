@@ -13,7 +13,7 @@ import java.util.function.Function;
 
 public class MinelittleflawlessModItems {
     public static final DeferredRegister.Items REGISTRY = DeferredRegister.createItems(MinelittleflawlessMod.MODID);
-    public static final DeferredItem<SpawnEggItem> FLAWLESS_SPAWN_EGG = register("flawless_spawn_egg", properties -> new SpawnEggItem(MinelittleflawlessModEntities.FLAWLESS.get(), properties));
+    public static final DeferredItem<SpawnEggItem> FLAWLESS_SPAWN_EGG = register("flawless_spawn_egg", properties -> new SpawnEggItem(MinelittleflawlessModEntities.FLAWLESS.get(), 10205183, 10205183, properties));
     public static final DeferredItem<FlawlessMagicianClothingItem> FLAWLESS_MAGICIAN_CLOTHING = register("flawless_magician_clothing", FlawlessMagicianClothingItem::new);
     public static final DeferredItem<TuxedoItem> TUXEDO = register("tuxedo", TuxedoItem::new);
     public static final DeferredItem<FarmerItem> FARMER = register("farmer", FarmerItem::new);
