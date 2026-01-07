@@ -7,9 +7,15 @@
     "ccc"
   ],
   "key": {
-    "a": "minecraft:black_carpet",
-    "b": "minecraft:purple_carpet",
-    "c": "minecraft:black_wool"
+    "a": {
+      "item": "minecraft:black_carpet"
+    },
+    "b": {
+      "item": "minecraft:purple_carpet"
+    },
+    "c": {
+      "item": "minecraft:black_wool"
+    }
   },
   "result": {
     "id": "minelittleflawless:flawless_magician_clothing",

@@ -7,8 +7,12 @@
     " b "
   ],
   "key": {
-    "a": "minecraft:wheat",
-    "b": "minecraft:string"
+    "a": {
+      "item": "minecraft:wheat"
+    },
+    "b": {
+      "item": "minecraft:string"
+    }
   },
   "result": {
     "id": "minelittleflawless:farmer",
