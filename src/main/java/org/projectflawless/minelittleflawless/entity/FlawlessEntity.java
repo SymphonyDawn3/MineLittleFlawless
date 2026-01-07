@@ -176,6 +176,8 @@ public class FlawlessEntity extends TamableAnimal implements IShearable {
                     this.heal(nutrition);
                     this.usePlayerItem(sourceentity, hand, itemstack);
                     retval = InteractionResult.SUCCESS;
+                } else {
+                    retval = super.mobInteract(sourceentity, hand);
                 }
             }
             else if (this.isFood(itemstack)) {
