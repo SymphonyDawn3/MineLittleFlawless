@@ -7,9 +7,15 @@
     "c c"
   ],
   "key": {
-    "a": "minecraft:string",
-    "b": "#minecraft:planks",
-    "c": "minecraft:iron_ingot"
+    "a": {
+      "item": "minecraft:string"
+    },
+    "b": {
+      "tag": "minecraft:planks"
+    },
+    "c": {
+      "item": "minecraft:iron_ingot"
+    }
   },
   "result": {
     "id": "minelittleflawless:rockstar",

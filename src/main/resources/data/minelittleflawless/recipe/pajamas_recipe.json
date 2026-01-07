@@ -7,8 +7,12 @@
     "aaa"
   ],
   "key": {
-    "a": "minecraft:white_carpet",
-    "b": "#minecraft:candles"
+    "a": {
+      "item": "minecraft:white_carpet"
+    },
+    "b": {
+      "tag": "minecraft:candles"
+    }
   },
   "result": {
     "id": "minelittleflawless:pajamas",

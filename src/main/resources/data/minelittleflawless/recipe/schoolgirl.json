@@ -7,7 +7,9 @@
     "aaa"
   ],
   "key": {
-    "a": "minecraft:pink_carpet"
+    "a": {
+      "item": "minecraft:pink_carpet"
+    }
   },
   "result": {
     "id": "minelittleflawless:schoolgirl",
