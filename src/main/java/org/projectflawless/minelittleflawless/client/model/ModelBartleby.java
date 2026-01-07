@@ -1,8 +1,8 @@
 package org.projectflawless.minelittleflawless.client.model;
 
+import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.util.Mth;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
@@ -11,15 +11,17 @@ import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.client.model.EntityModel;
+import org.projectflawless.minelittleflawless.entity.BartlebyEntity;
 
 // Made with Blockbench 5.0.2
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
-public class ModelBartleby extends EntityModel<LivingEntityRenderState> {
+public class ModelBartleby extends HierarchicalModel<BartlebyEntity> {
 	// This layer location should be baked with EntityRendererProvider.Context in
 	// the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("minelittleflawless", "model_bartleby"), "main");
+
+    public final ModelPart root;
 	public final ModelPart body;
 	public final ModelPart head;
 	public final ModelPart l_arm;
@@ -28,7 +30,7 @@ public class ModelBartleby extends EntityModel<LivingEntityRenderState> {
 	public final ModelPart r_leg;
 
 	public ModelBartleby(ModelPart root) {
-		super(root);
+		this.root = root;
 		this.body = root.getChild("body");
 		this.head = this.body.getChild("head");
 		this.l_arm = this.body.getChild("l_arm");
@@ -54,13 +56,13 @@ public class ModelBartleby extends EntityModel<LivingEntityRenderState> {
 		return LayerDefinition.create(meshdefinition, 128, 128);
 	}
 
-	public void setupAnim(LivingEntityRenderState state) {
-		float limbSwing = state.walkAnimationPos;
-		float limbSwingAmount = state.walkAnimationSpeed;
-		float ageInTicks = state.ageInTicks;
-		float netHeadYaw = state.yRot;
-		float headPitch = state.xRot;
+    @Override
+    public ModelPart root() {
+        return this.root;
+    }
 
+    @Override
+	public void setupAnim(BartlebyEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.head.yRot = netHeadYaw / (180F / (float) Math.PI);
 		this.head.xRot = headPitch / (180F / (float) Math.PI);
 		this.r_leg.zRot = Mth.cos(limbSwing) * 1.0F * limbSwingAmount;
