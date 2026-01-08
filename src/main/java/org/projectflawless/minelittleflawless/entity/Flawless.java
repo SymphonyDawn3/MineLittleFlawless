@@ -270,6 +270,11 @@ public class Flawless extends TamableAnimal implements IShearable {
     }
 
     @Override
+    public boolean isShearable(@Nullable Player player, ItemStack item, Level level, BlockPos pos) {
+        return !this.getEntityData().get(DATA_flawlessClothing).isEmpty();
+    }
+
+    @Override
     public List<ItemStack> onSheared(@Nullable Player player, ItemStack item, Level level, BlockPos pos) {
         level.playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.HORSE_SADDLE, SoundSource.AMBIENT, 1, 1);
         String flawlessClothing = this.getEntityData().get(DATA_flawlessClothing);
