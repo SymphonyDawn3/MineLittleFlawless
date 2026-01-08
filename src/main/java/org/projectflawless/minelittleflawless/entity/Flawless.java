@@ -201,24 +201,6 @@ public class Flawless extends TamableAnimal implements IShearable {
                 this.setPersistenceRequired();
                 retval = InteractionResult.SUCCESS;
             }
-        } else if (itemstack.is(ItemTags.create(ResourceLocation.parse("minelittleflawless:flawless_clothing")))) {
-            if (this.getEntityData().get(DATA_flawlessClothing).isEmpty()) {
-                String flawlessClothing = itemstack.getItem().toString();
-                this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.HORSE_SADDLE, SoundSource.AMBIENT, 1, 1);
-
-                this.wearClothing(itemstack);
-                this.usePlayerItem(sourceentity, hand, itemstack);
-                this.getEntityData().set(DATA_flawlessClothing, flawlessClothing);
-
-                if (this.isTame()) {
-                    if (sourceentity instanceof ServerPlayer serverPlayer) {
-                        FlawlessAdvancements.fashionableFlawless(serverPlayer);
-                        FlawlessAdvancements.flawlessFanClub(serverPlayer);
-                    }
-                }
-
-                retval = InteractionResult.SUCCESS;
-            }
         } else if (itemstack.getItem() == Items.SHEARS) {
             retval = itemstack.interactLivingEntity(sourceentity, this, hand);
         } else {
@@ -290,7 +272,7 @@ public class Flawless extends TamableAnimal implements IShearable {
         }
     }
 
-    private void wearClothing(ItemStack itemstack) {
+    public void wearClothing(ItemStack itemstack) {
         AttributeModifier modifier;
 
         if (itemstack.getItem() == MineLittleFlawlessItems.FLAWLESS_MAGICIAN_CLOTHING.get()) {
