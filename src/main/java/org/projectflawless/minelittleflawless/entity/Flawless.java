@@ -66,7 +66,7 @@ import javax.annotation.Nullable;
 
 @EventBusSubscriber
 public class Flawless extends TamableAnimal implements IShearable {
-	public static final EntityDataAccessor<String> DATA_flawlessClothing = SynchedEntityData.defineId(Flawless.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<String> DATA_CLOTHING = SynchedEntityData.defineId(Flawless.class, EntityDataSerializers.STRING);
 
     public Flawless(EntityType<Flawless> type, Level world) {
 		super(type, world);
@@ -77,7 +77,7 @@ public class Flawless extends TamableAnimal implements IShearable {
 	@Override
 	protected void defineSynchedData(SynchedEntityData.Builder builder) {
 		super.defineSynchedData(builder);
-		builder.define(DATA_flawlessClothing, "");
+		builder.define(DATA_CLOTHING, "");
 	}
 
 	@Override
@@ -113,7 +113,7 @@ public class Flawless extends TamableAnimal implements IShearable {
 
 	@Override
 	public boolean hurt(DamageSource damagesource, float amount) {
-        String flawlessClothing = getEntityData().get(Flawless.DATA_flawlessClothing);
+        String flawlessClothing = getEntityData().get(Flawless.DATA_CLOTHING);
 
         if (damagesource.is(DamageTypeTags.IS_FIRE)) {
             if (flawlessClothing.equals(MineLittleFlawlessItems.TUXEDO.get().toString())) {
@@ -146,7 +146,7 @@ public class Flawless extends TamableAnimal implements IShearable {
             this.wearClothing(randomFlawlessClothing);
         }
 
-        this.getEntityData().set(DATA_flawlessClothing, flawlessClothing);
+        this.getEntityData().set(DATA_CLOTHING, flawlessClothing);
 
 		return retval;
 	}
@@ -154,13 +154,13 @@ public class Flawless extends TamableAnimal implements IShearable {
 	@Override
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
-		compound.putString("DataflawlessClothing", this.entityData.get(DATA_flawlessClothing));
+		compound.putString("clothing", this.entityData.get(DATA_CLOTHING));
 	}
 
 	@Override
 	public void readAdditionalSaveData(CompoundTag compound) {
 		super.readAdditionalSaveData(compound);
-		this.entityData.set(DATA_flawlessClothing, compound.getString("DataflawlessClothing"));
+		this.entityData.set(DATA_CLOTHING, compound.getString("clothing"));
 	}
 
 	@Override
@@ -187,7 +187,7 @@ public class Flawless extends TamableAnimal implements IShearable {
                     this.level().broadcastEntityEvent(this, (byte) 7);
 
                     if (sourceentity instanceof ServerPlayer serverPlayer) {
-                        if (!this.getEntityData().get(Flawless.DATA_flawlessClothing).isEmpty()) {
+                        if (!this.getEntityData().get(Flawless.DATA_CLOTHING).isEmpty()) {
                             FlawlessAdvancements.fashionableFlawless(serverPlayer);
                             FlawlessAdvancements.flawlessFanClub(serverPlayer);
                         }
@@ -233,7 +233,7 @@ public class Flawless extends TamableAnimal implements IShearable {
 
     @Override
     public boolean doHurtTarget(Entity source) {
-        String flawlessClothing = this.getEntityData().get(Flawless.DATA_flawlessClothing);
+        String flawlessClothing = this.getEntityData().get(Flawless.DATA_CLOTHING);
 
         if (flawlessClothing.equals(MineLittleFlawlessItems.PAJAMAS.get().toString())) {
             if (source instanceof LivingEntity livingSource)
@@ -254,20 +254,20 @@ public class Flawless extends TamableAnimal implements IShearable {
     @Override
     public List<ItemStack> onSheared(@Nullable Player player, ItemStack item, Level level, BlockPos pos) {
         level.playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.HORSE_SADDLE, SoundSource.AMBIENT, 1, 1);
-        String flawlessClothing = this.getEntityData().get(DATA_flawlessClothing);
+        String flawlessClothing = this.getEntityData().get(DATA_CLOTHING);
         return List.of(new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.parse(flawlessClothing))));
     }
 
     @Override
     public void spawnShearedDrop(Level level, BlockPos pos, ItemStack drop) {
         IShearable.super.spawnShearedDrop(level, pos, drop);
-        this.getEntityData().set(DATA_flawlessClothing, "");
+        this.getEntityData().set(DATA_CLOTHING, "");
         this.offClothing(drop);
     }
 
     @Override
     protected void playAttackSound() {
-        if (this.getEntityData().get(DATA_flawlessClothing).equals(MineLittleFlawlessItems.ROCKSTAR.get().toString())) {
+        if (this.getEntityData().get(DATA_CLOTHING).equals(MineLittleFlawlessItems.ROCKSTAR.get().toString())) {
             this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.NOTE_BLOCK_GUITAR, SoundSource.AMBIENT, 5, (float) (Math.random() * 2));
         }
     }
@@ -333,7 +333,7 @@ public class Flawless extends TamableAnimal implements IShearable {
             final Vec3 _center = new Vec3(player.getX(), player.getY(), player.getZ());
             for (Flawless entityiterator : player.level().getEntitiesOfClass(Flawless.class, new AABB(_center, _center).inflate(16 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
                 if (entityiterator.isTame() && entityiterator.isOwnedBy(player)) {
-                    flawlessClothing = entityiterator.getEntityData().get(DATA_flawlessClothing);
+                    flawlessClothing = entityiterator.getEntityData().get(DATA_CLOTHING);
 
                     if (flawlessClothing.equals(MineLittleFlawlessItems.FARMER.get().toString())) {
                         ItemEntity entityToSpawn = new ItemEntity(player.level(), entityiterator.getX(), entityiterator.getY(), entityiterator.getZ(),

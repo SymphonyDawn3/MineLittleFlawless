@@ -42,7 +42,7 @@ public class FlawlessAdvancements {
                                     && flawless.isOwnedBy(this.serverPlayer));
 
                 Stream<String> flawlessClothingStream = flawlesses.stream()
-                        .map(flawless -> flawless.getEntityData().get(Flawless.DATA_flawlessClothing))
+                        .map(flawless -> flawless.getEntityData().get(Flawless.DATA_CLOTHING))
                         .filter(flawlessClothing -> needsToBeClothed != flawlessClothing.isEmpty());
 
                 long flawlessCount = needsToBeClothed ? flawlessClothingStream.distinct().count() : flawlessClothingStream.count();
