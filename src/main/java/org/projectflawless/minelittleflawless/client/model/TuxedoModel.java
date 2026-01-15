@@ -76,7 +76,7 @@ public class TuxedoModel extends AgeableHierarchicalModel<Flawless> {
 	public void setupAnim(Flawless entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.head.yRot = netHeadYaw / (180F / (float) Math.PI);
 		this.head.xRot = headPitch / (180F / (float) Math.PI);
-		this.rightArm.xRot = Mth.cos(limbSwing * 0.6662F + (float) Math.PI) * limbSwingAmount;
-		this.leftArm.xRot = Mth.cos(limbSwing * 0.6662F) * limbSwingAmount;
+		this.rightArm.xRot = Mth.cos(limbSwing) * limbSwingAmount;
+		this.leftArm.xRot = Mth.cos(limbSwing) * -limbSwingAmount;
 	}
 }
