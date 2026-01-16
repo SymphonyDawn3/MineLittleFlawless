@@ -1,5 +1,6 @@
 package org.projectflawless.minelittleflawless.client.renderer;
 
+import net.minecraft.client.renderer.RenderType;
 import org.projectflawless.minelittleflawless.entity.Flawless;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessItems;
 import org.projectflawless.minelittleflawless.client.model.*;
@@ -29,7 +30,22 @@ public class FlawlessRenderer extends MobRenderer<Flawless, FlawlessModel> {
                 new PajamasRenderLayer(), new SchoolgirlRenderLayer(), new RockstarRenderLayer());
 
         flawlessClothingRenderLayers.forEach(this::addLayer);
-	}
+
+        this.addLayer(new RenderLayer<>(this) {
+
+            private final UnicornHornCoronaModel model = new UnicornHornCoronaModel(Minecraft.getInstance().getEntityModels().bakeLayer(UnicornHornCoronaModel.LAYER_LOCATION));
+
+            @Override
+            public void render(PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, Flawless entity, float limbSwing, float limbSwingAmount, float partialTick, float ageInTicks, float netHeadYaw, float headPitch) {
+                if (!entity.getMainHandItem().isEmpty()) {
+                    this.getParentModel().copyPropertiesTo(model);
+                    VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.eyes(ResourceLocation.parse("minelittleflawless:flawless_horn_corona")));
+                    this.model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+                    this.model.renderToBuffer(poseStack, vertexConsumer, packedLight, LivingEntityRenderer.getOverlayCoords(entity, 0));
+                }
+            }
+        });
+    }
 
 	@Override
 	public ResourceLocation getTextureLocation(Flawless entity) {
