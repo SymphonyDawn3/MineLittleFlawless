@@ -19,6 +19,8 @@ public class MineLittleFlawlessModels {
 		event.registerLayerDefinition(TuxedoModel.LAYER_LOCATION, TuxedoModel::createBodyLayer);
 		event.registerLayerDefinition(RockstarModel.LAYER_LOCATION, RockstarModel::createBodyLayer);
 		event.registerLayerDefinition(FlawlessModel.LAYER_LOCATION, FlawlessModel::createBodyLayer);
+        event.registerLayerDefinition(TwilightModel.LAYER_LOCATION, TwilightModel::createBodyLayer);
+        event.registerLayerDefinition(TrixieModel.LAYER_LOCATION, TrixieModel::createBodyLayer);
         event.registerLayerDefinition(UnicornHornCoronaModel.LAYER_LOCATION, UnicornHornCoronaModel::createBodyLayer);
 	}
 }
