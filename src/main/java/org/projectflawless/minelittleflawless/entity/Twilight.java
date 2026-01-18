@@ -1,15 +1,18 @@
 package org.projectflawless.minelittleflawless.entity;
 
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
 
 @EventBusSubscriber
@@ -50,6 +53,12 @@ public class Twilight extends SparklemoonFamily {
             return false;
 
         return this.isInLove() && otherAnimal.isInLove();
+    }
+
+    @SubscribeEvent
+    public static void init(RegisterSpawnPlacementsEvent event) {
+        event.register(MineLittleFlawlessEntities.TWILIGHT.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                (entityType, world, reason, pos, random) -> (world.getBlockState(pos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON) && world.getRawBrightness(pos, 0) > 8), RegisterSpawnPlacementsEvent.Operation.REPLACE);
     }
 
     @SubscribeEvent
