@@ -63,7 +63,7 @@ public class FlawlessRenderer extends MobRenderer<Flawless, FlawlessModel> {
                 float ageInTicks,
                 float netHeadYaw,
                 float headPitch) {
-            if (entity.getEntityData().get(Flawless.DATA_flawlessClothing).equals(this.flawlessClothing)) {
+            if (entity.getEntityData().get(Flawless.DATA_CLOTHING).equals(this.flawlessClothing)) {
                 this.vertexConsumer = bufferSource.getBuffer(this.model.renderType(this.layerTexture));
                 this.renderClothing(entity, poseStack, light, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
             }
