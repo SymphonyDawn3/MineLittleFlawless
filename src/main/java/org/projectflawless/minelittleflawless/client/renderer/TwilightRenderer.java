@@ -7,8 +7,6 @@ import org.projectflawless.minelittleflawless.client.model.TwilightModel;
 import org.projectflawless.minelittleflawless.entity.Twilight;
 
 public class TwilightRenderer extends MobRenderer<Twilight, TwilightModel> {
-    private Twilight entity = null;
-
     public TwilightRenderer(EntityRendererProvider.Context context) {
         super(context, new TwilightModel(context.bakeLayer(TwilightModel.LAYER_LOCATION)), 0.5f);
     }

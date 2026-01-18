@@ -21,8 +21,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import java.util.List;
 
 public class FlawlessRenderer extends MobRenderer<Flawless, FlawlessModel> {
-	private Flawless entity = null;
-
     public FlawlessRenderer(EntityRendererProvider.Context context) {
 		super(context, new FlawlessModel(context.bakeLayer(FlawlessModel.LAYER_LOCATION)), 0.5f);
 
