@@ -7,8 +7,6 @@ import org.projectflawless.minelittleflawless.client.model.TrixieModel;
 import org.projectflawless.minelittleflawless.entity.Trixie;
 
 public class TrixieRenderer extends MobRenderer<Trixie, TrixieModel> {
-    private Trixie entity = null;
-
     public TrixieRenderer(EntityRendererProvider.Context context) {
         super(context, new TrixieModel(context.bakeLayer(TrixieModel.LAYER_LOCATION)), 0.5f);
     }
