@@ -18,82 +18,89 @@ import org.projectflawless.minelittleflawless.entity.Flawless;
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 public class FlawlessModel extends AgeableHierarchicalModel<Flawless> {
-	// This layer location should be baked with EntityRendererProvider.Context in
-	// the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("minelittleflawless", "model_flawless"), "main");
+	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("minelittleflawless", "flawless_model"), "main");
 
-    public final ModelPart root;
-	public final ModelPart head;
-	public final ModelPart ears;
-	public final ModelPart hair;
-	public final ModelPart snoutFemale;
-	public final ModelPart horn;
-	public final ModelPart hornGlow;
-	public final ModelPart body;
-	public final ModelPart abdomen;
-	public final ModelPart tail;
-	public final ModelPart tailBody;
-	public final ModelPart tail2;
-	public final ModelPart tail3;
-	public final ModelPart tail4;
-	public final ModelPart neck;
-	public final ModelPart rightLeg;
-	public final ModelPart leftLeg;
-	public final ModelPart leftArm;
-	public final ModelPart rightArm;
+    private final ModelPart root;
+    private final ModelPart body;
+	private final ModelPart head;
+	private final ModelPart ears;
+	private final ModelPart horn;
+	private final ModelPart snout;
+	private final ModelPart mare;
+	private final ModelPart neck;
+	private final ModelPart mane;
+	private final ModelPart tail;
+	private final ModelPart tailStub;
+	private final ModelPart tailLength;
+	private final ModelPart rightArm;
+	private final ModelPart leftLeg;
+	private final ModelPart leftArm;
+	private final ModelPart rightLeg;
 
 	public FlawlessModel(ModelPart root) {
         super(0.5f, 21.2086f);
         this.root = root;
-		this.head = root.getChild("head");
+		this.body = this.root.getChild("body");
+		this.head = this.body.getChild("head");
 		this.ears = this.head.getChild("ears");
-		this.hair = this.head.getChild("hair");
-		this.snoutFemale = this.head.getChild("snoutFemale");
 		this.horn = this.head.getChild("horn");
-		this.hornGlow = this.horn.getChild("hornGlow");
-		this.body = root.getChild("body");
-		this.abdomen = this.body.getChild("abdomen");
-		this.tail = this.body.getChild("tail");
-		this.tailBody = this.tail.getChild("tailBody");
-		this.tail2 = this.tailBody.getChild("tail2");
-		this.tail3 = this.tail2.getChild("tail3");
-		this.tail4 = this.tail3.getChild("tail4");
+		this.snout = this.head.getChild("snout");
+		this.mare = this.snout.getChild("mare");
 		this.neck = this.body.getChild("neck");
-		this.rightLeg = root.getChild("rightLeg");
-		this.leftLeg = root.getChild("leftLeg");
-		this.leftArm = root.getChild("leftArm");
-		this.rightArm = root.getChild("rightArm");
+		this.mane = this.neck.getChild("mane");
+		this.tail = this.body.getChild("tail");
+		this.tailStub = this.tail.getChild("tailStub");
+		this.tailLength = this.tailStub.getChild("tailLength");
+		this.rightArm = this.body.getChild("rightArm");
+		this.leftLeg = this.body.getChild("leftLeg");
+		this.leftArm = this.body.getChild("leftArm");
+		this.rightLeg = this.body.getChild("rightLeg");
 	}
 
 	public static LayerDefinition createBodyLayer() {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
-		PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 17).addBox(-4.0F, -4.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -1.0F, -8.0F));
-		PartDefinition ears = head.addOrReplaceChild("ears",
-				CubeListBuilder.create().texOffs(8, 57).addBox(4.0F, -2.0F, -2.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(16, 57).addBox(-6.0F, -2.0F, -2.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)),
-				PartPose.offset(0.0F, 0.0F, 0.0F));
-		PartDefinition hair = head.addOrReplaceChild("hair", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -4.0F, -4.0F, 8.0F, 9.0F, 8.0F, new CubeDeformation(0.5F)), PartPose.offset(0.0F, 0.0F, 0.0F));
-		PartDefinition snoutFemale = head.addOrReplaceChild("snoutFemale",
-				CubeListBuilder.create().texOffs(56, 24).addBox(-2.0F, 0.0F, -1.0F, 4.0F, 2.0F, 1.0F, new CubeDeformation(0.0F)).texOffs(32, 60).addBox(-1.0F, -1.0F, -1.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)),
-				PartPose.offset(0.0F, 2.0F, -4.0F));
-		PartDefinition horn = head.addOrReplaceChild("horn", CubeListBuilder.create().texOffs(24, 57).addBox(-0.5F, -11.0F, -3.5F, 1.0F, 4.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 2.0F, 2.0F, 0.5061F, 0.0F, 0.0F));
-		PartDefinition hornGlow = horn.addOrReplaceChild("hornGlow", CubeListBuilder.create().texOffs(28, 57).addBox(-0.5F, -11.0F, -3.5F, 1.0F, 4.0F, 1.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 0.0F, 0.0F));
-		PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
-		PartDefinition abdomen = body.addOrReplaceChild("abdomen",
-				CubeListBuilder.create().texOffs(32, 16).addBox(-4.0F, -20.0F, -8.0F, 8.0F, 8.0F, 4.0F, new CubeDeformation(0.0F)).texOffs(32, 0).addBox(-4.0F, -20.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.0F)).texOffs(48, 36)
-						.addBox(-4.0F, -20.0F, 4.0F, 8.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)).texOffs(48, 28).addBox(-4.0F, -16.0F, 4.0F, 8.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)),
-				PartPose.offset(0.0F, 0.0F, 0.0F));
-		PartDefinition tail = body.addOrReplaceChild("tail", CubeListBuilder.create().texOffs(0, 57).addBox(-1.0F, -4.0F, -0.5F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -20.0F, 8.0F, -1.0647F, 0.0F, 0.0F));
-		PartDefinition tailBody = tail.addOrReplaceChild("tailBody", CubeListBuilder.create().texOffs(0, 49).addBox(-2.0F, -1.0F, -2.0F, 4.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)),
-				PartPose.offsetAndRotation(0.0F, -4.0F, 0.0F, 1.0647F, 0.0F, 0.0F));
-		PartDefinition tail2 = tailBody.addOrReplaceChild("tail2", CubeListBuilder.create().texOffs(16, 49).addBox(-2.0F, -21.0F, 6.0F, 4.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, -8.0F));
-		PartDefinition tail3 = tail2.addOrReplaceChild("tail3", CubeListBuilder.create().texOffs(48, 52).addBox(-2.0F, -17.0F, 6.0F, 4.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
-		PartDefinition tail4 = tail3.addOrReplaceChild("tail4", CubeListBuilder.create().texOffs(56, 16).addBox(-2.0F, -13.0F, 6.0F, 4.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
-		PartDefinition neck = body.addOrReplaceChild("neck", CubeListBuilder.create().texOffs(48, 44).addBox(-2.0F, 1.2F, -2.8F, 4.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -24.0F, -6.0F, 0.1571F, 0.0F, 0.0F));
-		PartDefinition rightLeg = partdefinition.addOrReplaceChild("rightLeg", CubeListBuilder.create().texOffs(32, 44).addBox(-2.0F, 1.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(-2.0F, 11.0F, 4.0F));
-		PartDefinition leftLeg = partdefinition.addOrReplaceChild("leftLeg", CubeListBuilder.create().texOffs(16, 33).addBox(-2.0F, 1.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(2.0F, 11.0F, 4.0F));
-		PartDefinition leftArm = partdefinition.addOrReplaceChild("leftArm", CubeListBuilder.create().texOffs(32, 28).addBox(-2.0F, 1.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(2.0F, 11.0F, -5.0F));
-		PartDefinition rightArm = partdefinition.addOrReplaceChild("rightArm", CubeListBuilder.create().texOffs(0, 33).addBox(-2.0F, 1.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(-2.0F, 11.0F, -5.0F));
+
+		PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 36).addBox(-4.0F, -1.3333F, -9.3333F, 8.0F, 8.0F, 4.0F, new CubeDeformation(0.0F))
+		.texOffs(0, 0).addBox(-4.0F, -1.3333F, -5.3333F, 8.0F, 8.0F, 12.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 5.3333F, 0.3333F));
+
+		PartDefinition head = body.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 20).addBox(-4.0F, -6.0F, -6.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.0F))
+		.texOffs(32, 20).addBox(-4.0F, -6.0F, -6.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.5F)), PartPose.offset(0.0F, -5.3333F, -7.3333F));
+
+		PartDefinition ears = head.addOrReplaceChild("ears", CubeListBuilder.create().texOffs(16, 48).addBox(-4.0F, -8.0F, -1.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F))
+		.texOffs(16, 48).mirror().addBox(2.0F, -8.0F, -1.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(0.0F, 0.0F, 0.0F));
+
+		PartDefinition horn = head.addOrReplaceChild("horn", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
+
+		PartDefinition bone_r1 = horn.addOrReplaceChild("bone_r1", CubeListBuilder.create().texOffs(20, 64).addBox(-0.5F, -11.0F, -3.5F, 1.0F, 4.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.5061F, 0.0F, 0.0F));
+
+		PartDefinition snout = head.addOrReplaceChild("snout", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
+
+		PartDefinition mare = snout.addOrReplaceChild("mare", CubeListBuilder.create().texOffs(50, 16).addBox(-2.0F, 0.0F, -7.0F, 4.0F, 2.0F, 1.0F, new CubeDeformation(0.0F))
+		.texOffs(64, 24).addBox(-1.0F, -1.0F, -7.0F, 2.0F, 1.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+
+		PartDefinition neck = body.addOrReplaceChild("neck", CubeListBuilder.create().texOffs(32, 52).addBox(-2.0F, 1.0F, -2.75F, 4.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -5.3333F, -7.3333F, 0.1571F, 0.0F, 0.0F));
+
+		PartDefinition mane = neck.addOrReplaceChild("mane", CubeListBuilder.create().texOffs(16, 52).addBox(-2.0F, 0.0F, -2.75F, 4.0F, 8.0F, 4.0F, new CubeDeformation(-0.5F)), PartPose.offset(0.0F, -2.9F, 1.5F));
+
+		PartDefinition tail = body.addOrReplaceChild("tail", CubeListBuilder.create(), PartPose.offset(0.0F, -5.3333F, 6.6667F));
+
+		PartDefinition tailStub = tail.addOrReplaceChild("tailStub", CubeListBuilder.create().texOffs(48, 52).addBox(-1.0F, -2.1301F, -1.5699F, 2.0F, 2.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 6.0F, -0.25F, 0.5061F, 0.0F, 0.0F));
+
+		PartDefinition tailLength = tailStub.addOrReplaceChild("tailLength", CubeListBuilder.create().texOffs(56, 0).addBox(-2.0F, -2.0F, 0.25F, 4.0F, 4.0F, 4.0F, new CubeDeformation(0.0F))
+		.texOffs(56, 8).addBox(-2.0F, 2.0F, 0.25F, 4.0F, 4.0F, 4.0F, new CubeDeformation(0.0F))
+		.texOffs(56, 0).addBox(-2.0F, 6.0F, 0.25F, 4.0F, 4.0F, 4.0F, new CubeDeformation(0.0F))
+		.texOffs(56, 8).addBox(-2.0F, 10.0F, 0.25F, 4.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -1.1301F, 3.4301F, -0.48F, 0.0F, 0.0F));
+
+		PartDefinition rightArm = body.addOrReplaceChild("rightArm", CubeListBuilder.create().texOffs(24, 36).mirror().addBox(0.0F, 4.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(0.0F, 2.6667F, -5.3333F));
+
+		PartDefinition leftLeg = body.addOrReplaceChild("leftLeg", CubeListBuilder.create().texOffs(40, 0).mirror().addBox(-4.0F, 4.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(0.0F, 2.6667F, 3.6667F));
+
+		PartDefinition leftArm = body.addOrReplaceChild("leftArm", CubeListBuilder.create().texOffs(40, 36).mirror().addBox(-4.0F, 4.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(0.0F, 2.6667F, -5.3333F));
+
+		PartDefinition rightLeg = body.addOrReplaceChild("rightLeg", CubeListBuilder.create().texOffs(0, 48).mirror().addBox(0.0F, 4.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(0.0F, 2.6667F, 3.6667F));
+
 		return LayerDefinition.create(meshdefinition, 128, 128);
 	}
 

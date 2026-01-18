@@ -18,59 +18,38 @@ import org.projectflawless.minelittleflawless.entity.Flawless;
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 public class FlawlessMagicianClothingModel extends AgeableHierarchicalModel<Flawless> {
-	// This layer location should be baked with EntityRendererProvider.Context in
-	// the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("minelittleflawless", "model_flawless_magician_clothing"), "main");
+	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath("minelittleflawless", "flawless_magician_clothing_model"), "main");
 
-    public final ModelPart root;
-	public final ModelPart head;
-	public final ModelPart hat;
-	public final ModelPart body;
-	public final ModelPart jacket;
-	public final ModelPart rightLeg;
-	public final ModelPart rightPants;
-	public final ModelPart leftLeg;
-	public final ModelPart leftPants;
-	public final ModelPart leftArm;
-	public final ModelPart leftSleeve;
-	public final ModelPart rightArm;
-	public final ModelPart rightSleeve;
+    private final ModelPart root;
+    private final ModelPart body;
+	private final ModelPart cloak;
+	private final ModelPart head;
+	private final ModelPart top_hat;
 
 	public FlawlessMagicianClothingModel(ModelPart root) {
         super(0.5f, 21.2086f);
         this.root = root;
-        this.head = root.getChild("head");
-		this.hat = this.head.getChild("hat");
-		this.body = root.getChild("body");
-		this.jacket = this.body.getChild("jacket");
-		this.rightLeg = root.getChild("rightLeg");
-		this.rightPants = this.rightLeg.getChild("rightPants");
-		this.leftLeg = root.getChild("leftLeg");
-		this.leftPants = this.leftLeg.getChild("leftPants");
-		this.leftArm = root.getChild("leftArm");
-		this.leftSleeve = this.leftArm.getChild("leftSleeve");
-		this.rightArm = root.getChild("rightArm");
-		this.rightSleeve = this.rightArm.getChild("rightSleeve");
+		this.body = this.root.getChild("body");
+		this.cloak = this.body.getChild("cloak");
+		this.head = this.body.getChild("head");
+		this.top_hat = this.head.getChild("top_hat");
 	}
 
 	public static LayerDefinition createBodyLayer() {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
-		PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create(), PartPose.offset(0.0F, -1.0F, -8.0F));
-		PartDefinition hat = head.addOrReplaceChild("hat", CubeListBuilder.create(), PartPose.offset(0.0F, 1.0F, 2.0F));
-		PartDefinition cube_r1 = hat.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(0, 0).addBox(-9.0F, -2.0F, 0.0F, 10.0F, 2.0F, 11.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(4.0F, -5.0F, -6.0F, -0.1745F, 0.0F, 0.0F));
-		PartDefinition cube_r2 = hat.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(0, 29).addBox(-8.0F, -8.0F, 1.0F, 7.0F, 7.0F, 7.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(4.5F, -5.0F, -6.0F, -0.1309F, 0.0F, 0.0F));
-		PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
-		PartDefinition jacket = body.addOrReplaceChild("jacket", CubeListBuilder.create().texOffs(28, 29).addBox(-4.0F, -20.0F, 4.5F, 8.0F, 8.0F, 4.0F, new CubeDeformation(0.25F)).texOffs(0, 13)
-				.addBox(-4.0F, -20.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.25F)).texOffs(32, 13).addBox(-4.0F, -20.0F, -8.5F, 8.0F, 8.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 0.0F, 0.0F));
-		PartDefinition rightLeg = partdefinition.addOrReplaceChild("rightLeg", CubeListBuilder.create(), PartPose.offset(-2.0F, 11.0F, 4.0F));
-		PartDefinition rightPants = rightLeg.addOrReplaceChild("rightPants", CubeListBuilder.create().texOffs(52, 25).addBox(-2.0F, 1.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 0.0F, 0.0F));
-		PartDefinition leftLeg = partdefinition.addOrReplaceChild("leftLeg", CubeListBuilder.create(), PartPose.offset(2.0F, 11.0F, 4.0F));
-		PartDefinition leftPants = leftLeg.addOrReplaceChild("leftPants", CubeListBuilder.create().texOffs(44, 41).addBox(-2.0F, 1.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 0.0F, 0.0F));
-		PartDefinition leftArm = partdefinition.addOrReplaceChild("leftArm", CubeListBuilder.create(), PartPose.offset(2.0F, 11.0F, -5.0F));
-		PartDefinition leftSleeve = leftArm.addOrReplaceChild("leftSleeve", CubeListBuilder.create().texOffs(28, 41).addBox(-2.0F, 1.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 0.0F, 0.0F));
-		PartDefinition rightArm = partdefinition.addOrReplaceChild("rightArm", CubeListBuilder.create(), PartPose.offset(-2.0F, 11.0F, -5.0F));
-		PartDefinition rightSleeve = rightArm.addOrReplaceChild("rightSleeve", CubeListBuilder.create().texOffs(0, 43).addBox(-2.0F, 1.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+
+		PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create(), PartPose.offset(0.0F, 5.3333F, 0.3333F));
+
+		PartDefinition cloak = body.addOrReplaceChild("cloak", CubeListBuilder.create().texOffs(40, 38).addBox(-4.0F, -1.3333F, -9.3333F, 8.0F, 16.0F, 4.0F, new CubeDeformation(1.0F))
+		.texOffs(0, 18).addBox(-4.0F, -1.3333F, -3.3333F, 8.0F, 18.0F, 12.0F, new CubeDeformation(1.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+
+		PartDefinition head = body.addOrReplaceChild("head", CubeListBuilder.create(), PartPose.offset(0.0F, -5.3333F, -7.3333F));
+
+		PartDefinition top_hat = head.addOrReplaceChild("top_hat", CubeListBuilder.create().texOffs(0, 0).addBox(-8.0F, -2.0F, -8.0F, 16.0F, 2.0F, 16.0F, new CubeDeformation(0.0F))
+		.texOffs(40, 18).addBox(-5.0F, -12.0F, -5.0F, 10.0F, 10.0F, 10.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -4.2346F, -0.1522F, -0.48F, 0.0F, 0.0F));
+
 		return LayerDefinition.create(meshdefinition, 128, 128);
 	}
 
@@ -83,9 +62,5 @@ public class FlawlessMagicianClothingModel extends AgeableHierarchicalModel<Flaw
 	public void setupAnim(Flawless entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.head.yRot = netHeadYaw / (180F / (float) Math.PI);
 		this.head.xRot = headPitch / (180F / (float) Math.PI);
-		this.rightLeg.xRot = Mth.cos(limbSwing) * limbSwingAmount;
-		this.rightArm.xRot = Mth.cos(limbSwing) * limbSwingAmount;
-		this.leftArm.xRot = Mth.cos(limbSwing) * -limbSwingAmount;
-		this.leftLeg.xRot = Mth.cos(limbSwing) * -limbSwingAmount;
 	}
 }
