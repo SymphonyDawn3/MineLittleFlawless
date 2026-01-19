@@ -126,7 +126,7 @@ public class Flawless extends SparklemoonFamily implements IShearable {
 	@Override
 	public void readAdditionalSaveData(CompoundTag compound) {
 		super.readAdditionalSaveData(compound);
-		this.entityData.set(DATA_CLOTHING, compound.getString("DataflawlessClothing"));
+		this.entityData.set(DATA_CLOTHING, compound.getString("clothing"));
 	}
 
 	@Override
