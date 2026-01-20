@@ -1,0 +1,24 @@
+{
+	"variants" : {
+		"default" : "model:0"
+	},
+	"modelConfigs": [
+	    {
+	        "modelPartsFields": [
+	        ],
+	        "modelMainPartFieldAliases": [
+	            "org.projectflawless.minelittleflawless.client.model.TwilightModel;head"
+	        ],
+	        "modelRootPath": [
+	            [
+	                "org.projectflawless.minelittleflawless.client.model.TwilightModel;root"
+	            ],
+	            [
+	                "org.projectflawless.minelittleflawless.client.model.TwilightModel;body"
+	            ]
+	        ],
+	        "renderingFullModel": false,
+	        "modelPartsRotationReset": true
+	    }
+	]
+}
