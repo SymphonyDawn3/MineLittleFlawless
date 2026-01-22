@@ -16,7 +16,7 @@ import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
 
 @EventBusSubscriber
-public class Trixie extends SparklemoonFamily {
+public class Trixie extends TamableTamersPony {
     public Trixie(EntityType<Trixie> type, Level world) {
         super(type, world);
     }
@@ -29,7 +29,7 @@ public class Trixie extends SparklemoonFamily {
 
     @Override
     public AgeableMob getBreedOffspring(ServerLevel serverWorld, AgeableMob ageable) {
-        SparklemoonFamily retval;
+        TamableTamersPony retval;
 
         if (ageable instanceof Twilight)
             retval = MineLittleFlawlessEntities.FLAWLESS.get().create(serverWorld, null, ageable.blockPosition(), MobSpawnType.BREEDING, false, false);
@@ -63,6 +63,6 @@ public class Trixie extends SparklemoonFamily {
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
-        event.put(MineLittleFlawlessEntities.TRIXIE.get(), SparklemoonFamily.createAttributes().build());
+        event.put(MineLittleFlawlessEntities.TRIXIE.get(), TamableTamersPony.createAttributes().build());
     }
 }
