@@ -26,8 +26,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.event.EventHooks;
 
-abstract class SparklemoonFamily extends TamableAnimal {
-    public SparklemoonFamily(EntityType<? extends SparklemoonFamily> type, Level world) {
+abstract class TamableTamersPony extends TamableAnimal {
+    public TamableTamersPony(EntityType<? extends TamableTamersPony> type, Level world) {
         super(type, world);
         this.xpReward = 0;
         this.setNoAi(false);
@@ -36,7 +36,7 @@ abstract class SparklemoonFamily extends TamableAnimal {
     @Override
     protected void registerGoals() {
         super.registerGoals();
-        this.goalSelector.addGoal(1, new BreedGoal(this, 1, SparklemoonFamily.class));
+        this.goalSelector.addGoal(1, new BreedGoal(this, 1, TamableTamersPony.class));
         this.goalSelector.addGoal(2, new OwnerHurtByTargetGoal(this));
         this.targetSelector.addGoal(3, new OwnerHurtTargetGoal(this));
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, Monster.class, false, false));

@@ -56,7 +56,7 @@ import java.util.Objects;
 import javax.annotation.Nullable;
 
 @EventBusSubscriber
-public class Flawless extends SparklemoonFamily implements IShearable {
+public class Flawless extends TamableTamersPony implements IShearable {
 	public static final EntityDataAccessor<String> DATA_CLOTHING = SynchedEntityData.defineId(Flawless.class, EntityDataSerializers.STRING);
 
     public Flawless(EntityType<Flawless> type, Level world) {
@@ -270,7 +270,7 @@ public class Flawless extends SparklemoonFamily implements IShearable {
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
-        event.put(FLAWLESS.get(), SparklemoonFamily.createAttributes().build());
+        event.put(FLAWLESS.get(), TamableTamersPony.createAttributes().build());
     }
 
     @SubscribeEvent
