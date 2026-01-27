@@ -1,7 +1,6 @@
 package org.projectflawless.minelittleflawless.init;
 
-import org.projectflawless.minelittleflawless.entity.Bartleby;
-import org.projectflawless.minelittleflawless.entity.Flawless;
+import org.projectflawless.minelittleflawless.entity.*;
 import org.projectflawless.minelittleflawless.MineLittleFlawless;
 
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -11,8 +10,6 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.core.registries.Registries;
-import org.projectflawless.minelittleflawless.entity.Trixie;
-import org.projectflawless.minelittleflawless.entity.Twilight;
 
 public class MineLittleFlawlessEntities {
 	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(Registries.ENTITY_TYPE, MineLittleFlawless.MODID);
@@ -40,6 +37,13 @@ public class MineLittleFlawlessEntities {
 
     public static final DeferredHolder<EntityType<?>, EntityType<Trixie>> TRIXIE = register("trixie",
             EntityType.Builder.of(Trixie::new, MobCategory.CREATURE)
+                    .setShouldReceiveVelocityUpdates(true)
+                    .setTrackingRange(64)
+                    .setUpdateInterval(3)
+                    .sized(0.8125f, 2f));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Arinos>> ARINOS = register("arinos",
+            EntityType.Builder.of(Arinos::new, MobCategory.MONSTER)
                     .setShouldReceiveVelocityUpdates(true)
                     .setTrackingRange(64)
                     .setUpdateInterval(3)

@@ -21,6 +21,7 @@ public class MineLittleFlawlessTabs {
             tabData.accept(MineLittleFlawlessItems.FLAWLESS_SPAWN_EGG.get());
             tabData.accept(MineLittleFlawlessItems.TWILIGHT_SPAWN_EGG.get());
             tabData.accept(MineLittleFlawlessItems.TRIXIE_SPAWN_EGG.get());
+            tabData.accept(MineLittleFlawlessItems.ARINOS_SPAWN_EGG.get());
         } else if (tabData.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             tabData.accept(MineLittleFlawlessItems.FLAWLESS_MAGICIAN_CLOTHING.get());
             tabData.accept(MineLittleFlawlessItems.TUXEDO.get());
