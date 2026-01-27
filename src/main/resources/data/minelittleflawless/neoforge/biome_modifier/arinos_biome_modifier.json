@@ -1,0 +1,12 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": {
+    "type": "neoforge:any"
+  },
+  "spawners": {
+    "type": "minelittleflawless:arinos",
+    "weight": 95,
+    "minCount": 4,
+    "maxCount": 4
+  }
+}
