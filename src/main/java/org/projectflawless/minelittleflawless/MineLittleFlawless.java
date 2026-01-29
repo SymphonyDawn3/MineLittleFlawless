@@ -1,5 +1,6 @@
 package org.projectflawless.minelittleflawless;
 
+import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessTabs;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessItems;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
@@ -19,5 +20,6 @@ public class MineLittleFlawless {
         MineLittleFlawlessItems.REGISTRY.register(modEventBus);
         MineLittleFlawlessEntities.REGISTRY.register(modEventBus);
         MineLittleFlawlessTabs.REGISTRY.register(modEventBus);
+        MineLittleFlawlessSoundEvents.REGISTRY.register(modEventBus);
     }
 }
