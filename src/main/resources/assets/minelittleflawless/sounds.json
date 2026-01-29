@@ -1,0 +1,31 @@
+{
+  "entity.arinos.jingle": {
+    "subtitle": "subtitle.minelittleflawless.entity.arinos.jingle",
+    "sounds": [
+      "minelittleflawless:entity.arinos.jingle"
+    ]
+  },
+  "entity.arinos.speak": {
+    "subtitle": "subtitle.minelittleflawless.arinos.speak",
+    "sounds": [
+      "minelittleflawless:entity.arinos.speak1",
+      "minelittleflawless:entity.arinos.speak2",
+      "minelittleflawless:entity.arinos.speak3",
+      "minelittleflawless:entity.arinos.speak4"
+    ]
+  },
+  "entity.arinos.hurt": {
+    "subtitle": "subtitle.minelittleflawless.arinos.hurt",
+    "sounds": [
+      "minelittleflawless:entity.arinos.hurt1",
+      "minelittleflawless:entity.arinos.hurt2"
+    ]
+  },
+  "entity.arinos.death": {
+    "subtitle": "subtitle.minelittleflawless.arinos.death",
+    "sounds": [
+      "minelittleflawless:entity.arinos.death1",
+      "minelittleflawless:entity.arinos.death2"
+    ]
+  }
+}

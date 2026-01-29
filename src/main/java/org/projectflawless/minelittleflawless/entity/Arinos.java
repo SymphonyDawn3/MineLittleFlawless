@@ -2,7 +2,9 @@ package org.projectflawless.minelittleflawless.entity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.TemptGoal;
 import net.minecraft.world.entity.monster.Monster;
@@ -11,12 +13,14 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
+import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
 
 import javax.annotation.Nullable;
 
@@ -30,6 +34,21 @@ public class Arinos extends TamableTamersPony {
     public void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(9, new TemptGoal(this, 1, this::isFood, false));
+    }
+
+    @Override
+    public SoundEvent getAmbientSound() {
+        return MineLittleFlawlessSoundEvents.ARINOS_SPEAK.get();
+    }
+
+    @Override
+    public SoundEvent getHurtSound(DamageSource ds) {
+        return MineLittleFlawlessSoundEvents.ARINOS_HURT.get();
+    }
+
+    @Override
+    public SoundEvent getDeathSound() {
+        return MineLittleFlawlessSoundEvents.ARINOS_DEATH.get();
     }
 
     @Override
@@ -55,6 +74,11 @@ public class Arinos extends TamableTamersPony {
     @Override
     public float getWalkTargetValue(BlockPos pos, LevelReader level) {
         return -level.getPathfindingCostFromLightLevels(pos);
+    }
+
+    @Override
+    protected void playStepSound(BlockPos pos, BlockState state) {
+        this.playSound(MineLittleFlawlessSoundEvents.ARINOS_JINGLE.value(), 0.15f, 1.0f);
     }
 
     @SubscribeEvent
