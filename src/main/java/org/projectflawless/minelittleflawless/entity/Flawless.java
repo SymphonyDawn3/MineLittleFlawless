@@ -2,6 +2,7 @@ package org.projectflawless.minelittleflawless.entity;
 
 import static org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities.FLAWLESS;
 
+import net.minecraft.sounds.SoundEvent;
 import org.projectflawless.minelittleflawless.FlawlessAdvancements;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessItems;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
@@ -49,6 +50,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.nbt.CompoundTag;
+import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
 
 import java.util.Comparator;
 import java.util.List;
@@ -76,6 +78,21 @@ public class Flawless extends TamableTamersPony implements IShearable {
 		super.registerGoals();
 		this.goalSelector.addGoal(9, new TemptGoal(this, 1, Ingredient.of(Items.SUGAR), false));
 	}
+
+    @Override
+    public SoundEvent getAmbientSound() {
+        return MineLittleFlawlessSoundEvents.FLAWLESS_SPEAK.get();
+    }
+
+    @Override
+    public SoundEvent getHurtSound(DamageSource ds) {
+        return MineLittleFlawlessSoundEvents.FLAWLESS_HURT.get();
+    }
+
+    @Override
+    public SoundEvent getDeathSound() {
+        return MineLittleFlawlessSoundEvents.FLAWLESS_DEATH.get();
+    }
 
     @Override
 	public boolean hurt(DamageSource damagesource, float amount) {

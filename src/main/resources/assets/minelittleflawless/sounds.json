@@ -1,4 +1,28 @@
 {
+  "entity.flawless.speak": {
+    "subtitle": "subtitle.minelittleflawless.flawless.speak",
+    "sounds": [
+      "minelittleflawless:entity.flawless.speak1",
+      "minelittleflawless:entity.flawless.speak2",
+      "minelittleflawless:entity.flawless.speak3",
+      "minelittleflawless:entity.flawless.speak4",
+      "minelittleflawless:entity.flawless.speak5"
+    ]
+  },
+  "entity.flawless.hurt": {
+    "subtitle": "subtitle.minelittleflawless.flawless.hurt",
+    "sounds": [
+      "minelittleflawless:entity.flawless.hurt1",
+      "minelittleflawless:entity.flawless.hurt2"
+    ]
+  },
+  "entity.flawless.death": {
+    "subtitle": "subtitle.minelittleflawless.flawless.death",
+    "sounds": [
+      "minelittleflawless:entity.flawless.death1",
+      "minelittleflawless:entity.flawless.death2"
+    ]
+  },
   "entity.arinos.jingle": {
     "subtitle": "subtitle.minelittleflawless.entity.arinos.jingle",
     "sounds": [

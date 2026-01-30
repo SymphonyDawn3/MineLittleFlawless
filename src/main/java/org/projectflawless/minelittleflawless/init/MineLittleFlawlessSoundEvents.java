@@ -10,6 +10,15 @@ public class MineLittleFlawlessSoundEvents {
     public static final DeferredRegister<SoundEvent> REGISTRY = DeferredRegister.create(BuiltInRegistries.SOUND_EVENT,
             MineLittleFlawless.MODID);
 
+    public static final DeferredHolder<SoundEvent, SoundEvent> FLAWLESS_SPEAK = REGISTRY.register("entity.flawless.speak",
+            SoundEvent::createVariableRangeEvent);
+
+    public static final DeferredHolder<SoundEvent, SoundEvent> FLAWLESS_HURT = REGISTRY.register("entity.flawless.hurt",
+            SoundEvent::createVariableRangeEvent);
+
+    public static final DeferredHolder<SoundEvent, SoundEvent> FLAWLESS_DEATH = REGISTRY.register("entity.flawless.death",
+            SoundEvent::createVariableRangeEvent);
+
     public static final DeferredHolder<SoundEvent, SoundEvent> ARINOS_JINGLE = REGISTRY.register("entity.arinos.jingle",
             SoundEvent::createVariableRangeEvent);
 
