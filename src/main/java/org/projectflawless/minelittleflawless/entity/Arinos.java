@@ -57,6 +57,11 @@ public class Arinos extends TamableTamersPony {
     }
 
     @Override
+    public boolean removeWhenFarAway(double distanceToClosestPlayer) {
+        return true;
+    }
+
+    @Override
     public AgeableMob getBreedOffspring(ServerLevel serverWorld, AgeableMob ageable) {
         Arinos retval = MineLittleFlawlessEntities.ARINOS.get().create(serverWorld, null, ageable.blockPosition(), MobSpawnType.BREEDING, false, false);
 
