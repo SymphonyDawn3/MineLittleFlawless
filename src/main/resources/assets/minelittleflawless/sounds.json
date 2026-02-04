@@ -4,9 +4,7 @@
     "sounds": [
       "minelittleflawless:entity.flawless.speak1",
       "minelittleflawless:entity.flawless.speak2",
-      "minelittleflawless:entity.flawless.speak3",
-      "minelittleflawless:entity.flawless.speak4",
-      "minelittleflawless:entity.flawless.speak5"
+      "minelittleflawless:entity.flawless.speak3"
     ]
   },
   "entity.flawless.hurt": {
