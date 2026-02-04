@@ -23,6 +23,50 @@
       "minelittleflawless:entity.flawless.death2"
     ]
   },
+  "entity.twilight.speak": {
+    "subtitle": "subtitle.minelittleflawless.twilight.speak",
+    "sounds": [
+      "minelittleflawless:entity.twilight.speak1",
+      "minelittleflawless:entity.twilight.speak2"
+    ]
+  },
+  "entity.twilight.hurt": {
+    "subtitle": "subtitle.minelittleflawless.twilight.hurt",
+    "sounds": [
+      "minelittleflawless:entity.twilight.hurt1",
+      "minelittleflawless:entity.twilight.hurt2"
+    ]
+  },
+  "entity.twilight.death": {
+    "subtitle": "subtitle.minelittleflawless.twilight.death",
+    "sounds": [
+      "minelittleflawless:entity.twilight.death1",
+      "minelittleflawless:entity.twilight.death2"
+    ]
+  },
+  "entity.trixie.speak": {
+    "subtitle": "subtitle.minelittleflawless.trixie.speak",
+    "sounds": [
+      "minelittleflawless:entity.trixie.speak1",
+      "minelittleflawless:entity.trixie.speak2",
+      "minelittleflawless:entity.trixie.speak3",
+      "minelittleflawless:entity.trixie.speak4"
+    ]
+  },
+  "entity.trixie.hurt": {
+    "subtitle": "subtitle.minelittleflawless.trixie.hurt",
+    "sounds": [
+      "minelittleflawless:entity.trixie.hurt1",
+      "minelittleflawless:entity.trixie.hurt2"
+    ]
+  },
+  "entity.trixie.death": {
+    "subtitle": "subtitle.minelittleflawless.trixie.death",
+    "sounds": [
+      "minelittleflawless:entity.trixie.death1",
+      "minelittleflawless:entity.trixie.death2"
+    ]
+  },
   "entity.arinos.jingle": {
     "subtitle": "subtitle.minelittleflawless.entity.arinos.jingle",
     "sounds": [
