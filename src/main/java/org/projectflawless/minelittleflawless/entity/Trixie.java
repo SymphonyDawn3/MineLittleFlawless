@@ -1,7 +1,9 @@
 package org.projectflawless.minelittleflawless.entity;
 
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
@@ -14,6 +16,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
+import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
 
 @EventBusSubscriber
 public class Trixie extends TamableTamersPony {
@@ -25,6 +28,21 @@ public class Trixie extends TamableTamersPony {
     public void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(9, new TemptGoal(this, 1, itemstack -> itemstack.is(Items.BEETROOT), false));
+    }
+
+    @Override
+    public SoundEvent getAmbientSound() {
+        return MineLittleFlawlessSoundEvents.TRIXIE_SPEAK.get();
+    }
+
+    @Override
+    public SoundEvent getHurtSound(DamageSource ds) {
+        return MineLittleFlawlessSoundEvents.TRIXIE_HURT.get();
+    }
+
+    @Override
+    public SoundEvent getDeathSound() {
+        return MineLittleFlawlessSoundEvents.TRIXIE_DEATH.get();
     }
 
     @Override
