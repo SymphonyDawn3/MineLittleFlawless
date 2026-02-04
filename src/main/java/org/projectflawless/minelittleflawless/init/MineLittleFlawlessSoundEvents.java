@@ -19,6 +19,24 @@ public class MineLittleFlawlessSoundEvents {
     public static final DeferredHolder<SoundEvent, SoundEvent> FLAWLESS_DEATH = REGISTRY.register("entity.flawless.death",
             SoundEvent::createVariableRangeEvent);
 
+    public static final DeferredHolder<SoundEvent, SoundEvent> TWILIGHT_SPEAK = REGISTRY.register("entity.twilight.speak",
+            SoundEvent::createVariableRangeEvent);
+
+    public static final DeferredHolder<SoundEvent, SoundEvent> TWILIGHT_HURT = REGISTRY.register("entity.twilight.hurt",
+            SoundEvent::createVariableRangeEvent);
+
+    public static final DeferredHolder<SoundEvent, SoundEvent> TWILIGHT_DEATH = REGISTRY.register("entity.twilight.death",
+            SoundEvent::createVariableRangeEvent);
+
+    public static final DeferredHolder<SoundEvent, SoundEvent> TRIXIE_SPEAK = REGISTRY.register("entity.trixie.speak",
+            SoundEvent::createVariableRangeEvent);
+
+    public static final DeferredHolder<SoundEvent, SoundEvent> TRIXIE_HURT = REGISTRY.register("entity.trixie.hurt",
+            SoundEvent::createVariableRangeEvent);
+
+    public static final DeferredHolder<SoundEvent, SoundEvent> TRIXIE_DEATH = REGISTRY.register("entity.trixie.death",
+            SoundEvent::createVariableRangeEvent);
+
     public static final DeferredHolder<SoundEvent, SoundEvent> ARINOS_JINGLE = REGISTRY.register("entity.arinos.jingle",
             SoundEvent::createVariableRangeEvent);
 
