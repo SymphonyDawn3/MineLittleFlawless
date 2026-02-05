@@ -1,8 +1,6 @@
 {
   "type": "neoforge:add_spawns",
-  "biomes": {
-    "type": "neoforge:any"
-  },
+  "biomes": "#minecraft:is_overworld",
   "spawners": {
     "type": "minelittleflawless:arinos",
     "weight": 95,
