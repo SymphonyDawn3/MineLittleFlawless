@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "minecraft:warped_forest",
+  "spawners": {
+    "type": "minelittleflawless:arinos",
+    "weight": 1,
+    "minCount": 1,
+    "maxCount": 4
+  }
+}
