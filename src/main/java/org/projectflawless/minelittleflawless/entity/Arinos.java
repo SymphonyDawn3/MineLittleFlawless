@@ -52,6 +52,11 @@ public class Arinos extends TamableTamersPony {
     }
 
     @Override
+    public boolean canAttackType(EntityType<?> entityType) {
+        return !this.getType().equals(entityType);
+    }
+
+    @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData livingdata) {
         return super.finalizeSpawn(world, difficulty, spawnType, livingdata);
     }
