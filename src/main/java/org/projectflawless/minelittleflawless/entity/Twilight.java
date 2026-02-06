@@ -1,8 +1,11 @@
 package org.projectflawless.minelittleflawless.entity;
 
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.*;
@@ -28,6 +31,11 @@ public class Twilight extends TamableTamersPony {
     public void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(9, new TemptGoal(this, 1, itemstack -> itemstack.is(Items.BOOK), false));
+    }
+
+    @Override
+    public boolean canAttackType(EntityType<?> entityType) {
+        return !(entityType.is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("minelittleflawless:sparklemoon_family"))));
     }
 
     @Override

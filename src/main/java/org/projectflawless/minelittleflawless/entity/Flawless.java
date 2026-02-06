@@ -2,7 +2,9 @@ package org.projectflawless.minelittleflawless.entity;
 
 import static org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities.FLAWLESS;
 
+import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.tags.TagKey;
 import org.projectflawless.minelittleflawless.FlawlessAdvancements;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessItems;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
@@ -92,6 +94,11 @@ public class Flawless extends TamableTamersPony implements IShearable {
     @Override
     public SoundEvent getDeathSound() {
         return MineLittleFlawlessSoundEvents.FLAWLESS_DEATH.get();
+    }
+
+    @Override
+    public boolean canAttackType(EntityType<?> entityType) {
+        return !(entityType.is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse("minelittleflawless:sparklemoon_family"))));
     }
 
     @Override
