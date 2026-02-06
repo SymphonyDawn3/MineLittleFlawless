@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "minecraft:basalt_deltas",
+  "spawners": {
+    "type": "minelittleflawless:arinos",
+    "weight": 26,
+    "minCount": 4,
+    "maxCount": 4
+  }
+}
