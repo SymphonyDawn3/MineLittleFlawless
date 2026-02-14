@@ -25,7 +25,8 @@ public class FlawlessClothingItem extends Item {
                 flawless.level().playSound(null, flawless.getX(), flawless.getY(), flawless.getZ(), SoundEvents.HORSE_SADDLE, SoundSource.AMBIENT, 1, 1);
 
                 flawless.wearClothing(stack);
-                stack.consume(1, player);
+                if (!player.getAbilities().instabuild)
+                    stack.shrink(1);
                 flawless.getEntityData().set(Flawless.DATA_CLOTHING, flawlessClothing);
 
                 if (flawless.isTame()) {

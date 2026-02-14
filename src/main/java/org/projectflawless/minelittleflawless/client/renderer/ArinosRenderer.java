@@ -15,13 +15,13 @@ public class ArinosRenderer extends MobRenderer<Arinos, ArinosModel> {
     public ArinosRenderer(EntityRendererProvider.Context context) {
         super(context, new ArinosModel(context.bakeLayer(ArinosModel.LAYER_LOCATION)), 0.5f);
         this.addLayer(new RenderLayer<>(this) {
-            private JesterModel model = new JesterModel(context.getModelSet().bakeLayer(JesterModel.LAYER_LOCATION));
+            private final JesterModel model = new JesterModel(context.getModelSet().bakeLayer(JesterModel.LAYER_LOCATION));
 
             @Override
             public void render(PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, Arinos livingEntity, float limbSwing, float limbSwingAmount, float partialTick, float ageInTicks, float netHeadYaw, float headPitch) {
                 RenderLayer.coloredCutoutModelCopyLayerRender(this.getParentModel(), this.model,
                         this.getTextureLocation(livingEntity), poseStack, bufferSource, packedLight, livingEntity,
-                        limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, partialTick, -1);
+                        limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, partialTick, 1.0f, 1.0f, 1.0f);
             }
 
             @Override
