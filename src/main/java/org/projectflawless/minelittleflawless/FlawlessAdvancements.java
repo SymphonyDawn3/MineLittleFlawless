@@ -1,6 +1,6 @@
 package org.projectflawless.minelittleflawless;
 
-import net.minecraft.advancements.AdvancementHolder;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
@@ -17,7 +17,7 @@ public class FlawlessAdvancements {
     private static class InternalFlawlessAdvancement {
         final private ServerPlayer serverPlayer;
         final private PlayerAdvancements playerAdvancements;
-        private AdvancementHolder advHolder;
+        private Advancement advancement;
         private AdvancementProgress progress;
 
         private InternalFlawlessAdvancement(ServerPlayer serverPlayer, ResourceLocation advancementResource) {
@@ -25,9 +25,9 @@ public class FlawlessAdvancements {
             this.playerAdvancements = serverPlayer.getAdvancements();
             MinecraftServer minecraftServer = serverPlayer.getServer();
             if (minecraftServer != null) {
-                this.advHolder = minecraftServer.getAdvancements().get(advancementResource);
-                if (this.advHolder != null) {
-                    this.progress = this.playerAdvancements.getOrStartProgress(this.advHolder);
+                this.advancement = minecraftServer.getAdvancements().getAdvancement(advancementResource);
+                if (this.advancement != null) {
+                    this.progress = this.playerAdvancements.getOrStartProgress(this.advancement);
                 }
             }
         }
@@ -50,7 +50,7 @@ public class FlawlessAdvancements {
 
                 if (flawlessCount >= flawlessMaxCount) {
                     for (String criteria : this.progress.getRemainingCriteria())
-                        this.playerAdvancements.award(this.advHolder, criteria);
+                        this.playerAdvancements.award(this.advancement, criteria);
                 }
             }
         }

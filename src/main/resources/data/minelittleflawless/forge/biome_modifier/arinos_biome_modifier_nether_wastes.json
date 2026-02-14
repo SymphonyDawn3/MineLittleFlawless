@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "minecraft:nether_wastes",
+  "spawners": {
+    "type": "minelittleflawless:arinos",
+    "weight": 31,
+    "minCount": 4,
+    "maxCount": 4
+  }
+}

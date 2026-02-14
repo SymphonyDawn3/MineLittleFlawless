@@ -4,7 +4,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
@@ -12,16 +11,16 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.levelgen.Heightmap;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
-import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+import net.minecraftforge.event.ForgeEventFactory;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
 
-@EventBusSubscriber
+@Mod.EventBusSubscriber
 public class Twilight extends TamableTamersPony {
     public Twilight(EntityType<Twilight> type, Level world) {
         super(type, world);
@@ -30,7 +29,7 @@ public class Twilight extends TamableTamersPony {
     @Override
     public void registerGoals() {
         super.registerGoals();
-        this.goalSelector.addGoal(9, new TemptGoal(this, 1, itemstack -> itemstack.is(Items.BOOK), false));
+        this.goalSelector.addGoal(9, new TemptGoal(this, 1, Ingredient.of(Items.BOOK), false));
     }
 
     @Override
@@ -58,12 +57,12 @@ public class Twilight extends TamableTamersPony {
         TamableTamersPony retval;
 
         if (ageable instanceof Trixie)
-            retval = MineLittleFlawlessEntities.FLAWLESS.get().create(serverWorld, null, ageable.blockPosition(), MobSpawnType.BREEDING, false, false);
+            retval = MineLittleFlawlessEntities.FLAWLESS.get().create(serverWorld, null, null, ageable.blockPosition(), MobSpawnType.BREEDING, false, false);
         else
-            retval = MineLittleFlawlessEntities.TWILIGHT.get().create(serverWorld, null, ageable.blockPosition(), MobSpawnType.BREEDING, false, false);
+            retval = MineLittleFlawlessEntities.TWILIGHT.get().create(serverWorld, null, null, ageable.blockPosition(), MobSpawnType.BREEDING, false, false);
 
         if (retval != null) {
-            retval.finalizeSpawn(serverWorld, serverWorld.getCurrentDifficultyAt(retval.blockPosition()), MobSpawnType.BREEDING, null);
+            ForgeEventFactory.onFinalizeSpawn(retval, serverWorld, serverWorld.getCurrentDifficultyAt(retval.blockPosition()), MobSpawnType.BREEDING, null, null);
         }
         return retval;
     }
@@ -79,12 +78,6 @@ public class Twilight extends TamableTamersPony {
             return false;
 
         return this.isInLove() && otherAnimal.isInLove();
-    }
-
-    @SubscribeEvent
-    public static void init(RegisterSpawnPlacementsEvent event) {
-        event.register(MineLittleFlawlessEntities.TWILIGHT.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                (entityType, world, reason, pos, random) -> (world.getBlockState(pos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON) && world.getRawBrightness(pos, 0) > 8), RegisterSpawnPlacementsEvent.Operation.REPLACE);
     }
 
     @SubscribeEvent

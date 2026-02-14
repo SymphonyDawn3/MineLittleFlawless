@@ -1,6 +1,5 @@
 package org.projectflawless.minelittleflawless.entity;
 
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
@@ -20,11 +19,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.neoforged.neoforge.event.EventHooks;
+import net.minecraftforge.common.ForgeMod;
+import net.minecraftforge.event.ForgeEventFactory;
 
 import java.util.Objects;
 
-abstract class TamableTamersPony extends TamableAnimal {
+public abstract class TamableTamersPony extends TamableAnimal {
     public TamableTamersPony(EntityType<? extends TamableTamersPony> type, Level world) {
         super(type, world);
         this.xpReward = 0;
@@ -41,7 +41,7 @@ abstract class TamableTamersPony extends TamableAnimal {
         this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.2, false));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, (float) 6));
         this.goalSelector.addGoal(7, new FollowParentGoal(this, 1));
-        this.goalSelector.addGoal(8, new FollowOwnerGoal(this, 1, (float) 10, (float) 2));
+        this.goalSelector.addGoal(8, new FollowOwnerGoal(this, 1, (float) 10, (float) 2, false));
         this.goalSelector.addGoal(10, new RandomStrollGoal(this, 1));
         this.goalSelector.addGoal(11, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(12, new FloatGoal(this));
@@ -55,8 +55,8 @@ abstract class TamableTamersPony extends TamableAnimal {
         if (this.isFood(itemstack) || itemstack.is(ItemTags.create(ResourceLocation.parse("minelittleflawless:flawless_food")))) {
             if (this.isTame() && this.isOwnedBy(sourceentity)) {
                 if (this.getHealth() < this.getMaxHealth()) {
-                    FoodProperties foodproperties = itemstack.get(DataComponents.FOOD);
-                    float nutrition = foodproperties != null ? (float) foodproperties.nutrition() * 10 : 1;
+                    FoodProperties foodproperties = itemstack.getFoodProperties(this);
+                    float nutrition = foodproperties != null ? (float) foodproperties.getNutrition() * 10 : 1;
                     this.heal(nutrition);
                     this.usePlayerItem(sourceentity, hand, itemstack);
                     retval = InteractionResult.SUCCESS;
@@ -65,7 +65,7 @@ abstract class TamableTamersPony extends TamableAnimal {
                 }
             } else if (this.isFood(itemstack)) {
                 this.usePlayerItem(sourceentity, hand, itemstack);
-                if (this.random.nextInt(3) == 0 && !EventHooks.onAnimalTame(this, sourceentity)) {
+                if (this.random.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, sourceentity)) {
                     this.tame(sourceentity);
                     this.level().broadcastEntityEvent(this, (byte) 7);
                     this.onTameSuccess(sourceentity, hand);
@@ -99,7 +99,7 @@ abstract class TamableTamersPony extends TamableAnimal {
         builder = builder.add(Attributes.ARMOR, 0);
         builder = builder.add(Attributes.ATTACK_DAMAGE, 15);
         builder = builder.add(Attributes.FOLLOW_RANGE, 16);
-        builder = builder.add(Attributes.STEP_HEIGHT, 0.6);
+        builder = builder.add(ForgeMod.STEP_HEIGHT_ADDITION.get(), 0.6);
         return builder;
     }
 
