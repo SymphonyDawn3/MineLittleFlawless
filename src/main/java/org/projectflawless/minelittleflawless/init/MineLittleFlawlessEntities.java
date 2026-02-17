@@ -1,54 +1,48 @@
 package org.projectflawless.minelittleflawless.init;
 
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
-import org.projectflawless.minelittleflawless.entity.*;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import org.projectflawless.minelittleflawless.MineLittleFlawless;
+import org.projectflawless.minelittleflawless.entity.*;
 
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.core.registries.Registries;
 
 public class MineLittleFlawlessEntities {
-	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(Registries.ENTITY_TYPE, MineLittleFlawless.MODID);
-
-    public static final RegistryObject<EntityType<Bartleby>> BARTLEBY = register("bartleby",
+    public static final EntityType<Bartleby> BARTLEBY = register("bartleby",
 			EntityType.Builder.of(Bartleby::new, MobCategory.MONSTER)
-                    .setShouldReceiveVelocityUpdates(true)
-                    .setTrackingRange(64)
-                    .setUpdateInterval(3)
+                    .clientTrackingRange(64)
+                    .updateInterval(3)
 					.sized(0.75f, 3.125f));
 
-    public static final RegistryObject<EntityType<Flawless>> FLAWLESS = register("flawless",
+    public static final EntityType<Flawless> FLAWLESS = register("flawless",
 			EntityType.Builder.of(Flawless::new, MobCategory.CREATURE)
-                    .setShouldReceiveVelocityUpdates(true)
-                    .setTrackingRange(64)
-                    .setUpdateInterval(3)
+                    .clientTrackingRange(64)
+                    .updateInterval(3)
 					.sized(0.8125f, 2f));
 
-    public static final RegistryObject<EntityType<Twilight>> TWILIGHT = register("twilight",
+    public static final EntityType<Twilight> TWILIGHT = register("twilight",
             EntityType.Builder.of(Twilight::new, MobCategory.CREATURE)
-                    .setShouldReceiveVelocityUpdates(true)
-                    .setTrackingRange(64)
-                    .setUpdateInterval(3)
+                    .clientTrackingRange(64)
+                    .updateInterval(3)
                     .sized(0.8125f, 2f));
 
-    public static final RegistryObject<EntityType<Trixie>> TRIXIE = register("trixie",
+    public static final EntityType<Trixie> TRIXIE = register("trixie",
             EntityType.Builder.of(Trixie::new, MobCategory.CREATURE)
-                    .setShouldReceiveVelocityUpdates(true)
-                    .setTrackingRange(64)
-                    .setUpdateInterval(3)
+                    .clientTrackingRange(64)
+                    .updateInterval(3)
                     .sized(0.8125f, 2f));
 
-    public static final RegistryObject<EntityType<Arinos>> ARINOS = register("arinos",
+    public static final EntityType<Arinos> ARINOS = register("arinos",
             EntityType.Builder.of(Arinos::new, MobCategory.MONSTER)
-                    .setShouldReceiveVelocityUpdates(true)
-                    .setTrackingRange(64)
-                    .setUpdateInterval(3)
+                    .clientTrackingRange(64)
+                    .updateInterval(3)
                     .sized(0.8125f, 2f));
 
-    private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
-        return REGISTRY.register(registryname, () -> entityTypeBuilder.build(registryname));
+    private static <T extends Entity> EntityType<T> register(String entityName, EntityType.Builder<T> entityTypeBuilder) {
+        return Registry.register(BuiltInRegistries.ENTITY_TYPE,
+                new ResourceLocation(MineLittleFlawless.MOD_ID, entityName), entityTypeBuilder.build(entityName));
     }
 }

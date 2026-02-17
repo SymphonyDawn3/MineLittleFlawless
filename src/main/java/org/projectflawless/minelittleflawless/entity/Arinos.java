@@ -15,16 +15,10 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.event.ForgeEventFactory;
-import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
 
-import javax.annotation.Nullable;
-
-@Mod.EventBusSubscriber
 public class Arinos extends TamableTamersPony {
     public Arinos(EntityType<Arinos> type, Level world) {
         super(type, world);
@@ -38,17 +32,17 @@ public class Arinos extends TamableTamersPony {
 
     @Override
     public SoundEvent getAmbientSound() {
-        return MineLittleFlawlessSoundEvents.ARINOS_SPEAK.get();
+        return MineLittleFlawlessSoundEvents.ARINOS_SPEAK;
     }
 
     @Override
     public SoundEvent getHurtSound(DamageSource ds) {
-        return MineLittleFlawlessSoundEvents.ARINOS_HURT.get();
+        return MineLittleFlawlessSoundEvents.ARINOS_HURT;
     }
 
     @Override
     public SoundEvent getDeathSound() {
-        return MineLittleFlawlessSoundEvents.ARINOS_DEATH.get();
+        return MineLittleFlawlessSoundEvents.ARINOS_DEATH;
     }
 
     @Override
@@ -68,10 +62,10 @@ public class Arinos extends TamableTamersPony {
 
     @Override
     public AgeableMob getBreedOffspring(ServerLevel serverWorld, AgeableMob ageable) {
-        Arinos retval = MineLittleFlawlessEntities.ARINOS.get().create(serverWorld, null, null, ageable.blockPosition(), MobSpawnType.BREEDING, false, false);
+        Arinos retval = MineLittleFlawlessEntities.ARINOS.create(serverWorld, null, null, ageable.blockPosition(), MobSpawnType.BREEDING, false, false);
 
         if (retval != null) {
-            ForgeEventFactory.onFinalizeSpawn(retval, serverWorld, serverWorld.getCurrentDifficultyAt(retval.blockPosition()), MobSpawnType.BREEDING, null, null);
+            retval.finalizeSpawn(serverWorld, serverWorld.getCurrentDifficultyAt(retval.blockPosition()), MobSpawnType.BREEDING, null, null);
         }
         return retval;
     }
@@ -88,11 +82,6 @@ public class Arinos extends TamableTamersPony {
 
     @Override
     protected void playStepSound(BlockPos pos, BlockState state) {
-        this.playSound(MineLittleFlawlessSoundEvents.ARINOS_JINGLE.get(), 0.15f, 1.0f);
-    }
-
-    @SubscribeEvent
-    public static void registerAttributes(EntityAttributeCreationEvent event) {
-        event.put(MineLittleFlawlessEntities.ARINOS.get(), TamableTamersPony.createAttributes().build());
+        this.playSound(MineLittleFlawlessSoundEvents.ARINOS_JINGLE, 0.15f, 1.0f);
     }
 }
