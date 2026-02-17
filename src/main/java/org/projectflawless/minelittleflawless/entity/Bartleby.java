@@ -14,10 +14,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraftforge.common.ForgeMod;
-import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber
 public class Bartleby extends Monster {
 	public Bartleby(EntityType<Bartleby> type, Level world) {
 		super(type, world);
@@ -63,7 +60,6 @@ public class Bartleby extends Monster {
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
-		builder = builder.add(ForgeMod.STEP_HEIGHT_ADDITION.get(), 0.6);
 		return builder;
 	}
 }

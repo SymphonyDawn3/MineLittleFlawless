@@ -58,35 +58,35 @@ public class FlawlessAdvancements {
 
     public static void flawlessFriendship(ServerPlayer serverPlayer) {
         InternalFlawlessAdvancement flawlessAdvancement = new InternalFlawlessAdvancement(
-                serverPlayer, ResourceLocation.parse("minelittleflawless:flawless_friendship"));
+                serverPlayer, new ResourceLocation("minelittleflawless:flawless_friendship"));
 
         flawlessAdvancement.processAdvancement(1, false);
     }
 
     public static void fashionableFlawless(ServerPlayer serverPlayer) {
         InternalFlawlessAdvancement flawlessAdvancement = new InternalFlawlessAdvancement(
-                serverPlayer, ResourceLocation.parse("minelittleflawless:fashionable_flawless"));
+                serverPlayer, new ResourceLocation("minelittleflawless:fashionable_flawless"));
 
         flawlessAdvancement.processAdvancement(1, true);
     }
 
     public static void flawlessBuddles(ServerPlayer serverPlayer) {
         InternalFlawlessAdvancement flawlessAdvancement = new InternalFlawlessAdvancement(
-                serverPlayer, ResourceLocation.parse("minelittleflawless:flawless_buddies"));
+                serverPlayer, new ResourceLocation("minelittleflawless:flawless_buddies"));
 
         flawlessAdvancement.processAdvancement(2, false);
     }
 
     public static void flawlessEnchilada(ServerPlayer serverPlayer) {
         InternalFlawlessAdvancement flawlessAdvancement = new InternalFlawlessAdvancement(
-                serverPlayer, ResourceLocation.parse("minelittleflawless:flawless_enchilada"));
+                serverPlayer, new ResourceLocation("minelittleflawless:flawless_enchilada"));
 
         flawlessAdvancement.processAdvancement(6, false);
     }
 
     public static void flawlessFanClub(ServerPlayer serverPlayer) {
         InternalFlawlessAdvancement flawlessAdvancement = new InternalFlawlessAdvancement(
-                serverPlayer, ResourceLocation.parse("minelittleflawless:flawless_fan_club"));
+                serverPlayer, new ResourceLocation("minelittleflawless:flawless_fan_club"));
 
         flawlessAdvancement.processAdvancement(6, true);
     }

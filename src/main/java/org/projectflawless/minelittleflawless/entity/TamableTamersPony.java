@@ -1,7 +1,8 @@
 package org.projectflawless.minelittleflawless.entity;
 
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
@@ -19,8 +20,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.ForgeMod;
-import net.minecraftforge.event.ForgeEventFactory;
 
 import java.util.Objects;
 
@@ -52,10 +51,10 @@ public abstract class TamableTamersPony extends TamableAnimal {
         ItemStack itemstack = sourceentity.getItemInHand(hand);
         InteractionResult retval = InteractionResult.PASS;
 
-        if (this.isFood(itemstack) || itemstack.is(ItemTags.create(ResourceLocation.parse("minelittleflawless:flawless_food")))) {
+        if (this.isFood(itemstack) || itemstack.is(TagKey.create(Registries.ITEM, new ResourceLocation("minelittleflawless:flawless_food")))) {
             if (this.isTame() && this.isOwnedBy(sourceentity)) {
                 if (this.getHealth() < this.getMaxHealth()) {
-                    FoodProperties foodproperties = itemstack.getFoodProperties(this);
+                    FoodProperties foodproperties = itemstack.getItem().getFoodProperties();
                     float nutrition = foodproperties != null ? (float) foodproperties.getNutrition() * 10 : 1;
                     this.heal(nutrition);
                     this.usePlayerItem(sourceentity, hand, itemstack);
@@ -65,7 +64,7 @@ public abstract class TamableTamersPony extends TamableAnimal {
                 }
             } else if (this.isFood(itemstack)) {
                 this.usePlayerItem(sourceentity, hand, itemstack);
-                if (this.random.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, sourceentity)) {
+                if (this.random.nextInt(3) == 0) {
                     this.tame(sourceentity);
                     this.level().broadcastEntityEvent(this, (byte) 7);
                     this.onTameSuccess(sourceentity, hand);
@@ -99,7 +98,6 @@ public abstract class TamableTamersPony extends TamableAnimal {
         builder = builder.add(Attributes.ARMOR, 0);
         builder = builder.add(Attributes.ATTACK_DAMAGE, 15);
         builder = builder.add(Attributes.FOLLOW_RANGE, 16);
-        builder = builder.add(ForgeMod.STEP_HEIGHT_ADDITION.get(), 0.6);
         return builder;
     }
 
