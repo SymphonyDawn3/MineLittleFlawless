@@ -1,26 +1,29 @@
 package org.projectflawless.minelittleflawless;
 
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessTabs;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessItems;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
+import net.fabricmc.api.ModInitializer;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.projectflawless.minelittleflawless.init.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Mod(MineLittleFlawless.MODID)
-public class MineLittleFlawless {
-    public static final Logger LOGGER = LogManager.getLogger(MineLittleFlawless.class);
-    public static final String MODID = "minelittleflawless";
+public class MineLittleFlawless implements ModInitializer {
+	public static final String MOD_ID = "minelittleflawless";
 
-    public MineLittleFlawless(FMLJavaModLoadingContext context) {
-        IEventBus modEventBus = context.getModEventBus();
-        MineLittleFlawlessItems.REGISTRY.register(modEventBus);
-        MineLittleFlawlessEntities.REGISTRY.register(modEventBus);
-        MineLittleFlawlessTabs.REGISTRY.register(modEventBus);
-        MineLittleFlawlessSoundEvents.REGISTRY.register(modEventBus);
-    }
+	// This logger is used to write text to the console and the log file.
+	// It is considered best practice to use your mod id as the logger's name.
+	// That way, it's clear which mod wrote info, warnings, and errors.
+	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
+	@Override
+	public void onInitialize() {
+        MineLittleFlawlessItems.init();
+        MineLittleFlawlessSoundEvents.init();
+        MineLittleFlawlessSpawns.init();
+        MineLittleFlawlessBiomeSpawns.init();
+        MineLittleFlawlessTabs.buildTabContentsVanilla();
+        MineLittleFlawlessAttributes.registerAttributes();
+        FlawlessEvents.init();
+
+		LOGGER.info("Hello Fabric world!");
+	}
 }

@@ -1,33 +1,29 @@
 package org.projectflawless.minelittleflawless.init;
 
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.DeferredRegister;
-import org.projectflawless.minelittleflawless.MineLittleFlawless;
+import net.fabricmc.fabric.api.event.Event;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.core.registries.Registries;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class MineLittleFlawlessTabs {
-    public static final DeferredRegister<CreativeModeTab> REGISTRY = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MineLittleFlawless.MODID);
+    final public static Event<ItemGroupEvents.ModifyEntries> SPAWN_EGGS = ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.SPAWN_EGGS);
+    final public static Event<ItemGroupEvents.ModifyEntries> TOOLS_AND_UTILITIES = ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES);
 
-    @SubscribeEvent
-    public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
-        if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
-            tabData.accept(MineLittleFlawlessItems.FLAWLESS_SPAWN_EGG.get());
-            tabData.accept(MineLittleFlawlessItems.TWILIGHT_SPAWN_EGG.get());
-            tabData.accept(MineLittleFlawlessItems.TRIXIE_SPAWN_EGG.get());
-            tabData.accept(MineLittleFlawlessItems.ARINOS_SPAWN_EGG.get());
-        } else if (tabData.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
-            tabData.accept(MineLittleFlawlessItems.FLAWLESS_MAGICIAN_CLOTHING.get());
-            tabData.accept(MineLittleFlawlessItems.TUXEDO.get());
-            tabData.accept(MineLittleFlawlessItems.FARMER.get());
-            tabData.accept(MineLittleFlawlessItems.PAJAMAS.get());
-            tabData.accept(MineLittleFlawlessItems.SCHOOLGIRL.get());
-			tabData.accept(MineLittleFlawlessItems.ROCKSTAR.get());
-        }
+    public static void buildTabContentsVanilla() {
+        SPAWN_EGGS.register(entries -> {
+            entries.accept(MineLittleFlawlessItems.FLAWLESS_SPAWN_EGG);
+            entries.accept(MineLittleFlawlessItems.TWILIGHT_SPAWN_EGG);
+            entries.accept(MineLittleFlawlessItems.TRIXIE_SPAWN_EGG);
+            entries.accept(MineLittleFlawlessItems.ARINOS_SPAWN_EGG);
+        });
+
+        TOOLS_AND_UTILITIES.register(entries -> {
+            entries.accept(MineLittleFlawlessItems.FLAWLESS_MAGICIAN_CLOTHING);
+            entries.accept(MineLittleFlawlessItems.TUXEDO);
+            entries.accept(MineLittleFlawlessItems.FARMER);
+            entries.accept(MineLittleFlawlessItems.PAJAMAS);
+            entries.accept(MineLittleFlawlessItems.SCHOOLGIRL);
+            entries.accept(MineLittleFlawlessItems.ROCKSTAR);
+        });
     }
 }
