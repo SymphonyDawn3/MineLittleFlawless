@@ -70,7 +70,9 @@ jar {
 	from("LICENSE") {
 		rename { "${it}_${inputs.properties.archiveFileName}"}
 	}
+}
 
+remapJar {
     archiveFileName = "${mod_id}-${mod_version}-fabric-${minecraft_version}.jar"
 }
 
