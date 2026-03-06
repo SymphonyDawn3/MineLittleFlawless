@@ -105,5 +105,15 @@ public class MineLittleFlawlessBiomeSpawns {
                 1,
                 4
         );
+
+        // Trixiebelle
+        BiomeModifications.addSpawn(
+                biomeSelectionContext -> biomeSelectionContext.hasTag(MineLittleFlawlessTags.SPAWNS_TRIXIEBELLE),
+                MobCategory.CREATURE,
+                MineLittleFlawlessEntities.TRIXIEBELLE,
+                20,
+                4,
+                4
+        );
     }
 }
