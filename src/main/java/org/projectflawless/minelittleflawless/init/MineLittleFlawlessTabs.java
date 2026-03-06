@@ -15,6 +15,7 @@ public class MineLittleFlawlessTabs {
             entries.accept(MineLittleFlawlessItems.TWILIGHT_SPAWN_EGG);
             entries.accept(MineLittleFlawlessItems.TRIXIE_SPAWN_EGG);
             entries.accept(MineLittleFlawlessItems.ARINOS_SPAWN_EGG);
+            entries.accept(MineLittleFlawlessItems.TRIXIEBELLE_SPAWN_EGG);
         });
 
         TOOLS_AND_UTILITIES.register(entries -> {
