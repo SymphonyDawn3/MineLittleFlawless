@@ -28,6 +28,12 @@ loom {
 		}
 	}
 
+    runs {
+        client {
+            programArgs(["--username", "Dev"])
+        }
+    }
+
 }
 
 dependencies {
