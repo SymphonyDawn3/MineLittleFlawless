@@ -1,10 +1,10 @@
-package org.projectflawless.minelittleflawless.client.renderer;
+package org.projectflawless.minelittleflawless.client.renderer.entity;
 
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 import org.projectflawless.minelittleflawless.MineLittleFlawless;
-import org.projectflawless.minelittleflawless.client.model.TwilightModel;
+import org.projectflawless.minelittleflawless.client.model.entity.TwilightModel;
 import org.projectflawless.minelittleflawless.entity.Twilight;
 
 public class TwilightRenderer extends MobRenderer<Twilight, TwilightModel> {

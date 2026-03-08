@@ -1,8 +1,10 @@
-package org.projectflawless.minelittleflawless.client.renderer;
+package org.projectflawless.minelittleflawless.client.renderer.entity;
 
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import org.projectflawless.minelittleflawless.MineLittleFlawless;
+import org.projectflawless.minelittleflawless.client.model.entity.FlawlessModel;
+import org.projectflawless.minelittleflawless.client.model.entity.clothing.*;
 import org.projectflawless.minelittleflawless.entity.Flawless;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessItems;
 import org.projectflawless.minelittleflawless.client.model.*;

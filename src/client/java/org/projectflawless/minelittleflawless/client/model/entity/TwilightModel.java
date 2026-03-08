@@ -1,4 +1,4 @@
-package org.projectflawless.minelittleflawless.client.model;
+package org.projectflawless.minelittleflawless.client.model.entity;
 
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;

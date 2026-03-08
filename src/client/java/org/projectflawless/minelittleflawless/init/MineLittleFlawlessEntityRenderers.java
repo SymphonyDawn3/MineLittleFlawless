@@ -1,7 +1,7 @@
 package org.projectflawless.minelittleflawless.init;
 
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import org.projectflawless.minelittleflawless.client.renderer.*;
+import org.projectflawless.minelittleflawless.client.renderer.entity.*;
 
 public class MineLittleFlawlessEntityRenderers {
 	public static void registerEntityRenderers() {
