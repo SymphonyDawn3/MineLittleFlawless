@@ -23,24 +23,18 @@ public class PajamasModel extends AgeableHierarchicalModel<Flawless> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(MineLittleFlawless.MOD_ID, "pajamas_model"), "main");
 
     private final ModelPart root;
-    private final ModelPart body;
-	private final ModelPart pajamas;
 	private final ModelPart head;
-	private final ModelPart nightcap;
-	private final ModelPart sleeves;
 	private final ModelPart rightSleeve;
 	private final ModelPart leftSleeve;
 
 	public PajamasModel(ModelPart root) {
         super(0.5f, 21.2086f);
         this.root = root;
-		this.body = this.root.getChild("body");
-		this.pajamas = this.body.getChild("pajamas");
-		this.head = this.body.getChild("head");
-		this.nightcap = this.head.getChild("nightcap");
-		this.sleeves = this.body.getChild("sleeves");
-		this.rightSleeve = this.sleeves.getChild("rightSleeve");
-		this.leftSleeve = this.sleeves.getChild("leftSleeve");
+		ModelPart body = this.root.getChild("body");
+		this.head = body.getChild("head");
+		ModelPart sleeves = body.getChild("sleeves");
+		this.rightSleeve = sleeves.getChild("rightSleeve");
+		this.leftSleeve = sleeves.getChild("leftSleeve");
 	}
 
 	public static LayerDefinition createBodyLayer() {
@@ -49,20 +43,20 @@ public class PajamasModel extends AgeableHierarchicalModel<Flawless> {
 
 		PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create(), PartPose.offset(0.0F, 5.3333F, 0.3333F));
 
-		PartDefinition pajamas = body.addOrReplaceChild("pajamas", CubeListBuilder.create().texOffs(0, 30).addBox(-4.0F, -1.3333F, -9.3333F, 8.0F, 8.0F, 4.0F, new CubeDeformation(0.3F))
+		body.addOrReplaceChild("pajamas", CubeListBuilder.create().texOffs(0, 30).addBox(-4.0F, -1.3333F, -9.3333F, 8.0F, 8.0F, 4.0F, new CubeDeformation(0.3F))
 		.texOffs(0, 0).addBox(-4.0F, -1.3333F, -4.7333F, 8.0F, 8.0F, 12.0F, new CubeDeformation(0.3F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
 		PartDefinition head = body.addOrReplaceChild("head", CubeListBuilder.create(), PartPose.offset(0.0F, -5.3333F, -7.3333F));
 
-		PartDefinition nightcap = head.addOrReplaceChild("nightcap", CubeListBuilder.create().texOffs(0, 20).addBox(-4.0F, -8.0F, -6.0F, 8.0F, 2.0F, 8.0F, new CubeDeformation(0.5F))
+		head.addOrReplaceChild("nightcap", CubeListBuilder.create().texOffs(0, 20).addBox(-4.0F, -8.0F, -6.0F, 8.0F, 2.0F, 8.0F, new CubeDeformation(0.5F))
 		.texOffs(24, 30).addBox(-3.0F, -11.0F, -4.0F, 6.0F, 2.0F, 7.0F, new CubeDeformation(0.5F))
 		.texOffs(32, 20).addBox(-2.0F, -13.0F, -2.0F, 4.0F, 1.0F, 6.0F, new CubeDeformation(0.5F)), PartPose.offset(0.0F, -1.0F, 0.0F));
 
 		PartDefinition sleeves = body.addOrReplaceChild("sleeves", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-		PartDefinition rightSleeve = sleeves.addOrReplaceChild("rightSleeve", CubeListBuilder.create().texOffs(24, 39).addBox(0.0F, 4.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 2.6667F, -5.3333F));
+		sleeves.addOrReplaceChild("rightSleeve", CubeListBuilder.create().texOffs(24, 39).addBox(0.0F, 4.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 2.6667F, -5.3333F));
 
-		PartDefinition leftSleeve = sleeves.addOrReplaceChild("leftSleeve", CubeListBuilder.create().texOffs(40, 0).addBox(-4.0F, 4.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 2.6667F, -5.3333F));
+		sleeves.addOrReplaceChild("leftSleeve", CubeListBuilder.create().texOffs(40, 0).addBox(-4.0F, 4.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 2.6667F, -5.3333F));
 
 		return LayerDefinition.create(meshdefinition, 64, 64);
 	}

@@ -23,32 +23,23 @@ public class SchoolgirlModel extends AgeableHierarchicalModel<Flawless> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(MineLittleFlawless.MOD_ID, "schoolgirl_model"), "main");
 
     private final ModelPart root;
-    private final ModelPart body;
 	private final ModelPart head;
-	private final ModelPart ears;
-	private final ModelPart collar;
-	private final ModelPart shirt;
-	private final ModelPart sleeves;
 	private final ModelPart rightSleeve;
 	private final ModelPart leftSleeve;
-	private final ModelPart socks;
 	private final ModelPart leftSock;
 	private final ModelPart rightSock;
 
 	public SchoolgirlModel(ModelPart root) {
         super(0.5f, 21.2086f);
         this.root = root;
-		this.body = this.root.getChild("body");
-		this.head = this.body.getChild("head");
-		this.ears = this.head.getChild("ears");
-		this.collar = this.body.getChild("collar");
-		this.shirt = this.body.getChild("shirt");
-		this.sleeves = this.body.getChild("sleeves");
-		this.rightSleeve = this.sleeves.getChild("rightSleeve");
-		this.leftSleeve = this.sleeves.getChild("leftSleeve");
-		this.socks = this.body.getChild("socks");
-		this.leftSock = this.socks.getChild("leftSock");
-		this.rightSock = this.socks.getChild("rightSock");
+		ModelPart body = this.root.getChild("body");
+		this.head = body.getChild("head");
+		ModelPart sleeves = body.getChild("sleeves");
+		this.rightSleeve = sleeves.getChild("rightSleeve");
+		this.leftSleeve = sleeves.getChild("leftSleeve");
+		ModelPart socks = body.getChild("socks");
+		this.leftSock = socks.getChild("leftSock");
+		this.rightSock = socks.getChild("rightSock");
 	}
 
 	public static LayerDefinition createBodyLayer() {
@@ -59,24 +50,24 @@ public class SchoolgirlModel extends AgeableHierarchicalModel<Flawless> {
 
 		PartDefinition head = body.addOrReplaceChild("head", CubeListBuilder.create(), PartPose.offset(0.0F, -5.3333F, -7.3333F));
 
-		PartDefinition ears = head.addOrReplaceChild("ears", CubeListBuilder.create().texOffs(16, 32).addBox(2.0F, -8.0F, -1.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+		head.addOrReplaceChild("ears", CubeListBuilder.create().texOffs(16, 32).addBox(2.0F, -8.0F, -1.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-		PartDefinition collar = body.addOrReplaceChild("collar", CubeListBuilder.create().texOffs(40, 0).addBox(-2.0F, 1.0F, -2.75F, 4.0F, 4.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offsetAndRotation(0.0F, -5.3333F, -7.3333F, 0.1571F, 0.0F, 0.0F));
+		body.addOrReplaceChild("collar", CubeListBuilder.create().texOffs(40, 0).addBox(-2.0F, 1.0F, -2.75F, 4.0F, 4.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offsetAndRotation(0.0F, -5.3333F, -7.3333F, 0.1571F, 0.0F, 0.0F));
 
-		PartDefinition shirt = body.addOrReplaceChild("shirt", CubeListBuilder.create().texOffs(0, 20).addBox(-4.0F, -1.3333F, -9.3333F, 8.0F, 8.0F, 4.0F, new CubeDeformation(0.3F))
+		body.addOrReplaceChild("shirt", CubeListBuilder.create().texOffs(0, 20).addBox(-4.0F, -1.3333F, -9.3333F, 8.0F, 8.0F, 4.0F, new CubeDeformation(0.3F))
 		.texOffs(0, 0).addBox(-4.0F, -1.3333F, -4.7333F, 8.0F, 8.0F, 12.0F, new CubeDeformation(0.3F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
 		PartDefinition sleeves = body.addOrReplaceChild("sleeves", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-		PartDefinition rightSleeve = sleeves.addOrReplaceChild("rightSleeve", CubeListBuilder.create().texOffs(24, 20).addBox(0.0F, 4.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 2.6667F, -5.3333F));
+		sleeves.addOrReplaceChild("rightSleeve", CubeListBuilder.create().texOffs(24, 20).addBox(0.0F, 4.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 2.6667F, -5.3333F));
 
-		PartDefinition leftSleeve = sleeves.addOrReplaceChild("leftSleeve", CubeListBuilder.create().texOffs(0, 32).addBox(-4.0F, 4.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 2.6667F, -5.3333F));
+		sleeves.addOrReplaceChild("leftSleeve", CubeListBuilder.create().texOffs(0, 32).addBox(-4.0F, 4.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 2.6667F, -5.3333F));
 
 		PartDefinition socks = body.addOrReplaceChild("socks", CubeListBuilder.create(), PartPose.offset(0.0F, 2.6667F, 3.6667F));
 
-		PartDefinition leftSock = socks.addOrReplaceChild("leftSock", CubeListBuilder.create().texOffs(16, 36).addBox(-4.0F, 4.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+		socks.addOrReplaceChild("leftSock", CubeListBuilder.create().texOffs(16, 36).addBox(-4.0F, 4.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-		PartDefinition rightSock = socks.addOrReplaceChild("rightSock", CubeListBuilder.create().texOffs(32, 36).addBox(0.0F, 4.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+		socks.addOrReplaceChild("rightSock", CubeListBuilder.create().texOffs(32, 36).addBox(0.0F, 4.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.25F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
 		return LayerDefinition.create(meshdefinition, 64, 64);
 	}
