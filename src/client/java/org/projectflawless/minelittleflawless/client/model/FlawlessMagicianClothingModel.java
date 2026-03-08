@@ -22,18 +22,13 @@ public class FlawlessMagicianClothingModel extends AgeableHierarchicalModel<Flaw
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(MineLittleFlawless.MOD_ID, "flawless_magician_clothing_model"), "main");
 
     private final ModelPart root;
-    private final ModelPart body;
-	private final ModelPart cloak;
 	private final ModelPart head;
-	private final ModelPart top_hat;
 
 	public FlawlessMagicianClothingModel(ModelPart root) {
         super(0.5f, 21.2086f);
         this.root = root;
-		this.body = this.root.getChild("body");
-		this.cloak = this.body.getChild("cloak");
-		this.head = this.body.getChild("head");
-		this.top_hat = this.head.getChild("top_hat");
+		ModelPart body = this.root.getChild("body");
+		this.head = body.getChild("head");
 	}
 
 	public static LayerDefinition createBodyLayer() {
@@ -42,12 +37,12 @@ public class FlawlessMagicianClothingModel extends AgeableHierarchicalModel<Flaw
 
 		PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create(), PartPose.offset(0.0F, 5.3333F, 0.3333F));
 
-		PartDefinition cloak = body.addOrReplaceChild("cloak", CubeListBuilder.create().texOffs(40, 38).addBox(-4.0F, -1.3333F, -9.3333F, 8.0F, 16.0F, 4.0F, new CubeDeformation(1.0F))
+		body.addOrReplaceChild("cloak", CubeListBuilder.create().texOffs(40, 38).addBox(-4.0F, -1.3333F, -9.3333F, 8.0F, 16.0F, 4.0F, new CubeDeformation(1.0F))
 		.texOffs(0, 18).addBox(-4.0F, -1.3333F, -3.3333F, 8.0F, 18.0F, 12.0F, new CubeDeformation(1.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
 		PartDefinition head = body.addOrReplaceChild("head", CubeListBuilder.create(), PartPose.offset(0.0F, -5.3333F, -7.3333F));
 
-		PartDefinition top_hat = head.addOrReplaceChild("top_hat", CubeListBuilder.create().texOffs(0, 0).addBox(-8.0F, -2.0F, -8.0F, 16.0F, 2.0F, 16.0F, new CubeDeformation(0.0F))
+        head.addOrReplaceChild("top_hat", CubeListBuilder.create().texOffs(0, 0).addBox(-8.0F, -2.0F, -8.0F, 16.0F, 2.0F, 16.0F, new CubeDeformation(0.0F))
 		.texOffs(40, 18).addBox(-5.0F, -12.0F, -5.0F, 10.0F, 10.0F, 10.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -4.2346F, -0.1522F, -0.48F, 0.0F, 0.0F));
 
 		return LayerDefinition.create(meshdefinition, 128, 128);
