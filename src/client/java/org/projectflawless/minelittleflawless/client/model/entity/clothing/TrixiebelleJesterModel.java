@@ -2,7 +2,7 @@
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
-package org.projectflawless.minelittleflawless.client.model;
+package org.projectflawless.minelittleflawless.client.model.entity.clothing;
 
 import net.minecraft.client.model.AgeableHierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;

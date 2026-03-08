@@ -2,6 +2,8 @@ package org.projectflawless.minelittleflawless.init;
 
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import org.projectflawless.minelittleflawless.client.model.*;
+import org.projectflawless.minelittleflawless.client.model.entity.*;
+import org.projectflawless.minelittleflawless.client.model.entity.clothing.*;
 
 public class MineLittleFlawlessModels {
 	public static void registerLayerDefinitions() {

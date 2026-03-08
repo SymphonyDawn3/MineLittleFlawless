@@ -1,4 +1,4 @@
-package org.projectflawless.minelittleflawless.client.renderer;
+package org.projectflawless.minelittleflawless.client.renderer.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -7,8 +7,8 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.resources.ResourceLocation;
 import org.projectflawless.minelittleflawless.MineLittleFlawless;
-import org.projectflawless.minelittleflawless.client.model.TrixiebelleJesterModel;
-import org.projectflawless.minelittleflawless.client.model.TrixiebelleModel;
+import org.projectflawless.minelittleflawless.client.model.entity.clothing.TrixiebelleJesterModel;
+import org.projectflawless.minelittleflawless.client.model.entity.TrixiebelleModel;
 import org.projectflawless.minelittleflawless.entity.Trixiebelle;
 
 public class TrixiebelleRenderer extends MobRenderer<Trixiebelle, TrixiebelleModel> {

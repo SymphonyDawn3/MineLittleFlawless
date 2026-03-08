@@ -1,4 +1,4 @@
-package org.projectflawless.minelittleflawless.client.renderer;
+package org.projectflawless.minelittleflawless.client.renderer.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -7,8 +7,8 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.resources.ResourceLocation;
 import org.projectflawless.minelittleflawless.MineLittleFlawless;
-import org.projectflawless.minelittleflawless.client.model.ArinosModel;
-import org.projectflawless.minelittleflawless.client.model.JesterModel;
+import org.projectflawless.minelittleflawless.client.model.entity.ArinosModel;
+import org.projectflawless.minelittleflawless.client.model.entity.clothing.JesterModel;
 import org.projectflawless.minelittleflawless.entity.Arinos;
 
 public class ArinosRenderer extends MobRenderer<Arinos, ArinosModel> {

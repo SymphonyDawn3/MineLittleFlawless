@@ -1,4 +1,4 @@
-package org.projectflawless.minelittleflawless.client.model;
+package org.projectflawless.minelittleflawless.client.model.entity.clothing;
 
 import net.minecraft.client.model.AgeableHierarchicalModel;
 

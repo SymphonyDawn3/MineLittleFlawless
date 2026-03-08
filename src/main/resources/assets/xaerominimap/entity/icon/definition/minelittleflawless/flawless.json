@@ -7,14 +7,14 @@
 	        "modelPartsFields": [
 	        ],
 	        "modelMainPartFieldAliases": [
-	            "org.projectflawless.minelittleflawless.client.model.FlawlessModel;head"
+	            "org.projectflawless.minelittleflawless.client.model.entity.TamersPonyModel;head"
 	        ],
 	        "modelRootPath": [
 	            [
-	                "org.projectflawless.minelittleflawless.client.model.FlawlessModel;root"
+	                "org.projectflawless.minelittleflawless.client.model.entity.TamersPonyModel;root"
 	            ],
 	            [
-	                "org.projectflawless.minelittleflawless.client.model.FlawlessModel;body"
+	                "org.projectflawless.minelittleflawless.client.model.entity.TamersPonyModel;body"
 	            ]
 	        ],
 	        "renderingFullModel": false,
