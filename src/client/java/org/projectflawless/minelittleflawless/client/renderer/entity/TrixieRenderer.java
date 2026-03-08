@@ -1,10 +1,10 @@
-package org.projectflawless.minelittleflawless.client.renderer;
+package org.projectflawless.minelittleflawless.client.renderer.entity;
 
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 import org.projectflawless.minelittleflawless.MineLittleFlawless;
-import org.projectflawless.minelittleflawless.client.model.TrixieModel;
+import org.projectflawless.minelittleflawless.client.model.entity.TrixieModel;
 import org.projectflawless.minelittleflawless.entity.Trixie;
 
 public class TrixieRenderer extends MobRenderer<Trixie, TrixieModel> {

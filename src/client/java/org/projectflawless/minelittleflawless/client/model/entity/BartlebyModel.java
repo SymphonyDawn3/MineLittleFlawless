@@ -1,4 +1,4 @@
-package org.projectflawless.minelittleflawless.client.model;
+package org.projectflawless.minelittleflawless.client.model.entity;
 
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.util.Mth;

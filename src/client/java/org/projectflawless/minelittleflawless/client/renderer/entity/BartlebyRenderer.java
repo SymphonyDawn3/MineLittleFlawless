@@ -1,7 +1,7 @@
-package org.projectflawless.minelittleflawless.client.renderer;
+package org.projectflawless.minelittleflawless.client.renderer.entity;
 
 import org.projectflawless.minelittleflawless.MineLittleFlawless;
-import org.projectflawless.minelittleflawless.client.model.BartlebyModel;
+import org.projectflawless.minelittleflawless.client.model.entity.BartlebyModel;
 import org.projectflawless.minelittleflawless.entity.Bartleby;
 
 import net.minecraft.resources.ResourceLocation;
