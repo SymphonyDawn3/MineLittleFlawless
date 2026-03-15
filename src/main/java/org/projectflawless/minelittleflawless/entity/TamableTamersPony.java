@@ -1,8 +1,5 @@
 package org.projectflawless.minelittleflawless.entity;
 
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
@@ -20,6 +17,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import org.projectflawless.minelittleflawless.init.MineLittleFlawlessTags;
 
 import java.util.Objects;
 
@@ -51,7 +49,7 @@ public abstract class TamableTamersPony extends TamableAnimal {
         ItemStack itemstack = sourceentity.getItemInHand(hand);
         InteractionResult retval = InteractionResult.PASS;
 
-        if (this.isFood(itemstack) || itemstack.is(TagKey.create(Registries.ITEM, new ResourceLocation("minelittleflawless:flawless_food")))) {
+        if (this.isFood(itemstack) || itemstack.is(MineLittleFlawlessTags.FLAWLESS_FOOD)) {
             if (this.isTame() && this.isOwnedBy(sourceentity)) {
                 if (this.getHealth() < this.getMaxHealth()) {
                     FoodProperties foodproperties = itemstack.getItem().getFoodProperties();

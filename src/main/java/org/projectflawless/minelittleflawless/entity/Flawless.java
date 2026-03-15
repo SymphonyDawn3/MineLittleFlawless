@@ -3,14 +3,12 @@ package org.projectflawless.minelittleflawless.entity;
 import net.minecraft.Util;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.FlawlessAdvancements;
-import org.projectflawless.minelittleflawless.MineLittleFlawless;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessItems;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
 
@@ -47,6 +45,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.nbt.CompoundTag;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
+import org.projectflawless.minelittleflawless.init.MineLittleFlawlessTags;
 
 import java.util.Comparator;
 import java.util.Objects;
@@ -89,7 +88,7 @@ public class Flawless extends TamableTamersPony implements Shearable {
 
     @Override
     public boolean canAttackType(EntityType<?> entityType) {
-        return !(entityType.is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("minelittleflawless:sparklemoon_family"))));
+        return !(entityType.is(MineLittleFlawlessTags.SPARKLEMOON_FAMILY));
     }
 
     @Override
@@ -119,8 +118,7 @@ public class Flawless extends TamableTamersPony implements Shearable {
             flawlessClothing = "";
         } else {
             randomFlawlessClothing = new ItemStack(
-                    getRandomItemFromTags(new ResourceLocation(
-                            MineLittleFlawless.MOD_ID, "flawless_clothing")));
+                    getRandomItemFromTags(MineLittleFlawlessTags.FLAWLESS_CLOTHING));
             flawlessClothing = Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(randomFlawlessClothing.getItem())).toString();
             this.wearClothing(randomFlawlessClothing);
         }
@@ -147,7 +145,7 @@ public class Flawless extends TamableTamersPony implements Shearable {
 		ItemStack itemstack = sourceentity.getItemInHand(hand);
 		InteractionResult retval = InteractionResult.PASS;
 
-        if (itemstack.is(TagKey.create(Registries.ITEM, new ResourceLocation("minelittleflawless:flawless_clothing")))) {
+        if (itemstack.is(MineLittleFlawlessTags.FLAWLESS_CLOTHING)) {
             if (this.getEntityData().get(DATA_CLOTHING).isEmpty()) {
                 String flawlessClothing = Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(itemstack.getItem())).toString();
                 this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.HORSE_SADDLE, SoundSource.AMBIENT, 1, 1);
@@ -285,8 +283,8 @@ public class Flawless extends TamableTamersPony implements Shearable {
 
                     if (flawlessClothing.equals(BuiltInRegistries.ITEM.getKey(MineLittleFlawlessItems.FARMER).toString())) {
                         ItemEntity entityToSpawn = new ItemEntity(player.level(), entityiterator.getX(),
-                                entityiterator.getY(), entityiterator.getZ(), new ItemStack(getRandomItemFromTags(
-                                        new ResourceLocation(MineLittleFlawless.MOD_ID, "farmer_gifts"))));
+                                entityiterator.getY(), entityiterator.getZ(), new ItemStack(
+                                        getRandomItemFromTags(MineLittleFlawlessTags.FARMER_GIFTS)));
                         entityToSpawn.setPickUpDelay(10);
                         player.level().addFreshEntity(entityToSpawn);
                     }
@@ -323,9 +321,9 @@ public class Flawless extends TamableTamersPony implements Shearable {
         return !this.getEntityData().get(DATA_CLOTHING).isEmpty();
     }
 
-    public static Item getRandomItemFromTags(ResourceLocation tagResource) {
+    public static Item getRandomItemFromTags(TagKey<Item> tagItem) {
         return Util.getRandomSafe(
-                BuiltInRegistries.ITEM.getOrCreateTag(TagKey.create(Registries.ITEM, tagResource))
+                BuiltInRegistries.ITEM.getOrCreateTag(tagItem)
                         .stream()
                         .map(Holder::value)
                         .toList(), RandomSource.create()).orElseThrow();
