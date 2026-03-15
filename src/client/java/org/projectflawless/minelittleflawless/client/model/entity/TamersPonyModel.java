@@ -17,6 +17,7 @@ public class TamersPonyModel<E extends TamableTamersPony> extends AgeableHierarc
     protected final ModelPart root;
     protected final ModelPart body;
     protected final ModelPart head;
+    protected final ModelPart horn;
     protected final ModelPart snout;
     protected final ModelPart stallion;
     protected final ModelPart wings;
@@ -34,6 +35,7 @@ public class TamersPonyModel<E extends TamableTamersPony> extends AgeableHierarc
         this.root = root;
         this.body = this.root.getChild("body");
         this.head = this.body.getChild("head");
+        this.horn = this.head.getChild("horn");
         this.snout = this.head.getChild("snout");
         this.stallion = this.snout.getChild("stallion");
         this.wings = this.body.getChild("wings");
