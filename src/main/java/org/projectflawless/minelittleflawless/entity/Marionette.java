@@ -11,6 +11,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
+import org.projectflawless.minelittleflawless.init.MineLittleFlawlessTags;
 
 public class Marionette extends TamableTamersPony {
     public Marionette(EntityType<Marionette> type, Level world) {
@@ -21,6 +22,11 @@ public class Marionette extends TamableTamersPony {
     protected void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(9, new TemptGoal(this, 1, Ingredient.of(Items.SWEET_BERRIES), false));
+    }
+
+    @Override
+    public boolean canAttackType(EntityType<?> entityType) {
+        return !entityType.is(MineLittleFlawlessTags.SPARKLEMOON_FAMILY);
     }
 
     @Override
