@@ -17,6 +17,7 @@ public class MineLittleFlawlessItems {
     public static final SpawnEggItem TRIXIE_SPAWN_EGG = register("trixie_spawn_egg", () -> new SpawnEggItem(MineLittleFlawlessEntities.TRIXIE, 7123690, 14808319, new Item.Properties()));
     public static final SpawnEggItem ARINOS_SPAWN_EGG = register("arinos_spawn_egg", () -> new SpawnEggItem(MineLittleFlawlessEntities.ARINOS, 16636668, 3717372, new Item.Properties()));
     public static final SpawnEggItem TRIXIEBELLE_SPAWN_EGG = register("trixiebelle_spawn_egg", () -> new SpawnEggItem(MineLittleFlawlessEntities.TRIXIEBELLE, 0xfdf0b5, 0xff7d69, new Item.Properties()));
+    public static final SpawnEggItem MARIONETTE_SPAWN_EGG = register("marionette_spawn_egg", () -> new SpawnEggItem(MineLittleFlawlessEntities.MARIONETTE, 0xffffff, 0x302631, new Item.Properties()));
     public static final FlawlessMagicianClothingItem FLAWLESS_MAGICIAN_CLOTHING = register("flawless_magician_clothing", () -> new FlawlessMagicianClothingItem(new Item.Properties()));
     public static final TuxedoItem TUXEDO = register("tuxedo", () -> new TuxedoItem(new Item.Properties()));
     public static final FarmerItem FARMER = register("farmer", () -> new FarmerItem(new Item.Properties()));
