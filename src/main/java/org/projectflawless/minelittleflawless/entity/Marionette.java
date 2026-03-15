@@ -1,6 +1,8 @@
 package org.projectflawless.minelittleflawless.entity;
 
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
@@ -11,6 +13,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
+import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessTags;
 
 public class Marionette extends TamableTamersPony {
@@ -27,6 +30,21 @@ public class Marionette extends TamableTamersPony {
     @Override
     public boolean canAttackType(EntityType<?> entityType) {
         return !entityType.is(MineLittleFlawlessTags.SPARKLEMOON_FAMILY);
+    }
+
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return MineLittleFlawlessSoundEvents.MARIONETTE_SPEAK;
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource damageSource) {
+        return MineLittleFlawlessSoundEvents.MARIONETTE_HURT;
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return MineLittleFlawlessSoundEvents.MARIONETTE_DEATH;
     }
 
     @Override
