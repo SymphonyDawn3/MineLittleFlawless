@@ -32,7 +32,7 @@ public class Trixie extends TamableTamersPony {
 
     @Override
     public SoundEvent getAmbientSound() {
-        return MineLittleFlawlessSoundEvents.TRIXIE_SPEAK;
+        return MineLittleFlawlessSoundEvents.TRIXIE_AMBIENT;
     }
 
     @Override

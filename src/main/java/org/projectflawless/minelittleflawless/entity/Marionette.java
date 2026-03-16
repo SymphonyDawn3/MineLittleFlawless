@@ -34,7 +34,7 @@ public class Marionette extends TamableTamersPony {
 
     @Override
     protected SoundEvent getAmbientSound() {
-        return MineLittleFlawlessSoundEvents.MARIONETTE_SPEAK;
+        return MineLittleFlawlessSoundEvents.MARIONETTE_AMBIENT;
     }
 
     @Override
