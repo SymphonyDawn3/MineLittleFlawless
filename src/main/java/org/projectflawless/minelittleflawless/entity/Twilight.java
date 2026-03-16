@@ -32,7 +32,7 @@ public class Twilight extends TamableTamersPony {
 
     @Override
     public SoundEvent getAmbientSound() {
-        return MineLittleFlawlessSoundEvents.TWILIGHT_SPEAK;
+        return MineLittleFlawlessSoundEvents.TWILIGHT_AMBIENT;
     }
 
     @Override

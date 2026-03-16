@@ -73,7 +73,7 @@ public class Flawless extends TamableTamersPony implements Shearable {
 
     @Override
     public SoundEvent getAmbientSound() {
-        return MineLittleFlawlessSoundEvents.FLAWLESS_SPEAK;
+        return MineLittleFlawlessSoundEvents.FLAWLESS_AMBIENT;
     }
 
     @Override
