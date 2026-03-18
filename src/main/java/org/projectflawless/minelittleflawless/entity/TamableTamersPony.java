@@ -19,8 +19,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessTags;
 
-import java.util.Objects;
-
 public abstract class TamableTamersPony extends TamableAnimal {
     public TamableTamersPony(EntityType<? extends TamableTamersPony> type, Level world) {
         super(type, world);
@@ -83,10 +81,15 @@ public abstract class TamableTamersPony extends TamableAnimal {
 
     @Override
     public boolean canAttack(LivingEntity target) {
-        if (target instanceof TamableAnimal tamableTarget)
-            return !tamableTarget.isOwnedBy(Objects.requireNonNull(this.getOwner()));
-        else
+        // Check if this mob is tamable and has the same owner as the attacking mob.
+        if (target instanceof TamableAnimal tamableTarget) {
+            if (tamableTarget.isTame())
+                return tamableTarget.getOwner() != this.getOwner();
+            else
+                return super.canAttack(tamableTarget);
+        } else {
             return super.canAttack(target);
+        }
     }
 
     public static AttributeSupplier.Builder createAttributes() {
