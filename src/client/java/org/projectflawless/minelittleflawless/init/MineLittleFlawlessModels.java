@@ -20,8 +20,10 @@ public class MineLittleFlawlessModels {
         EntityModelLayerRegistry.registerModelLayer(TrixieModel.LAYER_LOCATION, TamersPonyModel::createBodyLayer);
         EntityModelLayerRegistry.registerModelLayer(ArinosModel.LAYER_LOCATION, TamersPonyModel::createBodyLayer);
         EntityModelLayerRegistry.registerModelLayer(TrixiebelleModel.LAYER_LOCATION, TamersPonyModel::createBodyLayer);
+        EntityModelLayerRegistry.registerModelLayer(MarionetteModel.LAYER_LOCATION, TamersPonyModel::createBodyLayer);
         EntityModelLayerRegistry.registerModelLayer(JesterModel.LAYER_LOCATION, JesterModel::createBodyLayer);
         EntityModelLayerRegistry.registerModelLayer(TrixiebelleJesterModel.LAYER_LOCATION, TrixiebelleJesterModel::createBodyLayer);
+        EntityModelLayerRegistry.registerModelLayer(MaskModel.LAYER_LOCATION, MaskModel::createBodyLayer);
         EntityModelLayerRegistry.registerModelLayer(UnicornHornCoronaModel.LAYER_LOCATION, UnicornHornCoronaModel::createBodyLayer);
 	}
 }
