@@ -41,6 +41,12 @@ public class MineLittleFlawlessEntities {
                     .updateInterval(3)
                     .sized(0.8125f, 2f));
 
+    public static final EntityType<Trixiebelle> TRIXIEBELLE = register("trixiebelle",
+            EntityType.Builder.of(Trixiebelle::new, MobCategory.CREATURE)
+                    .clientTrackingRange(64)
+                    .updateInterval(3)
+                    .sized(0.8125f, 2f));
+
     private static <T extends Entity> EntityType<T> register(String entityName, EntityType.Builder<T> entityTypeBuilder) {
         return Registry.register(BuiltInRegistries.ENTITY_TYPE,
                 new ResourceLocation(MineLittleFlawless.MOD_ID, entityName), entityTypeBuilder.build(entityName));
