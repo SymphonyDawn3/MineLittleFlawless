@@ -1,120 +1,120 @@
 {
-  "entity.flawless.speak": {
-    "subtitle": "subtitle.minelittleflawless.flawless.speak",
+  "entity.flawless.ambient": {
+    "subtitle": "subtitles.entity.flawless.ambient",
     "sounds": [
-      "minelittleflawless:entity.flawless.speak1",
-      "minelittleflawless:entity.flawless.speak2",
-      "minelittleflawless:entity.flawless.speak3"
+      "minelittleflawless:mob/flawless/speak1",
+      "minelittleflawless:mob/flawless/speak2",
+      "minelittleflawless:mob/flawless/speak3"
     ]
   },
   "entity.flawless.hurt": {
-    "subtitle": "subtitle.minelittleflawless.flawless.hurt",
+    "subtitle": "subtitles.entity.flawless.hurt",
     "sounds": [
-      "minelittleflawless:entity.flawless.hurt1",
-      "minelittleflawless:entity.flawless.hurt2"
+      "minelittleflawless:mob/flawless/hurt1",
+      "minelittleflawless:mob/flawless/hurt2"
     ]
   },
   "entity.flawless.death": {
-    "subtitle": "subtitle.minelittleflawless.flawless.death",
+    "subtitle": "subtitles.entity.flawless.death",
     "sounds": [
-      "minelittleflawless:entity.flawless.death1",
-      "minelittleflawless:entity.flawless.death2"
+      "minelittleflawless:mob/flawless/hurt1",
+      "minelittleflawless:mob/flawless/hurt2"
     ]
   },
-  "entity.twilight.speak": {
-    "subtitle": "subtitle.minelittleflawless.twilight.speak",
+  "entity.twilight.ambient": {
+    "subtitle": "subtitles.entity.twilight.ambient",
     "sounds": [
-      "minelittleflawless:entity.twilight.speak1",
-      "minelittleflawless:entity.twilight.speak2"
+      "minelittleflawless:mob/twilight/speak1",
+      "minelittleflawless:mob/twilight/speak2"
     ]
   },
   "entity.twilight.hurt": {
-    "subtitle": "subtitle.minelittleflawless.twilight.hurt",
+    "subtitle": "subtitles.entity.twilight.hurt",
     "sounds": [
-      "minelittleflawless:entity.twilight.hurt1",
-      "minelittleflawless:entity.twilight.hurt2"
+      "minelittleflawless:mob/twilight/hurt1",
+      "minelittleflawless:mob/twilight/hurt2"
     ]
   },
   "entity.twilight.death": {
-    "subtitle": "subtitle.minelittleflawless.twilight.death",
+    "subtitle": "subtitles.entity.twilight.death",
     "sounds": [
-      "minelittleflawless:entity.twilight.death1",
-      "minelittleflawless:entity.twilight.death2"
+      "minelittleflawless:mob/twilight/hurt1",
+      "minelittleflawless:mob/twilight/hurt2"
     ]
   },
-  "entity.trixie.speak": {
-    "subtitle": "subtitle.minelittleflawless.trixie.speak",
+  "entity.trixie.ambient": {
+    "subtitle": "subtitles.entity.trixie.ambient",
     "sounds": [
-      "minelittleflawless:entity.trixie.speak1",
-      "minelittleflawless:entity.trixie.speak2",
-      "minelittleflawless:entity.trixie.speak3",
-      "minelittleflawless:entity.trixie.speak4"
+      "minelittleflawless:mob/trixie/speak1",
+      "minelittleflawless:mob/trixie/speak2",
+      "minelittleflawless:mob/trixie/speak3",
+      "minelittleflawless:mob/trixie/speak4"
     ]
   },
   "entity.trixie.hurt": {
-    "subtitle": "subtitle.minelittleflawless.trixie.hurt",
+    "subtitle": "subtitles.entity.trixie.hurt",
     "sounds": [
-      "minelittleflawless:entity.trixie.hurt1",
-      "minelittleflawless:entity.trixie.hurt2"
+      "minelittleflawless:mob/trixie/hurt1",
+      "minelittleflawless:mob/trixie/hurt2"
     ]
   },
   "entity.trixie.death": {
-    "subtitle": "subtitle.minelittleflawless.trixie.death",
+    "subtitle": "subtitles.entity.trixie.death",
     "sounds": [
-      "minelittleflawless:entity.trixie.death1",
-      "minelittleflawless:entity.trixie.death2"
+      "minelittleflawless:mob/trixie/hurt1",
+      "minelittleflawless:mob/trixie/hurt2"
     ]
   },
   "entity.arinos.jingle": {
-    "subtitle": "subtitle.minelittleflawless.entity.arinos.jingle",
+    "subtitle": "subtitles.entity.arinos.jingle",
     "sounds": [
-      "minelittleflawless:entity.arinos.jingle"
+      "minelittleflawless:mob/arinos/jingle"
     ]
   },
-  "entity.arinos.speak": {
-    "subtitle": "subtitle.minelittleflawless.arinos.speak",
+  "entity.arinos.ambient": {
+    "subtitle": "subtitles.entity.arinos.ambient",
     "sounds": [
-      "minelittleflawless:entity.arinos.speak1",
-      "minelittleflawless:entity.arinos.speak2",
-      "minelittleflawless:entity.arinos.speak3",
-      "minelittleflawless:entity.arinos.speak4"
+      "minelittleflawless:mob/arinos/speak1",
+      "minelittleflawless:mob/arinos/speak2",
+      "minelittleflawless:mob/arinos/speak3",
+      "minelittleflawless:mob/arinos/speak4"
     ]
   },
   "entity.arinos.hurt": {
-    "subtitle": "subtitle.minelittleflawless.arinos.hurt",
+    "subtitle": "subtitles.entity.arinos.hurt",
     "sounds": [
-      "minelittleflawless:entity.arinos.hurt1",
-      "minelittleflawless:entity.arinos.hurt2"
+      "minelittleflawless:mob/arinos/hurt1",
+      "minelittleflawless:mob/arinos/hurt2"
     ]
   },
   "entity.arinos.death": {
-    "subtitle": "subtitle.minelittleflawless.arinos.death",
+    "subtitle": "subtitles.entity.arinos.death",
     "sounds": [
-      "minelittleflawless:entity.arinos.death1",
-      "minelittleflawless:entity.arinos.death2"
+      "minelittleflawless:mob/arinos/hurt1",
+      "minelittleflawless:mob/arinos/hurt2"
     ]
   },
-  "entity.marionette.speak": {
-    "subtitle": "subtitle.minelittleflawless.marionette.speak",
+  "entity.marionette.ambient": {
+    "subtitle": "subtitles.entity.marionette.ambient",
     "sounds": [
-      "minelittleflawless:entity.marionette.speak1",
-      "minelittleflawless:entity.marionette.speak2",
-      "minelittleflawless:entity.marionette.speak3",
-      "minelittleflawless:entity.marionette.speak4"
+      "minelittleflawless:mob/marionette/speak1",
+      "minelittleflawless:mob/marionette/speak2",
+      "minelittleflawless:mob/marionette/speak3",
+      "minelittleflawless:mob/marionette/speak4"
     ]
   },
   "entity.marionette.hurt": {
-    "subtitle": "subtitle.minelittleflawless.marionette.hurt",
+    "subtitle": "subtitles.entity.marionette.hurt",
     "sounds": [
-      "minelittleflawless:entity.marionette.hurt1",
-      "minelittleflawless:entity.marionette.hurt2"
+      "minelittleflawless:mob/marionette/hurt1",
+      "minelittleflawless:mob/marionette/hurt2"
     ]
   },
   "entity.marionette.death": {
-    "subtitle": "subtitle.minelittleflawless.marionette.death",
+    "subtitle": "subtitles.entity.marionette.death",
     "sounds": [
-      "minelittleflawless:entity.marionette.death1",
-      "minelittleflawless:entity.marionette.death2"
+      "minelittleflawless:mob/marionette/hurt1",
+      "minelittleflawless:mob/marionette/hurt2"
     ]
   }
 }

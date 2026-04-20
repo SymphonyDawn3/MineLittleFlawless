@@ -32,7 +32,7 @@ public class Arinos extends TamableTamersPony {
 
     @Override
     public SoundEvent getAmbientSound() {
-        return MineLittleFlawlessSoundEvents.ARINOS_SPEAK;
+        return MineLittleFlawlessSoundEvents.ARINOS_AMBIENT;
     }
 
     @Override

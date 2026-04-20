@@ -7,10 +7,10 @@ import net.minecraft.sounds.SoundEvent;
 import org.projectflawless.minelittleflawless.MineLittleFlawless;
 
 public class MineLittleFlawlessSoundEvents {
-    public static final SoundEvent FLAWLESS_SPEAK = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.flawless.speak"),
+    public static final SoundEvent FLAWLESS_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.flawless.ambient"),
             SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.flawless.speak")));
+                    "entity.flawless.ambient")));
 
     public static final SoundEvent FLAWLESS_HURT = Registry.register(BuiltInRegistries.SOUND_EVENT,
             new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.flawless.hurt"),
@@ -22,10 +22,10 @@ public class MineLittleFlawlessSoundEvents {
             SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
                     "entity.flawless.death")));
 
-    public static final SoundEvent TWILIGHT_SPEAK = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.twilight.speak"),
+    public static final SoundEvent TWILIGHT_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.twilight.ambient"),
             SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.twilight.speak")));
+                    "entity.twilight.ambient")));
 
     public static final SoundEvent TWILIGHT_HURT = Registry.register(BuiltInRegistries.SOUND_EVENT,
             new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.twilight.hurt"),
@@ -37,10 +37,10 @@ public class MineLittleFlawlessSoundEvents {
             SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
                     "entity.twilight.death")));
 
-    public static final SoundEvent TRIXIE_SPEAK = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.trixie.speak"),
+    public static final SoundEvent TRIXIE_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.trixie.ambient"),
             SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.trixie.speak")));
+                    "entity.trixie.ambient")));
 
     public static final SoundEvent TRIXIE_HURT = Registry.register(BuiltInRegistries.SOUND_EVENT,
             new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.trixie.hurt"),
@@ -57,10 +57,10 @@ public class MineLittleFlawlessSoundEvents {
             SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
                     "entity.arinos.jingle")));
 
-    public static final SoundEvent ARINOS_SPEAK = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.arinos.speak"),
+    public static final SoundEvent ARINOS_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.arinos.ambient"),
             SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.arinos.speak")));
+                    "entity.arinos.ambient")));
 
     public static final SoundEvent ARINOS_HURT = Registry.register(BuiltInRegistries.SOUND_EVENT,
             new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.arinos.hurt"),
@@ -72,10 +72,10 @@ public class MineLittleFlawlessSoundEvents {
             SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
                     "entity.arinos.death")));
 
-    public static final SoundEvent MARIONETTE_SPEAK = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.marionette.speak"),
+    public static final SoundEvent MARIONETTE_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.marionette.ambient"),
             SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.marionette.speak")));
+                    "entity.marionette.ambient")));
 
     public static final SoundEvent MARIONETTE_HURT = Registry.register(BuiltInRegistries.SOUND_EVENT,
             new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.marionette.hurt"),
