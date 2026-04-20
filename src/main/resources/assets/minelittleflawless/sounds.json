@@ -93,5 +93,28 @@
       "minelittleflawless:entity.arinos.death1",
       "minelittleflawless:entity.arinos.death2"
     ]
+  },
+  "entity.marionette.speak": {
+    "subtitle": "subtitle.minelittleflawless.marionette.speak",
+    "sounds": [
+      "minelittleflawless:entity.marionette.speak1",
+      "minelittleflawless:entity.marionette.speak2",
+      "minelittleflawless:entity.marionette.speak3",
+      "minelittleflawless:entity.marionette.speak4"
+    ]
+  },
+  "entity.marionette.hurt": {
+    "subtitle": "subtitle.minelittleflawless.marionette.hurt",
+    "sounds": [
+      "minelittleflawless:entity.marionette.hurt1",
+      "minelittleflawless:entity.marionette.hurt2"
+    ]
+  },
+  "entity.marionette.death": {
+    "subtitle": "subtitle.minelittleflawless.marionette.death",
+    "sounds": [
+      "minelittleflawless:entity.marionette.death1",
+      "minelittleflawless:entity.marionette.death2"
+    ]
   }
 }

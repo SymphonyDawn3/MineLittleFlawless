@@ -72,6 +72,21 @@ public class MineLittleFlawlessSoundEvents {
             SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
                     "entity.arinos.death")));
 
+    public static final SoundEvent MARIONETTE_SPEAK = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.marionette.speak"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.marionette.speak")));
+
+    public static final SoundEvent MARIONETTE_HURT = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.marionette.hurt"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.marionette.hurt")));
+
+    public static final SoundEvent MARIONETTE_DEATH = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.marionette.death"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.marionette.death")));
+
     public static void init() {
 
     }

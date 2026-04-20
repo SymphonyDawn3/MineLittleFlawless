@@ -1,10 +1,7 @@
 package org.projectflawless.minelittleflawless.entity;
 
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.*;
@@ -15,6 +12,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
+import org.projectflawless.minelittleflawless.init.MineLittleFlawlessTags;
 
 public class Twilight extends TamableTamersPony {
     public Twilight(EntityType<Twilight> type, Level world) {
@@ -29,7 +27,7 @@ public class Twilight extends TamableTamersPony {
 
     @Override
     public boolean canAttackType(EntityType<?> entityType) {
-        return !(entityType.is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("minelittleflawless:sparklemoon_family"))));
+        return !(entityType.is(MineLittleFlawlessTags.SPARKLEMOON_FAMILY));
     }
 
     @Override
