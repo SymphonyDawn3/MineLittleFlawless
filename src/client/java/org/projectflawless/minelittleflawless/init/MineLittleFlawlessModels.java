@@ -16,7 +16,9 @@ public class MineLittleFlawlessModels {
         EntityModelLayerRegistry.registerModelLayer(TwilightModel.LAYER_LOCATION, TwilightModel::createBodyLayer);
         EntityModelLayerRegistry.registerModelLayer(TrixieModel.LAYER_LOCATION, TrixieModel::createBodyLayer);
         EntityModelLayerRegistry.registerModelLayer(ArinosModel.LAYER_LOCATION, ArinosModel::createBodyLayer);
+        EntityModelLayerRegistry.registerModelLayer(TrixiebelleModel.LAYER_LOCATION, TrixiebelleModel::createBodyLayer);
         EntityModelLayerRegistry.registerModelLayer(JesterModel.LAYER_LOCATION, JesterModel::createBodyLayer);
+        EntityModelLayerRegistry.registerModelLayer(TrixiebelleJesterModel.LAYER_LOCATION, TrixiebelleJesterModel::createBodyLayer);
         EntityModelLayerRegistry.registerModelLayer(UnicornHornCoronaModel.LAYER_LOCATION, UnicornHornCoronaModel::createBodyLayer);
 	}
 }

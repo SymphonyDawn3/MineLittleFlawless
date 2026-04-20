@@ -18,6 +18,7 @@ public class MineLittleFlawless implements ModInitializer {
 	public void onInitialize() {
         MineLittleFlawlessItems.init();
         MineLittleFlawlessSoundEvents.init();
+        MineLittleFlawlessTags.init();
         MineLittleFlawlessSpawns.init();
         MineLittleFlawlessBiomeSpawns.init();
         MineLittleFlawlessTabs.buildTabContentsVanilla();
