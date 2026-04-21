@@ -115,5 +115,15 @@ public class MineLittleFlawlessBiomeSpawns {
                 4,
                 4
         );
+
+        // Star Catcher
+        BiomeModifications.addSpawn(
+                biomeSelectionContext -> biomeSelectionContext.hasTag(MineLittleFlawlessTags.SPAWNS_STAR_CATCHER),
+                MobCategory.CREATURE,
+                MineLittleFlawlessEntities.STAR_CATCHER,
+                20,
+                4,
+                4
+        );
     }
 }
