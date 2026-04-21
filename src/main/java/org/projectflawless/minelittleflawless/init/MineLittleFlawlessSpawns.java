@@ -40,5 +40,11 @@ public class MineLittleFlawlessSpawns {
                                 serverLevelAccessor.getRawBrightness(blockPos, 0) > 8;
                     }
                 ));
+        SpawnPlacements.register(MineLittleFlawlessEntities.STAR_CATCHER, SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                (entityType, serverLevelAccessor, mobSpawnType,
+                 blockPos, randomSource)
+                        -> (serverLevelAccessor.getBlockState(blockPos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON) &&
+                        serverLevelAccessor.getRawBrightness(blockPos, 0) > 8));
     }
 }
