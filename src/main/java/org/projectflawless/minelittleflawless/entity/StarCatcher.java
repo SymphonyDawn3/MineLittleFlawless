@@ -56,7 +56,7 @@ public class StarCatcher extends TamableTamersPony implements InventoryCarrier, 
     );
 
     private final SimpleContainer inventory = new SimpleContainer(3);
-    
+
     public StarCatcher(EntityType<StarCatcher> type, Level world) {
         super(type, world);
         this.setCanPickUpLoot(true);
