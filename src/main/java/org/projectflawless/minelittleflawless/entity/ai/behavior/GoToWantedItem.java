@@ -16,11 +16,11 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class GoToWantedItem {
-    public static <E extends LivingEntity> ExtendedBehaviour<E> create(float speedModifier, boolean hasTarget, int maxDistToWalk) {
-        return create(livingEntity -> true, speedModifier, hasTarget, maxDistToWalk);
+    public static <E extends LivingEntity> ExtendedBehaviour<E> create(float speedModifier, boolean hasTarget) {
+        return create(livingEntity -> true, speedModifier, hasTarget);
     }
 
-    public static <E extends LivingEntity> ExtendedBehaviour<E> create(Predicate<E> canWalkToItem, float speedModifier, boolean hasTarget, int maxDistToWalk) {
+    public static <E extends LivingEntity> ExtendedBehaviour<E> create(Predicate<E> canWalkToItem, float speedModifier, boolean hasTarget) {
         return new ExtendedBehaviour<>() {
             private ItemEntity itemEntity;
 
@@ -29,24 +29,15 @@ public class GoToWantedItem {
                 return ObjectArrayList.of(
                         Pair.of(MemoryModuleType.LOOK_TARGET, MemoryStatus.REGISTERED),
                         Pair.of(MemoryModuleType.WALK_TARGET, hasTarget ? MemoryStatus.REGISTERED : MemoryStatus.VALUE_ABSENT),
-                        Pair.of(MemoryModuleType.NEAREST_VISIBLE_WANTED_ITEM, MemoryStatus.VALUE_PRESENT),
-                        Pair.of(MemoryModuleType.ITEM_PICKUP_COOLDOWN_TICKS, MemoryStatus.REGISTERED)
+                        Pair.of(MemoryModuleType.NEAREST_VISIBLE_WANTED_ITEM, MemoryStatus.VALUE_PRESENT)
                 );
             }
 
             @Override
             protected boolean checkExtraStartConditions(ServerLevel level, E entity) {
-                ItemEntity itemEntity = BrainUtils.getMemory(entity, MemoryModuleType.NEAREST_VISIBLE_WANTED_ITEM);
+                this.itemEntity = BrainUtils.getMemory(entity, MemoryModuleType.NEAREST_VISIBLE_WANTED_ITEM);
 
-                if (itemEntity != null) {
-                    this.itemEntity = itemEntity;
-                    return !BrainUtils.hasMemory(entity, MemoryModuleType.ITEM_PICKUP_COOLDOWN_TICKS)
-                            && canWalkToItem.test(entity)
-                            && this.itemEntity.closerThan(entity, maxDistToWalk)
-                            && entity.level().getWorldBorder().isWithinBounds(this.itemEntity.blockPosition());
-                } else {
-                    return false;
-                }
+                return canWalkToItem.test(entity) && entity.level().getWorldBorder().isWithinBounds(this.itemEntity.blockPosition());
             }
 
             @Override
@@ -58,13 +49,12 @@ public class GoToWantedItem {
 
             @Override
             protected void stop(E entity) {
-                BrainUtils.clearMemory(entity, MemoryModuleType.LOOK_TARGET);
-                BrainUtils.clearMemory(entity, MemoryModuleType.WALK_TARGET);
+                BrainUtils.clearMemories(entity, MemoryModuleType.LOOK_TARGET, MemoryModuleType.WALK_TARGET);
             }
 
             @Override
             protected boolean shouldKeepRunning(E entity) {
-                return BrainUtils.hasMemory(entity, MemoryModuleType.NEAREST_VISIBLE_WANTED_ITEM);
+                return this.itemEntity.isAlive();
             }
         };
     }

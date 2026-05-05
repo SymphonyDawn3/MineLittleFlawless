@@ -37,24 +37,6 @@ import java.util.List;
 import java.util.Optional;
 
 public class StarCatcher extends TamableTamersPony implements InventoryCarrier, SmartBrainOwner<StarCatcher> {
-    private static final List<? extends PredicateSensor<?, ? extends StarCatcher>> SENSORS = List.of(
-            new NearestItemSensor<>(),
-            new NearbyPlayersSensor<StarCatcher>()
-                    .setPredicate((player, starCatcher) -> !player.isSpectator() && starCatcher.isOwnedBy(player))
-    );
-
-    private static final BrainActivityGroup<StarCatcher> CORE_TASKS = BrainActivityGroup.coreTasks(
-            new LookAtTarget<>(),
-            new MoveToWalkTarget<>()
-    );
-
-    private static final BrainActivityGroup<StarCatcher> IDLE_TASKS = BrainActivityGroup.idleTasks(
-            new FirstApplicableBehaviour<>(
-                    GoToWantedItem.create(starCatcher -> true, 1.75f, true, 10),
-                    new GoAndThrowItems<>(StarCatcher::trackTarget, 1f)
-            )
-    );
-
     private final SimpleContainer inventory = new SimpleContainer(3);
     
     public StarCatcher(EntityType<StarCatcher> type, Level world) {
@@ -64,7 +46,11 @@ public class StarCatcher extends TamableTamersPony implements InventoryCarrier, 
 
     @Override
     public List<? extends PredicateSensor<?, ? extends StarCatcher>> getSensors() {
-        return SENSORS;
+        return List.of(
+                new NearestItemSensor<>(),
+                new NearbyPlayersSensor<StarCatcher>().setPredicate(
+                        (player, entity) -> !player.isSpectator() && entity.isOwnedBy(player))
+        );
     }
 
     @Override
@@ -74,12 +60,20 @@ public class StarCatcher extends TamableTamersPony implements InventoryCarrier, 
 
     @Override
     public BrainActivityGroup<StarCatcher> getCoreTasks() {
-        return CORE_TASKS;
+        return BrainActivityGroup.coreTasks(
+                new LookAtTarget<>(),
+                new MoveToWalkTarget<>()
+        );
     }
 
     @Override
     public BrainActivityGroup<? extends StarCatcher> getIdleTasks() {
-        return IDLE_TASKS;
+        return BrainActivityGroup.idleTasks(
+                new FirstApplicableBehaviour<>(
+                        GoToWantedItem.create(starCatcher -> true, 1.75f, true),
+                        new GoAndThrowItems<>(StarCatcher::trackTarget, 1f)
+                )
+        );
     }
 
     @Override
