@@ -3,12 +3,12 @@ package org.projectflawless.minelittleflawless.client.renderer.entity.layers;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.model.AgeableHierarchicalModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.resources.ResourceLocation;
+import org.projectflawless.minelittleflawless.client.model.entity.AdultAndBabyPonyModel;
 import org.projectflawless.minelittleflawless.client.model.entity.FlawlessModel;
 import org.projectflawless.minelittleflawless.client.renderer.entity.FlawlessRenderer;
 import org.projectflawless.minelittleflawless.entity.Flawless;
@@ -16,12 +16,12 @@ import org.projectflawless.minelittleflawless.entity.Flawless;
 public class FlawlessClothingRenderLayer extends RenderLayer<Flawless, FlawlessModel> {
     protected static final EntityModelSet entityModels = Minecraft.getInstance().getEntityModels();
     public final ResourceLocation layerTexture;
-    public final AgeableHierarchicalModel<Flawless> model;
+    public final AdultAndBabyPonyModel<Flawless> model;
     public final String flawlessClothing;
     public VertexConsumer vertexConsumer;
 
     public FlawlessClothingRenderLayer(FlawlessRenderer renderer, ResourceLocation layerTexture,
-                                       AgeableHierarchicalModel<Flawless> model, String flawlessClothing) {
+                                       AdultAndBabyPonyModel<Flawless> model, String flawlessClothing) {
         super(renderer);
         this.layerTexture = layerTexture;
         this.model = model;

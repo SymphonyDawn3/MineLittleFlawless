@@ -4,8 +4,6 @@ package org.projectflawless.minelittleflawless.client.model.entity.clothing;
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
-
-import net.minecraft.client.model.AgeableHierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -13,9 +11,10 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import org.projectflawless.minelittleflawless.MineLittleFlawless;
+import org.projectflawless.minelittleflawless.client.model.entity.AdultAndBabyPonyModel;
 import org.projectflawless.minelittleflawless.entity.Arinos;
 
-public class JesterModel extends AgeableHierarchicalModel<Arinos> {
+public class JesterModel extends AdultAndBabyPonyModel<Arinos> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(MineLittleFlawless.MOD_ID, "jester_model"), "main");
 
