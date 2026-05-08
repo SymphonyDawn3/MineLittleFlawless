@@ -10,7 +10,7 @@ public class StarCatcherModel extends TamersPonyModel<StarCatcher> {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(MineLittleFlawless.MOD_ID, "star_catcher_model"), "main");
 
     public StarCatcherModel(ModelPart root) {
-        super(root);
+        super(root, 1.45f, 0.725f, -7.25f, 7.0f);
     }
 
     @Override

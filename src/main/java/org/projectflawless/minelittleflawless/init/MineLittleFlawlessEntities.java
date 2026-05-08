@@ -45,7 +45,7 @@ public class MineLittleFlawlessEntities {
             EntityType.Builder.of(Trixiebelle::new, MobCategory.CREATURE)
                     .clientTrackingRange(64)
                     .updateInterval(3)
-                    .sized(0.8125f, 2f));
+                    .sized(0.56875f, 1.4f));
 
     public static final EntityType<Marionette> MARIONETTE = register("marionette",
             EntityType.Builder.of(Marionette::new, MobCategory.CREATURE)
@@ -57,7 +57,7 @@ public class MineLittleFlawlessEntities {
             EntityType.Builder.of(StarCatcher::new, MobCategory.CREATURE)
                     .clientTrackingRange(64)
                     .updateInterval(3)
-                    .sized(0.8125f, 2f));
+                    .sized(1.178125f, 2.9f));
 
     private static <T extends Entity> EntityType<T> register(String entityName, EntityType.Builder<T> entityTypeBuilder) {
         return Registry.register(BuiltInRegistries.ENTITY_TYPE,

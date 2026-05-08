@@ -10,7 +10,7 @@ public class TrixiebelleModel extends TamersPonyModel<Trixiebelle> {
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(MineLittleFlawless.MOD_ID, "trixiebelle_model"), "main");
 
 	public TrixiebelleModel(ModelPart root) {
-        super(root);
+        super(root, 0.7f, 0.35f, 10.2f, 44.7f);
 	}
 
     @Override

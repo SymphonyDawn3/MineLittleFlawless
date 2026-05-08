@@ -4,16 +4,16 @@
 
 package org.projectflawless.minelittleflawless.client.model.entity.clothing;
 
-import net.minecraft.client.model.AgeableHierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import org.projectflawless.minelittleflawless.MineLittleFlawless;
+import org.projectflawless.minelittleflawless.client.model.entity.AdultAndBabyPonyModel;
 import org.projectflawless.minelittleflawless.entity.Trixiebelle;
 
-public class TrixiebelleJesterModel extends AgeableHierarchicalModel<Trixiebelle> {
+public class TrixiebelleJesterModel extends AdultAndBabyPonyModel<Trixiebelle> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(MineLittleFlawless.MOD_ID, "trixiebelle_jester_model"), "main");
 
@@ -21,7 +21,7 @@ public class TrixiebelleJesterModel extends AgeableHierarchicalModel<Trixiebelle
 	private final ModelPart head;
 
 	public TrixiebelleJesterModel(ModelPart root) {
-        super(0.5f, 21.2086f);
+        super(0.7f, 0.35f, 10.2f, 44.7f);
         this.root = root;
 		ModelPart body = this.root.getChild("body");
 		this.head = body.getChild("head");
