@@ -27,6 +27,9 @@ public class MineLittleFlawlessTags {
     public static TagKey<Biome> SPAWNS_STAR_CATCHER = TagKey.create(Registries.BIOME,
             new ResourceLocation(MineLittleFlawless.MOD_ID, "spawns_star_catcher"));
 
+    public static TagKey<Biome> SPAWNS_MARIONETTE = TagKey.create(Registries.BIOME,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "spawns_marionette"));
+
     public static void init() {
 
     }

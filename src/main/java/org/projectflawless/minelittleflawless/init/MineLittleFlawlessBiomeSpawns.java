@@ -125,5 +125,15 @@ public class MineLittleFlawlessBiomeSpawns {
                 4,
                 4
         );
+
+        // Marionette
+        BiomeModifications.addSpawn(
+                biomeSelectionContext -> biomeSelectionContext.hasTag(MineLittleFlawlessTags.SPAWNS_MARIONETTE),
+                MobCategory.CREATURE,
+                MineLittleFlawlessEntities.MARIONETTE,
+                20,
+                4,
+                4
+        );
     }
 }
