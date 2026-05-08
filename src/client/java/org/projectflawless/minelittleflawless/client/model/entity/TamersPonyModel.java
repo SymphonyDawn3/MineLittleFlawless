@@ -1,6 +1,5 @@
 package org.projectflawless.minelittleflawless.client.model.entity;
 
-import net.minecraft.client.model.AgeableHierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -10,7 +9,7 @@ import net.minecraft.util.Mth;
 import org.projectflawless.minelittleflawless.MineLittleFlawless;
 import org.projectflawless.minelittleflawless.entity.TamableTamersPony;
 
-public class TamersPonyModel<E extends TamableTamersPony> extends AgeableHierarchicalModel<E> {
+public class TamersPonyModel<E extends TamableTamersPony> extends AdultAndBabyPonyModel<E> {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(
             MineLittleFlawless.MOD_ID, "tamers_pony_model"), "main");
 
@@ -31,7 +30,11 @@ public class TamersPonyModel<E extends TamableTamersPony> extends AgeableHierarc
     protected final ModelPart rightLeg;
 
     public TamersPonyModel(ModelPart root) {
-        super(0.5f, 21.2086f);
+        this(root,1.0f, 0.5f, 0.0f, 21.2086f);
+    }
+
+    public TamersPonyModel(ModelPart root, float adultScaleFactor, float babyScaleFactor, float adultDownY, float babyDownY) {
+        super(adultScaleFactor, babyScaleFactor, adultDownY, babyDownY);
         this.root = root;
         this.body = this.root.getChild("body");
         this.head = this.body.getChild("head");
