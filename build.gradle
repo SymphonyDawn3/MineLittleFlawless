@@ -21,6 +21,11 @@ repositories {
         name = 'SmartBrainLib'
         url = 'https://dl.cloudsmith.io/public/tslat/sbl/maven/'
     }
+
+    maven {
+        name = 'Terraformers'
+        url = 'https://maven.terraformersmc.com/'
+    }
 }
 
 loom {
@@ -55,6 +60,9 @@ dependencies {
 
     // SmartBrainLib
     modImplementation "net.tslat.smartbrainlib:SmartBrainLib-fabric-${project.minecraft_version}:${project.sbl_version}"
+
+    // Mod Menu
+    modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
 }
 
 processResources {
