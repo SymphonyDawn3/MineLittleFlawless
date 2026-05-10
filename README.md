@@ -11,7 +11,7 @@ Minecraft mod! :3**
 
 ## How to get the mod:
 
-Right now, these are the offcial ways you should the mod as downloading the mod from other sources is not official and may compromise your Minecraft/Microsoft 
+Right now, these are the official ways you should the mod as downloading the mod from other sources is not official and may compromise your Minecraft/Microsoft 
 account, as well as other things on your computer.
 
 **Only download the mod from these sources:**
