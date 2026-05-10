@@ -1,3 +1,4 @@
+![Mine Little Flawless Logo](/src/main/resources/icon.png)
 # Mine Little Flawless
 
 Mine Little Flawless is a Minecraft mod that features the characters of the humble Tamers12345!
