@@ -33,20 +33,42 @@ By the way, you also need [Git LFS](https://git-lfs.com/) installed to handle th
 Just `git clone` the repository link and make some changes on it. I will be working on an issue and pull request system soon if people wanted to contribute with 
 this mod. :)
 
-## Building the mod
+## Building and Running (this is for devs only)
 
-You need [MCreator EAP 2025.3.42611](https://mcreator.net/download/eap-2025-3-42611).
+After you `git clone` this repository, depending on the OS:
 
-### Instructions
+### Building
+* For Windows
+```
+> gradlew.bat build
+```
 
-1. Open MCreator.
-2. Click `Open workspace...`.
-3. Go to the folder of where you downloaded the mod source code.
-4. Click `minelittleflawless.mcreator`.
-5. Click `Build & run` from above.
-6. Click `Build workspace`.
-7. If you wanted to test the mod, click the green play icon at the top right or debug by the green bug icon. You can also press `Run client` and `Debug client` in
-the `Build & run` menu.
+* For Unix-like (Linux, Mac OS, BSDs, etc.)
+```
+$ ./gradlew build
+```
+
+### Running (for the client)
+* For Windows
+```
+> gradlew.bat runClient
+```
+
+* For Unix-like (Linux, Mac OS, BSDs, etc.)
+```
+$ ./gradlew runClient
+```
+
+### Running (for the server)
+* For Windows
+```
+> gradlew.bat runServer
+```
+
+* For Unix-like (Linux, Mac OS, BSDs, etc.)
+```
+$ ./gradlew runServer
+```
 
 ## Disclaimer
 
