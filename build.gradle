@@ -15,6 +15,9 @@ repositories {
     maven {
         name = 'ParchmentMC'
         url = 'https://maven.parchmentmc.org'
+    }
+
+    maven {
         name = 'SmartBrainLib'
         url = 'https://dl.cloudsmith.io/public/tslat/sbl/maven/'
     }
