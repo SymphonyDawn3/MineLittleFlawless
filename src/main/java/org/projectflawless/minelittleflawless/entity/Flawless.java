@@ -299,21 +299,7 @@ public class Flawless extends TamableTamersPony implements Shearable {
         this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.HORSE_SADDLE, source, 1, 1);
         String flawlessClothing = this.getEntityData().get(DATA_CLOTHING);
 
-        int i = 1 + this.random.nextInt(3);
-
-        for (int j = 0; j < i; j++) {
-            ItemEntity itemEntity = this.spawnAtLocation(BuiltInRegistries.ITEM.get(
-                    new ResourceLocation(flawlessClothing)), 1);
-
-            if (itemEntity != null) {
-                itemEntity.setDeltaMovement(itemEntity.getDeltaMovement()
-                        .add(
-                                (this.random.nextFloat() - this.random.nextFloat()) * 0.1F,
-                                this.random.nextFloat() * 0.05F,
-                                (this.random.nextFloat() - this.random.nextFloat()) * 0.1F)
-                );
-            }
-        }
+        this.spawnAtLocation(BuiltInRegistries.ITEM.get(new ResourceLocation(flawlessClothing)));
     }
 
     @Override
