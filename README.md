@@ -35,37 +35,31 @@ this mod. :)
 
 ## Building and Running (this is for devs only)
 
-After you `git clone` this repository, depending on the OS:
+### Convention
+You do not need to install Gradle to do this. To read the below syntax, if you are running Windows, you should run `gradlew.bat`. Otherwise on Unix-like operating systems (Linux, Mac OS, BSDs), you should run `./gradlew`.
+Since I develop this mod on Linux, I use `./gradlew`.
+
+If you see `./gradlew` and you are running Windows, just replace `./gradlew` with `gradlew.bat`.
+
+### Datagen
+After you `git clone` this repository, you need to run Fabric's `runDatagen` Gradle command to generate the data `.json` files
+before you build or run the commands below.
+
+```
+$ ./gradlew runDatagen
+```
 
 ### Building
-* For Windows
-```
-> gradlew.bat build
-```
-
-* For Unix-like (Linux, Mac OS, BSDs, etc.)
 ```
 $ ./gradlew build
 ```
 
 ### Running (for the client)
-* For Windows
-```
-> gradlew.bat runClient
-```
-
-* For Unix-like (Linux, Mac OS, BSDs, etc.)
 ```
 $ ./gradlew runClient
 ```
 
 ### Running (for the server)
-* For Windows
-```
-> gradlew.bat runServer
-```
-
-* For Unix-like (Linux, Mac OS, BSDs, etc.)
 ```
 $ ./gradlew runServer
 ```
