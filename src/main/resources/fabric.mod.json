@@ -16,6 +16,9 @@
 	"icon": "${mod_icon}",
 	"environment": "*",
 	"entrypoints": {
+        "fabric-datagen": [
+            "org.projectflawless.minelittleflawless.MineLittleFlawlessDataGenerator"
+        ],
 		"main": [
 			"org.projectflawless.minelittleflawless.MineLittleFlawless"
 		],
