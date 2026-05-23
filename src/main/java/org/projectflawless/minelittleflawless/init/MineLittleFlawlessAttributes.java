@@ -16,5 +16,6 @@ public class MineLittleFlawlessAttributes {
         FabricDefaultAttributeRegistry.register(TRIXIEBELLE, TamableTamersPony.createAttributes().build());
         FabricDefaultAttributeRegistry.register(MARIONETTE, TamableTamersPony.createAttributes().build());
         FabricDefaultAttributeRegistry.register(STAR_CATCHER, TamableTamersPony.createAttributes().build());
+        FabricDefaultAttributeRegistry.register(JACKIE_SPECTRE, TamableTamersPony.createAttributes().build());
     }
 }

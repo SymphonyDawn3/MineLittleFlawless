@@ -19,6 +19,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
@@ -202,6 +203,7 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
         private static final TagKey<Biome> SPAWNS_MARIONETTE = TagKey.create(Registries.BIOME, new ResourceLocation(MineLittleFlawless.MOD_ID, "spawns_marionette"));
         private static final TagKey<Biome> SPAWNS_STAR_CATCHER = TagKey.create(Registries.BIOME, new ResourceLocation(MineLittleFlawless.MOD_ID, "spawns_star_catcher"));
         private static final TagKey<Biome> SPAWNS_TRIXIEBELLE = TagKey.create(Registries.BIOME, new ResourceLocation(MineLittleFlawless.MOD_ID, "spawns_trixiebelle"));
+        private static final TagKey<Biome> SPAWNS_JACKIE_SPECTRE = TagKey.create(Registries.BIOME, new ResourceLocation(MineLittleFlawless.MOD_ID, "spawns_jackie_spectre"));
 
         public BiomeTagGenerator(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
             super(output, Registries.BIOME, registriesFuture);
@@ -241,6 +243,13 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
                             Biomes.WINDSWEPT_SAVANNA,
                             Biomes.DESERT,
                             Biomes.STONY_PEAKS);
+
+            this.getOrCreateTagBuilder(SPAWNS_JACKIE_SPECTRE)
+                    .forceAddTag(BiomeTags.IS_BEACH)
+                    .forceAddTag(BiomeTags.IS_OCEAN)
+                    .forceAddTag(BiomeTags.IS_DEEP_OCEAN)
+                    .forceAddTag(BiomeTags.IS_RIVER)
+                    .add(Biomes.STONY_SHORE);
         }
     }
 

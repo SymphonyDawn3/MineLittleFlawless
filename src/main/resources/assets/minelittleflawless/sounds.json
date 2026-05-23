@@ -116,5 +116,27 @@
       "minelittleflawless:mob/marionette/hurt1",
       "minelittleflawless:mob/marionette/hurt2"
     ]
+  },
+  "entity.jackie_spectre.ambient": {
+    "subtitle": "subtitles.entity.jackie_spectre.ambient",
+    "sounds": [
+      "minelittleflawless:mob/jackie_spectre/speak1",
+      "minelittleflawless:mob/jackie_spectre/speak2",
+      "minelittleflawless:mob/jackie_spectre/speak3"
+    ]
+  },
+  "entity.jackie_spectre.hurt": {
+    "subtitle": "subtitles.entity.jackie_spectre.hurt",
+    "sounds": [
+      "minelittleflawless:mob/jackie_spectre/hurt1",
+      "minelittleflawless:mob/jackie_spectre/hurt2"
+    ]
+  },
+  "entity.jackie_spectre.death": {
+    "subtitle": "subtitles.entity.jackie_spectre.death",
+    "sounds": [
+      "minelittleflawless:mob/jackie_spectre/hurt1",
+      "minelittleflawless:mob/jackie_spectre/hurt2"
+    ]
   }
 }

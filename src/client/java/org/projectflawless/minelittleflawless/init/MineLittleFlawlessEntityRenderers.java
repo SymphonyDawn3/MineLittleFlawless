@@ -13,5 +13,6 @@ public class MineLittleFlawlessEntityRenderers {
         EntityRendererRegistry.register(MineLittleFlawlessEntities.TRIXIEBELLE, TrixiebelleRenderer::new);
         EntityRendererRegistry.register(MineLittleFlawlessEntities.MARIONETTE, MarionetteRenderer::new);
         EntityRendererRegistry.register(MineLittleFlawlessEntities.STAR_CATCHER, StarCatcherRenderer::new);
+        EntityRendererRegistry.register(MineLittleFlawlessEntities.JACKIE_SPECTRE, JackieSpectreRenderer::new);
 	}
 }
