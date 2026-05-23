@@ -135,5 +135,15 @@ public class MineLittleFlawlessBiomeSpawns {
                 4,
                 4
         );
+
+        // Jackie Spectre
+        BiomeModifications.addSpawn(
+                biomeSelectionContext -> biomeSelectionContext.hasTag(MineLittleFlawlessTags.SPAWNS_JACKIE_SPECTRE),
+                MobCategory.CREATURE,
+                MineLittleFlawlessEntities.JACKIE_SPECTRE,
+                20,
+                4,
+                4
+        );
     }
 }

@@ -59,6 +59,12 @@ public class MineLittleFlawlessEntities {
                     .updateInterval(3)
                     .sized(1.178125f, 2.9f));
 
+    public static final EntityType<JackieSpectre> JACKIE_SPECTRE = register("jackie_spectre",
+            EntityType.Builder.of(JackieSpectre::new, MobCategory.CREATURE)
+                    .clientTrackingRange(64)
+                    .updateInterval(3)
+                    .sized(0.56875f, 1.4f));
+
     private static <T extends Entity> EntityType<T> register(String entityName, EntityType.Builder<T> entityTypeBuilder) {
         return Registry.register(BuiltInRegistries.ENTITY_TYPE,
                 new ResourceLocation(MineLittleFlawless.MOD_ID, entityName), entityTypeBuilder.build(entityName));

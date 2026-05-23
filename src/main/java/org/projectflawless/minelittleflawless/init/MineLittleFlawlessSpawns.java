@@ -28,6 +28,14 @@ public class MineLittleFlawlessSpawns {
         });
         register(MineLittleFlawlessEntities.STAR_CATCHER);
         register(MineLittleFlawlessEntities.MARIONETTE);
+        register(MineLittleFlawlessEntities.JACKIE_SPECTRE, ((entityType,
+                                                              serverLevelAccessor,
+                                                              mobSpawnType, blockPos,
+                                                              randomSource) -> {
+            BlockState blockState = serverLevelAccessor.getBlockState(blockPos.below());
+            return (blockState.is(BlockTags.ANIMALS_SPAWNABLE_ON) || blockState.is(BlockTags.SAND) || blockState.is(BlockTags.BASE_STONE_OVERWORLD)) &&
+                    serverLevelAccessor.getRawBrightness(blockPos, 0) > 8;
+        }));
     }
 
     private static void register(EntityType<? extends Mob> entityType) {
