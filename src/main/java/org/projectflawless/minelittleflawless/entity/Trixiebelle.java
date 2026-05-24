@@ -1,6 +1,7 @@
 package org.projectflawless.minelittleflawless.entity;
 
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
@@ -10,7 +11,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
+import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
 
 public class Trixiebelle extends TamableTamersPony {
     public Trixiebelle(EntityType<Trixiebelle> type, Level world) {
@@ -26,6 +29,21 @@ public class Trixiebelle extends TamableTamersPony {
     @Override
     public boolean canAttackType(EntityType<?> entityType) {
         return !this.getType().equals(entityType);
+    }
+
+    @Override
+    protected @Nullable SoundEvent getAmbientSound() {
+        return MineLittleFlawlessSoundEvents.TRIXIEBELLE_AMBIENT;
+    }
+
+    @Override
+    protected @Nullable SoundEvent getHurtSound(DamageSource damageSource) {
+        return MineLittleFlawlessSoundEvents.TRIXIEBELLE_HURT;
+    }
+
+    @Override
+    protected @Nullable SoundEvent getDeathSound() {
+        return MineLittleFlawlessSoundEvents.TRIXIEBELLE_DEATH;
     }
 
     @Override
