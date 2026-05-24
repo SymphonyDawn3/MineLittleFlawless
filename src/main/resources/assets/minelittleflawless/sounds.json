@@ -117,6 +117,31 @@
       "minelittleflawless:mob/marionette/hurt2"
     ]
   },
+  "entity.trixiebelle.ambient": {
+    "subtitle": "subtitles.entity.trixiebelle.ambient",
+    "sounds": [
+      "minelittleflawless:mob/trixiebelle/speak1",
+      "minelittleflawless:mob/trixiebelle/speak2",
+      "minelittleflawless:mob/trixiebelle/speak3",
+      "minelittleflawless:mob/trixiebelle/speak4"
+    ]
+  },
+  "entity.trixiebelle.hurt": {
+    "subtitle": "subtitles.entity.trixiebelle.hurt",
+    "sounds": [
+      "minelittleflawless:mob/trixiebelle/hurt1",
+      "minelittleflawless:mob/trixiebelle/hurt2",
+      "minelittleflawless:mob/trixiebelle/hurt3"
+    ]
+  },
+  "entity.trixiebelle.death": {
+    "subtitle": "subtitles.entity.trixiebelle.death",
+    "sounds": [
+      "minelittleflawless:mob/trixiebelle/hurt1",
+      "minelittleflawless:mob/trixiebelle/hurt2",
+      "minelittleflawless:mob/trixiebelle/hurt3"
+    ]
+  },
   "entity.jackie_spectre.ambient": {
     "subtitle": "subtitles.entity.jackie_spectre.ambient",
     "sounds": [

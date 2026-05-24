@@ -86,6 +86,20 @@ public class MineLittleFlawlessSoundEvents {
             new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.marionette.death"),
             SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
                     "entity.marionette.death")));
+    public static final SoundEvent TRIXIEBELLE_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.trixiebelle.ambient"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.trixiebelle.ambient")));
+
+    public static final SoundEvent TRIXIEBELLE_HURT = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.trixiebelle.hurt"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.trixiebelle.hurt")));
+
+    public static final SoundEvent TRIXIEBELLE_DEATH = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.trixiebelle.death"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.trixiebelle.death")));
 
     public static final SoundEvent JACKIE_SPECTRE_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
             new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.jackie_spectre.ambient"),
