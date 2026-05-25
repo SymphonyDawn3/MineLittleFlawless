@@ -41,11 +41,11 @@ public class FlawlessAdvancements {
                             flawless.isTame()
                                     && flawless.isOwnedBy(this.serverPlayer));
 
-                Stream<String> flawlessClothingStream = flawlesses.stream()
-                        .map(flawless -> flawless.getEntityData().get(Flawless.DATA_CLOTHING));
+                Stream<ResourceLocation> flawlessClothingStream = flawlesses.stream()
+                        .map(Flawless::getClothing);
 
                 long flawlessCount = needsToBeClothed ?
-                        flawlessClothingStream.filter(flawlessClothing -> !flawlessClothing.isEmpty()).distinct().count()
+                        flawlessClothingStream.filter(flawlessClothing -> flawlessClothing.equals(Clothing.NONE)).distinct().count()
                         : flawlessClothingStream.count();
 
                 if (flawlessCount >= flawlessMaxCount) {

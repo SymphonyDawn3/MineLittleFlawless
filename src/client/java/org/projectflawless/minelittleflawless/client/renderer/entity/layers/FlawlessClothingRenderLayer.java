@@ -17,11 +17,11 @@ public class FlawlessClothingRenderLayer extends RenderLayer<Flawless, FlawlessM
     protected static final EntityModelSet entityModels = Minecraft.getInstance().getEntityModels();
     public final ResourceLocation layerTexture;
     public final AdultAndBabyPonyModel<Flawless> model;
-    public final String flawlessClothing;
+    public final ResourceLocation flawlessClothing;
     public VertexConsumer vertexConsumer;
 
     public FlawlessClothingRenderLayer(FlawlessRenderer renderer, ResourceLocation layerTexture,
-                                       AdultAndBabyPonyModel<Flawless> model, String flawlessClothing) {
+                                       AdultAndBabyPonyModel<Flawless> model, ResourceLocation flawlessClothing) {
         super(renderer);
         this.layerTexture = layerTexture;
         this.model = model;
@@ -31,7 +31,7 @@ public class FlawlessClothingRenderLayer extends RenderLayer<Flawless, FlawlessM
     @Override
     public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, Flawless entity, float limbSwing,
             float limbSwingAmount, float partialTick, float ageInTicks, float netHeadYaw, float headPitch) {
-        if (entity.getEntityData().get(Flawless.DATA_CLOTHING).equals(this.flawlessClothing)) {
+        if (entity.getClothing().equals(this.flawlessClothing)) {
             this.vertexConsumer = bufferSource.getBuffer(this.model.renderType(this.layerTexture));
             this.renderClothing(entity, poseStack, light, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
         }
