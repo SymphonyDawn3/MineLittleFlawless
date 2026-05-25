@@ -16,8 +16,11 @@ import org.projectflawless.minelittleflawless.FlawlessAdvancements;
 import org.projectflawless.minelittleflawless.entity.Flawless;
 
 public class FlawlessClothingItem extends Item {
-	public FlawlessClothingItem(Properties properties) {
-		super(properties.stacksTo(1));
+    private final ResourceLocation clothing;
+
+	public FlawlessClothingItem(Properties properties, ResourceLocation clothing) {
+        super(properties.stacksTo(1));
+        this.clothing = clothing;
 	}
 
     @Override
@@ -27,7 +30,7 @@ public class FlawlessClothingItem extends Item {
                 ResourceLocation flawlessClothing = BuiltInRegistries.ITEM.getKey(stack.getItem());
                 flawless.level().playSound(null, flawless.getX(), flawless.getY(), flawless.getZ(), SoundEvents.HORSE_SADDLE, SoundSource.AMBIENT, 1, 1);
 
-                flawless.wearClothing(stack);
+                flawless.wearClothing((FlawlessClothingItem) stack.getItem());
                 if (!player.getAbilities().instabuild)
                     stack.shrink(1);
                 flawless.setClothing(flawlessClothing);
@@ -44,5 +47,9 @@ public class FlawlessClothingItem extends Item {
         }
 
         return InteractionResult.PASS;
+    }
+
+    public ResourceLocation getClothing() {
+        return this.clothing;
     }
 }
