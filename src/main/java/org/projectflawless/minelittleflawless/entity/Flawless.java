@@ -8,6 +8,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
+import org.projectflawless.minelittleflawless.Clothing;
 import org.projectflawless.minelittleflawless.FlawlessAdvancements;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessItems;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
@@ -62,7 +63,7 @@ public class Flawless extends TamableTamersPony implements Shearable {
 	@Override
 	protected void defineSynchedData() {
 		super.defineSynchedData();
-		this.entityData.define(DATA_CLOTHING, "");
+		this.entityData.define(DATA_CLOTHING, Clothing.NONE.toString());
 	}
 
 	@Override
@@ -93,10 +94,10 @@ public class Flawless extends TamableTamersPony implements Shearable {
 
     @Override
 	public boolean hurt(DamageSource damagesource, float amount) {
-        String flawlessClothing = getEntityData().get(Flawless.DATA_CLOTHING);
+        ResourceLocation flawlessClothing = this.getClothing();
 
         if (damagesource.is(DamageTypeTags.IS_FIRE)) {
-            if (flawlessClothing.equals(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(MineLittleFlawlessItems.TUXEDO)).toString())) {
+            if (flawlessClothing.equals(Clothing.TUXEDO)) {
                 return false;
             }
         }
@@ -111,19 +112,19 @@ public class Flawless extends TamableTamersPony implements Shearable {
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag dataTag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, spawnType, livingdata, dataTag);
 
-        String flawlessClothing;
+        ResourceLocation flawlessClothing;
         ItemStack randomFlawlessClothing;
 
         if (Math.random() < 0.5) {
-            flawlessClothing = "";
+            flawlessClothing = Clothing.NONE;
         } else {
             randomFlawlessClothing = new ItemStack(
                     getRandomItemFromTags(MineLittleFlawlessTags.FLAWLESS_CLOTHING));
-            flawlessClothing = Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(randomFlawlessClothing.getItem())).toString();
+            flawlessClothing = BuiltInRegistries.ITEM.getKey(randomFlawlessClothing.getItem());
             this.wearClothing(randomFlawlessClothing);
         }
 
-        this.getEntityData().set(DATA_CLOTHING, flawlessClothing);
+        this.setClothing(flawlessClothing);
 
 		return retval;
 	}
@@ -146,13 +147,13 @@ public class Flawless extends TamableTamersPony implements Shearable {
 		InteractionResult retval = InteractionResult.PASS;
 
         if (itemstack.is(MineLittleFlawlessTags.FLAWLESS_CLOTHING)) {
-            if (this.getEntityData().get(DATA_CLOTHING).isEmpty()) {
-                String flawlessClothing = Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(itemstack.getItem())).toString();
+            if (this.getClothing().equals(Clothing.NONE)) {
+                ResourceLocation flawlessClothing = BuiltInRegistries.ITEM.getKey(itemstack.getItem());
                 this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.HORSE_SADDLE, SoundSource.AMBIENT, 1, 1);
 
                 this.wearClothing(itemstack);
                 this.usePlayerItem(sourceentity, hand, itemstack);
-                this.getEntityData().set(DATA_CLOTHING, flawlessClothing);
+                this.setClothing(flawlessClothing);
 
                 if (this.isTame()) {
                     if (sourceentity instanceof ServerPlayer serverPlayer) {
@@ -184,7 +185,7 @@ public class Flawless extends TamableTamersPony implements Shearable {
     @Override
     protected void onTameSuccess(Player player, InteractionHand hand) {
         if (player instanceof ServerPlayer serverPlayer) {
-            if (!this.getEntityData().get(Flawless.DATA_CLOTHING).isEmpty()) {
+            if (!this.getClothing().equals(Clothing.NONE)) {
                 FlawlessAdvancements.fashionableFlawless(serverPlayer);
                 FlawlessAdvancements.flawlessFanClub(serverPlayer);
             }
@@ -210,17 +211,17 @@ public class Flawless extends TamableTamersPony implements Shearable {
 
     @Override
     public boolean doHurtTarget(Entity source) {
-        String flawlessClothing = this.getEntityData().get(Flawless.DATA_CLOTHING);
+        ResourceLocation flawlessClothing = this.getClothing();
 
-        if (flawlessClothing.equals(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(MineLittleFlawlessItems.PAJAMAS)).toString())) {
+        if (flawlessClothing.equals(Clothing.PAJAMAS)) {
             if (source instanceof LivingEntity livingSource)
                 livingSource.addEffect(new MobEffectInstance(MobEffects.GLOWING, 200, 1));
         }
-        if (flawlessClothing.equals(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(MineLittleFlawlessItems.FARMER)).toString())) {
+        if (flawlessClothing.equals(Clothing.FARMER)) {
             if (source instanceof LivingEntity livingSource)
                 livingSource.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 200, 1));
         }
-        if (flawlessClothing.equals(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(MineLittleFlawlessItems.SCHOOLGIRL)).toString())) {
+        if (flawlessClothing.equals(Clothing.SCHOOLGIRL)) {
             if (source instanceof LivingEntity livingSource)
                 livingSource.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 1));
         }
@@ -232,13 +233,13 @@ public class Flawless extends TamableTamersPony implements Shearable {
 
     @Override
     public ItemEntity spawnAtLocation(ItemStack drop, float offsetY) {
-        this.getEntityData().set(DATA_CLOTHING, "");
+        this.setClothing(Clothing.NONE);
         this.offClothing(drop);
         return super.spawnAtLocation(drop, offsetY);
     }
 
     private void playAttackSound() {
-        if (this.getEntityData().get(DATA_CLOTHING).equals(MineLittleFlawlessItems.ROCKSTAR.toString())) {
+        if (this.getClothing().equals(Clothing.ROCKSTAR)) {
             this.level().playSound(null, this.getX(), this.getY(), this.getZ(),
                     SoundEvents.NOTE_BLOCK_GUITAR.value(), SoundSource.AMBIENT, 5, (float) (Math.random() * 2));
         }
@@ -274,14 +275,14 @@ public class Flawless extends TamableTamersPony implements Shearable {
     }
 
     public static Player.BedSleepingProblem whenPlayerWakesUp(Player player, BlockPos sleepingPos) {
-        String flawlessClothing;
+        ResourceLocation flawlessClothing;
         {
             final Vec3 _center = new Vec3(player.getX(), player.getY(), player.getZ());
             for (Flawless entityiterator : player.level().getEntitiesOfClass(Flawless.class, new AABB(_center, _center).inflate(16 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList()) {
                 if (entityiterator.isTame() && entityiterator.isOwnedBy(player)) {
-                    flawlessClothing = entityiterator.getEntityData().get(DATA_CLOTHING);
+                    flawlessClothing = entityiterator.getClothing();
 
-                    if (flawlessClothing.equals(BuiltInRegistries.ITEM.getKey(MineLittleFlawlessItems.FARMER).toString())) {
+                    if (flawlessClothing.equals(Clothing.FARMER)) {
                         ItemEntity entityToSpawn = new ItemEntity(player.level(), entityiterator.getX(),
                                 entityiterator.getY(), entityiterator.getZ(), new ItemStack(
                                         getRandomItemFromTags(MineLittleFlawlessTags.FARMER_GIFTS)));
@@ -297,14 +298,14 @@ public class Flawless extends TamableTamersPony implements Shearable {
     @Override
     public void shear(SoundSource source) {
         this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.HORSE_SADDLE, source, 1, 1);
-        String flawlessClothing = this.getEntityData().get(DATA_CLOTHING);
+        ResourceLocation flawlessClothing = this.getClothing();
 
-        this.spawnAtLocation(BuiltInRegistries.ITEM.get(new ResourceLocation(flawlessClothing)));
+        this.spawnAtLocation(BuiltInRegistries.ITEM.get(flawlessClothing));
     }
 
     @Override
     public boolean readyForShearing() {
-        return !this.getEntityData().get(DATA_CLOTHING).isEmpty();
+        return !this.getClothing().equals(Clothing.NONE);
     }
 
     public static Item getRandomItemFromTags(TagKey<Item> tagItem) {
@@ -313,5 +314,13 @@ public class Flawless extends TamableTamersPony implements Shearable {
                         .stream()
                         .map(Holder::value)
                         .toList(), RandomSource.create()).orElseThrow();
+    }
+
+    public ResourceLocation getClothing() {
+        return new ResourceLocation(this.getEntityData().get(DATA_CLOTHING));
+    }
+
+    public void setClothing(ResourceLocation clothing) {
+        this.getEntityData().set(DATA_CLOTHING, clothing.toString());
     }
 }
