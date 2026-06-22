@@ -2,6 +2,7 @@ package org.projectflawless.minelittleflawless.entity;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.damagesource.DamageSource;
@@ -32,6 +33,7 @@ import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.entity.ai.behavior.GoAndThrowItems;
 import org.projectflawless.minelittleflawless.entity.ai.behavior.GoToWantedItem;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
+import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
 
 import java.util.List;
 import java.util.Optional;
@@ -113,6 +115,21 @@ public class StarCatcher extends TamableTamersPony implements InventoryCarrier, 
     protected void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(9, new TemptGoal(this, 1, Ingredient.of(Items.HONEY_BOTTLE), false));
+    }
+
+    @Override
+    protected @Nullable SoundEvent getAmbientSound() {
+        return MineLittleFlawlessSoundEvents.STAR_CATCHER_AMBIENT;
+    }
+
+    @Override
+    protected @Nullable SoundEvent getHurtSound(DamageSource damageSource) {
+        return MineLittleFlawlessSoundEvents.STAR_CATCHER_HURT;
+    }
+
+    @Override
+    protected @Nullable SoundEvent getDeathSound() {
+        return MineLittleFlawlessSoundEvents.STAR_CATCHER_DEATH;
     }
 
     @Override
