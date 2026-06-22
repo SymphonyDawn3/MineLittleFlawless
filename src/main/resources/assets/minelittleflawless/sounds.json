@@ -163,5 +163,27 @@
       "minelittleflawless:mob/jackie_spectre/hurt1",
       "minelittleflawless:mob/jackie_spectre/hurt2"
     ]
+  },
+  "entity.star_catcher.ambient": {
+    "subtitle": "subtitles.entity.star_catcher.ambient",
+    "sounds": [
+      "minelittleflawless:mob/star_catcher/speak1",
+      "minelittleflawless:mob/star_catcher/speak2",
+      "minelittleflawless:mob/star_catcher/speak3"
+    ]
+  },
+  "entity.star_catcher.hurt": {
+    "subtitle": "subtitles.entity.star_catcher.hurt",
+    "sounds": [
+      "minelittleflawless:mob/star_catcher/hurt1",
+      "minelittleflawless:mob/star_catcher/hurt2"
+    ]
+  },
+  "entity.star_catcher.death": {
+    "subtitle": "subtitles.entity.star_catcher.death",
+    "sounds": [
+      "minelittleflawless:mob/star_catcher/hurt1",
+      "minelittleflawless:mob/star_catcher/hurt2"
+    ]
   }
 }
