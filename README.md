@@ -67,3 +67,10 @@ $ ./gradlew runServer
 ## Disclaimer
 
 **This mod is not affiliated nor endorsed with Mojang, Microsoft, Hasbro, and SEGA. The characters in this mod are purely for entertainment only.**
+
+## Credits
+
+The pony skins of Twilight, Trixie (and probably more in the future) is by the wonderful [Community Skin Pack](https://github.com/MineLittlePony/Community-Skin-Pack)!
+The appropriate credits are in [this file](https://github.com/MineLittlePony/Community-Skin-Pack/blob/master/pack%20info%20and%20credits.txt).
+
+The Flawless skin is by madi93638.
