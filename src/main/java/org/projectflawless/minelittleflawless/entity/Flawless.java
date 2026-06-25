@@ -231,8 +231,10 @@ public class Flawless extends TamableTamersPony implements Shearable {
 
     @Override
     public ItemEntity spawnAtLocation(ItemStack drop, float offsetY) {
-        this.setClothing(Clothing.NONE);
-        this.offClothing((FlawlessClothingItem) drop.getItem());
+        if (drop.getItem() instanceof FlawlessClothingItem flawlessClothingItem) {
+            this.setClothing(Clothing.NONE);
+            this.offClothing(flawlessClothingItem);
+        }
         return super.spawnAtLocation(drop, offsetY);
     }
 
