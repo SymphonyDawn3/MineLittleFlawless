@@ -185,5 +185,38 @@
       "minelittleflawless:mob/star_catcher/hurt1",
       "minelittleflawless:mob/star_catcher/hurt2"
     ]
+  },
+  "entity.star_catcher.clean_on": {
+    "subtitle": "subtitles.entity.star_catcher.clean_on",
+    "sounds": [
+      "minelittleflawless:mob/star_catcher/clean1",
+      "minelittleflawless:mob/star_catcher/clean2"
+    ]
+  },
+  "entity.star_catcher.clean_off": {
+    "subtitle": "subtitles.entity.star_catcher.clean_off",
+    "sounds": [
+      "minelittleflawless:mob/star_catcher/unclean1",
+      "minelittleflawless:mob/star_catcher/unclean2"
+    ]
+  },
+  "entity.star_catcher.clean_toggle": {
+    "sounds": [
+      "minecraft:random/successful_hit"
+    ]
+  },
+  "entity.star_catcher.clean_around": {
+    "subtitle": "subtitles.entity.star_catcher.clean_around",
+    "sounds": [
+      "minelittleflawless:mob/star_catcher/cleanaround1",
+      "minelittleflawless:mob/star_catcher/cleanaround2"
+    ]
+  },
+  "entity.star_catcher.deny_clean": {
+    "subtitle": "subtitles.entity.star_catcher.deny_clean",
+    "sounds": [
+      "minelittleflawless:mob/star_catcher/denyclean1",
+      "minelittleflawless:mob/star_catcher/denyclean2"
+    ]
   }
 }
