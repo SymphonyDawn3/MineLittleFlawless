@@ -131,6 +131,31 @@ public class MineLittleFlawlessSoundEvents {
             SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
                     "entity.star_catcher.death")));
 
+    public static final SoundEvent STAR_CATCHER_CLEAN_ON = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.star_catcher.clean_on"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.star_catcher.clean_on")));
+
+    public static final SoundEvent STAR_CATCHER_CLEAN_OFF = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.star_catcher.clean_off"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.star_catcher.clean_off")));
+
+    public static final SoundEvent STAR_CATCHER_CLEAN_TOGGLE = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.star_catcher.clean_toggle"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.star_catcher.clean_toggle")));
+
+    public static final SoundEvent STAR_CATCHER_CLEAN_AROUND = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.star_catcher.clean_around"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.star_catcher.clean_around")));
+
+    public static final SoundEvent STAR_CATCHER_DENY_CLEAN = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.star_catcher.deny_clean"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.star_catcher.deny_clean")));
+
     public static void init() {
 
     }

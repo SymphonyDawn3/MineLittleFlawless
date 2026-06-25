@@ -23,9 +23,11 @@ public class MaidLayer extends RenderLayer<StarCatcher, StarCatcherModel> {
     public void render(PoseStack poseStack, MultiBufferSource buffer, int packedLight, StarCatcher livingEntity,
                        float limbSwing, float limbSwingAmount, float partialTick, float ageInTicks, float netHeadYaw,
                        float headPitch) {
-        RenderLayer.coloredCutoutModelCopyLayerRender(this.getParentModel(), this.model,
-                this.getTextureLocation(livingEntity), poseStack, buffer, packedLight, livingEntity,
-                limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, partialTick, 1.0f, 1.0f, 1.0f);
+        if (livingEntity.canPickUpLoot()) {
+            RenderLayer.coloredCutoutModelCopyLayerRender(this.getParentModel(), this.model,
+                    this.getTextureLocation(livingEntity), poseStack, buffer, packedLight, livingEntity,
+                    limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, partialTick, 1.0f, 1.0f, 1.0f);
+        }
     }
 
     @Override

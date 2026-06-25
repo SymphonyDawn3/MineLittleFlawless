@@ -1,9 +1,12 @@
 package org.projectflawless.minelittleflawless.entity;
-
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
@@ -39,11 +42,11 @@ import java.util.List;
 import java.util.Optional;
 
 public class StarCatcher extends TamableTamersPony implements InventoryCarrier, SmartBrainOwner<StarCatcher> {
+    private static final EntityDataAccessor<Boolean> CLEAN_DATA_ID = SynchedEntityData.defineId(StarCatcher.class, EntityDataSerializers.BOOLEAN);
     private final SimpleContainer inventory = new SimpleContainer(3);
     
     public StarCatcher(EntityType<StarCatcher> type, Level world) {
         super(type, world);
-        this.setCanPickUpLoot(true);
     }
 
     @Override
@@ -72,7 +75,7 @@ public class StarCatcher extends TamableTamersPony implements InventoryCarrier, 
     public BrainActivityGroup<? extends StarCatcher> getIdleTasks() {
         return BrainActivityGroup.idleTasks(
                 new FirstApplicableBehaviour<>(
-                        GoToWantedItem.create(starCatcher -> true, 1.75f, true),
+                        GoToWantedItem.create(StarCatcher::canPickUpLoot, 1.75f, true),
                         new GoAndThrowItems<>(StarCatcher::trackTarget, 1f)
                 )
         );
@@ -90,13 +93,36 @@ public class StarCatcher extends TamableTamersPony implements InventoryCarrier, 
     }
 
     @Override
+    public boolean canPickUpLoot() {
+        if (this.level().isClientSide()) {
+            return this.getEntityData().get(CLEAN_DATA_ID);
+        } else {
+            return super.canPickUpLoot();
+        }
+    }
+
+    @Override
+    public void setCanPickUpLoot(boolean canPickUpLoot) {
+        this.getEntityData().set(CLEAN_DATA_ID, canPickUpLoot);
+        super.setCanPickUpLoot(canPickUpLoot);
+    }
+
+    @Override
     public boolean wantsToPickUp(ItemStack stack) {
-        return this.inventory.canAddItem(stack) && this.isTame();
+        // True if her inventory is not full and she can pick up through cleaning mode.
+        return this.inventory.canAddItem(stack);
     }
 
     @Override
     protected void pickUpItem(ItemEntity itemEntity) {
         InventoryCarrier.pickUpItem(this, this, itemEntity);
+    }
+
+    @Override
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.getEntityData().define(CLEAN_DATA_ID, false);
+        this.getEntityData().set(CLEAN_DATA_ID, this.canPickUpLoot());
     }
 
     @Override
@@ -119,7 +145,10 @@ public class StarCatcher extends TamableTamersPony implements InventoryCarrier, 
 
     @Override
     protected @Nullable SoundEvent getAmbientSound() {
-        return MineLittleFlawlessSoundEvents.STAR_CATCHER_AMBIENT;
+        if (this.canPickUpLoot())
+            return MineLittleFlawlessSoundEvents.STAR_CATCHER_CLEAN_AROUND;
+        else
+            return MineLittleFlawlessSoundEvents.STAR_CATCHER_AMBIENT;
     }
 
     @Override
@@ -170,6 +199,43 @@ public class StarCatcher extends TamableTamersPony implements InventoryCarrier, 
             this.spawnAtLocation(item);
         }
         this.inventory.clearContent();
+    }
+
+    @Override
+    public InteractionResult mobInteract(Player sourceentity, InteractionHand hand) {
+        ItemStack itemStack = sourceentity.getMainHandItem();
+
+        // Set her to grab items around the vicinity if she is owned by the same player.
+        if (itemStack.is(Items.BRUSH) && this.isOwnedBy(sourceentity)) {
+            // If there are no items to pick up, don't go any further.
+            if (!BrainUtils.hasMemory(this, MemoryModuleType.NEAREST_VISIBLE_WANTED_ITEM)) {
+                boolean canPickUpLoot = this.canPickUpLoot();
+                if (canPickUpLoot) {
+                    this.consumeCleanToggle(false, sourceentity, itemStack, hand);
+                }
+                this.playSound(MineLittleFlawlessSoundEvents.STAR_CATCHER_DENY_CLEAN, this.getSoundVolume(), this.getVoicePitch());
+
+                return canPickUpLoot ? InteractionResult.SUCCESS : InteractionResult.CONSUME;
+            }
+
+            this.consumeCleanToggle(!this.canPickUpLoot(), sourceentity, itemStack, hand);
+
+            this.playSound(this.canPickUpLoot() ? MineLittleFlawlessSoundEvents.STAR_CATCHER_CLEAN_ON
+                    : MineLittleFlawlessSoundEvents.STAR_CATCHER_CLEAN_OFF, this.getSoundVolume(), this.getVoicePitch());
+
+            return InteractionResult.SUCCESS;
+        }
+
+        return super.mobInteract(sourceentity, hand);
+    }
+
+    private void consumeCleanToggle(boolean toggle, Player player, ItemStack stack, InteractionHand hand) {
+        this.setCanPickUpLoot(toggle);
+        this.playSound(MineLittleFlawlessSoundEvents.STAR_CATCHER_CLEAN_TOGGLE);
+        stack.hurtAndBreak(1, player, player1 -> {
+            player1.broadcastBreakEvent(hand);
+            this.setCanPickUpLoot(false);
+        });
     }
 
     private static Optional<PositionTracker> trackTarget(StarCatcher starCatcher) {
