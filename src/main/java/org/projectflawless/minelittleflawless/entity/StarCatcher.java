@@ -44,7 +44,7 @@ import java.util.Optional;
 public class StarCatcher extends TamableTamersPony implements InventoryCarrier, SmartBrainOwner<StarCatcher> {
     private static final EntityDataAccessor<Boolean> CLEAN_DATA_ID = SynchedEntityData.defineId(StarCatcher.class, EntityDataSerializers.BOOLEAN);
     private final SimpleContainer inventory = new SimpleContainer(3);
-
+    
     public StarCatcher(EntityType<StarCatcher> type, Level world) {
         super(type, world);
     }
