@@ -15,7 +15,7 @@ Right now, these are the official ways you should the mod as downloading the mod
 account, as well as other things on your computer.
 
 **Only download the mod from these sources:**
-* [Github Releases](https://github.com/SymphonyDawn3/MineLittleFlawless/releases)
+* [Modrinth](https://modrinth.com/mod/minelittleflawless/versions)
 
 ### Installation
 
