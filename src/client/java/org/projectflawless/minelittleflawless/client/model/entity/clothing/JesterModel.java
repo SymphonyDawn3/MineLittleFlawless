@@ -8,11 +8,11 @@ import org.projectflawless.minelittleflawless.entity.Arinos;
 public class JesterModel extends AdultAndBabyPonyModel<Arinos> {
     @Override
     public ResourceLocation getModelResource(Arinos animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "geo/jester.geo.json");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "geo/clothing/jester.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(Arinos animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/jester.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/clothing/jester.png");
     }
 }

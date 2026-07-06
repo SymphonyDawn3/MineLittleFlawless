@@ -8,11 +8,11 @@ import org.projectflawless.minelittleflawless.entity.StarCatcher;
 public class MaidModel extends AdultAndBabyPonyModel<StarCatcher> {
     @Override
     public ResourceLocation getModelResource(StarCatcher animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "geo/maid.geo.json");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "geo/clothing/maid.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(StarCatcher animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/maid.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/clothing/maid.png");
     }
 }

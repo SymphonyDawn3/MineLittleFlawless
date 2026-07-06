@@ -8,11 +8,11 @@ import org.projectflawless.minelittleflawless.entity.Flawless;
 public class FlawlessMagicianClothingModel extends AdultAndBabyPonyModel<Flawless> {
     @Override
     public ResourceLocation getModelResource(Flawless animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "geo/flawless_magician_clothing.geo.json");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "geo/clothing/flawless_magician_clothing.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(Flawless animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/flawless_magician_clothing.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/clothing/flawless_magician_clothing.png");
     }
 }
