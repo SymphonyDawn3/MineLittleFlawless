@@ -26,6 +26,15 @@ repositories {
         name = 'Terraformers'
         url = 'https://maven.terraformersmc.com/'
     }
+
+    maven {
+        name = 'Geckolib'
+        url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        content {
+            includeGroupByRegex("software\\.bernie.*")
+            includeGroup("com.eliotlash.mclib")
+        }
+    }
 }
 
 loom {
@@ -63,6 +72,9 @@ dependencies {
 
     // Mod Menu
     modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
+
+    // Geckolib
+    modImplementation "software.bernie.geckolib:geckolib-fabric-${project.minecraft_version}:${project.geckolib_version}"
 }
 
 processResources {
