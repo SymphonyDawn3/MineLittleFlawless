@@ -1,44 +1,53 @@
 package org.projectflawless.minelittleflawless.client.model.entity;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import net.minecraft.client.model.HierarchicalModel;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
+import org.projectflawless.minelittleflawless.MineLittleFlawless;
+import org.projectflawless.minelittleflawless.entity.TamableTamersPony;
+import software.bernie.geckolib.cache.object.GeoBone;
+import software.bernie.geckolib.constant.DataTickets;
+import software.bernie.geckolib.core.animatable.GeoAnimatable;
+import software.bernie.geckolib.core.animation.AnimationState;
+import software.bernie.geckolib.model.GeoModel;
+import software.bernie.geckolib.model.data.EntityModelData;
 
-public abstract class AdultAndBabyPonyModel<E extends Entity> extends HierarchicalModel<E> {
-    private final float adultScaleFactor;
-    private final float babyScaleFactor;
-    private final float adultDownY;
-    private final float babyDownY;
+import java.util.Optional;
 
-    public AdultAndBabyPonyModel() {
-        this(1.0f, 0.5f, 0.0f, 21.2086f);
-    }
-
-    public AdultAndBabyPonyModel(float babyScaleFactor, float babyDownY) {
-        this(1.0f, babyScaleFactor, 0.0f, babyDownY);
-    }
-
-    public AdultAndBabyPonyModel(float adultScaleFactor, float babyScaleFactor, float adultDownY, float babyDownY) {
-        this.adultScaleFactor = adultScaleFactor;
-        this.babyScaleFactor = babyScaleFactor;
-        this.adultDownY = adultDownY;
-        this.babyDownY = babyDownY;
-    }
+public abstract class AdultAndBabyPonyModel<E extends TamableTamersPony & GeoAnimatable> extends GeoModel<E> {
     @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-        poseStack.pushPose();
+    public ResourceLocation getModelResource(E animatable) {
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "geo/tamers_pony.geo.json");
+    }
 
-        if (this.young) {
-            poseStack.scale(this.babyScaleFactor, this.babyScaleFactor, this.babyScaleFactor);
-            poseStack.translate(0.0f, this.babyDownY / 16.0f, 0.0f);
-        } else {
-            poseStack.scale(this.adultScaleFactor, this.adultScaleFactor, this.adultScaleFactor);
-            poseStack.translate(0.0f, this.adultDownY / 16.0f, 0.0f);
-        }
+    @Override
+    public ResourceLocation getAnimationResource(E animatable) {
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "animations/tamers_pony.animation.json");
+    }
 
-        super.renderToBuffer(poseStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
+    @Override
+    public void setCustomAnimations(E animatable, long instanceId, AnimationState<E> animationState) {
+        super.setCustomAnimations(animatable, instanceId, animationState);
 
-        poseStack.popPose();
+        EntityModelData entityModelData = animationState.getData(DataTickets.ENTITY_MODEL_DATA);
+
+        Optional<GeoBone> head = this.getBone("head");
+
+        head.ifPresent(bone -> {
+            bone.setRotX(entityModelData.headPitch() * Mth.DEG_TO_RAD);
+            bone.setRotY(entityModelData.netHeadYaw() * Mth.DEG_TO_RAD);
+        });
+
+        Optional<GeoBone> stallion = this.getBone("stallion");
+        Optional<GeoBone> horn = this.getBone("horn");
+        Optional<GeoBone> wings = this.getBone("wings");
+        Optional<GeoBone> extendedRight = this.getBone("extendedRight");
+        Optional<GeoBone> extendedLeft = this.getBone("extendedLeft");
+
+
+        stallion.ifPresent(bone -> bone.setHidden(!animatable.isStallion()));
+        horn.ifPresent(bone -> bone.setHidden(!animatable.isUnicorn()));
+        wings.ifPresent(bone -> bone.setHidden(!animatable.isPegasus()));
+        extendedLeft.ifPresent(bone -> bone.setHidden(true));
+        extendedRight.ifPresent(bone -> bone.setHidden(true));
     }
 }
