@@ -52,6 +52,7 @@ public class Arinos extends TamableTamersPony {
 
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag dataTag) {
+        this.setAlicorn(true);
         return super.finalizeSpawn(world, difficulty, spawnType, livingdata, dataTag);
     }
 

@@ -1,5 +1,9 @@
 package org.projectflawless.minelittleflawless.entity;
 
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
@@ -18,12 +22,98 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessTags;
+import software.bernie.geckolib.animatable.GeoEntity;
+import software.bernie.geckolib.constant.DefaultAnimations;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.AnimatableManager;
+import software.bernie.geckolib.core.animation.AnimationController;
+import software.bernie.geckolib.core.object.PlayState;
+import software.bernie.geckolib.util.GeckoLibUtil;
 
-public abstract class TamableTamersPony extends TamableAnimal {
+public abstract class TamableTamersPony extends TamableAnimal implements GeoEntity {
+    private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
+    private static final EntityDataAccessor<Boolean> IS_STALLION = SynchedEntityData.defineId(TamableTamersPony.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> IS_UNICORN = SynchedEntityData.defineId(TamableTamersPony.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> IS_PEGASUS = SynchedEntityData.defineId(TamableTamersPony.class, EntityDataSerializers.BOOLEAN);
+
     public TamableTamersPony(EntityType<? extends TamableTamersPony> type, Level world) {
         super(type, world);
         this.xpReward = 0;
         this.setNoAi(false);
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
+        controllers.add(new AnimationController<>(this, "Walking", 0,
+                state -> state.isMoving() ? state.setAndContinue(DefaultAnimations.WALK) : PlayState.STOP)
+                .setAnimationSpeedHandler(tamablePony -> this.walkAnimation.speed() * (tamablePony.isBaby() ? 8.0 : 2.0)));
+    }
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return this.geoCache;
+    }
+
+    @Override
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.getEntityData().define(IS_STALLION, false);
+        this.getEntityData().define(IS_UNICORN, false);
+        this.getEntityData().define(IS_PEGASUS, false);
+    }
+
+    @Override
+    public void addAdditionalSaveData(CompoundTag compound) {
+        super.addAdditionalSaveData(compound);
+
+        CompoundTag ponyData = new CompoundTag();
+        ponyData.putBoolean("Stallion", this.isStallion());
+        ponyData.putBoolean("Unicorn", this.isUnicorn());
+        ponyData.putBoolean("Pegasus", this.isPegasus());
+        compound.put("PonyData", ponyData);
+    }
+
+    @Override
+    public void readAdditionalSaveData(CompoundTag compound) {
+        super.readAdditionalSaveData(compound);
+
+        CompoundTag ponyData = compound.getCompound("PonyData");
+        this.setStallion(ponyData.getBoolean("Stallion"));
+        this.setUnicorn(ponyData.getBoolean("Unicorn"));
+        this.setPegasus(ponyData.getBoolean("Pegasus"));
+    }
+
+    public boolean isStallion() {
+        return this.getEntityData().get(IS_STALLION);
+    }
+
+    public boolean isUnicorn() {
+        return this.getEntityData().get(IS_UNICORN);
+    }
+
+    public boolean isPegasus() {
+        return this.getEntityData().get(IS_PEGASUS);
+    }
+
+    public boolean isAlicorn() {
+        return this.isUnicorn() && this.isPegasus();
+    }
+
+    public void setStallion(boolean toggle) {
+        this.getEntityData().set(IS_STALLION, toggle);
+    }
+
+    public void setUnicorn(boolean toggle) {
+        this.getEntityData().set(IS_UNICORN, toggle);
+    }
+
+    public void setPegasus(boolean toggle) {
+        this.getEntityData().set(IS_PEGASUS, toggle);
+    }
+
+    public void setAlicorn(boolean toggle) {
+        this.setUnicorn(toggle);
+        this.setPegasus(toggle);
     }
 
     @Override

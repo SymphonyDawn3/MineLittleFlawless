@@ -108,6 +108,8 @@ public class Flawless extends TamableTamersPony implements Shearable {
 
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag dataTag) {
+        this.setUnicorn(true);
+
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, spawnType, livingdata, dataTag);
 
         ResourceLocation flawlessClothing;
