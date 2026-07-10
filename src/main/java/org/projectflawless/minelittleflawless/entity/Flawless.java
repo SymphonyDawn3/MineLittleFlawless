@@ -138,7 +138,10 @@ public class Flawless extends TamableTamersPony implements Shearable {
 	@Override
 	public void readAdditionalSaveData(CompoundTag compound) {
 		super.readAdditionalSaveData(compound);
-		this.entityData.set(DATA_CLOTHING, compound.getString("clothing"));
+
+        if (compound.contains("clothing")) {
+            this.entityData.set(DATA_CLOTHING, compound.getString("clothing"));
+        }
 	}
 
 	@Override
