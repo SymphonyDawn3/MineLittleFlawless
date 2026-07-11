@@ -1,9 +1,7 @@
 package org.projectflawless.minelittleflawless.entity;
 
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.*;
@@ -12,8 +10,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.ServerLevelAccessor;
-import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessTags;
@@ -21,6 +17,7 @@ import org.projectflawless.minelittleflawless.init.MineLittleFlawlessTags;
 public class Trixie extends TamableTamersPony {
     public Trixie(EntityType<Trixie> type, Level world) {
         super(type, world);
+        this.setUnicorn(true);
     }
 
     @Override
@@ -47,12 +44,6 @@ public class Trixie extends TamableTamersPony {
     @Override
     public SoundEvent getDeathSound() {
         return MineLittleFlawlessSoundEvents.TRIXIE_DEATH;
-    }
-
-    @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData spawnData, @Nullable CompoundTag dataTag) {
-        this.setUnicorn(true);
-        return super.finalizeSpawn(level, difficulty, reason, spawnData, dataTag);
     }
 
     @Override

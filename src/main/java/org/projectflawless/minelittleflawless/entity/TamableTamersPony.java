@@ -77,10 +77,12 @@ public abstract class TamableTamersPony extends TamableAnimal implements GeoEnti
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
 
-        CompoundTag ponyData = compound.getCompound("PonyData");
-        this.setStallion(ponyData.getBoolean("Stallion"));
-        this.setUnicorn(ponyData.getBoolean("Unicorn"));
-        this.setPegasus(ponyData.getBoolean("Pegasus"));
+        if (compound.contains("PonyData")) {
+            CompoundTag ponyData = compound.getCompound("PonyData");
+            this.setStallion(ponyData.getBoolean("Stallion"));
+            this.setUnicorn(ponyData.getBoolean("Unicorn"));
+            this.setPegasus(ponyData.getBoolean("Pegasus"));
+        }
     }
 
     public boolean isStallion() {
