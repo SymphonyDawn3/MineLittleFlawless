@@ -96,25 +96,25 @@ public class MineLittleFlawlessSoundEvents {
             SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
                     "entity.trixiebelle.hurt")));
 
+    public static final SoundEvent SKYWISHES_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.skywishes.ambient"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.skywishes.ambient")));
+
+    public static final SoundEvent SKYWISHES_HURT = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.skywishes.hurt"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.skywishes.hurt")));
+
+    public static final SoundEvent SKYWISHES_DEATH = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.skywishes.death"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.skywishes.death")));
+
     public static final SoundEvent TRIXIEBELLE_DEATH = Registry.register(BuiltInRegistries.SOUND_EVENT,
             new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.trixiebelle.death"),
             SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
                     "entity.trixiebelle.death")));
-
-    public static final SoundEvent JACKIE_SPECTRE_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.jackie_spectre.ambient"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.jackie_spectre.ambient")));
-
-    public static final SoundEvent JACKIE_SPECTRE_HURT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.jackie_spectre.hurt"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.jackie_spectre.hurt")));
-
-    public static final SoundEvent JACKIE_SPECTRE_DEATH = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.jackie_spectre.death"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.jackie_spectre.death")));
 
     public static final SoundEvent STAR_CATCHER_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
             new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.star_catcher.ambient"),
@@ -155,6 +155,21 @@ public class MineLittleFlawlessSoundEvents {
             new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.star_catcher.deny_clean"),
             SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
                     "entity.star_catcher.deny_clean")));
+
+    public static final SoundEvent JACKIE_SPECTRE_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.jackie_spectre.ambient"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.jackie_spectre.ambient")));
+
+    public static final SoundEvent JACKIE_SPECTRE_HURT = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.jackie_spectre.hurt"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.jackie_spectre.hurt")));
+
+    public static final SoundEvent JACKIE_SPECTRE_DEATH = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.jackie_spectre.death"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.jackie_spectre.death")));
 
     public static void init() {
 

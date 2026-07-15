@@ -116,6 +116,16 @@ public class MineLittleFlawlessBiomeSpawns {
                 4
         );
 
+        // Skywishes
+        BiomeModifications.addSpawn(
+                biomeSelectionContext -> biomeSelectionContext.hasTag(MineLittleFlawlessTags.SPAWNS_SKYWISHES),
+                MobCategory.CREATURE,
+                MineLittleFlawlessEntities.SKYWISHES,
+                20,
+                4,
+                4
+        );
+
         // Star Catcher
         BiomeModifications.addSpawn(
                 biomeSelectionContext -> biomeSelectionContext.hasTag(MineLittleFlawlessTags.SPAWNS_STAR_CATCHER),

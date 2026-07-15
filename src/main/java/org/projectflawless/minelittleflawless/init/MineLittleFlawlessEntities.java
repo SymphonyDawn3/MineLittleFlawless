@@ -47,17 +47,23 @@ public class MineLittleFlawlessEntities {
                     .updateInterval(3)
                     .sized(0.56875f, 1.4f));
 
-    public static final EntityType<Marionette> MARIONETTE = register("marionette",
-            EntityType.Builder.of(Marionette::new, MobCategory.CREATURE)
+    public static final EntityType<Skywishes> SKYWISHES = register("skywishes",
+            EntityType.Builder.of(Skywishes::new, MobCategory.CREATURE)
                     .clientTrackingRange(64)
                     .updateInterval(3)
-                    .sized(0.8125f, 2f));
+                    .sized(0.56875f, 1.4f));
 
     public static final EntityType<StarCatcher> STAR_CATCHER = register("star_catcher",
             EntityType.Builder.of(StarCatcher::new, MobCategory.CREATURE)
                     .clientTrackingRange(64)
                     .updateInterval(3)
                     .sized(1.178125f, 2.9f));
+
+    public static final EntityType<Marionette> MARIONETTE = register("marionette",
+            EntityType.Builder.of(Marionette::new, MobCategory.CREATURE)
+                    .clientTrackingRange(64)
+                    .updateInterval(3)
+                    .sized(0.8125f, 2f));
 
     public static final EntityType<JackieSpectre> JACKIE_SPECTRE = register("jackie_spectre",
             EntityType.Builder.of(JackieSpectre::new, MobCategory.CREATURE)

@@ -142,26 +142,28 @@
       "minelittleflawless:mob/trixiebelle/hurt3"
     ]
   },
-  "entity.jackie_spectre.ambient": {
-    "subtitle": "subtitles.entity.jackie_spectre.ambient",
+  "entity.skywishes.ambient": {
+    "subtitle": "subtitles.entity.skywishes.ambient",
     "sounds": [
-      "minelittleflawless:mob/jackie_spectre/speak1",
-      "minelittleflawless:mob/jackie_spectre/speak2",
-      "minelittleflawless:mob/jackie_spectre/speak3"
+      "minelittleflawless:mob/skywishes/speak1",
+      "minelittleflawless:mob/skywishes/speak2",
+      "minelittleflawless:mob/skywishes/speak3"
     ]
   },
-  "entity.jackie_spectre.hurt": {
-    "subtitle": "subtitles.entity.jackie_spectre.hurt",
+  "entity.skywishes.hurt": {
+    "subtitle": "subtitles.entity.skywishes.hurt",
     "sounds": [
-      "minelittleflawless:mob/jackie_spectre/hurt1",
-      "minelittleflawless:mob/jackie_spectre/hurt2"
+      "minelittleflawless:mob/skywishes/hurt1",
+      "minelittleflawless:mob/skywishes/hurt2",
+      "minelittleflawless:mob/skywishes/hurt3"
     ]
   },
-  "entity.jackie_spectre.death": {
-    "subtitle": "subtitles.entity.jackie_spectre.death",
+  "entity.skywishes.death": {
+    "subtitle": "subtitles.entity.skywishes.death",
     "sounds": [
-      "minelittleflawless:mob/jackie_spectre/hurt1",
-      "minelittleflawless:mob/jackie_spectre/hurt2"
+      "minelittleflawless:mob/skywishes/hurt1",
+      "minelittleflawless:mob/skywishes/hurt2",
+      "minelittleflawless:mob/skywishes/hurt3"
     ]
   },
   "entity.star_catcher.ambient": {
@@ -217,6 +219,28 @@
     "sounds": [
       "minelittleflawless:mob/star_catcher/denyclean1",
       "minelittleflawless:mob/star_catcher/denyclean2"
+    ]
+  },
+  "entity.jackie_spectre.ambient": {
+    "subtitle": "subtitles.entity.jackie_spectre.ambient",
+    "sounds": [
+      "minelittleflawless:mob/jackie_spectre/speak1",
+      "minelittleflawless:mob/jackie_spectre/speak2",
+      "minelittleflawless:mob/jackie_spectre/speak3"
+    ]
+  },
+  "entity.jackie_spectre.hurt": {
+    "subtitle": "subtitles.entity.jackie_spectre.hurt",
+    "sounds": [
+      "minelittleflawless:mob/jackie_spectre/hurt1",
+      "minelittleflawless:mob/jackie_spectre/hurt2"
+    ]
+  },
+  "entity.jackie_spectre.death": {
+    "subtitle": "subtitles.entity.jackie_spectre.death",
+    "sounds": [
+      "minelittleflawless:mob/jackie_spectre/hurt1",
+      "minelittleflawless:mob/jackie_spectre/hurt2"
     ]
   }
 }

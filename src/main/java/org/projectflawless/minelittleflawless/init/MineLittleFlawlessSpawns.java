@@ -26,6 +26,7 @@ public class MineLittleFlawlessSpawns {
                     || blockState.is(BlockTags.BASE_STONE_OVERWORLD)) &&
                     serverLevelAccessor.getRawBrightness(blockPos, 0) > 8;
         });
+        register(MineLittleFlawlessEntities.SKYWISHES);
         register(MineLittleFlawlessEntities.STAR_CATCHER);
         register(MineLittleFlawlessEntities.MARIONETTE);
         register(MineLittleFlawlessEntities.JACKIE_SPECTRE, ((entityType,
