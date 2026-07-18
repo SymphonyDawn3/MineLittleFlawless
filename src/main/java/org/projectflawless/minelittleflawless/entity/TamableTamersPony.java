@@ -18,6 +18,7 @@ import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.raid.Raider;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -124,7 +125,14 @@ public abstract class TamableTamersPony extends TamableAnimal implements GeoEnti
         this.goalSelector.addGoal(1, new BreedGoal(this, 1, TamableTamersPony.class));
         this.goalSelector.addGoal(2, new OwnerHurtByTargetGoal(this));
         this.targetSelector.addGoal(3, new OwnerHurtTargetGoal(this));
-        this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, LivingEntity.class, false, targetPredicate -> targetPredicate instanceof Enemy));
+        // A compromise when non-tamed ponies shouldn't attack raiders during raids to make the Hero of the Village
+        // advancement possible, as written in FlawlessEvents:init()
+        this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, LivingEntity.class, false, targetPredicate -> {
+            if (targetPredicate instanceof Raider raider && raider.getCurrentRaid() != null && !this.isTame())
+                return false;
+            else
+                return targetPredicate instanceof Enemy;
+        }));
         this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.2, false));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, (float) 6));
         this.goalSelector.addGoal(7, new FollowParentGoal(this, 1));
