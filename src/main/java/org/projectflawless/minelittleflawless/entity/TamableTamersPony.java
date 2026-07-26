@@ -4,6 +4,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
@@ -22,6 +23,7 @@ import net.minecraft.world.entity.raid.Raider;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import org.projectflawless.minelittleflawless.Clothing;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessTags;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.constant.DefaultAnimations;
@@ -33,6 +35,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 public abstract class TamableTamersPony extends TamableAnimal implements GeoEntity {
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
+    private static final EntityDataAccessor<String> DATA_CLOTHING = SynchedEntityData.defineId(TamableTamersPony.class, EntityDataSerializers.STRING);
     private static final EntityDataAccessor<Boolean> IS_STALLION = SynchedEntityData.defineId(TamableTamersPony.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> IS_UNICORN = SynchedEntityData.defineId(TamableTamersPony.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> IS_PEGASUS = SynchedEntityData.defineId(TamableTamersPony.class, EntityDataSerializers.BOOLEAN);
@@ -58,6 +61,7 @@ public abstract class TamableTamersPony extends TamableAnimal implements GeoEnti
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
+        this.getEntityData().define(DATA_CLOTHING, Clothing.NONE.toString());
         this.getEntityData().define(IS_STALLION, false);
         this.getEntityData().define(IS_UNICORN, false);
         this.getEntityData().define(IS_PEGASUS, false);
@@ -66,6 +70,8 @@ public abstract class TamableTamersPony extends TamableAnimal implements GeoEnti
     @Override
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
+
+        compound.putString("clothing", this.getClothing().toString());
 
         CompoundTag ponyData = new CompoundTag();
         ponyData.putBoolean("Stallion", this.isStallion());
@@ -78,12 +84,23 @@ public abstract class TamableTamersPony extends TamableAnimal implements GeoEnti
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
 
+        if (compound.contains("clothing"))
+            this.setClothing(ResourceLocation.tryParse(compound.getString("clothing")));
+
         if (compound.contains("PonyData")) {
             CompoundTag ponyData = compound.getCompound("PonyData");
             this.setStallion(ponyData.getBoolean("Stallion"));
             this.setUnicorn(ponyData.getBoolean("Unicorn"));
             this.setPegasus(ponyData.getBoolean("Pegasus"));
         }
+    }
+
+    public ResourceLocation getClothing() {
+        return ResourceLocation.tryParse(this.getEntityData().get(DATA_CLOTHING));
+    }
+
+    public void setClothing(ResourceLocation clothing) {
+        this.getEntityData().set(DATA_CLOTHING, clothing.toString());
     }
 
     public boolean isStallion() {

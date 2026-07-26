@@ -34,9 +34,6 @@ import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.sounds.SoundEvents;
@@ -49,8 +46,6 @@ import java.util.Comparator;
 import java.util.Objects;
 
 public class Flawless extends TamableTamersPony implements Shearable {
-	public static final EntityDataAccessor<String> DATA_CLOTHING = SynchedEntityData.defineId(Flawless.class, EntityDataSerializers.STRING);
-
     public Flawless(EntityType<Flawless> type, Level world) {
 		super(type, world);
 		xpReward = 0;
@@ -58,12 +53,6 @@ public class Flawless extends TamableTamersPony implements Shearable {
         this.setGuaranteedDrop(EquipmentSlot.CHEST);
         this.setUnicorn(true);
     }
-
-	@Override
-	protected void defineSynchedData() {
-		super.defineSynchedData();
-		this.entityData.define(DATA_CLOTHING, Clothing.NONE.toString());
-	}
 
 	@Override
 	protected void registerGoals() {
@@ -126,21 +115,6 @@ public class Flawless extends TamableTamersPony implements Shearable {
         this.setClothing(flawlessClothing);
 
 		return retval;
-	}
-
-	@Override
-	public void addAdditionalSaveData(CompoundTag compound) {
-		super.addAdditionalSaveData(compound);
-		compound.putString("clothing", this.entityData.get(DATA_CLOTHING));
-	}
-
-	@Override
-	public void readAdditionalSaveData(CompoundTag compound) {
-		super.readAdditionalSaveData(compound);
-
-        if (compound.contains("clothing")) {
-            this.entityData.set(DATA_CLOTHING, compound.getString("clothing"));
-        }
 	}
 
 	@Override
@@ -318,13 +292,5 @@ public class Flawless extends TamableTamersPony implements Shearable {
     @Override
     public boolean readyForShearing() {
         return !this.getClothing().equals(Clothing.NONE);
-    }
-
-    public ResourceLocation getClothing() {
-        return new ResourceLocation(this.getEntityData().get(DATA_CLOTHING));
-    }
-
-    public void setClothing(ResourceLocation clothing) {
-        this.getEntityData().set(DATA_CLOTHING, clothing.toString());
     }
 }
