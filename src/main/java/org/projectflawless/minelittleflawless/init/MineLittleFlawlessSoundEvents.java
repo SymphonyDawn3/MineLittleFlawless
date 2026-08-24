@@ -171,6 +171,31 @@ public class MineLittleFlawlessSoundEvents {
             SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
                     "entity.jackie_spectre.death")));
 
+    public static final SoundEvent WISH_FULFILLMENT_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.wish_fulfillment.ambient"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.wish_fulfillment.ambient")));
+
+    public static final SoundEvent WISH_FULFILLMENT_HURT = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.wish_fulfillment.hurt"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.wish_fulfillment.hurt")));
+
+    public static final SoundEvent WISH_FULFILLMENT_DEATH = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.wish_fulfillment.death"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.wish_fulfillment.death")));
+
+    public static final SoundEvent WISH_FULFILLMENT_TRADE_ACCEPT = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.wish_fulfillment.trade_accept"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.wish_fulfillment.trade_accept")));
+
+    public static final SoundEvent WISH_FULFILLMENT_TRADE_DENY = Registry.register(BuiltInRegistries.SOUND_EVENT,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.wish_fulfillment.trade_deny"),
+            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
+                    "entity.wish_fulfillment.trade_deny")));
+
     public static void init() {
 
     }

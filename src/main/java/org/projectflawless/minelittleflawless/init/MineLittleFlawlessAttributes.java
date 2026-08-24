@@ -18,5 +18,6 @@ public class MineLittleFlawlessAttributes {
         FabricDefaultAttributeRegistry.register(STAR_CATCHER, TamableTamersPony.createAttributes().build());
         FabricDefaultAttributeRegistry.register(MARIONETTE, TamableTamersPony.createAttributes().build());
         FabricDefaultAttributeRegistry.register(JACKIE_SPECTRE, TamableTamersPony.createAttributes().build());
+        FabricDefaultAttributeRegistry.register(WISH_FULFILLMENT, TamableTamersPony.createAttributes().build());
     }
 }

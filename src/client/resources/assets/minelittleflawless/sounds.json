@@ -242,5 +242,39 @@
       "minelittleflawless:mob/jackie_spectre/hurt1",
       "minelittleflawless:mob/jackie_spectre/hurt2"
     ]
+  },
+  "entity.wish_fulfillment.ambient": {
+    "subtitle": "subtitles.entity.wish_fulfillment.ambient",
+    "sounds": [
+      "minelittleflawless:mob/wish_fulfillment/blerp1",
+      "minelittleflawless:mob/wish_fulfillment/blerp2",
+      "minelittleflawless:mob/wish_fulfillment/blerp3",
+      "minelittleflawless:mob/wish_fulfillment/blerp4"
+    ]
+  },
+  "entity.wish_fulfillment.hurt": {
+    "subtitle": "subtitles.entity.wish_fulfillment.hurt",
+    "sounds": [
+      "minelittleflawless:mob/wish_fulfillment/hurt1",
+      "minelittleflawless:mob/wish_fulfillment/hurt2"
+    ]
+  },
+  "entity.wish_fulfillment.death": {
+    "subtitle": "subtitles.entity.wish_fulfillment.death",
+    "sounds": [
+      "minelittleflawless:mob/wish_fulfillment/death"
+    ]
+  },
+  "entity.wish_fulfillment.trade_accept": {
+    "subtitle": "subtitles.entity.wish_fulfillment.trade_accept",
+    "sounds": [
+      "minelittleflawless:mob/wish_fulfillment/tradeaccept"
+    ]
+  },
+  "entity.wish_fulfillment.trade_deny": {
+    "subtitle": "subtitles.entity.wish_fulfillment.trade_deny",
+    "sounds": [
+      "minelittleflawless:mob/wish_fulfillment/tradedeny"
+    ]
   }
 }

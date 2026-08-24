@@ -155,5 +155,33 @@ public class MineLittleFlawlessBiomeSpawns {
                 4,
                 4
         );
+
+        // Wish Fulfillment - Overworld
+        BiomeModifications.addSpawn(
+                biomeSelectionContext -> true,
+                MobCategory.MONSTER,
+                MineLittleFlawlessEntities.WISH_FULFILLMENT,
+                20,
+                4,
+                4
+        );
+
+        // Wish Fulfillment - Warped Forest
+        BiomeModifications.addSpawn(biomeSelectionContext -> biomeSelectionContext.getBiomeKey().equals(Biomes.WARPED_FOREST),
+                MobCategory.MONSTER,
+                MineLittleFlawlessEntities.WISH_FULFILLMENT,
+                1,
+                1,
+                4
+        );
+
+        // Wish Fulfillment - Crimson Forest
+        BiomeModifications.addSpawn(biomeSelectionContext -> biomeSelectionContext.getBiomeKey().equals(Biomes.CRIMSON_FOREST),
+                MobCategory.MONSTER,
+                MineLittleFlawlessEntities.WISH_FULFILLMENT,
+                3,
+                4,
+                4
+        );
     }
 }

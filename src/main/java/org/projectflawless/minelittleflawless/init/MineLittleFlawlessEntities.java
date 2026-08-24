@@ -71,6 +71,12 @@ public class MineLittleFlawlessEntities {
                     .updateInterval(3)
                     .sized(0.56875f, 1.4f));
 
+    public static final EntityType<WishFulfillment> WISH_FULFILLMENT = register("wish_fulfillment",
+            EntityType.Builder.of(WishFulfillment::new, MobCategory.MONSTER)
+                    .clientTrackingRange(64)
+                    .updateInterval(3)
+                    .sized(0.8125f, 2f));
+
     private static <T extends Entity> EntityType<T> register(String entityName, EntityType.Builder<T> entityTypeBuilder) {
         return Registry.register(BuiltInRegistries.ENTITY_TYPE,
                 new ResourceLocation(MineLittleFlawless.MOD_ID, entityName), entityTypeBuilder.build(entityName));
