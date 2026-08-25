@@ -31,14 +31,14 @@ public class TamersPonyRenderer<T extends TamableTamersPony, M extends TamersPon
         super.preRender(poseStack, animatable, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, red, green, blue, alpha);
 
         // Get the bones of the entity.
-        Optional<GeoBone> body = model.getBone("body");
+        Optional<GeoBone> root = model.getBone("root");
         Optional<GeoBone> head = model.getBone("head");
         Optional<GeoBone> rightArm = model.getBone("rightArm");
         Optional<GeoBone> leftArm = model.getBone("leftArm");
         Optional<GeoBone> rightLeg = model.getBone("rightLeg");
         Optional<GeoBone> leftLeg = model.getBone("leftLeg");
 
-        body.ifPresent(bone -> {
+        root.ifPresent(bone -> {
             if (animatable.isBaby()) {
                 bone.setScaleX(this.babyScaleFactor);
                 bone.setScaleY(this.babyScaleFactor);
@@ -82,9 +82,12 @@ public class TamersPonyRenderer<T extends TamableTamersPony, M extends TamersPon
             }
         });
 
-        body.ifPresent(bone -> {
+        root.ifPresent(bone -> {
             if (animatable.isBaby()) {
-                bone.setPosY(-1.5f*this.babyScaleFactor/0.4f);
+                if (animatable.isInSittingPose())
+                    bone.setPosY(-0.875f*this.babyScaleFactor/0.4f);
+                else
+                    bone.setPosY(-1.5f*this.babyScaleFactor/0.4f);
             }
         });
     }

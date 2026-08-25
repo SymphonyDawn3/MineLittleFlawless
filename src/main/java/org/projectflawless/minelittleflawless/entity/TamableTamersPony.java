@@ -7,10 +7,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -48,9 +45,21 @@ public abstract class TamableTamersPony extends TamableAnimal implements GeoEnti
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(new AnimationController<>(this, "Walking", 0,
-                state -> state.isMoving() ? state.setAndContinue(DefaultAnimations.WALK) : PlayState.STOP)
-                .setAnimationSpeedHandler(tamablePony -> this.walkAnimation.speed() * (tamablePony.isBaby() ? 8.0 : 2.0)));
+        controllers.add(new AnimationController<>(this, "Walking", 3,
+                state -> {
+                    if (this.isInSittingPose() || (this.getVehicle() != null)) {
+                        state.setControllerSpeed(1.0f);
+                        state.setAnimation(DefaultAnimations.SIT);
+                        return PlayState.CONTINUE;
+                    } else if (state.isMoving()) {
+                        state.setControllerSpeed(this.walkAnimation.speed() * (this.isBaby() ? 6.0f : 2.0f));
+                        state.setAnimation(DefaultAnimations.WALK);
+                        return PlayState.CONTINUE;
+                    } else {
+                        state.setAnimation(DefaultAnimations.IDLE);
+                        return PlayState.CONTINUE;
+                    }
+                }));
     }
 
     @Override
@@ -139,7 +148,8 @@ public abstract class TamableTamersPony extends TamableAnimal implements GeoEnti
     @Override
     protected void registerGoals() {
         super.registerGoals();
-        this.goalSelector.addGoal(1, new BreedGoal(this, 1, TamableTamersPony.class));
+        this.goalSelector.addGoal(1, new SitWhenOrderedToGoal(this));
+        this.goalSelector.addGoal(2, new BreedGoal(this, 1, TamableTamersPony.class));
         this.goalSelector.addGoal(2, new OwnerHurtByTargetGoal(this));
         this.targetSelector.addGoal(3, new OwnerHurtTargetGoal(this));
         // A compromise when non-tamed ponies shouldn't attack raiders during raids to make the Hero of the Village
@@ -152,7 +162,7 @@ public abstract class TamableTamersPony extends TamableAnimal implements GeoEnti
         }));
         this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.2, false));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, (float) 6));
-        this.goalSelector.addGoal(7, new FollowParentGoal(this, 1));
+        this.goalSelector.addGoal(7, new TamableTamersPonyFollowParentGoal(this, 1));
         this.goalSelector.addGoal(8, new FollowOwnerGoal(this, 1, (float) 10, (float) 2, false));
         this.goalSelector.addGoal(10, new RandomStrollGoal(this, 1));
         this.goalSelector.addGoal(11, new RandomLookAroundGoal(this));
@@ -187,6 +197,10 @@ public abstract class TamableTamersPony extends TamableAnimal implements GeoEnti
                 this.setPersistenceRequired();
                 retval = InteractionResult.SUCCESS;
             }
+        } else if (!this.level().isClientSide() && hand == InteractionHand.MAIN_HAND && itemstack.isEmpty() && this.isTame() && this.isOwnedBy(sourceentity)) {
+            this.setOrderedToSit(!this.isOrderedToSit());
+
+            retval = InteractionResult.SUCCESS;
         } else {
             retval = super.mobInteract(sourceentity, hand);
             if (retval == InteractionResult.SUCCESS || retval == InteractionResult.CONSUME)
@@ -221,5 +235,19 @@ public abstract class TamableTamersPony extends TamableAnimal implements GeoEnti
 
     protected void onTameSuccess(Player player, InteractionHand hand) {
 
+    }
+
+    public static class TamableTamersPonyFollowParentGoal extends FollowParentGoal {
+        private final TamableTamersPony tamableTamersPony;
+
+        public TamableTamersPonyFollowParentGoal(TamableTamersPony tamableTamersPony, double speedModifier) {
+            super(tamableTamersPony, speedModifier);
+            this.tamableTamersPony = tamableTamersPony;
+        }
+
+        @Override
+        public boolean canUse() {
+            return !this.tamableTamersPony.isInSittingPose() && super.canUse();
+        }
     }
 }
