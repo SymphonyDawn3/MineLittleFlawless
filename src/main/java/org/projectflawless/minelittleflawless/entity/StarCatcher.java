@@ -208,7 +208,7 @@ public class StarCatcher extends TamableTamersPony implements InventoryCarrier, 
         ItemStack itemStack = sourceentity.getMainHandItem();
 
         // Set her to grab items around the vicinity if she is owned by the same player.
-        if (itemStack.is(Items.BRUSH) && this.isOwnedBy(sourceentity)) {
+        if (itemStack.is(Items.BRUSH) && this.isOwnedBy(sourceentity) && !this.isOrderedToSit()) {
             // If there are no items to pick up, don't go any further.
             if (!BrainUtils.hasMemory(this, MemoryModuleType.NEAREST_VISIBLE_WANTED_ITEM)) {
                 boolean canPickUpLoot = this.canPickUpLoot();
@@ -226,6 +226,8 @@ public class StarCatcher extends TamableTamersPony implements InventoryCarrier, 
                     : MineLittleFlawlessSoundEvents.STAR_CATCHER_CLEAN_OFF, this.getSoundVolume(), this.getVoicePitch());
 
             return InteractionResult.SUCCESS;
+        } else if (itemStack.isEmpty() && this.canPickUpLoot()) {
+            return InteractionResult.PASS;
         }
 
         return super.mobInteract(sourceentity, hand);
