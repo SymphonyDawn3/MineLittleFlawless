@@ -230,22 +230,20 @@ public class WishFulfillment extends TamableTamersPony implements Merchant, Smar
 
     @Override
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
-        if (hand == InteractionHand.MAIN_HAND) {
-            ItemStack itemStack = player.getMainHandItem();
+        ItemStack itemStack = player.getMainHandItem();
 
-            if (itemStack.isEmpty()) {
-                if (this.isNight() && this.isFullMoon() && !this.isAllOutOfStock() && !this.isBaby()) {
-                    this.setTradingPlayer(player);
-                    this.openTradingScreen(player, this.getDisplayName(), this.wishingLevel);
-                } else {
-                    if (!this.isClientSide()) {
-                        this.playWishDenySound();
-                        this.ambientSoundTime -= this.getAmbientSoundInterval();
-                    }
+        if (itemStack.is(this.itemForTrading)) {
+            if (this.isNight() && this.isFullMoon() && !this.isAllOutOfStock() && !this.isBaby()) {
+                this.setTradingPlayer(player);
+                this.openTradingScreen(player, this.getDisplayName(), this.wishingLevel);
+            } else {
+                if (!this.isClientSide()) {
+                    this.playWishDenySound();
+                    this.ambientSoundTime -= this.getAmbientSoundInterval();
                 }
-
-                return InteractionResult.sidedSuccess(this.level().isClientSide());
             }
+
+            return InteractionResult.sidedSuccess(this.level().isClientSide());
         }
 
         return super.mobInteract(player, hand);
