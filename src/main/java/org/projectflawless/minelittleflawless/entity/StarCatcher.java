@@ -96,21 +96,6 @@ public class StarCatcher extends TamableTamersPony implements InventoryCarrier, 
     }
 
     @Override
-    public boolean canPickUpLoot() {
-        if (this.level().isClientSide()) {
-            return this.getEntityData().get(CLEAN_DATA_ID);
-        } else {
-            return super.canPickUpLoot();
-        }
-    }
-
-    @Override
-    public void setCanPickUpLoot(boolean canPickUpLoot) {
-        this.getEntityData().set(CLEAN_DATA_ID, canPickUpLoot);
-        super.setCanPickUpLoot(canPickUpLoot);
-    }
-
-    @Override
     public boolean wantsToPickUp(ItemStack stack) {
         // True if her inventory is not full and she can pick up through cleaning mode.
         return this.inventory.canAddItem(stack);
