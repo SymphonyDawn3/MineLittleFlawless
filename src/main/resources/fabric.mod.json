@@ -36,5 +36,9 @@
 		"fabric-api": "*",
         "smartbrainlib": ">=1.15",
         "geckolib": ">=4.8.4"
-	}
+	},
+    "mixins": [
+      "minelittleflawless.mixins.json"
+    ],
+    "accessWidener": "minelittleflawless.classtweaker"
 }

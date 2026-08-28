@@ -18,61 +18,61 @@ public class MineLittleFlawlessEntities {
 					.sized(0.75f, 3.125f));
 
     public static final EntityType<Flawless> FLAWLESS = register("flawless",
-			EntityType.Builder.of(Flawless::new, MobCategory.CREATURE)
+			EntityType.Builder.of(Flawless::new, MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_PERSISTENT)
                     .clientTrackingRange(64)
                     .updateInterval(3)
 					.sized(0.8125f, 2f));
 
     public static final EntityType<Twilight> TWILIGHT = register("twilight",
-            EntityType.Builder.of(Twilight::new, MobCategory.CREATURE)
+            EntityType.Builder.of(Twilight::new, MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_PERSISTENT)
                     .clientTrackingRange(64)
                     .updateInterval(3)
                     .sized(0.8125f, 2f));
 
     public static final EntityType<Trixie> TRIXIE = register("trixie",
-            EntityType.Builder.of(Trixie::new, MobCategory.CREATURE)
+            EntityType.Builder.of(Trixie::new, MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_PERSISTENT)
                     .clientTrackingRange(64)
                     .updateInterval(3)
                     .sized(0.8125f, 2f));
 
     public static final EntityType<Arinos> ARINOS = register("arinos",
-            EntityType.Builder.of(Arinos::new, MobCategory.MONSTER)
+            EntityType.Builder.of(Arinos::new, MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT)
                     .clientTrackingRange(64)
                     .updateInterval(3)
                     .sized(0.8125f, 2f));
 
     public static final EntityType<Trixiebelle> TRIXIEBELLE = register("trixiebelle",
-            EntityType.Builder.of(Trixiebelle::new, MobCategory.CREATURE)
+            EntityType.Builder.of(Trixiebelle::new, MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_PERSISTENT)
                     .clientTrackingRange(64)
                     .updateInterval(3)
                     .sized(0.56875f, 1.4f));
 
     public static final EntityType<Skywishes> SKYWISHES = register("skywishes",
-            EntityType.Builder.of(Skywishes::new, MobCategory.CREATURE)
+            EntityType.Builder.of(Skywishes::new, MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_PERSISTENT)
                     .clientTrackingRange(64)
                     .updateInterval(3)
                     .sized(0.56875f, 1.4f));
 
     public static final EntityType<StarCatcher> STAR_CATCHER = register("star_catcher",
-            EntityType.Builder.of(StarCatcher::new, MobCategory.CREATURE)
+            EntityType.Builder.of(StarCatcher::new, MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_PERSISTENT)
                     .clientTrackingRange(64)
                     .updateInterval(3)
                     .sized(1.178125f, 2.9f));
 
     public static final EntityType<Marionette> MARIONETTE = register("marionette",
-            EntityType.Builder.of(Marionette::new, MobCategory.CREATURE)
+            EntityType.Builder.of(Marionette::new, MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_PERSISTENT)
                     .clientTrackingRange(64)
                     .updateInterval(3)
                     .sized(0.8125f, 2f));
 
     public static final EntityType<JackieSpectre> JACKIE_SPECTRE = register("jackie_spectre",
-            EntityType.Builder.of(JackieSpectre::new, MobCategory.CREATURE)
+            EntityType.Builder.of(JackieSpectre::new, MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_PERSISTENT)
                     .clientTrackingRange(64)
                     .updateInterval(3)
                     .sized(0.56875f, 1.4f));
 
     public static final EntityType<WishFulfillment> WISH_FULFILLMENT = register("wish_fulfillment",
-            EntityType.Builder.of(WishFulfillment::new, MobCategory.MONSTER)
+            EntityType.Builder.of(WishFulfillment::new, MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT)
                     .clientTrackingRange(64)
                     .updateInterval(3)
                     .sized(0.8125f, 2f));

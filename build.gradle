@@ -50,9 +50,10 @@ loom {
     runs {
         client {
             programArgs(["--username", "Dev"])
-        }
+            vmArg "-Dmixin.debug.export=true"        }
     }
 
+    accessWidenerPath = file("src/main/resources/minelittleflawless.classtweaker")
 }
 
 dependencies {

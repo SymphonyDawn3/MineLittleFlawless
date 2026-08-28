@@ -1,0 +1,4 @@
+classTweaker v2 named
+
+transitive-extend-enum net/minecraft/world/entity/MobCategory MINE_LITTLE_FLAWLESS_FABRIC_MLP_PERSISTENT
+transitive-extend-enum net/minecraft/world/entity/MobCategory MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT

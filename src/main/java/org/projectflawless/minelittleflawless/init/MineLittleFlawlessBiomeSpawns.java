@@ -10,9 +10,9 @@ public class MineLittleFlawlessBiomeSpawns {
         // Flawless
         BiomeModifications.addSpawn(
                 biomeSelectionContext -> true,
-                MobCategory.CREATURE,
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_PERSISTENT,
                 MineLittleFlawlessEntities.FLAWLESS,
-                20,
+                1,
                 4,
                 4
         );
@@ -20,9 +20,9 @@ public class MineLittleFlawlessBiomeSpawns {
         // Twilight
         BiomeModifications.addSpawn(
                 biomeSelectionContext -> true,
-                MobCategory.CREATURE,
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_PERSISTENT,
                 MineLittleFlawlessEntities.TWILIGHT,
-                20,
+                1,
                 4,
                 4
         );
@@ -30,9 +30,9 @@ public class MineLittleFlawlessBiomeSpawns {
         // Trixie
         BiomeModifications.addSpawn(
                 biomeSelectionContext -> true,
-                MobCategory.CREATURE,
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_PERSISTENT,
                 MineLittleFlawlessEntities.TRIXIE,
-                20,
+                1,
                 4,
                 4
         );
@@ -40,16 +40,16 @@ public class MineLittleFlawlessBiomeSpawns {
         // Arinos - Overworld
         BiomeModifications.addSpawn(
                 biomeSelectionContext -> biomeSelectionContext.hasTag(BiomeTags.IS_OVERWORLD),
-                MobCategory.MONSTER,
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
                 MineLittleFlawlessEntities.ARINOS,
-                95,
+                8,
                 4,
                 4);
 
         // Arinos - End
         BiomeModifications.addSpawn(
                 biomeSelectionContext -> biomeSelectionContext.hasTag(BiomeTags.IS_END),
-                MobCategory.MONSTER,
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
                 MineLittleFlawlessEntities.ARINOS,
                 1,
                 4,
@@ -59,9 +59,9 @@ public class MineLittleFlawlessBiomeSpawns {
         // Arinos - Basalt Deltas
         BiomeModifications.addSpawn(
                 biomeSelectionContext -> biomeSelectionContext.getBiomeKey().equals(Biomes.BASALT_DELTAS),
-                MobCategory.MONSTER,
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
                 MineLittleFlawlessEntities.ARINOS,
-                26,
+                1,
                 4,
                 4
         );
@@ -69,9 +69,9 @@ public class MineLittleFlawlessBiomeSpawns {
         // Arinos - Crimson Forest
         BiomeModifications.addSpawn(
                 biomeSelectionContext -> biomeSelectionContext.getBiomeKey().equals(Biomes.CRIMSON_FOREST),
-                MobCategory.MONSTER,
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
                 MineLittleFlawlessEntities.ARINOS,
-                3,
+                8,
                 4,
                 4
         );
@@ -79,9 +79,9 @@ public class MineLittleFlawlessBiomeSpawns {
         // Arinos - Nether Wastes
         BiomeModifications.addSpawn(
                 biomeSelectionContext -> biomeSelectionContext.getBiomeKey().equals(Biomes.NETHER_WASTES),
-                MobCategory.MONSTER,
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
                 MineLittleFlawlessEntities.ARINOS,
-                31,
+                1,
                 4,
                 4
         );
@@ -89,9 +89,9 @@ public class MineLittleFlawlessBiomeSpawns {
         // Arinos - Soul Sand Valley
         BiomeModifications.addSpawn(
                 biomeSelectionContext -> biomeSelectionContext.getBiomeKey().equals(Biomes.SOUL_SAND_VALLEY),
-                MobCategory.MONSTER,
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
                 MineLittleFlawlessEntities.ARINOS,
-                13,
+                1,
                 4,
                 4
         );
@@ -99,9 +99,9 @@ public class MineLittleFlawlessBiomeSpawns {
         // Arinos - Warped Forest
         BiomeModifications.addSpawn(
                 biomeSelectionContext -> biomeSelectionContext.getBiomeKey().equals(Biomes.WARPED_FOREST),
-                MobCategory.MONSTER,
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
                 MineLittleFlawlessEntities.ARINOS,
-                1,
+                8,
                 1,
                 4
         );
@@ -109,9 +109,9 @@ public class MineLittleFlawlessBiomeSpawns {
         // Trixiebelle
         BiomeModifications.addSpawn(
                 biomeSelectionContext -> biomeSelectionContext.hasTag(MineLittleFlawlessTags.SPAWNS_TRIXIEBELLE),
-                MobCategory.CREATURE,
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_PERSISTENT,
                 MineLittleFlawlessEntities.TRIXIEBELLE,
-                20,
+                1,
                 4,
                 4
         );
@@ -119,9 +119,9 @@ public class MineLittleFlawlessBiomeSpawns {
         // Skywishes
         BiomeModifications.addSpawn(
                 biomeSelectionContext -> biomeSelectionContext.hasTag(MineLittleFlawlessTags.SPAWNS_SKYWISHES),
-                MobCategory.CREATURE,
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_PERSISTENT,
                 MineLittleFlawlessEntities.SKYWISHES,
-                20,
+                1,
                 4,
                 4
         );
@@ -129,9 +129,9 @@ public class MineLittleFlawlessBiomeSpawns {
         // Star Catcher
         BiomeModifications.addSpawn(
                 biomeSelectionContext -> biomeSelectionContext.hasTag(MineLittleFlawlessTags.SPAWNS_STAR_CATCHER),
-                MobCategory.CREATURE,
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_PERSISTENT,
                 MineLittleFlawlessEntities.STAR_CATCHER,
-                20,
+                1,
                 4,
                 4
         );
@@ -139,9 +139,9 @@ public class MineLittleFlawlessBiomeSpawns {
         // Marionette
         BiomeModifications.addSpawn(
                 biomeSelectionContext -> biomeSelectionContext.hasTag(MineLittleFlawlessTags.SPAWNS_MARIONETTE),
-                MobCategory.CREATURE,
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_PERSISTENT,
                 MineLittleFlawlessEntities.MARIONETTE,
-                20,
+                1,
                 4,
                 4
         );
@@ -149,9 +149,9 @@ public class MineLittleFlawlessBiomeSpawns {
         // Jackie Spectre
         BiomeModifications.addSpawn(
                 biomeSelectionContext -> biomeSelectionContext.hasTag(MineLittleFlawlessTags.SPAWNS_JACKIE_SPECTRE),
-                MobCategory.CREATURE,
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_PERSISTENT,
                 MineLittleFlawlessEntities.JACKIE_SPECTRE,
-                20,
+                1,
                 4,
                 4
         );
@@ -159,16 +159,16 @@ public class MineLittleFlawlessBiomeSpawns {
         // Wish Fulfillment - Overworld
         BiomeModifications.addSpawn(
                 biomeSelectionContext -> true,
-                MobCategory.MONSTER,
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
                 MineLittleFlawlessEntities.WISH_FULFILLMENT,
-                20,
+                1,
                 4,
                 4
         );
 
         // Wish Fulfillment - Warped Forest
         BiomeModifications.addSpawn(biomeSelectionContext -> biomeSelectionContext.getBiomeKey().equals(Biomes.WARPED_FOREST),
-                MobCategory.MONSTER,
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
                 MineLittleFlawlessEntities.WISH_FULFILLMENT,
                 1,
                 1,
@@ -177,9 +177,9 @@ public class MineLittleFlawlessBiomeSpawns {
 
         // Wish Fulfillment - Crimson Forest
         BiomeModifications.addSpawn(biomeSelectionContext -> biomeSelectionContext.getBiomeKey().equals(Biomes.CRIMSON_FOREST),
-                MobCategory.MONSTER,
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
                 MineLittleFlawlessEntities.WISH_FULFILLMENT,
-                3,
+                1,
                 4,
                 4
         );
