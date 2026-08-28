@@ -34,6 +34,7 @@ import net.tslat.smartbrainlib.api.core.sensor.vanilla.NearbyPlayersSensor;
 import net.tslat.smartbrainlib.api.core.sensor.vanilla.NearestItemSensor;
 import net.tslat.smartbrainlib.util.BrainUtils;
 import org.jetbrains.annotations.Nullable;
+import org.projectflawless.minelittleflawless.Clothing;
 import org.projectflawless.minelittleflawless.entity.ai.behavior.GoAndThrowItems;
 import org.projectflawless.minelittleflawless.entity.ai.behavior.GoToWantedItem;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
@@ -240,6 +241,12 @@ public class StarCatcher extends TamableTamersPony implements InventoryCarrier, 
             player1.broadcastBreakEvent(hand);
             this.setCanPickUpLoot(false);
         });
+
+        if (toggle) {
+            this.setClothing(Clothing.MAID);
+        } else {
+            this.setClothing(Clothing.NONE);
+        }
     }
 
     private static Optional<PositionTracker> trackTarget(StarCatcher starCatcher) {

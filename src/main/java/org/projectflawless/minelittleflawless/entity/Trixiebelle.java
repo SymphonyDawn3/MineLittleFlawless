@@ -12,6 +12,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
+import org.projectflawless.minelittleflawless.Clothing;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
 
@@ -19,6 +20,7 @@ public class Trixiebelle extends TamableTamersPony {
     public Trixiebelle(EntityType<Trixiebelle> type, Level world) {
         super(type, world);
         this.setUnicorn(true);
+        this.setClothing(Clothing.TRIXIEBELLE_JESTER);
     }
 
     @Override

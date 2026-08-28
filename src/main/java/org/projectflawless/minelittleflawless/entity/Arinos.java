@@ -12,6 +12,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.state.BlockState;
+import org.projectflawless.minelittleflawless.Clothing;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
 
@@ -19,6 +20,7 @@ public class Arinos extends TamableTamersPony {
     public Arinos(EntityType<Arinos> type, Level world) {
         super(type, world);
         this.setAlicorn(true);
+        this.setClothing(Clothing.JESTER);
     }
 
     @Override

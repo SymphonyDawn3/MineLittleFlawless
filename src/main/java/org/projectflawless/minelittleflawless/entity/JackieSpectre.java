@@ -12,12 +12,14 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
+import org.projectflawless.minelittleflawless.Clothing;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
 
 public class JackieSpectre extends TamableTamersPony {
     public JackieSpectre(EntityType<JackieSpectre> type, Level world) {
         super(type, world);
+        this.setClothing(Clothing.SAILOR);
     }
 
     @Override

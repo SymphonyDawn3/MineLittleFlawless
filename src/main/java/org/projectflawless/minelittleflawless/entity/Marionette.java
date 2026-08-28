@@ -12,6 +12,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
+import org.projectflawless.minelittleflawless.Clothing;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessTags;
@@ -19,6 +20,7 @@ import org.projectflawless.minelittleflawless.init.MineLittleFlawlessTags;
 public class Marionette extends TamableTamersPony {
     public Marionette(EntityType<Marionette> type, Level world) {
         super(type, world);
+        this.setClothing(Clothing.MASK);
     }
 
     @Override
