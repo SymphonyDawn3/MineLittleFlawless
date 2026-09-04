@@ -22,8 +22,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
@@ -200,12 +198,7 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
     }
 
     private static class BiomeTagGenerator extends FabricTagProvider<Biome> {
-        private static final TagKey<Biome> SPAWNS_MARIONETTE = TagKey.create(Registries.BIOME, new ResourceLocation(MineLittleFlawless.MOD_ID, "spawns_marionette"));
         private static final TagKey<Biome> SPAWNS_WISHCATCHER = TagKey.create(Registries.BIOME, new ResourceLocation(MineLittleFlawless.MOD_ID, "spawns_wishcatcher"));
-        private static final TagKey<Biome> SPAWNS_TRIXIEBELLE = TagKey.create(Registries.BIOME, new ResourceLocation(MineLittleFlawless.MOD_ID, "spawns_trixiebelle"));
-        private static final TagKey<Biome> SPAWNS_SKYWISHES = TagKey.create(Registries.BIOME, new ResourceLocation(MineLittleFlawless.MOD_ID, "spawns_skywishes"));
-        private static final TagKey<Biome> SPAWNS_STAR_CATCHER = TagKey.create(Registries.BIOME, new ResourceLocation(MineLittleFlawless.MOD_ID, "spawns_star_catcher"));
-        private static final TagKey<Biome> SPAWNS_JACKIE_SPECTRE = TagKey.create(Registries.BIOME, new ResourceLocation(MineLittleFlawless.MOD_ID, "spawns_jackie_spectre"));
 
         public BiomeTagGenerator(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
             super(output, Registries.BIOME, registriesFuture);
@@ -213,7 +206,7 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
 
         @Override
         protected void addTags(HolderLookup.Provider arg) {
-            this.getOrCreateTagBuilder(SPAWNS_MARIONETTE)
+            this.getOrCreateTagBuilder(MineLittleFlawlessTags.SPAWNS_MARIONETTE)
                     .add(
                             Biomes.CHERRY_GROVE,
                             Biomes.OLD_GROWTH_PINE_TAIGA,
@@ -232,7 +225,7 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
                             Biomes.SNOWY_TAIGA,
                             Biomes.TAIGA);
 
-            this.getOrCreateTagBuilder(SPAWNS_TRIXIEBELLE)
+            this.getOrCreateTagBuilder(MineLittleFlawlessTags.SPAWNS_TRIXIEBELLE)
                     .add(
                             Biomes.BADLANDS,
                             Biomes.ERODED_BADLANDS,
@@ -246,13 +239,13 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
                             Biomes.DESERT,
                             Biomes.STONY_PEAKS);
 
-            this.getOrCreateTagBuilder(SPAWNS_SKYWISHES)
+            this.getOrCreateTagBuilder(MineLittleFlawlessTags.SPAWNS_SKYWISHES)
                     .addTag(SPAWNS_WISHCATCHER);
 
-            this.getOrCreateTagBuilder(SPAWNS_STAR_CATCHER)
+            this.getOrCreateTagBuilder(MineLittleFlawlessTags.SPAWNS_STAR_CATCHER)
                     .addTag(SPAWNS_WISHCATCHER);
 
-            this.getOrCreateTagBuilder(SPAWNS_JACKIE_SPECTRE)
+            this.getOrCreateTagBuilder(MineLittleFlawlessTags.SPAWNS_JACKIE_SPECTRE)
                     .forceAddTag(BiomeTags.IS_BEACH)
                     .forceAddTag(BiomeTags.IS_OCEAN)
                     .forceAddTag(BiomeTags.IS_DEEP_OCEAN)
@@ -262,23 +255,20 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
     }
 
     private static class EntityTypeTagGenerator extends FabricTagProvider.EntityTypeTagProvider {
-        private static final TagKey<EntityType<?>> SPARKLEMOON_FAMILY = TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation(MineLittleFlawless.MOD_ID, "sparklemoon_family"));
-        private static final TagKey<EntityType<?>> CLOWN_COLLEGE = TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation(MineLittleFlawless.MOD_ID, "clown_college"));
-
         public EntityTypeTagGenerator(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
             super(output, completableFuture);
         }
 
         @Override
         protected void addTags(HolderLookup.Provider arg) {
-            this.getOrCreateTagBuilder(SPARKLEMOON_FAMILY)
+            this.getOrCreateTagBuilder(MineLittleFlawlessTags.SPARKLEMOON_FAMILY)
                     .add(
                             MineLittleFlawlessEntities.TWILIGHT,
                             MineLittleFlawlessEntities.TRIXIE,
                             MineLittleFlawlessEntities.FLAWLESS,
                             MineLittleFlawlessEntities.MARIONETTE);
 
-            this.getOrCreateTagBuilder(CLOWN_COLLEGE)
+            this.getOrCreateTagBuilder(MineLittleFlawlessTags.CLOWN_COLLEGE)
                     .add(
                             MineLittleFlawlessEntities.ARINOS,
                             MineLittleFlawlessEntities.LAST_LAUGH,
@@ -289,17 +279,13 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
     }
 
     private static class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
-        private static final TagKey<Item> FARMER_GIFTS = TagKey.create(Registries.ITEM, new ResourceLocation(MineLittleFlawless.MOD_ID, "farmer_gifts"));
-        private static final TagKey<Item> FLAWLESS_CLOTHING = TagKey.create(Registries.ITEM, new ResourceLocation(MineLittleFlawless.MOD_ID, "flawless_clothing"));
-        private static final TagKey<Item> FLAWLESS_FOOD = TagKey.create(Registries.ITEM, new ResourceLocation(MineLittleFlawless.MOD_ID, "flawless_food"));
-
         public ItemTagGenerator(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
             super(output, completableFuture);
         }
 
         @Override
         protected void addTags(HolderLookup.Provider arg) {
-            this.getOrCreateTagBuilder(FARMER_GIFTS)
+            this.getOrCreateTagBuilder(MineLittleFlawlessTags.FARMER_GIFTS)
                     .add(
                             Items.PUMPKIN_SEEDS,
                             Items.NETHER_WART,
@@ -310,7 +296,7 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
                             Items.POTATO,
                             Items.MELON_SEEDS);
 
-            this.getOrCreateTagBuilder(FLAWLESS_CLOTHING)
+            this.getOrCreateTagBuilder(MineLittleFlawlessTags.FLAWLESS_CLOTHING)
                     .add(
                             MineLittleFlawlessItems.FLAWLESS_MAGICIAN_CLOTHING,
                             MineLittleFlawlessItems.PAJAMAS,
@@ -319,7 +305,7 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
                             MineLittleFlawlessItems.FARMER,
                             MineLittleFlawlessItems.ROCKSTAR);
 
-            this.getOrCreateTagBuilder(FLAWLESS_FOOD)
+            this.getOrCreateTagBuilder(MineLittleFlawlessTags.FLAWLESS_FOOD)
                     .add(
                             Items.MELON_SLICE,
                             Items.MUSHROOM_STEW,
