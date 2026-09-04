@@ -1,0 +1,74 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.bibblebop_clown",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "body",
+					"parent": "root",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-4, 12, -9], "size": [8, 8, 4], "inflate": 0.25, "uv": [0, 30]},
+						{"origin": [-4, 12, -4.5], "size": [8, 8, 12], "inflate": 0.25, "uv": [0, 0]},
+						{"origin": [-1, 15, -10.25], "size": [2, 2, 2], "uv": [32, 24]}
+					]
+				},
+				{
+					"name": "rightArm",
+					"parent": "body",
+					"pivot": [0, 16, -5],
+					"cubes": [
+						{"origin": [0, 0, -7], "size": [4, 12, 4], "inflate": 0.2, "uv": [24, 30]}
+					]
+				},
+				{
+					"name": "leftArm",
+					"parent": "body",
+					"pivot": [0, 16, -5],
+					"cubes": [
+						{"origin": [-4, 0, -7], "size": [4, 12, 4], "inflate": 0.2, "uv": [40, 0]}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "root",
+					"pivot": [0, 24, -7]
+				},
+				{
+					"name": "snout",
+					"parent": "head",
+					"pivot": [0, 24, -7]
+				},
+				{
+					"name": "stallion",
+					"parent": "snout",
+					"pivot": [0, 24, -7],
+					"cubes": [
+						{"origin": [-2, 22, -14], "size": [4, 3, 1], "inflate": 0.01, "uv": [32, 20]}
+					]
+				},
+				{
+					"name": "neck",
+					"parent": "root",
+					"pivot": [0, 18, -7],
+					"rotation": [9, 0, 0],
+					"cubes": [
+						{"origin": [-4, 19.91667, -11.16667], "size": [8, 2, 8], "uv": [0, 20]}
+					]
+				}
+			]
+		}
+	]
+}

@@ -52,25 +52,33 @@ public class MineLittleFlawlessSoundEvents {
             SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
                     "entity.trixie.death")));
 
-    public static final SoundEvent ARINOS_JINGLE = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.arinos.jingle"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.arinos.jingle")));
+    // Generic stepping sound for clown ponies
+    public static final SoundEvent CLOWN_PONY_JINGLE = register("entity.clown_pony.jingle");
 
-    public static final SoundEvent ARINOS_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.arinos.ambient"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.arinos.ambient")));
+    // Arinos
+    public static final SoundEvent ARINOS_AMBIENT = register("entity.arinos.ambient");
+    public static final SoundEvent ARINOS_HURT = register("entity.arinos.hurt");
+    public static final SoundEvent ARINOS_DEATH = register("entity.arinos.death");
 
-    public static final SoundEvent ARINOS_HURT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.arinos.hurt"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.arinos.hurt")));
+    // Last Laugh
+    public static final SoundEvent LAST_LAUGH_AMBIENT = register("entity.last_laugh.ambient");
+    public static final SoundEvent LAST_LAUGH_HURT = register("entity.last_laugh.hurt");
+    public static final SoundEvent LAST_LAUGH_DEATH = register("entity.last_laugh.death");
 
-    public static final SoundEvent ARINOS_DEATH = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.arinos.death"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.arinos.death")));
+    // Cherry Chuckles
+    public static final SoundEvent CHERRY_CHUCKLES_AMBIENT = register("entity.cherry_chuckles.ambient");
+    public static final SoundEvent CHERRY_CHUCKLES_HURT = register("entity.cherry_chuckles.hurt");
+    public static final SoundEvent CHERRY_CHUCKLES_DEATH = register("entity.cherry_chuckles.death");
+
+    // Bibblebop
+    public static final SoundEvent BIBBLEBOP_AMBIENT = register("entity.bibblebop.ambient");
+    public static final SoundEvent BIBBLEBOP_HURT = register("entity.bibblebop.hurt");
+    public static final SoundEvent BIBBLEBOP_DEATH = register("entity.bibblebop.death");
+
+    // Tricolor Jubilee
+    public static final SoundEvent TRICOLOR_JUBILEE_AMBIENT = register("entity.tricolor_jubilee.ambient");
+    public static final SoundEvent TRICOLOR_JUBILEE_HURT = register("entity.tricolor_jubilee.hurt");
+    public static final SoundEvent TRICOLOR_JUBILEE_DEATH = register("entity.tricolor_jubilee.death");
 
     public static final SoundEvent MARIONETTE_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
             new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.marionette.ambient"),
@@ -198,5 +206,10 @@ public class MineLittleFlawlessSoundEvents {
 
     public static void init() {
 
+    }
+
+    private static SoundEvent register(String path) {
+        ResourceLocation location = new ResourceLocation(MineLittleFlawless.MOD_ID, path);
+        return Registry.register(BuiltInRegistries.SOUND_EVENT, location, SoundEvent.createVariableRangeEvent(location));
     }
 }

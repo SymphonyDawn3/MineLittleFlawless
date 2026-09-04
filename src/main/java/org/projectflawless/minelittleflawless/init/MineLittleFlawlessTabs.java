@@ -15,6 +15,10 @@ public class MineLittleFlawlessTabs {
             entries.accept(MineLittleFlawlessItems.TWILIGHT_SPAWN_EGG);
             entries.accept(MineLittleFlawlessItems.TRIXIE_SPAWN_EGG);
             entries.accept(MineLittleFlawlessItems.ARINOS_SPAWN_EGG);
+            entries.accept(MineLittleFlawlessItems.LAST_LAUGH_SPAWN_EGG);
+            entries.accept(MineLittleFlawlessItems.CHERRY_CHUCKLES_SPAWN_EGG);
+            entries.accept(MineLittleFlawlessItems.BIBBLEBOP_SPAWN_EGG);
+            entries.accept(MineLittleFlawlessItems.TRICOLOR_JUBILEE_SPAWN_EGG);
             entries.accept(MineLittleFlawlessItems.TRIXIEBELLE_SPAWN_EGG);
             entries.accept(MineLittleFlawlessItems.SKYWISHES_SPAWN_EGG);
             entries.accept(MineLittleFlawlessItems.STAR_CATCHER_SPAWN_EGG);

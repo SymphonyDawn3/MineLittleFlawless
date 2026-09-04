@@ -263,6 +263,7 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
 
     private static class EntityTypeTagGenerator extends FabricTagProvider.EntityTypeTagProvider {
         private static final TagKey<EntityType<?>> SPARKLEMOON_FAMILY = TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation(MineLittleFlawless.MOD_ID, "sparklemoon_family"));
+        private static final TagKey<EntityType<?>> CLOWN_COLLEGE = TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation(MineLittleFlawless.MOD_ID, "clown_college"));
 
         public EntityTypeTagGenerator(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
             super(output, completableFuture);
@@ -276,6 +277,14 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
                             MineLittleFlawlessEntities.TRIXIE,
                             MineLittleFlawlessEntities.FLAWLESS,
                             MineLittleFlawlessEntities.MARIONETTE);
+
+            this.getOrCreateTagBuilder(CLOWN_COLLEGE)
+                    .add(
+                            MineLittleFlawlessEntities.ARINOS,
+                            MineLittleFlawlessEntities.LAST_LAUGH,
+                            MineLittleFlawlessEntities.CHERRY_CHUCKLES,
+                            MineLittleFlawlessEntities.BIBBLEBOP,
+                            MineLittleFlawlessEntities.TRICOLOR_JUBILEE);
         }
     }
 

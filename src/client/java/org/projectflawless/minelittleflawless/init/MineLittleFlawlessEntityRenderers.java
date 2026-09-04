@@ -10,6 +10,10 @@ public class MineLittleFlawlessEntityRenderers {
         EntityRendererRegistry.register(MineLittleFlawlessEntities.TWILIGHT, TwilightRenderer::new);
         EntityRendererRegistry.register(MineLittleFlawlessEntities.TRIXIE, TrixieRenderer::new);
         EntityRendererRegistry.register(MineLittleFlawlessEntities.ARINOS, ArinosRenderer::new);
+        EntityRendererRegistry.register(MineLittleFlawlessEntities.LAST_LAUGH, LastLaughRenderer::new);
+        EntityRendererRegistry.register(MineLittleFlawlessEntities.CHERRY_CHUCKLES, CherryChucklesRenderer::new);
+        EntityRendererRegistry.register(MineLittleFlawlessEntities.BIBBLEBOP, BibblebopRenderer::new);
+        EntityRendererRegistry.register(MineLittleFlawlessEntities.TRICOLOR_JUBILEE, TricolorJubileeRenderer::new);
         EntityRendererRegistry.register(MineLittleFlawlessEntities.TRIXIEBELLE, TrixiebelleRenderer::new);
         EntityRendererRegistry.register(MineLittleFlawlessEntities.SKYWISHES, SkywishesRenderer::new);
         EntityRendererRegistry.register(MineLittleFlawlessEntities.STAR_CATCHER, StarCatcherRenderer::new);

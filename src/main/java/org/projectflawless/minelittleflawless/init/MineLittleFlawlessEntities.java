@@ -41,6 +41,30 @@ public class MineLittleFlawlessEntities {
                     .updateInterval(3)
                     .sized(0.8125f, 2f));
 
+    public static final EntityType<LastLaugh> LAST_LAUGH = register("last_laugh",
+            EntityType.Builder.of(LastLaugh::new, MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT)
+                    .clientTrackingRange(64)
+                    .updateInterval(3)
+                    .sized(0.8125f, 2f));
+
+    public static final EntityType<CherryChuckles> CHERRY_CHUCKLES = register("cherry_chuckles",
+            EntityType.Builder.of(CherryChuckles::new, MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT)
+                    .clientTrackingRange(64)
+                    .updateInterval(3)
+                    .sized(0.56875f, 1.4f));
+
+    public static final EntityType<Bibblebop> BIBBLEBOP = register("bibblebop",
+            EntityType.Builder.of(Bibblebop::new, MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT)
+                    .clientTrackingRange(64)
+                    .updateInterval(3)
+                    .sized(1.178125f, 2.9f));
+
+    public static final EntityType<TricolorJubilee> TRICOLOR_JUBILEE = register("tricolor_jubilee",
+            EntityType.Builder.of(TricolorJubilee::new, MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT)
+                    .clientTrackingRange(64)
+                    .updateInterval(3)
+                    .sized(0.8125f, 2f));
+
     public static final EntityType<Trixiebelle> TRIXIEBELLE = register("trixiebelle",
             EntityType.Builder.of(Trixiebelle::new, MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_PERSISTENT)
                     .clientTrackingRange(64)

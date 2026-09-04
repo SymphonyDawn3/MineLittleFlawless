@@ -14,10 +14,11 @@ public class MineLittleFlawlessSpawns {
         register(MineLittleFlawlessEntities.FLAWLESS);
         register(MineLittleFlawlessEntities.TWILIGHT);
         register(MineLittleFlawlessEntities.TRIXIE);
-        register(MineLittleFlawlessEntities.ARINOS, (entityType, serverLevel,
-                                                     spawnType, pos, random)
-                -> Monster.isDarkEnoughToSpawn(serverLevel, pos, random)
-                && Mob.checkMobSpawnRules(entityType, serverLevel, spawnType, pos, random));
+        clownSpawns(MineLittleFlawlessEntities.ARINOS);
+        clownSpawns(MineLittleFlawlessEntities.LAST_LAUGH);
+        clownSpawns(MineLittleFlawlessEntities.CHERRY_CHUCKLES);
+        clownSpawns(MineLittleFlawlessEntities.BIBBLEBOP);
+        clownSpawns(MineLittleFlawlessEntities.TRICOLOR_JUBILEE);
         register(MineLittleFlawlessEntities.TRIXIEBELLE, (entityType,
                                                           serverLevelAccessor,
                                                           mobSpawnType,
@@ -58,5 +59,12 @@ public class MineLittleFlawlessSpawns {
     private static <E extends Mob> void register(EntityType<E> entityType, SpawnPlacements.SpawnPredicate<E> spawnPredicate) {
         SpawnPlacements.register(entityType, SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, spawnPredicate);
+    }
+
+    private static void clownSpawns(EntityType<? extends Mob> entityType) {
+        register(entityType, (entityType2, serverLevel,
+                                                     spawnType, pos, random)
+                -> Monster.isDarkEnoughToSpawn(serverLevel, pos, random)
+                && Mob.checkMobSpawnRules(entityType2, serverLevel, spawnType, pos, random));
     }
 }

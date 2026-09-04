@@ -65,10 +65,10 @@
       "minelittleflawless:mob/trixie/hurt2"
     ]
   },
-  "entity.arinos.jingle": {
-    "subtitle": "subtitles.entity.arinos.jingle",
+  "entity.clown_pony.jingle": {
+    "subtitle": "subtitles.entity.clown_pony.jingle",
     "sounds": [
-      "minelittleflawless:mob/arinos/jingle"
+      "minelittleflawless:mob/clown_pony/jingle"
     ]
   },
   "entity.arinos.ambient": {
@@ -92,6 +92,98 @@
     "sounds": [
       "minelittleflawless:mob/arinos/hurt1",
       "minelittleflawless:mob/arinos/hurt2"
+    ]
+  },
+  "entity.last_laugh.ambient": {
+    "subtitle": "subtitles.entity.last_laugh.ambient",
+    "sounds": [
+      "minelittleflawless:mob/last_laugh/speak1",
+      "minelittleflawless:mob/last_laugh/speak2",
+      "minelittleflawless:mob/last_laugh/speak3",
+      "minelittleflawless:mob/last_laugh/speak4"
+    ]
+  },
+  "entity.last_laugh.hurt": {
+    "subtitle": "subtitles.entity.last_laugh.hurt",
+    "sounds": [
+      "minelittleflawless:mob/last_laugh/hurt1",
+      "minelittleflawless:mob/last_laugh/hurt2"
+    ]
+  },
+  "entity.last_laugh.death": {
+    "subtitle": "subtitles.entity.last_laugh.death",
+    "sounds": [
+      "minelittleflawless:mob/last_laugh/hurt1",
+      "minelittleflawless:mob/last_laugh/hurt2"
+    ]
+  },
+  "entity.cherry_chuckles.ambient": {
+    "subtitle": "subtitles.entity.cherry_chuckles.ambient",
+    "sounds": [
+      "minelittleflawless:mob/cherry_chuckles/speak1",
+      "minelittleflawless:mob/cherry_chuckles/speak2",
+      "minelittleflawless:mob/cherry_chuckles/speak3",
+      "minelittleflawless:mob/cherry_chuckles/speak4"
+    ]
+  },
+  "entity.cherry_chuckles.hurt": {
+    "subtitle": "subtitles.entity.cherry_chuckles.hurt",
+    "sounds": [
+      "minelittleflawless:mob/cherry_chuckles/hurt1",
+      "minelittleflawless:mob/cherry_chuckles/hurt2"
+    ]
+  },
+  "entity.cherry_chuckles.death": {
+    "subtitle": "subtitles.entity.cherry_chuckles.death",
+    "sounds": [
+      "minelittleflawless:mob/cherry_chuckles/hurt1",
+      "minelittleflawless:mob/cherry_chuckles/hurt2"
+    ]
+  },
+  "entity.bibblebop.ambient": {
+    "subtitle": "subtitles.entity.bibblebop.ambient",
+    "sounds": [
+      "minelittleflawless:mob/bibblebop/speak1",
+      "minelittleflawless:mob/bibblebop/speak2",
+      "minelittleflawless:mob/bibblebop/speak3",
+      "minelittleflawless:mob/bibblebop/speak4"
+    ]
+  },
+  "entity.bibblebop.hurt": {
+    "subtitle": "subtitles.entity.cherry_chuckles.hurt",
+    "sounds": [
+      "minelittleflawless:mob/bibblebop/hurt1",
+      "minelittleflawless:mob/bibblebop/hurt2"
+    ]
+  },
+  "entity.bibblebop.death": {
+    "subtitle": "subtitles.entity.bibblebop.death",
+    "sounds": [
+      "minelittleflawless:mob/bibblebop/hurt1",
+      "minelittleflawless:mob/bibblebop/hurt2"
+    ]
+  },
+  "entity.tricolor_jubilee.ambient": {
+    "subtitle": "subtitles.entity.tricolor_jubilee.ambient",
+    "sounds": [
+      "minelittleflawless:mob/tricolor_jubilee/speak1",
+      "minelittleflawless:mob/tricolor_jubilee/speak2",
+      "minelittleflawless:mob/tricolor_jubilee/speak3",
+      "minelittleflawless:mob/tricolor_jubilee/speak4"
+    ]
+  },
+  "entity.tricolor_jubilee.hurt": {
+    "subtitle": "subtitles.entity.tricolor_jubilee.hurt",
+    "sounds": [
+      "minelittleflawless:mob/tricolor_jubilee/hurt1",
+      "minelittleflawless:mob/tricolor_jubilee/hurt2"
+    ]
+  },
+  "entity.tricolor_jubilee.death": {
+    "subtitle": "subtitles.entity.tricolor_jubilee.death",
+    "sounds": [
+      "minelittleflawless:mob/tricolor_jubilee/hurt1",
+      "minelittleflawless:mob/tricolor_jubilee/hurt2"
     ]
   },
   "entity.marionette.ambient": {

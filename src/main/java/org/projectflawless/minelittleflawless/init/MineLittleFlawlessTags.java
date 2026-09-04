@@ -21,6 +21,9 @@ public class MineLittleFlawlessTags {
     public static TagKey<EntityType<?>> SPARKLEMOON_FAMILY = TagKey.create(Registries.ENTITY_TYPE,
             new ResourceLocation(MineLittleFlawless.MOD_ID, "sparklemoon_family"));
 
+    public static TagKey<EntityType<?>> CLOWN_COLLEGE = TagKey.create(Registries.ENTITY_TYPE,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "clown_college"));
+
     public static TagKey<Biome> SPAWNS_TRIXIEBELLE = TagKey.create(Registries.BIOME,
             new ResourceLocation(MineLittleFlawless.MOD_ID, "spawns_trixiebelle"));
 

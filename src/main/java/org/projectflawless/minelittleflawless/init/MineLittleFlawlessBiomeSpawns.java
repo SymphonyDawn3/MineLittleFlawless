@@ -2,6 +2,7 @@ package org.projectflawless.minelittleflawless.init;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biomes;
 
@@ -37,74 +38,20 @@ public class MineLittleFlawlessBiomeSpawns {
                 4
         );
 
-        // Arinos - Overworld
-        BiomeModifications.addSpawn(
-                biomeSelectionContext -> biomeSelectionContext.hasTag(BiomeTags.IS_OVERWORLD),
-                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
-                MineLittleFlawlessEntities.ARINOS,
-                8,
-                4,
-                4);
+        // Arinos
+        clownBiomeSpawns(MineLittleFlawlessEntities.ARINOS);
+        
+        // Last Laugh
+        clownBiomeSpawns(MineLittleFlawlessEntities.LAST_LAUGH);
+        
+        // Cherry Chuckles
+        clownBiomeSpawns(MineLittleFlawlessEntities.CHERRY_CHUCKLES);
 
-        // Arinos - End
-        BiomeModifications.addSpawn(
-                biomeSelectionContext -> biomeSelectionContext.hasTag(BiomeTags.IS_END),
-                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
-                MineLittleFlawlessEntities.ARINOS,
-                1,
-                4,
-                4
-        );
+        // Bibblebop
+        clownBiomeSpawns(MineLittleFlawlessEntities.BIBBLEBOP);
 
-        // Arinos - Basalt Deltas
-        BiomeModifications.addSpawn(
-                biomeSelectionContext -> biomeSelectionContext.getBiomeKey().equals(Biomes.BASALT_DELTAS),
-                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
-                MineLittleFlawlessEntities.ARINOS,
-                1,
-                4,
-                4
-        );
-
-        // Arinos - Crimson Forest
-        BiomeModifications.addSpawn(
-                biomeSelectionContext -> biomeSelectionContext.getBiomeKey().equals(Biomes.CRIMSON_FOREST),
-                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
-                MineLittleFlawlessEntities.ARINOS,
-                8,
-                4,
-                4
-        );
-
-        // Arinos - Nether Wastes
-        BiomeModifications.addSpawn(
-                biomeSelectionContext -> biomeSelectionContext.getBiomeKey().equals(Biomes.NETHER_WASTES),
-                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
-                MineLittleFlawlessEntities.ARINOS,
-                1,
-                4,
-                4
-        );
-
-        // Arinos - Soul Sand Valley
-        BiomeModifications.addSpawn(
-                biomeSelectionContext -> biomeSelectionContext.getBiomeKey().equals(Biomes.SOUL_SAND_VALLEY),
-                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
-                MineLittleFlawlessEntities.ARINOS,
-                1,
-                4,
-                4
-        );
-
-        // Arinos - Warped Forest
-        BiomeModifications.addSpawn(
-                biomeSelectionContext -> biomeSelectionContext.getBiomeKey().equals(Biomes.WARPED_FOREST),
-                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
-                MineLittleFlawlessEntities.ARINOS,
-                8,
-                1,
-                4
-        );
+        // Tricolor Jubilee
+        clownBiomeSpawns(MineLittleFlawlessEntities.TRICOLOR_JUBILEE);
 
         // Trixiebelle
         BiomeModifications.addSpawn(
@@ -161,7 +108,7 @@ public class MineLittleFlawlessBiomeSpawns {
                 biomeSelectionContext -> true,
                 MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
                 MineLittleFlawlessEntities.WISH_FULFILLMENT,
-                1,
+                5,
                 4,
                 4
         );
@@ -170,7 +117,7 @@ public class MineLittleFlawlessBiomeSpawns {
         BiomeModifications.addSpawn(biomeSelectionContext -> biomeSelectionContext.getBiomeKey().equals(Biomes.WARPED_FOREST),
                 MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
                 MineLittleFlawlessEntities.WISH_FULFILLMENT,
-                1,
+                5,
                 1,
                 4
         );
@@ -179,8 +126,79 @@ public class MineLittleFlawlessBiomeSpawns {
         BiomeModifications.addSpawn(biomeSelectionContext -> biomeSelectionContext.getBiomeKey().equals(Biomes.CRIMSON_FOREST),
                 MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
                 MineLittleFlawlessEntities.WISH_FULFILLMENT,
-                1,
+                5,
                 4,
+                4
+        );
+    }
+    
+    public static void clownBiomeSpawns(EntityType<?> entityType) {
+        // Overworld
+        BiomeModifications.addSpawn(
+                biomeSelectionContext -> biomeSelectionContext.hasTag(BiomeTags.IS_OVERWORLD),
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
+                entityType,
+                8,
+                4,
+                4);
+
+        // End
+        BiomeModifications.addSpawn(
+                biomeSelectionContext -> biomeSelectionContext.hasTag(BiomeTags.IS_END),
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
+                entityType,
+                8,
+                4,
+                4
+        );
+
+        // Basalt Deltas
+        BiomeModifications.addSpawn(
+                biomeSelectionContext -> biomeSelectionContext.getBiomeKey().equals(Biomes.BASALT_DELTAS),
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
+                entityType,
+                8,
+                4,
+                4
+        );
+
+        // Crimson Forest
+        BiomeModifications.addSpawn(
+                biomeSelectionContext -> biomeSelectionContext.getBiomeKey().equals(Biomes.CRIMSON_FOREST),
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
+                entityType,
+                8,
+                4,
+                4
+        );
+
+        // Nether Wastes
+        BiomeModifications.addSpawn(
+                biomeSelectionContext -> biomeSelectionContext.getBiomeKey().equals(Biomes.NETHER_WASTES),
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT, 
+                entityType,
+                8,
+                4,
+                4
+        );
+
+        // Soul Sand Valley
+        BiomeModifications.addSpawn(
+                biomeSelectionContext -> biomeSelectionContext.getBiomeKey().equals(Biomes.SOUL_SAND_VALLEY),
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
+                entityType,
+                8,
+                4,
+                4
+        );
+
+        // Warped Forest
+        BiomeModifications.addSpawn(
+                biomeSelectionContext -> biomeSelectionContext.getBiomeKey().equals(Biomes.WARPED_FOREST),
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
+                entityType,
+                8,
+                1,
                 4
         );
     }

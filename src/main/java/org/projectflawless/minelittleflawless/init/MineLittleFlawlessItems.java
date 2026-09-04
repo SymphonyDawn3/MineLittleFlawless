@@ -16,6 +16,10 @@ public class MineLittleFlawlessItems {
     public static final SpawnEggItem TWILIGHT_SPAWN_EGG = register("twilight_spawn_egg", () -> new SpawnEggItem(MineLittleFlawlessEntities.TWILIGHT, 0xcc9cdf, 0x652d87, new Item.Properties()));
     public static final SpawnEggItem TRIXIE_SPAWN_EGG = register("trixie_spawn_egg", () -> new SpawnEggItem(MineLittleFlawlessEntities.TRIXIE, 0x6cb2ea, 0xe1f4ff, new Item.Properties()));
     public static final SpawnEggItem ARINOS_SPAWN_EGG = register("arinos_spawn_egg", () -> new SpawnEggItem(MineLittleFlawlessEntities.ARINOS, 0xfddafc, 0x38b8fc, new Item.Properties()));
+    public static final SpawnEggItem LAST_LAUGH_SPAWN_EGG = register("last_laugh_spawn_egg", () -> new SpawnEggItem(MineLittleFlawlessEntities.LAST_LAUGH, 0x828085, 0x1a1a1a, new Item.Properties()));
+    public static final SpawnEggItem CHERRY_CHUCKLES_SPAWN_EGG = register("cherry_chuckles_spawn_egg", () -> new SpawnEggItem(MineLittleFlawlessEntities.CHERRY_CHUCKLES, 0xc3fdff, 0x779bf9, new Item.Properties()));
+    public static final SpawnEggItem BIBBLEBOP_SPAWN_EGG = register("bibblebop_spawn_egg", () -> new SpawnEggItem(MineLittleFlawlessEntities.BIBBLEBOP, 0xffffff, 0xf788f1, new Item.Properties()));
+    public static final SpawnEggItem TRICOLOR_JUBILEE_SPAWN_EGG = register("tricolor_jubilee_spawn_egg", () -> new SpawnEggItem(MineLittleFlawlessEntities.TRICOLOR_JUBILEE, 0xfbf8cd, 0xbc79da, new Item.Properties()));
     public static final SpawnEggItem TRIXIEBELLE_SPAWN_EGG = register("trixiebelle_spawn_egg", () -> new SpawnEggItem(MineLittleFlawlessEntities.TRIXIEBELLE, 0xfdf0b5, 0xff7d69, new Item.Properties()));
     public static final SpawnEggItem SKYWISHES_SPAWN_EGG = register("skywishes_spawn_egg", () -> new SpawnEggItem(MineLittleFlawlessEntities.SKYWISHES, 0xfe9fe3, 0x913d9b, new Item.Properties()));
     public static final SpawnEggItem STAR_CATCHER_SPAWN_EGG = register("star_catcher_spawn_egg", () -> new SpawnEggItem(MineLittleFlawlessEntities.STAR_CATCHER, 0xf3ece0, 0xf2a6ce, new Item.Properties()));

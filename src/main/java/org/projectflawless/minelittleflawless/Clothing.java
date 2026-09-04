@@ -22,6 +22,18 @@ public class Clothing {
     // Arinos clothing
     public static ResourceLocation JESTER = new ResourceLocation(MineLittleFlawless.MOD_ID, "jester");
 
+    // Last Laugh clothing
+    public static ResourceLocation LAST_LAUGH_CLOWN = new ResourceLocation(MineLittleFlawless.MOD_ID, "last_laugh_clown");
+
+    // Cherry Chuckles clothing
+    public static ResourceLocation CHERRY_CHUCKLES_CLOWN = new ResourceLocation(MineLittleFlawless.MOD_ID, "cherry_chuckles_clown");
+
+    // Bibblebop clothing
+    public static ResourceLocation BIBBLEBOP_CLOWN = new ResourceLocation(MineLittleFlawless.MOD_ID, "bibblebop_clown");
+
+    // Tricolor Jubilee clothing
+    public static ResourceLocation TRICOLOR_JUBILEE_CLOWN = new ResourceLocation(MineLittleFlawless.MOD_ID, "tricolor_jubilee_clown");
+
     // Marionette clothing
     public static ResourceLocation MASK = new ResourceLocation(MineLittleFlawless.MOD_ID, "mask");
 
