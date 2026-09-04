@@ -37,13 +37,14 @@ public abstract class AdultAndBabyPonyModel<E extends TamableTamersPony & GeoAni
             bone.setRotY(entityModelData.netHeadYaw() * Mth.DEG_TO_RAD);
         });
 
+        Optional<GeoBone> mare = this.getBone("mare");
         Optional<GeoBone> stallion = this.getBone("stallion");
         Optional<GeoBone> horn = this.getBone("horn");
         Optional<GeoBone> wings = this.getBone("wings");
         Optional<GeoBone> extendedRight = this.getBone("extendedRight");
         Optional<GeoBone> extendedLeft = this.getBone("extendedLeft");
 
-
+        mare.ifPresent(bone -> bone.setHidden(animatable.isStallion()));
         stallion.ifPresent(bone -> bone.setHidden(!animatable.isStallion()));
         horn.ifPresent(bone -> bone.setHidden(!animatable.isUnicorn()));
         wings.ifPresent(bone -> bone.setHidden(!animatable.isPegasus()));
