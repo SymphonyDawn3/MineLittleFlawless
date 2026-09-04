@@ -7,50 +7,20 @@ import net.minecraft.sounds.SoundEvent;
 import org.projectflawless.minelittleflawless.MineLittleFlawless;
 
 public class MineLittleFlawlessSoundEvents {
-    public static final SoundEvent FLAWLESS_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.flawless.ambient"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.flawless.ambient")));
+    // Flawless
+    public static final SoundEvent FLAWLESS_AMBIENT = register("entity.flawless.ambient");
+    public static final SoundEvent FLAWLESS_HURT = register("entity.flawless.hurt");
+    public static final SoundEvent FLAWLESS_DEATH = register("entity.flawless.death");
 
-    public static final SoundEvent FLAWLESS_HURT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.flawless.hurt"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.flawless.hurt")));
+    // Twilight
+    public static final SoundEvent TWILIGHT_AMBIENT = register("entity.twilight.ambient");
+    public static final SoundEvent TWILIGHT_HURT = register("entity.twilight.hurt");
+    public static final SoundEvent TWILIGHT_DEATH = register("entity.twilight.death");
 
-    public static final SoundEvent FLAWLESS_DEATH = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.flawless.death"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.flawless.death")));
-
-    public static final SoundEvent TWILIGHT_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.twilight.ambient"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.twilight.ambient")));
-
-    public static final SoundEvent TWILIGHT_HURT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.twilight.hurt"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.twilight.hurt")));
-
-    public static final SoundEvent TWILIGHT_DEATH = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.twilight.death"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.twilight.death")));
-
-    public static final SoundEvent TRIXIE_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.trixie.ambient"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.trixie.ambient")));
-
-    public static final SoundEvent TRIXIE_HURT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.trixie.hurt"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.trixie.hurt")));
-
-    public static final SoundEvent TRIXIE_DEATH = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.trixie.death"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.trixie.death")));
+    // Trixie
+    public static final SoundEvent TRIXIE_AMBIENT = register("entity.trixie.ambient");
+    public static final SoundEvent TRIXIE_HURT = register("entity.trixie.hurt");
+    public static final SoundEvent TRIXIE_DEATH = register("entity.trixie.death");
 
     // Generic stepping sound for clown ponies
     public static final SoundEvent CLOWN_PONY_JINGLE = register("entity.clown_pony.jingle");
@@ -80,129 +50,42 @@ public class MineLittleFlawlessSoundEvents {
     public static final SoundEvent TRICOLOR_JUBILEE_HURT = register("entity.tricolor_jubilee.hurt");
     public static final SoundEvent TRICOLOR_JUBILEE_DEATH = register("entity.tricolor_jubilee.death");
 
-    public static final SoundEvent MARIONETTE_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.marionette.ambient"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.marionette.ambient")));
+    // Marionette
+    public static final SoundEvent MARIONETTE_AMBIENT = register("entity.marionette.ambient");
+    public static final SoundEvent MARIONETTE_HURT = register("entity.marionette.hurt");
+    public static final SoundEvent MARIONETTE_DEATH = register("entity.marionette.death");
 
-    public static final SoundEvent MARIONETTE_HURT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.marionette.hurt"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.marionette.hurt")));
+    // Trixiebelle
+    public static final SoundEvent TRIXIEBELLE_AMBIENT = register("entity.trixiebelle.ambient");
+    public static final SoundEvent TRIXIEBELLE_HURT = register("entity.trixiebelle.hurt");
+    public static final SoundEvent TRIXIEBELLE_DEATH = register("entity.trixiebelle.death");
 
-    public static final SoundEvent MARIONETTE_DEATH = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.marionette.death"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.marionette.death")));
-    public static final SoundEvent TRIXIEBELLE_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.trixiebelle.ambient"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.trixiebelle.ambient")));
+    // Skywishes
+    public static final SoundEvent SKYWISHES_AMBIENT = register("entity.skywishes.ambient");
+    public static final SoundEvent SKYWISHES_HURT = register("entity.skywishes.hurt");
+    public static final SoundEvent SKYWISHES_DEATH = register("entity.skywishes.death");
 
-    public static final SoundEvent TRIXIEBELLE_HURT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.trixiebelle.hurt"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.trixiebelle.hurt")));
+    // Star Catcher
+    public static final SoundEvent STAR_CATCHER_AMBIENT = register("entity.star_catcher.ambient");
+    public static final SoundEvent STAR_CATCHER_HURT = register("entity.star_catcher.hurt");
+    public static final SoundEvent STAR_CATCHER_DEATH = register("entity.star_catcher.death");
+    public static final SoundEvent STAR_CATCHER_CLEAN_ON = register("entity.star_catcher.clean_on");
+    public static final SoundEvent STAR_CATCHER_CLEAN_OFF = register("entity.star_catcher.clean_off");
+    public static final SoundEvent STAR_CATCHER_CLEAN_TOGGLE = register("entity.star_catcher.clean_toggle");
+    public static final SoundEvent STAR_CATCHER_CLEAN_AROUND = register("entity.star_catcher.clean_around");
+    public static final SoundEvent STAR_CATCHER_DENY_CLEAN = register("entity.star_catcher.deny_clean");
 
-    public static final SoundEvent SKYWISHES_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.skywishes.ambient"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.skywishes.ambient")));
+    // Jackie Spectre
+    public static final SoundEvent JACKIE_SPECTRE_AMBIENT = register("entity.jackie_spectre.ambient");
+    public static final SoundEvent JACKIE_SPECTRE_HURT = register("entity.jackie_spectre.hurt");
+    public static final SoundEvent JACKIE_SPECTRE_DEATH = register("entity.jackie_spectre.death");
 
-    public static final SoundEvent SKYWISHES_HURT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.skywishes.hurt"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.skywishes.hurt")));
-
-    public static final SoundEvent SKYWISHES_DEATH = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.skywishes.death"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.skywishes.death")));
-
-    public static final SoundEvent TRIXIEBELLE_DEATH = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.trixiebelle.death"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.trixiebelle.death")));
-
-    public static final SoundEvent STAR_CATCHER_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.star_catcher.ambient"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.star_catcher.ambient")));
-
-    public static final SoundEvent STAR_CATCHER_HURT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.star_catcher.hurt"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.star_catcher.hurt")));
-
-    public static final SoundEvent STAR_CATCHER_DEATH = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.star_catcher.death"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.star_catcher.death")));
-
-    public static final SoundEvent STAR_CATCHER_CLEAN_ON = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.star_catcher.clean_on"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.star_catcher.clean_on")));
-
-    public static final SoundEvent STAR_CATCHER_CLEAN_OFF = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.star_catcher.clean_off"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.star_catcher.clean_off")));
-
-    public static final SoundEvent STAR_CATCHER_CLEAN_TOGGLE = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.star_catcher.clean_toggle"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.star_catcher.clean_toggle")));
-
-    public static final SoundEvent STAR_CATCHER_CLEAN_AROUND = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.star_catcher.clean_around"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.star_catcher.clean_around")));
-
-    public static final SoundEvent STAR_CATCHER_DENY_CLEAN = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.star_catcher.deny_clean"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.star_catcher.deny_clean")));
-
-    public static final SoundEvent JACKIE_SPECTRE_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.jackie_spectre.ambient"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.jackie_spectre.ambient")));
-
-    public static final SoundEvent JACKIE_SPECTRE_HURT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.jackie_spectre.hurt"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.jackie_spectre.hurt")));
-
-    public static final SoundEvent JACKIE_SPECTRE_DEATH = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.jackie_spectre.death"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.jackie_spectre.death")));
-
-    public static final SoundEvent WISH_FULFILLMENT_AMBIENT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.wish_fulfillment.ambient"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.wish_fulfillment.ambient")));
-
-    public static final SoundEvent WISH_FULFILLMENT_HURT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.wish_fulfillment.hurt"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.wish_fulfillment.hurt")));
-
-    public static final SoundEvent WISH_FULFILLMENT_DEATH = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.wish_fulfillment.death"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.wish_fulfillment.death")));
-
-    public static final SoundEvent WISH_FULFILLMENT_TRADE_ACCEPT = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.wish_fulfillment.trade_accept"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.wish_fulfillment.trade_accept")));
-
-    public static final SoundEvent WISH_FULFILLMENT_TRADE_DENY = Registry.register(BuiltInRegistries.SOUND_EVENT,
-            new ResourceLocation(MineLittleFlawless.MOD_ID, "entity.wish_fulfillment.trade_deny"),
-            SoundEvent.createVariableRangeEvent(new ResourceLocation(MineLittleFlawless.MOD_ID,
-                    "entity.wish_fulfillment.trade_deny")));
+    // Wish Fulfillment
+    public static final SoundEvent WISH_FULFILLMENT_AMBIENT = register("entity.wish_fulfillment.ambient");
+    public static final SoundEvent WISH_FULFILLMENT_HURT = register("entity.wish_fulfillment.hurt");
+    public static final SoundEvent WISH_FULFILLMENT_DEATH = register("entity.wish_fulfillment.death");
+    public static final SoundEvent WISH_FULFILLMENT_TRADE_ACCEPT = register("entity.wish_fulfillment.trade_accept");
+    public static final SoundEvent WISH_FULFILLMENT_TRADE_DENY = register("entity.wish_fulfillment.trade_deny");
 
     public static void init() {
 
