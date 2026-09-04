@@ -19,7 +19,7 @@ import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.Clothing;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessTags;
+import org.projectflawless.minelittleflawless.MineLittleFlawlessTags;
 
 public class Trixie extends TamableTamersPony {
     public static final ResourceLocation[] CLOTHING_TYPES = { Clothing.NONE, Clothing.TRIXIE_MAGICIAN,

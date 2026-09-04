@@ -12,7 +12,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessTags;
+import org.projectflawless.minelittleflawless.MineLittleFlawlessTags;
 
 public class Twilight extends TamableTamersPony {
     public Twilight(EntityType<Twilight> type, Level world) {

@@ -5,6 +5,7 @@ import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.Biomes;
+import org.projectflawless.minelittleflawless.MineLittleFlawlessTags;
 
 public class MineLittleFlawlessBiomeSpawns {
     public static void init() {

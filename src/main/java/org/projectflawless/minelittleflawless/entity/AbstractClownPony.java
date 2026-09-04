@@ -14,7 +14,7 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessTags;
+import org.projectflawless.minelittleflawless.MineLittleFlawlessTags;
 
 public class AbstractClownPony extends TamableTamersPony {
     public AbstractClownPony(EntityType<? extends AbstractClownPony> type, Level world) {

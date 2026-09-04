@@ -15,7 +15,7 @@ import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.Clothing;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessTags;
+import org.projectflawless.minelittleflawless.MineLittleFlawlessTags;
 
 public class Marionette extends TamableTamersPony {
     public Marionette(EntityType<Marionette> type, Level world) {

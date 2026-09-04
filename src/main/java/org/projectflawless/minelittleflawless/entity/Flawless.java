@@ -39,7 +39,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.nbt.CompoundTag;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessTags;
+import org.projectflawless.minelittleflawless.MineLittleFlawlessTags;
 import org.projectflawless.minelittleflawless.item.FlawlessClothingItem;
 
 import java.util.Comparator;
