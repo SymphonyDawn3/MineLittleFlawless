@@ -26,6 +26,9 @@ public class MineLittleFlawlessTags {
     public static TagKey<Biome> SPAWNS_TRIXIEBELLE = TagKey.create(Registries.BIOME,
             new ResourceLocation(MineLittleFlawless.MOD_ID, "spawns_trixiebelle"));
 
+    public static TagKey<Biome> SPAWNS_WISHCATCHER = TagKey.create(Registries.BIOME,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "spawns_wishcatcher"));
+
     public static TagKey<Biome> SPAWNS_SKYWISHES = TagKey.create(Registries.BIOME,
             new ResourceLocation(MineLittleFlawless.MOD_ID, "spawns_skywishes"));
 

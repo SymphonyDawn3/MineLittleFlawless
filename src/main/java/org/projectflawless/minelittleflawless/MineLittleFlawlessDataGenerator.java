@@ -21,7 +21,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
@@ -198,8 +197,6 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
     }
 
     private static class BiomeTagGenerator extends FabricTagProvider<Biome> {
-        private static final TagKey<Biome> SPAWNS_WISHCATCHER = TagKey.create(Registries.BIOME, new ResourceLocation(MineLittleFlawless.MOD_ID, "spawns_wishcatcher"));
-
         public BiomeTagGenerator(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
             super(output, Registries.BIOME, registriesFuture);
         }
@@ -213,7 +210,7 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
                             Biomes.OLD_GROWTH_SPRUCE_TAIGA,
                             Biomes.TAIGA);
 
-            this.getOrCreateTagBuilder(SPAWNS_WISHCATCHER)
+            this.getOrCreateTagBuilder(MineLittleFlawlessTags.SPAWNS_WISHCATCHER)
                     .add(
                             Biomes.CHERRY_GROVE,
                             Biomes.FLOWER_FOREST,
@@ -240,10 +237,10 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
                             Biomes.STONY_PEAKS);
 
             this.getOrCreateTagBuilder(MineLittleFlawlessTags.SPAWNS_SKYWISHES)
-                    .addTag(SPAWNS_WISHCATCHER);
+                    .addTag(MineLittleFlawlessTags.SPAWNS_WISHCATCHER);
 
             this.getOrCreateTagBuilder(MineLittleFlawlessTags.SPAWNS_STAR_CATCHER)
-                    .addTag(SPAWNS_WISHCATCHER);
+                    .addTag(MineLittleFlawlessTags.SPAWNS_WISHCATCHER);
 
             this.getOrCreateTagBuilder(MineLittleFlawlessTags.SPAWNS_JACKIE_SPECTRE)
                     .forceAddTag(BiomeTags.IS_BEACH)
