@@ -1,6 +1,8 @@
 package org.projectflawless.minelittleflawless.init;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import org.projectflawless.minelittleflawless.entity.Bartleby;
 import org.projectflawless.minelittleflawless.entity.TamableTamersPony;
 
@@ -9,19 +11,23 @@ import static org.projectflawless.minelittleflawless.init.MineLittleFlawlessEnti
 public class MineLittleFlawlessAttributes {
     public static void registerAttributes() {
         FabricDefaultAttributeRegistry.register(BARTLEBY, Bartleby.createAttributes().build());
-        FabricDefaultAttributeRegistry.register(FLAWLESS, TamableTamersPony.createAttributes().build());
-        FabricDefaultAttributeRegistry.register(TWILIGHT, TamableTamersPony.createAttributes().build());
-        FabricDefaultAttributeRegistry.register(TRIXIE, TamableTamersPony.createAttributes().build());
-        FabricDefaultAttributeRegistry.register(ARINOS, TamableTamersPony.createAttributes().build());
-        FabricDefaultAttributeRegistry.register(LAST_LAUGH, TamableTamersPony.createAttributes().build());
-        FabricDefaultAttributeRegistry.register(CHERRY_CHUCKLES, TamableTamersPony.createAttributes().build());
-        FabricDefaultAttributeRegistry.register(BIBBLEBOP, TamableTamersPony.createAttributes().build());
-        FabricDefaultAttributeRegistry.register(TRICOLOR_JUBILEE, TamableTamersPony.createAttributes().build());
-        FabricDefaultAttributeRegistry.register(TRIXIEBELLE, TamableTamersPony.createAttributes().build());
-        FabricDefaultAttributeRegistry.register(SKYWISHES, TamableTamersPony.createAttributes().build());
-        FabricDefaultAttributeRegistry.register(STAR_CATCHER, TamableTamersPony.createAttributes().build());
-        FabricDefaultAttributeRegistry.register(MARIONETTE, TamableTamersPony.createAttributes().build());
-        FabricDefaultAttributeRegistry.register(JACKIE_SPECTRE, TamableTamersPony.createAttributes().build());
-        FabricDefaultAttributeRegistry.register(WISH_FULFILLMENT, TamableTamersPony.createAttributes().build());
+        tamableTamersPonyRegister(FLAWLESS);
+        tamableTamersPonyRegister(TWILIGHT);
+        tamableTamersPonyRegister(TRIXIE);
+        tamableTamersPonyRegister(ARINOS);
+        tamableTamersPonyRegister(LAST_LAUGH);
+        tamableTamersPonyRegister(CHERRY_CHUCKLES);
+        tamableTamersPonyRegister(BIBBLEBOP);
+        tamableTamersPonyRegister(TRICOLOR_JUBILEE);
+        tamableTamersPonyRegister(TRIXIEBELLE);
+        tamableTamersPonyRegister(SKYWISHES);
+        tamableTamersPonyRegister(STAR_CATCHER);
+        tamableTamersPonyRegister(MARIONETTE);
+        tamableTamersPonyRegister(JACKIE_SPECTRE);
+        tamableTamersPonyRegister(WISH_FULFILLMENT);
+    }
+
+    private static void tamableTamersPonyRegister(EntityType<? extends LivingEntity> type) {
+        FabricDefaultAttributeRegistry.register(type, TamableTamersPony.createAttributes().build());
     }
 }
