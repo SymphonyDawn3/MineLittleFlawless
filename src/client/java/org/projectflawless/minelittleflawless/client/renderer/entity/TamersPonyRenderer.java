@@ -4,6 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import org.projectflawless.minelittleflawless.PonySize;
 import org.projectflawless.minelittleflawless.client.model.entity.TamersPonyModel;
 import org.projectflawless.minelittleflawless.entity.TamableTamersPony;
 import software.bernie.geckolib.cache.object.BakedGeoModel;
@@ -13,17 +14,16 @@ import software.bernie.geckolib.renderer.GeoEntityRenderer;
 import java.util.Optional;
 
 public class TamersPonyRenderer<T extends TamableTamersPony, M extends TamersPonyModel<T>> extends GeoEntityRenderer<T> {
+    private final float BABY_BODY_SCALE_FACTOR = 0.4f;
     private final float BABY_HEAD_SCALE_FACTOR = 1.5f;
-    private final float adultScaleFactor;
-    private final float babyScaleFactor;
+    private final PonySize ponySize;
 
     public TamersPonyRenderer(EntityRendererProvider.Context context, M model) {
-        this(context, model, 1.0f, 0.4f);
+        this(context, model, PonySize.MEDIUM);
     }
-    public TamersPonyRenderer(EntityRendererProvider.Context context, M model, float adultScaleFactor, float babyScaleFactor) {
+    public TamersPonyRenderer(EntityRendererProvider.Context context, M model, PonySize ponySize) {
         super(context, model);
-        this.adultScaleFactor = adultScaleFactor;
-        this.babyScaleFactor = babyScaleFactor;
+        this.ponySize = ponySize;
     }
 
     @Override
@@ -40,13 +40,13 @@ public class TamersPonyRenderer<T extends TamableTamersPony, M extends TamersPon
 
         root.ifPresent(bone -> {
             if (animatable.isBaby()) {
-                bone.setScaleX(this.babyScaleFactor);
-                bone.setScaleY(this.babyScaleFactor);
-                bone.setScaleZ(this.babyScaleFactor);
+                bone.setScaleX(this.ponySize.scale*0.4f);
+                bone.setScaleY(this.ponySize.scale*0.4f);
+                bone.setScaleZ(this.ponySize.scale*0.4f);
             } else {
-                bone.setScaleX(this.adultScaleFactor);
-                bone.setScaleY(this.adultScaleFactor);
-                bone.setScaleZ(this.adultScaleFactor);
+                bone.setScaleX(this.ponySize.scale);
+                bone.setScaleY(this.ponySize.scale);
+                bone.setScaleZ(this.ponySize.scale);
             }
         });
 
@@ -85,9 +85,9 @@ public class TamersPonyRenderer<T extends TamableTamersPony, M extends TamersPon
         root.ifPresent(bone -> {
             if (animatable.isBaby()) {
                 if (animatable.isInSittingPose())
-                    bone.setPosY(-0.875f*this.babyScaleFactor/0.4f);
+                    bone.setPosY(-0.875f*(this.ponySize.scale*BABY_BODY_SCALE_FACTOR)/BABY_BODY_SCALE_FACTOR);
                 else
-                    bone.setPosY(-1.5f*this.babyScaleFactor/0.4f);
+                    bone.setPosY(-1.5f*(this.ponySize.scale*BABY_BODY_SCALE_FACTOR)/BABY_BODY_SCALE_FACTOR);
             }
         });
     }
