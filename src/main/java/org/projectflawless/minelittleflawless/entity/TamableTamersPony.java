@@ -104,6 +104,11 @@ public abstract class TamableTamersPony extends TamableAnimal implements GeoEnti
         }
     }
 
+    @Override
+    public float getScale() {
+        return this.isBaby() ? 0.4f : 1.0f;
+    }
+
     public ResourceLocation getClothing() {
         return ResourceLocation.tryParse(this.getEntityData().get(DATA_CLOTHING));
     }
