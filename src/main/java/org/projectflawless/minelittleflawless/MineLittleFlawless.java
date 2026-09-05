@@ -24,7 +24,5 @@ public class MineLittleFlawless implements ModInitializer {
         MineLittleFlawlessTabs.buildTabContentsVanilla();
         MineLittleFlawlessAttributes.registerAttributes();
         FlawlessEvents.init();
-
-		LOGGER.info("Hello Fabric world!");
 	}
 }
