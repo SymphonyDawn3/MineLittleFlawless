@@ -3,9 +3,7 @@ package org.projectflawless.minelittleflawless;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.datagen.v1.provider.*;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.FrameType;
@@ -14,6 +12,10 @@ import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.models.BlockModelGenerators;
+import net.minecraft.data.models.ItemModelGenerators;
+import net.minecraft.data.models.model.ModelLocationUtils;
+import net.minecraft.data.models.model.ModelTemplates;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
@@ -22,6 +24,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
@@ -34,6 +37,11 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
+        // Generate item models
+        pack.addProvider(BlockAndModelGenerator::new);
+
+        // Generate en_us.json language file
+        pack.addProvider(LanguageGenerator::new);
 
         // Generate recipes
         pack.addProvider(RecipeGenerator::new);
@@ -45,6 +53,205 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
         pack.addProvider(BiomeTagGenerator::new);
         pack.addProvider(EntityTypeTagGenerator::new);
         pack.addProvider(ItemTagGenerator::new);
+    }
+
+    private static class BlockAndModelGenerator extends FabricModelProvider {
+        private BlockModelGenerators blockStateModelGenerator;
+
+        public BlockAndModelGenerator(FabricDataOutput output) {
+            super(output);
+        }
+
+        @Override
+        public void generateBlockStateModels(BlockModelGenerators blockStateModelGenerator) {
+            this.blockStateModelGenerator = blockStateModelGenerator;
+            this.generateSpawnEggItemModels();
+        }
+
+        @Override
+        public void generateItemModels(ItemModelGenerators itemModelGenerator) {
+            itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.FLAWLESS_MAGICIAN_CLOTHING, ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.TUXEDO, ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.FARMER, ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.PAJAMAS, ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.SCHOOLGIRL, ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.ROCKSTAR, ModelTemplates.FLAT_ITEM);
+        }
+
+        private void generateSpawnEggItemModel(SpawnEggItem spawnEgg) {
+            this.blockStateModelGenerator.delegateItemModel(spawnEgg, ModelLocationUtils.decorateItemModelLocation("template_spawn_egg"));
+        }
+
+        private void generateSpawnEggItemModels() {
+            this.generateSpawnEggItemModel(MineLittleFlawlessItems.FLAWLESS_SPAWN_EGG);
+            this.generateSpawnEggItemModel(MineLittleFlawlessItems.TWILIGHT_SPAWN_EGG);
+            this.generateSpawnEggItemModel(MineLittleFlawlessItems.TRIXIE_SPAWN_EGG);
+            this.generateSpawnEggItemModel(MineLittleFlawlessItems.ARINOS_SPAWN_EGG);
+            this.generateSpawnEggItemModel(MineLittleFlawlessItems.LAST_LAUGH_SPAWN_EGG);
+            this.generateSpawnEggItemModel(MineLittleFlawlessItems.CHERRY_CHUCKLES_SPAWN_EGG);
+            this.generateSpawnEggItemModel(MineLittleFlawlessItems.BIBBLEBOP_SPAWN_EGG);
+            this.generateSpawnEggItemModel(MineLittleFlawlessItems.TRICOLOR_JUBILEE_SPAWN_EGG);
+            this.generateSpawnEggItemModel(MineLittleFlawlessItems.TRIXIEBELLE_SPAWN_EGG);
+            this.generateSpawnEggItemModel(MineLittleFlawlessItems.SKYWISHES_SPAWN_EGG);
+            this.generateSpawnEggItemModel(MineLittleFlawlessItems.STAR_CATCHER_SPAWN_EGG);
+            this.generateSpawnEggItemModel(MineLittleFlawlessItems.MARIONETTE_SPAWN_EGG);
+            this.generateSpawnEggItemModel(MineLittleFlawlessItems.JACKIE_SPECTRE_SPAWN_EGG);
+            this.generateSpawnEggItemModel(MineLittleFlawlessItems.WISH_FULFILLMENT_SPAWN_EGG);
+        }
+    }
+
+    private static class LanguageGenerator extends FabricLanguageProvider {
+
+        public LanguageGenerator(FabricDataOutput output) {
+            super(output);
+        }
+
+        @Override
+        public void generateTranslations(TranslationBuilder translationBuilder) {
+            this.generateEntityTranslations(translationBuilder);
+            this.generateSpawnEggTranslations(translationBuilder);
+            this.generateFlawlessClothingTranslations(translationBuilder);
+            this.generateSoundEventTranslations(translationBuilder);
+            this.generateAdvancementTranslations(translationBuilder);
+        }
+
+        private void generateEntityTranslations(TranslationBuilder translationBuilder) {
+            translationBuilder.add(MineLittleFlawlessEntities.BARTLEBY, "Bartleby");
+            translationBuilder.add(MineLittleFlawlessEntities.FLAWLESS, "Flawless");
+            translationBuilder.add(MineLittleFlawlessEntities.TWILIGHT, "Twilight");
+            translationBuilder.add(MineLittleFlawlessEntities.TRIXIE, "Trixie");
+            translationBuilder.add(MineLittleFlawlessEntities.ARINOS, "Arinos");
+            translationBuilder.add(MineLittleFlawlessEntities.LAST_LAUGH, "Last Laugh");
+            translationBuilder.add(MineLittleFlawlessEntities.CHERRY_CHUCKLES, "Cherry Chuckles");
+            translationBuilder.add(MineLittleFlawlessEntities.BIBBLEBOP, "Bibblebop");
+            translationBuilder.add(MineLittleFlawlessEntities.TRICOLOR_JUBILEE, "Tricolor Jubilee");
+            translationBuilder.add(MineLittleFlawlessEntities.TRIXIEBELLE, "Trixiebelle");
+            translationBuilder.add(MineLittleFlawlessEntities.SKYWISHES, "Skywishes");
+            translationBuilder.add(MineLittleFlawlessEntities.STAR_CATCHER, "Star Catcher");
+            translationBuilder.add(MineLittleFlawlessEntities.MARIONETTE, "Marionette");
+            translationBuilder.add(MineLittleFlawlessEntities.JACKIE_SPECTRE, "Jackie Spectre");
+            translationBuilder.add(MineLittleFlawlessEntities.WISH_FULFILLMENT, "Wish Fulfillment");
+        }
+
+        private void generateSpawnEggTranslations(TranslationBuilder translationBuilder) {
+            translationBuilder.add(MineLittleFlawlessItems.FLAWLESS_SPAWN_EGG, "Flawless Spawn Egg");
+            translationBuilder.add(MineLittleFlawlessItems.TWILIGHT_SPAWN_EGG, "Twilight Spawn Egg");
+            translationBuilder.add(MineLittleFlawlessItems.TRIXIE_SPAWN_EGG, "Trixie Spawn Egg");
+            translationBuilder.add(MineLittleFlawlessItems.ARINOS_SPAWN_EGG, "Arinos Spawn Egg");
+            translationBuilder.add(MineLittleFlawlessItems.LAST_LAUGH_SPAWN_EGG, "Last Laugh Spawn Egg");
+            translationBuilder.add(MineLittleFlawlessItems.CHERRY_CHUCKLES_SPAWN_EGG, "Cherry Chuckles Spawn Egg");
+            translationBuilder.add(MineLittleFlawlessItems.BIBBLEBOP_SPAWN_EGG, "Bibblebop Spawn Egg");
+            translationBuilder.add(MineLittleFlawlessItems.TRICOLOR_JUBILEE_SPAWN_EGG, "Tricolor Jubilee Spawn Egg");
+            translationBuilder.add(MineLittleFlawlessItems.TRIXIEBELLE_SPAWN_EGG, "Trixiebelle Spawn Egg");
+            translationBuilder.add(MineLittleFlawlessItems.SKYWISHES_SPAWN_EGG, "Skywishes Spawn Egg");
+            translationBuilder.add(MineLittleFlawlessItems.STAR_CATCHER_SPAWN_EGG, "Star Catcher Spawn Egg");
+            translationBuilder.add(MineLittleFlawlessItems.MARIONETTE_SPAWN_EGG, "Marionette Spawn Egg");
+            translationBuilder.add(MineLittleFlawlessItems.JACKIE_SPECTRE_SPAWN_EGG, "Jackie Spectre Spawn Egg");
+            translationBuilder.add(MineLittleFlawlessItems.WISH_FULFILLMENT_SPAWN_EGG, "Wish Fulfillment Spawn Egg");
+        }
+
+        private void generateFlawlessClothingTranslations(TranslationBuilder translationBuilder) {
+            translationBuilder.add(MineLittleFlawlessItems.FLAWLESS_MAGICIAN_CLOTHING, "Flawless Magician Clothing");
+            translationBuilder.add(MineLittleFlawlessItems.TUXEDO, "Tuxedo");
+            translationBuilder.add(MineLittleFlawlessItems.FARMER, "Farmer");
+            translationBuilder.add(MineLittleFlawlessItems.PAJAMAS, "Pajamas");
+            translationBuilder.add(MineLittleFlawlessItems.SCHOOLGIRL, "Schoolgirl");
+            translationBuilder.add(MineLittleFlawlessItems.ROCKSTAR, "Rockstar");
+        }
+
+        private void generateSoundEventTranslations(TranslationBuilder translationBuilder) {
+            // Flawless
+            translationBuilder.add("subtitles.entity.flawless.ambient", "Flawless speaks");
+            translationBuilder.add("subtitles.entity.flawless.hurt", "Flawless hurts");
+            translationBuilder.add("subtitles.entity.flawless.death", "Flawless dies");
+
+            // Twilight
+            translationBuilder.add("subtitles.entity.twilight.ambient", "Twilight speaks");
+            translationBuilder.add("subtitles.entity.twilight.hurt", "Twilight hurts");
+            translationBuilder.add("subtitles.entity.twilight.death", "Twilight dies");
+
+            // Trixie
+            translationBuilder.add("subtitles.entity.trixie.ambient", "Trixie speaks");
+            translationBuilder.add("subtitles.entity.trixie.hurt", "Trixie hurts");
+            translationBuilder.add("subtitles.entity.trixie.death", "Trixie dies");
+
+            // Generic clown pony jingle
+            translationBuilder.add("subtitles.entity.clown_pony.jingle", "Clown pony jingles");
+
+            // Arinos
+            translationBuilder.add("subtitles.entity.arinos.ambient", "Arinos speaks");
+            translationBuilder.add("subtitles.entity.arinos.hurt", "Arinos hurts");
+            translationBuilder.add("subtitles.entity.arinos.death", "Arinos dies");
+
+            // Last Laugh
+            translationBuilder.add("subtitles.entity.last_laugh.ambient", "Last Laugh speaks");
+            translationBuilder.add("subtitles.entity.last_laugh.hurt", "Last Laugh hurts");
+            translationBuilder.add("subtitles.entity.last_laugh.death", "Last Laugh dies");
+
+            // Cherry Chuckles
+            translationBuilder.add("subtitles.entity.cherry_chuckles.ambient", "Cherry Chuckles speaks");
+            translationBuilder.add("subtitles.entity.cherry_chuckles.hurt", "Cherry Chuckles hurts");
+            translationBuilder.add("subtitles.entity.cherry_chuckles.death", "Cherry Chuckles dies");
+
+            // Bibblebop
+            translationBuilder.add("subtitles.entity.bibblebop.ambient", "Bibblebop speaks");
+            translationBuilder.add("subtitles.entity.bibblebop.hurt", "Bibblebop hurts");
+            translationBuilder.add("subtitles.entity.bibblebop.death", "Bibblebop dies");
+
+            // Tricolor Jubilee
+            translationBuilder.add("subtitles.entity.tricolor_jubilee.ambient", "Tricolor Jubilee speaks");
+            translationBuilder.add("subtitles.entity.tricolor_jubilee.hurt", "Tricolor Jubilee hurts");
+            translationBuilder.add("subtitles.entity.tricolor_jubilee.death", "Tricolor Jubilee dies");
+
+            // Marionette
+            translationBuilder.add("subtitles.entity.marionette.ambient", "Marionette speaks");
+            translationBuilder.add("subtitles.entity.marionette.hurt", "Marionette hurts");
+            translationBuilder.add("subtitles.entity.marionette.death", "Marionette dies");
+
+            // Trixiebelle
+            translationBuilder.add("subtitles.entity.trixiebelle.ambient", "Trixiebelle speaks");
+            translationBuilder.add("subtitles.entity.trixiebelle.hurt", "Trixiebelle hurts");
+            translationBuilder.add("subtitles.entity.trixiebelle.death", "Trixiebelle dies");
+
+            // Skywishes
+            translationBuilder.add("subtitles.entity.skywishes.ambient", "Skywishes speaks");
+            translationBuilder.add("subtitles.entity.skywishes.hurt", "Skywishes hurts");
+            translationBuilder.add("subtitles.entity.skywishes.death", "Skywishes dies");
+
+            // Star Catcher
+            translationBuilder.add("subtitles.entity.star_catcher.ambient", "Star Catcher speaks");
+            translationBuilder.add("subtitles.entity.star_catcher.hurt", "Star Catcher hurts");
+            translationBuilder.add("subtitles.entity.star_catcher.death", "Star Catcher dies");
+            translationBuilder.add("subtitles.entity.star_catcher.clean_on", "Star Catcher starts cleaning");
+            translationBuilder.add("subtitles.entity.star_catcher.clean_off", "Star Catcher stops cleaning");
+            translationBuilder.add("subtitles.entity.star_catcher.clean_around", "Star Catcher cleans around");
+            translationBuilder.add("subtitles.entity.star_catcher.deny_clean", "Star Catcher denies cleaning");
+
+            // Jackie Spectre
+            translationBuilder.add("subtitles.entity.jackie_spectre.ambient", "Jackie Spectre speaks");
+            translationBuilder.add("subtitles.entity.jackie_spectre.hurt", "Jackie Spectre hurts");
+            translationBuilder.add("subtitles.entity.jackie_spectre.death", "Jackie Spectre dies");
+
+            // Wish Fulfillment
+            translationBuilder.add("subtitles.entity.wish_fulfillment.ambient", "Wish Fulfillment blerps");
+            translationBuilder.add("subtitles.entity.wish_fulfillment.hurt", "Wish Fulfillment hurts");
+            translationBuilder.add("subtitles.entity.wish_fulfillment.death", "Wish Fulfillment dies");
+            translationBuilder.add("subtitles.entity.wish_fulfillment.trade_accept", "Wish Fulfillment accepts offer");
+            translationBuilder.add("subtitles.entity.wish_fulfillment.trade_deny", "Wish Fulfillment denies offer");
+        }
+        
+        private void generateAdvancementTranslations(TranslationBuilder translationBuilder) {
+            translationBuilder.add("advancements.flawless_friendship.title", "Flawless Friendship!");
+            translationBuilder.add("advancements.flawless_friendship.descr", "Tame a Flawless!");
+            translationBuilder.add("advancements.fashionable_flawless.title", "Fashionable Flawless");
+            translationBuilder.add("advancements.fashionable_flawless.descr", "Dress up a tamed Flawless with any clothing!");
+            translationBuilder.add("advancements.flawless_buddies.descr", "Tame more than one Flawless!");
+            translationBuilder.add("advancements.flawless_buddies.title", "Flawless Buddies!");
+            translationBuilder.add("advancements.flawless_enchilada.title", "Flawless Enchilada!");
+            translationBuilder.add("advancements.flawless_enchilada.descr", "Tame 6 Flawlesses!");
+            translationBuilder.add("advancements.flawless_fan_club.title", "Flawless Fan Club!");
+            translationBuilder.add("advancements.flawless_fan_club.descr", "Have every tamed Flawless wear a different clothing!");
+        }
     }
 
     private static class RecipeGenerator extends FabricRecipeProvider {
