@@ -21,6 +21,31 @@
       "minelittleflawless:mob/flawless/hurt2"
     ]
   },
+  "entity.fractured.ambient": {
+    "subtitle": "subtitles.entity.fractured.ambient",
+    "sounds": [
+      "minelittleflawless:mob/fractured/speak1",
+      "minelittleflawless:mob/fractured/speak2",
+      "minelittleflawless:mob/fractured/speak3",
+      "minelittleflawless:mob/fractured/speak4",
+      "minelittleflawless:mob/fractured/speak5"
+    ]
+  },
+  "entity.fractured.hurt": {
+    "subtitle": "subtitles.entity.fractured.hurt",
+    "sounds": [
+      "minelittleflawless:mob/fractured/hurt1",
+      "minelittleflawless:mob/fractured/hurt2",
+      "minelittleflawless:mob/fractured/hurt3"
+    ]
+  },
+  "entity.fractured.death": {
+    "subtitle": "subtitles.entity.flawless.death",
+    "sounds": [
+      "minelittleflawless:mob/fractured/death1",
+      "minelittleflawless:mob/fractured/death2"
+    ]
+  },
   "entity.twilight.ambient": {
     "subtitle": "subtitles.entity.twilight.ambient",
     "sounds": [

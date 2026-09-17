@@ -1,0 +1,74 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.fractured_tuxedo",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [0, 1.75, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "body",
+					"parent": "root",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-4, 12, -9], "size": [8, 8, 4], "inflate": 0.3, "uv": [40, 18]},
+						{"origin": [-4, 12, -4.4], "size": [8, 8, 12], "inflate": 0.3, "uv": [0, 18]},
+						{"origin": [-0.5, 18.16667, -10.26667], "size": [1, 1, 1], "uv": [12, 58]},
+						{"origin": [0.5, 17.66667, -10.26667], "size": [2, 2, 1], "uv": [0, 58]},
+						{"origin": [-2.5, 17.66667, -10.26667], "size": [2, 2, 1], "uv": [6, 58]}
+					]
+				},
+				{
+					"name": "rightArm",
+					"parent": "body",
+					"pivot": [0, 16, -5],
+					"cubes": [
+						{"origin": [0, 0, -7], "size": [4, 12, 4], "inflate": 0.25, "uv": [40, 30]}
+					]
+				},
+				{
+					"name": "leftLeg",
+					"parent": "body",
+					"pivot": [0, 16, 4],
+					"cubes": [
+						{"origin": [-4, 0, 2], "size": [4, 12, 4], "inflate": 0.1, "uv": [56, 30]}
+					]
+				},
+				{
+					"name": "leftArm",
+					"parent": "body",
+					"pivot": [0, 16, -5],
+					"cubes": [
+						{"origin": [-4, 0, -7], "size": [4, 12, 4], "inflate": 0.25, "uv": [40, 46]}
+					]
+				},
+				{
+					"name": "rightLeg",
+					"parent": "body",
+					"pivot": [0, 16, 4],
+					"cubes": [
+						{"origin": [0, 0, 2], "size": [4, 12, 4], "inflate": 0.1, "uv": [56, 46]}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "root",
+					"pivot": [0, 24, -7],
+					"cubes": [
+						{"origin": [-8, 28.23463, -15.15224], "size": [16, 2, 16], "pivot": [0, 28.2346, -7.1522], "rotation": [-27.5, 0, 0], "uv": [0, 0]},
+						{"origin": [-5, 30.23463, -12.15224], "size": [10, 10, 10], "pivot": [0, 28.2346, -7.1522], "rotation": [-27.5, 0, 0], "uv": [0, 38]}
+					]
+				}
+			]
+		}
+	]
+}

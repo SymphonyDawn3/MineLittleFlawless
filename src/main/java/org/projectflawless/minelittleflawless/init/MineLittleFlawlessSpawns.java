@@ -31,6 +31,7 @@ public class MineLittleFlawlessSpawns {
         register(MineLittleFlawlessEntities.SKYWISHES);
         register(MineLittleFlawlessEntities.STAR_CATCHER);
         register(MineLittleFlawlessEntities.MARIONETTE);
+
         register(MineLittleFlawlessEntities.JACKIE_SPECTRE, ((entityType,
                                                               serverLevelAccessor,
                                                               mobSpawnType, blockPos,
@@ -39,6 +40,7 @@ public class MineLittleFlawlessSpawns {
             return (blockState.is(BlockTags.ANIMALS_SPAWNABLE_ON) || blockState.is(BlockTags.SAND) || blockState.is(BlockTags.BASE_STONE_OVERWORLD)) &&
                     serverLevelAccessor.getRawBrightness(blockPos, 0) > 8;
         }));
+
         register(MineLittleFlawlessEntities.WISH_FULFILLMENT, (entityType, serverLevel,
                                                                spawnType, pos, random)
                 -> (serverLevel.getLevel().dimensionTypeId().equals(BuiltinDimensionTypes.OVERWORLD)
@@ -47,6 +49,13 @@ public class MineLittleFlawlessSpawns {
                 && serverLevel.getBlockState(pos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON))
                 || (serverLevel.getLevel().dimensionTypeId().equals(BuiltinDimensionTypes.NETHER)
                 && serverLevel.getBlockState(pos.below()).is(BlockTags.NYLIUM)));
+
+        register(MineLittleFlawlessEntities.FRACTURED, (entityType,
+                                                        serverLevelAccessor, mobSpawnType,
+                                                        blockPos, randomSource) ->
+                serverLevelAccessor.getLevel().dimensionTypeId().equals(BuiltinDimensionTypes.OVERWORLD)
+                        && Monster.isDarkEnoughToSpawn(serverLevelAccessor, blockPos, randomSource)
+                        && serverLevelAccessor.getBlockState(blockPos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON));
     }
 
     private static void register(EntityType<? extends Mob> entityType) {

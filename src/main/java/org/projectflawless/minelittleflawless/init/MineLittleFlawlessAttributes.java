@@ -12,6 +12,7 @@ public class MineLittleFlawlessAttributes {
     public static void registerAttributes() {
         FabricDefaultAttributeRegistry.register(BARTLEBY, Bartleby.createAttributes().build());
         tamableTamersPonyRegister(FLAWLESS);
+        tamableTamersPonyRegister(FRACTURED);
         tamableTamersPonyRegister(TWILIGHT);
         tamableTamersPonyRegister(TRIXIE);
         tamableTamersPonyRegister(ARINOS);

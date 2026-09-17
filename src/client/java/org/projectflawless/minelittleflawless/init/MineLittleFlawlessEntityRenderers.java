@@ -7,6 +7,7 @@ public class MineLittleFlawlessEntityRenderers {
 	public static void registerEntityRenderers() {
 		EntityRendererRegistry.register(MineLittleFlawlessEntities.BARTLEBY, BartlebyRenderer::new);
 		EntityRendererRegistry.register(MineLittleFlawlessEntities.FLAWLESS, FlawlessRenderer::new);
+        EntityRendererRegistry.register(MineLittleFlawlessEntities.FRACTURED, FracturedRenderer::new);
         EntityRendererRegistry.register(MineLittleFlawlessEntities.TWILIGHT, TwilightRenderer::new);
         EntityRendererRegistry.register(MineLittleFlawlessEntities.TRIXIE, TrixieRenderer::new);
         EntityRendererRegistry.register(MineLittleFlawlessEntities.ARINOS, ArinosRenderer::new);

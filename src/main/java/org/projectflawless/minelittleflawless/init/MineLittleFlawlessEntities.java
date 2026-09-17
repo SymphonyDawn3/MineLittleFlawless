@@ -21,6 +21,9 @@ public class MineLittleFlawlessEntities {
     public static final EntityType<Flawless> FLAWLESS = registerPony("flawless",
 			Flawless::new, MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_PERSISTENT, PonySize.MEDIUM);
 
+    public static final EntityType<Fractured> FRACTURED = registerPony("fractured",
+            Fractured::new, MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT, PonySize.MEDIUM);
+
     public static final EntityType<Twilight> TWILIGHT = registerPony("twilight",
             Twilight::new, MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_PERSISTENT, PonySize.MEDIUM);
 

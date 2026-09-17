@@ -13,6 +13,7 @@ public class MineLittleFlawlessTabs {
     public static void buildTabContentsVanilla() {
         SPAWN_EGGS.register(entries -> {
             entries.accept(MineLittleFlawlessItems.FLAWLESS_SPAWN_EGG);
+            entries.accept(MineLittleFlawlessItems.FRACTURED_SPAWN_EGG);
             entries.accept(MineLittleFlawlessItems.TWILIGHT_SPAWN_EGG);
             entries.accept(MineLittleFlawlessItems.TRIXIE_SPAWN_EGG);
             entries.accept(MineLittleFlawlessItems.ARINOS_SPAWN_EGG);
