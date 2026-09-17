@@ -8,6 +8,7 @@ import net.minecraft.world.item.CreativeModeTabs;
 public class MineLittleFlawlessTabs {
     final public static Event<ItemGroupEvents.ModifyEntries> SPAWN_EGGS = ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.SPAWN_EGGS);
     final public static Event<ItemGroupEvents.ModifyEntries> TOOLS_AND_UTILITIES = ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES);
+    final public static Event<ItemGroupEvents.ModifyEntries> INGREDIENTS = ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS);
 
     public static void buildTabContentsVanilla() {
         SPAWN_EGGS.register(entries -> {
@@ -35,5 +36,7 @@ public class MineLittleFlawlessTabs {
             entries.accept(MineLittleFlawlessItems.SCHOOLGIRL);
             entries.accept(MineLittleFlawlessItems.ROCKSTAR);
         });
+
+        INGREDIENTS.register(entries -> entries.accept(MineLittleFlawlessItems.ROTTEN_SUGAR));
     }
 }

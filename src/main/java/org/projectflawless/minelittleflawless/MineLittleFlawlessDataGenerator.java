@@ -19,6 +19,7 @@ import net.minecraft.data.models.model.ModelTemplates;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
@@ -70,6 +71,7 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
 
         @Override
         public void generateItemModels(ItemModelGenerators itemModelGenerator) {
+            itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.ROTTEN_SUGAR, ModelTemplates.FLAT_ITEM);
             itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.FLAWLESS_MAGICIAN_CLOTHING, ModelTemplates.FLAT_ITEM);
             itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.TUXEDO, ModelTemplates.FLAT_ITEM);
             itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.FARMER, ModelTemplates.FLAT_ITEM);
@@ -109,6 +111,7 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
         @Override
         public void generateTranslations(TranslationBuilder translationBuilder) {
             this.generateEntityTranslations(translationBuilder);
+            this.generateMaterialTranslations(translationBuilder);
             this.generateSpawnEggTranslations(translationBuilder);
             this.generateFlawlessClothingTranslations(translationBuilder);
             this.generateSoundEventTranslations(translationBuilder);
@@ -131,6 +134,10 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
             translationBuilder.add(MineLittleFlawlessEntities.MARIONETTE, "Marionette");
             translationBuilder.add(MineLittleFlawlessEntities.JACKIE_SPECTRE, "Jackie Spectre");
             translationBuilder.add(MineLittleFlawlessEntities.WISH_FULFILLMENT, "Wish Fulfillment");
+        }
+
+        private void generateMaterialTranslations(TranslationBuilder translationBuilder) {
+            translationBuilder.add(MineLittleFlawlessItems.ROTTEN_SUGAR, "Rotten Sugar");
         }
 
         private void generateSpawnEggTranslations(TranslationBuilder translationBuilder) {
@@ -261,6 +268,14 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
 
         @Override
         public void buildRecipes(Consumer<FinishedRecipe> exporter) {
+            // Rotten Sugar recipe
+            ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, MineLittleFlawlessItems.ROTTEN_SUGAR)
+                    .requires(Items.SUGAR)
+                    .requires(Items.ROTTEN_FLESH)
+                    .unlockedBy("has_ingredient_0", InventoryChangeTrigger.TriggerInstance.hasItems(Items.SUGAR))
+                    .unlockedBy("has_ingredient_1", InventoryChangeTrigger.TriggerInstance.hasItems(Items.ROTTEN_FLESH))
+                    .save(exporter, new ResourceLocation(MineLittleFlawless.MOD_ID, "rotten_sugar"));
+
             // Farmer Flawless recipe
             ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MineLittleFlawlessItems.FARMER)
                     .define('a', Items.WHEAT)

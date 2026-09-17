@@ -12,6 +12,7 @@ import net.minecraft.world.item.Item;
 import java.util.function.Supplier;
 
 public class MineLittleFlawlessItems {
+    public static final Item ROTTEN_SUGAR = register("rotten_sugar", () -> new Item(new Item.Properties()));
     public static final SpawnEggItem FLAWLESS_SPAWN_EGG = register("flawless_spawn_egg", () -> new SpawnEggItem(MineLittleFlawlessEntities.FLAWLESS, 0xa3baff, 0xaa9cff, new Item.Properties()));
     public static final SpawnEggItem TWILIGHT_SPAWN_EGG = register("twilight_spawn_egg", () -> new SpawnEggItem(MineLittleFlawlessEntities.TWILIGHT, 0xcc9cdf, 0x652d87, new Item.Properties()));
     public static final SpawnEggItem TRIXIE_SPAWN_EGG = register("trixie_spawn_egg", () -> new SpawnEggItem(MineLittleFlawlessEntities.TRIXIE, 0x6cb2ea, 0xe1f4ff, new Item.Properties()));
