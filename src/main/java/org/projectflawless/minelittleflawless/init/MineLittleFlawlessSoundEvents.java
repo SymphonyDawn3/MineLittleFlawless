@@ -12,6 +12,11 @@ public class MineLittleFlawlessSoundEvents {
     public static final SoundEvent FLAWLESS_HURT = register("entity.flawless.hurt");
     public static final SoundEvent FLAWLESS_DEATH = register("entity.flawless.death");
 
+    // Fractured
+    public static final SoundEvent FRACTURED_AMBIENT = register("entity.fractured.ambient");
+    public static final SoundEvent FRACTURED_HURT = register("entity.fractured.hurt");
+    public static final SoundEvent FRACTURED_DEATH = register("entity.fractured.death");
+
     // Twilight
     public static final SoundEvent TWILIGHT_AMBIENT = register("entity.twilight.ambient");
     public static final SoundEvent TWILIGHT_HURT = register("entity.twilight.hurt");

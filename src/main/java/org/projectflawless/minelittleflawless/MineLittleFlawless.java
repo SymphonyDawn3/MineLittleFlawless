@@ -24,5 +24,6 @@ public class MineLittleFlawless implements ModInitializer {
         MineLittleFlawlessTabs.buildTabContentsVanilla();
         MineLittleFlawlessAttributes.registerAttributes();
         FlawlessEvents.init();
+        MineLittleFlawlessSBLSensors.init();
 	}
 }

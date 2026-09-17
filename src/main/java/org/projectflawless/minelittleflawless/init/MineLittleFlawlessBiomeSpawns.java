@@ -131,6 +131,16 @@ public class MineLittleFlawlessBiomeSpawns {
                 4,
                 4
         );
+
+        // Fractured
+        BiomeModifications.addSpawn(
+                biomeSelectionContext -> true,
+                MobCategory.MINE_LITTLE_FLAWLESS_FABRIC_MLP_NON_PERSISTENT,
+                MineLittleFlawlessEntities.FRACTURED,
+                5,
+                1,
+                4
+        );
     }
     
     public static void clownBiomeSpawns(EntityType<?> entityType) {

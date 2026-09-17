@@ -86,6 +86,7 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
 
         private void generateSpawnEggItemModels() {
             this.generateSpawnEggItemModel(MineLittleFlawlessItems.FLAWLESS_SPAWN_EGG);
+            this.generateSpawnEggItemModel(MineLittleFlawlessItems.FRACTURED_SPAWN_EGG);
             this.generateSpawnEggItemModel(MineLittleFlawlessItems.TWILIGHT_SPAWN_EGG);
             this.generateSpawnEggItemModel(MineLittleFlawlessItems.TRIXIE_SPAWN_EGG);
             this.generateSpawnEggItemModel(MineLittleFlawlessItems.ARINOS_SPAWN_EGG);
@@ -121,6 +122,7 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
         private void generateEntityTranslations(TranslationBuilder translationBuilder) {
             translationBuilder.add(MineLittleFlawlessEntities.BARTLEBY, "Bartleby");
             translationBuilder.add(MineLittleFlawlessEntities.FLAWLESS, "Flawless");
+            translationBuilder.add(MineLittleFlawlessEntities.FRACTURED, "Fractured");
             translationBuilder.add(MineLittleFlawlessEntities.TWILIGHT, "Twilight");
             translationBuilder.add(MineLittleFlawlessEntities.TRIXIE, "Trixie");
             translationBuilder.add(MineLittleFlawlessEntities.ARINOS, "Arinos");
@@ -142,6 +144,7 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
 
         private void generateSpawnEggTranslations(TranslationBuilder translationBuilder) {
             translationBuilder.add(MineLittleFlawlessItems.FLAWLESS_SPAWN_EGG, "Flawless Spawn Egg");
+            translationBuilder.add(MineLittleFlawlessItems.FRACTURED_SPAWN_EGG, "Fractured Spawn Egg");
             translationBuilder.add(MineLittleFlawlessItems.TWILIGHT_SPAWN_EGG, "Twilight Spawn Egg");
             translationBuilder.add(MineLittleFlawlessItems.TRIXIE_SPAWN_EGG, "Trixie Spawn Egg");
             translationBuilder.add(MineLittleFlawlessItems.ARINOS_SPAWN_EGG, "Arinos Spawn Egg");
@@ -171,6 +174,11 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
             translationBuilder.add("subtitles.entity.flawless.ambient", "Flawless speaks");
             translationBuilder.add("subtitles.entity.flawless.hurt", "Flawless hurts");
             translationBuilder.add("subtitles.entity.flawless.death", "Flawless dies");
+
+            // Fractured
+            translationBuilder.add("subtitles.entity.fractured.ambient", "Fractured speaks");
+            translationBuilder.add("subtitles.entity.fractured.hurt", "Fractured hurts");
+            translationBuilder.add("subtitles.entity.fractured.death", "Fractured dies");
 
             // Twilight
             translationBuilder.add("subtitles.entity.twilight.ambient", "Twilight speaks");

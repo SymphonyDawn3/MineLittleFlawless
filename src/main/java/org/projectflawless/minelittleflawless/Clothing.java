@@ -13,6 +13,9 @@ public class Clothing {
     public static ResourceLocation SCHOOLGIRL = new ResourceLocation(MineLittleFlawless.MOD_ID, "schoolgirl");
     public static ResourceLocation ROCKSTAR = new ResourceLocation(MineLittleFlawless.MOD_ID, "rockstar");
 
+    // Fractured clothing
+    public static ResourceLocation FRACTURED_TUXEDO = new ResourceLocation(MineLittleFlawless.MOD_ID, "fractured_tuxedo");
+
     // Trixie clothing
     public static ResourceLocation TRIXIE_MAGICIAN = new ResourceLocation(MineLittleFlawless.MOD_ID, "trixie_magician");
     public static ResourceLocation TRIXIE_BLACK_MAGICIAN = new ResourceLocation(MineLittleFlawless.MOD_ID, "trixie_black_magician");
