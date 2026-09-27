@@ -7,6 +7,11 @@
     "requireAnnotations": true
   },
   "mixins": [
-    "NaturalSpawnerMixin"
-  ]
+    "LivingEntityMixin",
+    "NaturalSpawnerMixin",
+    "RaiderMixin"
+  ],
+  "mixinextras": {
+    "minVersion": "0.5.4"
+  }
 }
