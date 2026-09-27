@@ -1,0 +1,25 @@
+package org.projectflawless.minelittleflawless.init;
+
+import dev.architectury.registry.client.level.entity.EntityRendererRegistry;
+import org.projectflawless.minelittleflawless.client.renderer.entity.*;
+
+public class MineLittleFlawlessEntityRenderers {
+	public static void registerEntityRenderers() {
+		EntityRendererRegistry.register(MineLittleFlawlessEntities.BARTLEBY, BartlebyRenderer::new);
+		EntityRendererRegistry.register(MineLittleFlawlessEntities.FLAWLESS, FlawlessRenderer::new);
+        EntityRendererRegistry.register(MineLittleFlawlessEntities.FRACTURED, FracturedRenderer::new);
+        EntityRendererRegistry.register(MineLittleFlawlessEntities.TWILIGHT, TwilightRenderer::new);
+        EntityRendererRegistry.register(MineLittleFlawlessEntities.TRIXIE, TrixieRenderer::new);
+        EntityRendererRegistry.register(MineLittleFlawlessEntities.ARINOS, ArinosRenderer::new);
+        EntityRendererRegistry.register(MineLittleFlawlessEntities.LAST_LAUGH, LastLaughRenderer::new);
+        EntityRendererRegistry.register(MineLittleFlawlessEntities.CHERRY_CHUCKLES, CherryChucklesRenderer::new);
+        EntityRendererRegistry.register(MineLittleFlawlessEntities.BIBBLEBOP, BibblebopRenderer::new);
+        EntityRendererRegistry.register(MineLittleFlawlessEntities.TRICOLOR_JUBILEE, TricolorJubileeRenderer::new);
+        EntityRendererRegistry.register(MineLittleFlawlessEntities.TRIXIEBELLE, TrixiebelleRenderer::new);
+        EntityRendererRegistry.register(MineLittleFlawlessEntities.SKYWISHES, SkywishesRenderer::new);
+        EntityRendererRegistry.register(MineLittleFlawlessEntities.STAR_CATCHER, StarCatcherRenderer::new);
+        EntityRendererRegistry.register(MineLittleFlawlessEntities.MARIONETTE, MarionetteRenderer::new);
+        EntityRendererRegistry.register(MineLittleFlawlessEntities.JACKIE_SPECTRE, JackieSpectreRenderer::new);
+        EntityRendererRegistry.register(MineLittleFlawlessEntities.WISH_FULFILLMENT, WishFulfillmentRenderer::new);
+	}
+}
