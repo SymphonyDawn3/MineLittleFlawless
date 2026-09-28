@@ -7,6 +7,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -30,8 +31,8 @@ public class MineLittleFlawlessSpawns {
                     || blockState.is(BlockTags.BASE_STONE_OVERWORLD)) &&
                     serverLevelAccessor.getRawBrightness(blockPos, 0) > 8;
         });
-        register(MineLittleFlawlessEntities.SKYWISHES);
-        register(MineLittleFlawlessEntities.STAR_CATCHER);
+        wishCatcherSpawns(MineLittleFlawlessEntities.SKYWISHES);
+        wishCatcherSpawns(MineLittleFlawlessEntities.STAR_CATCHER);
         register(MineLittleFlawlessEntities.MARIONETTE);
 
         register(MineLittleFlawlessEntities.JACKIE_SPECTRE, ((entityType,
@@ -77,5 +78,17 @@ public class MineLittleFlawlessSpawns {
                                                      spawnType, pos, random)
                 -> Monster.isDarkEnoughToSpawn(serverLevel, pos, random)
                 && Mob.checkMobSpawnRules(entityType2, serverLevel, spawnType, pos, random));
+    }
+
+    private static <E extends Mob> void wishCatcherSpawns(RegistrySupplier<EntityType<E>> entityType) {
+        register(entityType, (entityType2,
+                                                        serverLevelAccessor,
+                                                        mobSpawnType,
+                                                        blockPos,
+                                                        randomSource) -> {
+            BlockState blockState = serverLevelAccessor.getBlockState(blockPos.below());
+            return (blockState.is(BlockTags.ANIMALS_SPAWNABLE_ON) || blockState.is(Blocks.SNOW_BLOCK)) &&
+                    serverLevelAccessor.getRawBrightness(blockPos, 0) > 8;
+        });
     }
 }
