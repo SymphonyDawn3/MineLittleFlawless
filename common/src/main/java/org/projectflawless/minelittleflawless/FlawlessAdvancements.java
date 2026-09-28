@@ -44,9 +44,11 @@ public class FlawlessAdvancements {
                 Stream<ResourceLocation> flawlessClothingStream = flawlesses.stream()
                         .map(Flawless::getClothing);
 
-                long flawlessCount = needsToBeClothed ?
-                        flawlessClothingStream.filter(flawlessClothing -> flawlessClothing.equals(Clothing.NONE)).distinct().count()
-                        : flawlessClothingStream.count();
+                if (needsToBeClothed) {
+                    flawlessClothingStream = flawlessClothingStream.filter(flawlessClothing -> !flawlessClothing.equals(Clothing.NONE)).distinct();
+                }
+
+                long flawlessCount = flawlessClothingStream.count();
 
                 if (flawlessCount >= flawlessMaxCount) {
                     for (String criteria : this.progress.getRemainingCriteria())
