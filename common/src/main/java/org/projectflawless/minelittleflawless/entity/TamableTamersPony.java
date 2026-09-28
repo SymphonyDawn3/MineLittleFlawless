@@ -155,7 +155,7 @@ public abstract class TamableTamersPony extends TamableAnimal implements GeoEnti
         super.registerGoals();
         this.goalSelector.addGoal(1, new SitWhenOrderedToGoal(this));
         this.goalSelector.addGoal(2, new BreedGoal(this, 1, TamableTamersPony.class));
-        this.goalSelector.addGoal(2, new OwnerHurtByTargetGoal(this));
+        this.targetSelector.addGoal(2, new OwnerHurtByTargetGoal(this));
         this.targetSelector.addGoal(3, new OwnerHurtTargetGoal(this));
         // A compromise when non-tamed ponies shouldn't attack raiders during raids to make the Hero of the Village
         // advancement possible, as written in FlawlessEvents:init()
