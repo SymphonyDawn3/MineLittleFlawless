@@ -7,6 +7,6 @@ import org.projectflawless.minelittleflawless.entity.Twilight;
 public class TwilightModel extends TamersPonyModel<Twilight> {
     @Override
     public ResourceLocation getTextureResource(Twilight animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/twilight.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/twilight.png");
     }
 }

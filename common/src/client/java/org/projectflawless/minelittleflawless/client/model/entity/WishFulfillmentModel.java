@@ -7,6 +7,6 @@ import org.projectflawless.minelittleflawless.entity.WishFulfillment;
 public class WishFulfillmentModel extends TamersPonyModel<WishFulfillment> {
     @Override
     public ResourceLocation getTextureResource(WishFulfillment animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/wish_fulfillment.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/wish_fulfillment.png");
     }
 }

@@ -13,6 +13,6 @@ public class RockstarModel extends AdultAndBabyPonyModel<Flawless> {
 
     @Override
     public ResourceLocation getTextureResource(Flawless animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/clothing/rockstar.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/clothing/rockstar.png");
     }
 }

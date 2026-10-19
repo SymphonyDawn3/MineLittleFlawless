@@ -7,6 +7,6 @@ import org.projectflawless.minelittleflawless.entity.Bibblebop;
 public class BibblebopModel extends TamersPonyModel<Bibblebop> {
     @Override
     public ResourceLocation getTextureResource(Bibblebop bibblebop) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/bibblebop.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/bibblebop.png");
     }
 }

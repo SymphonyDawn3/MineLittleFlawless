@@ -13,6 +13,6 @@ public class CherryChucklesClownModel extends AdultAndBabyPonyModel<CherryChuckl
 
     @Override
     public ResourceLocation getTextureResource(CherryChuckles cherryChuckles) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/clothing/cherry_chuckles_clown.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/clothing/cherry_chuckles_clown.png");
     }
 }

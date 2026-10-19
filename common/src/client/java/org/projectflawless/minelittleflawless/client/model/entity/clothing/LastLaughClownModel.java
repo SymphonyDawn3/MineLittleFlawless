@@ -13,6 +13,6 @@ public class LastLaughClownModel extends AdultAndBabyPonyModel<LastLaugh> {
 
     @Override
     public ResourceLocation getTextureResource(LastLaugh lastLaugh) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/clothing/last_laugh_clown.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/clothing/last_laugh_clown.png");
     }
 }

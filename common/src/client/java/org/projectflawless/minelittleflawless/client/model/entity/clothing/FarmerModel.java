@@ -13,6 +13,6 @@ public class FarmerModel extends AdultAndBabyPonyModel<Flawless> {
 
     @Override
     public ResourceLocation getTextureResource(Flawless animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/clothing/farmer.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/clothing/farmer.png");
     }
 }

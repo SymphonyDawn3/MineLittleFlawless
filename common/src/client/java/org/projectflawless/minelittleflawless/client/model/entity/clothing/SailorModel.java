@@ -13,6 +13,6 @@ public class SailorModel extends AdultAndBabyPonyModel<JackieSpectre> {
 
     @Override
     public ResourceLocation getTextureResource(JackieSpectre animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/clothing/sailor.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/clothing/sailor.png");
     }
 }

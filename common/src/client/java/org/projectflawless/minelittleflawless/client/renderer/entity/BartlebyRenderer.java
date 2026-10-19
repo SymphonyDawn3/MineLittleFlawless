@@ -15,6 +15,6 @@ public class BartlebyRenderer extends MobRenderer<Bartleby, BartlebyModel> {
 
 	@Override
 	public ResourceLocation getTextureLocation(Bartleby entity) {
-		return new ResourceLocation(MineLittleFlawless.MOD_ID, "textures/entities/bartleby.png");
+		return new ResourceLocation(MineLittleFlawless.MOD_ID, "textures/entity/bartleby.png");
 	}
 }

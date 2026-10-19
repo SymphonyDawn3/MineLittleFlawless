@@ -13,6 +13,6 @@ public class FlawlessMagicianClothingModel extends AdultAndBabyPonyModel<Flawles
 
     @Override
     public ResourceLocation getTextureResource(Flawless animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/clothing/flawless_magician_clothing.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/clothing/flawless_magician_clothing.png");
     }
 }

@@ -13,6 +13,6 @@ public class SchoolgirlModel extends AdultAndBabyPonyModel<Flawless> {
 
     @Override
     public ResourceLocation getTextureResource(Flawless animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/clothing/schoolgirl.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/clothing/schoolgirl.png");
     }
 }

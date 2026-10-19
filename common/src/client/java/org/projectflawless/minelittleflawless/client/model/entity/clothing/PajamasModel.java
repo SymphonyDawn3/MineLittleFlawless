@@ -13,6 +13,6 @@ public class PajamasModel extends AdultAndBabyPonyModel<Flawless> {
 
     @Override
     public ResourceLocation getTextureResource(Flawless animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/clothing/pajamas.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/clothing/pajamas.png");
     }
 }

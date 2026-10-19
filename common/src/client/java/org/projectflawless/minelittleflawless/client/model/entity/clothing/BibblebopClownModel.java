@@ -13,6 +13,6 @@ public class BibblebopClownModel extends AdultAndBabyPonyModel<Bibblebop> {
 
     @Override
     public ResourceLocation getTextureResource(Bibblebop bibblebop) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/clothing/bibblebop_clown.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/clothing/bibblebop_clown.png");
     }
 }

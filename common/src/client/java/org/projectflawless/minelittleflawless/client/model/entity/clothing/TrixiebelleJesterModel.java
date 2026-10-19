@@ -13,6 +13,6 @@ public class TrixiebelleJesterModel extends AdultAndBabyPonyModel<Trixiebelle> {
 
     @Override
     public ResourceLocation getTextureResource(Trixiebelle animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/clothing/trixiebelle_jester.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/clothing/trixiebelle_jester.png");
     }
 }

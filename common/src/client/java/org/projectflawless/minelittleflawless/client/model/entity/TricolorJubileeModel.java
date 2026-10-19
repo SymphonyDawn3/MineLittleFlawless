@@ -7,6 +7,6 @@ import org.projectflawless.minelittleflawless.entity.TricolorJubilee;
 public class TricolorJubileeModel extends TamersPonyModel<TricolorJubilee> {
     @Override
     public ResourceLocation getTextureResource(TricolorJubilee tricolorJubilee) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/tricolor_jubilee.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/tricolor_jubilee.png");
     }
 }

@@ -7,6 +7,6 @@ import org.projectflawless.minelittleflawless.entity.Arinos;
 public class ArinosModel extends TamersPonyModel<Arinos> {
     @Override
     public ResourceLocation getTextureResource(Arinos animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/arinos.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/arinos.png");
     }
 }

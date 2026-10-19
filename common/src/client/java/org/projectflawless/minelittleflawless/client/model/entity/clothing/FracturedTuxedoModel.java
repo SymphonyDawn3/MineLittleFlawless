@@ -13,6 +13,6 @@ public class FracturedTuxedoModel extends AdultAndBabyPonyModel<Fractured> {
 
     @Override
     public ResourceLocation getTextureResource(Fractured animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/clothing/fractured_tuxedo.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/clothing/fractured_tuxedo.png");
     }
 }

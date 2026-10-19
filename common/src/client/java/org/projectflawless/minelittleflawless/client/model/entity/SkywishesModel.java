@@ -7,6 +7,6 @@ import org.projectflawless.minelittleflawless.entity.Skywishes;
 public class SkywishesModel extends TamersPonyModel<Skywishes> {
     @Override
     public ResourceLocation getTextureResource(Skywishes animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/skywishes.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/skywishes.png");
     }
 }

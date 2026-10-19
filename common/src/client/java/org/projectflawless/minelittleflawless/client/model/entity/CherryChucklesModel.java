@@ -7,6 +7,6 @@ import org.projectflawless.minelittleflawless.entity.CherryChuckles;
 public class CherryChucklesModel extends TamersPonyModel<CherryChuckles> {
     @Override
     public ResourceLocation getTextureResource(CherryChuckles cherryChuckles) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/cherry_chuckles.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/cherry_chuckles.png");
     }
 }

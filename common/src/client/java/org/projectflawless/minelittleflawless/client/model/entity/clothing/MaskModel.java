@@ -13,6 +13,6 @@ public class MaskModel extends AdultAndBabyPonyModel<Marionette> {
 
     @Override
     public ResourceLocation getTextureResource(Marionette animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/clothing/mask.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/clothing/mask.png");
     }
 }

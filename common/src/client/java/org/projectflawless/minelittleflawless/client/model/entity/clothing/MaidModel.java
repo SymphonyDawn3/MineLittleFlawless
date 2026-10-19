@@ -13,6 +13,6 @@ public class MaidModel extends AdultAndBabyPonyModel<StarCatcher> {
 
     @Override
     public ResourceLocation getTextureResource(StarCatcher animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/clothing/maid.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/clothing/maid.png");
     }
 }

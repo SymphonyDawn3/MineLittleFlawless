@@ -7,6 +7,6 @@ import org.projectflawless.minelittleflawless.entity.StarCatcher;
 public class StarCatcherModel extends TamersPonyModel<StarCatcher> {
     @Override
     public ResourceLocation getTextureResource(StarCatcher animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/star_catcher.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/star_catcher.png");
     }
 }

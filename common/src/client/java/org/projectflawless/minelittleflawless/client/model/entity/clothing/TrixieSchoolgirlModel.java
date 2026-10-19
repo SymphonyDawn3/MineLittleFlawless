@@ -13,6 +13,6 @@ public class TrixieSchoolgirlModel extends AdultAndBabyPonyModel<Trixie> {
 
     @Override
     public ResourceLocation getTextureResource(Trixie animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/clothing/trixie_schoolgirl.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/clothing/trixie_schoolgirl.png");
     }
 }

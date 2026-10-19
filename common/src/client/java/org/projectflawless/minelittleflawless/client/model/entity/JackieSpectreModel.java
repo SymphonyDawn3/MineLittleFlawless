@@ -7,6 +7,6 @@ import org.projectflawless.minelittleflawless.entity.JackieSpectre;
 public class JackieSpectreModel extends TamersPonyModel<JackieSpectre> {
     @Override
     public ResourceLocation getTextureResource(JackieSpectre animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/jackie_spectre.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/jackie_spectre.png");
     }
 }

@@ -7,6 +7,6 @@ import org.projectflawless.minelittleflawless.entity.Flawless;
 public class FlawlessModel extends TamersPonyModel<Flawless> {
     @Override
     public ResourceLocation getTextureResource(Flawless animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/flawless.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/flawless.png");
     }
 }

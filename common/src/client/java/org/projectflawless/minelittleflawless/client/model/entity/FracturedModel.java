@@ -7,6 +7,6 @@ import org.projectflawless.minelittleflawless.entity.Fractured;
 public class FracturedModel extends TamersPonyModel<Fractured> {
     @Override
     public ResourceLocation getTextureResource(Fractured animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/fractured.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/fractured.png");
     }
 }

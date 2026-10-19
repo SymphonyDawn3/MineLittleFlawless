@@ -13,6 +13,6 @@ public class TricolorJubileeClownModel extends AdultAndBabyPonyModel<TricolorJub
 
     @Override
     public ResourceLocation getTextureResource(TricolorJubilee tricolorJubilee) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/clothing/tricolor_jubilee_clown.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/clothing/tricolor_jubilee_clown.png");
     }
 }

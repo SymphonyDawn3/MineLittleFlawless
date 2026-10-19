@@ -7,6 +7,6 @@ import org.projectflawless.minelittleflawless.entity.Trixiebelle;
 public class TrixiebelleModel extends TamersPonyModel<Trixiebelle> {
     @Override
     public ResourceLocation getTextureResource(Trixiebelle animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/trixiebelle.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/trixiebelle.png");
     }
 }

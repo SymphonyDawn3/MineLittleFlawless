@@ -13,6 +13,6 @@ public class TrixieMagicianModel extends AdultAndBabyPonyModel<Trixie> {
 
     @Override
     public ResourceLocation getTextureResource(Trixie animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entities/clothing/trixie_magician.png");
+        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/clothing/trixie_magician.png");
     }
 }
