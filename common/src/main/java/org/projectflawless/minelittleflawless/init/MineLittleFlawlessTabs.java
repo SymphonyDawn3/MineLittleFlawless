@@ -37,7 +37,8 @@ public class MineLittleFlawlessTabs {
                 MineLittleFlawlessItems.FARMER,
                 MineLittleFlawlessItems.PAJAMAS,
                 MineLittleFlawlessItems.SCHOOLGIRL,
-                MineLittleFlawlessItems.ROCKSTAR
+                MineLittleFlawlessItems.ROCKSTAR,
+                MineLittleFlawlessItems.MUSIC_DISC_WISHLESS_RESONANCE
         );
 
         append(CreativeModeTabs.INGREDIENTS,

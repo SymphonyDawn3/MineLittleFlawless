@@ -95,6 +95,10 @@ public class MineLittleFlawlessSoundEvents {
     public static final RegistrySupplier<SoundEvent> WISH_FULFILLMENT_TRADE_ACCEPT = register("entity.wish_fulfillment.trade_accept");
     public static final RegistrySupplier<SoundEvent> WISH_FULFILLMENT_TRADE_DENY = register("entity.wish_fulfillment.trade_deny");
 
+    // Music Discs
+    // Wishless Resonance
+    public static final RegistrySupplier<SoundEvent> MUSIC_DISC_WISHLESS_RESONANCE = register("music_disc.wishless_resonance");
+
     public static void init() {
         SOUND_EVENTS.register();
     }

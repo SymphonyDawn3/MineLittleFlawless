@@ -1,9 +1,12 @@
 package org.projectflawless.minelittleflawless.init;
 
+import dev.architectury.core.item.ArchitecturyRecordItem;
 import dev.architectury.core.item.ArchitecturySpawnEggItem;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.RecordItem;
 import net.minecraft.world.item.SpawnEggItem;
 import org.projectflawless.minelittleflawless.item.*;
 import org.projectflawless.minelittleflawless.MineLittleFlawless;
@@ -15,6 +18,7 @@ import java.util.function.Supplier;
 public class MineLittleFlawlessItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(MineLittleFlawless.MOD_ID, Registries.ITEM);
     public static final RegistrySupplier<Item> ROTTEN_SUGAR = register("rotten_sugar", () -> new Item(new Item.Properties()));
+    public static final RegistrySupplier<RecordItem> MUSIC_DISC_WISHLESS_RESONANCE = register("music_disc_wishless_resonance", () -> new ArchitecturyRecordItem(15, MineLittleFlawlessSoundEvents.MUSIC_DISC_WISHLESS_RESONANCE, new Item.Properties().stacksTo(1).rarity(Rarity.RARE), 273));
     public static final RegistrySupplier<SpawnEggItem> FLAWLESS_SPAWN_EGG = register("flawless_spawn_egg", () -> new ArchitecturySpawnEggItem(MineLittleFlawlessEntities.FLAWLESS, 0xa3baff, 0xaa9cff, new Item.Properties()));
     public static final RegistrySupplier<SpawnEggItem> FRACTURED_SPAWN_EGG = register("fractured_spawn_egg", () -> new ArchitecturySpawnEggItem(MineLittleFlawlessEntities.FRACTURED, 0x39334d, 0x4a3559, new Item.Properties()));
     public static final RegistrySupplier<SpawnEggItem> TWILIGHT_SPAWN_EGG = register("twilight_spawn_egg", () -> new ArchitecturySpawnEggItem(MineLittleFlawlessEntities.TWILIGHT, 0xcc9cdf, 0x652d87, new Item.Properties()));

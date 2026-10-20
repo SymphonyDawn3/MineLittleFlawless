@@ -35,6 +35,7 @@ import net.tslat.smartbrainlib.api.core.sensor.ExtendedSensor;
 import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.entity.ai.behavior.WishWithPlayer;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
+import org.projectflawless.minelittleflawless.init.MineLittleFlawlessItems;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
 
 import java.util.Comparator;
@@ -217,6 +218,14 @@ public class WishFulfillment extends TamableTamersPony implements Merchant, Smar
 
             if (selectedOffers.stream().noneMatch(merchantOffer -> merchantOffer.getResult().is(randomOffer.getResult().getItem())))
                 selectedOffers.add(randomOffer);
+        }
+
+        if (this.isTame() && (wishingLevel == this.maxOfferLevel())) {
+            selectedOffers.add(new MerchantOffer(new ItemStack(
+                    this.itemForTrading, 1),
+                    new ItemStack(
+                            MineLittleFlawlessItems.MUSIC_DISC_WISHLESS_RESONANCE.get()
+                    ), 1, 18, 1.0f));
         }
 
         this.wishingOffers.addAll(selectedOffers);

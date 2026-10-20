@@ -393,5 +393,13 @@
     "sounds": [
       "minelittleflawless:mob/wish_fulfillment/tradedeny"
     ]
+  },
+  "music_disc.wishless_resonance": {
+    "sounds": [
+      {
+        "name": "minelittleflawless:records/wishless_resonance",
+        "stream": true
+      }
+    ]
   }
 }

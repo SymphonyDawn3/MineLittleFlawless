@@ -26,6 +26,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.RecordItem;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
@@ -75,6 +76,7 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
         @Override
         public void generateItemModels(ItemModelGenerators itemModelGenerator) {
             itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.ROTTEN_SUGAR.get(), ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.MUSIC_DISC_WISHLESS_RESONANCE.get(), ModelTemplates.FLAT_ITEM);
             itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.FLAWLESS_MAGICIAN_CLOTHING.get(), ModelTemplates.FLAT_ITEM);
             itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.TUXEDO.get(), ModelTemplates.FLAT_ITEM);
             itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.FARMER.get(), ModelTemplates.FLAT_ITEM);
@@ -116,6 +118,7 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
         public void generateTranslations(TranslationBuilder translationBuilder) {
             this.generateEntityTranslations(translationBuilder);
             this.generateMaterialTranslations(translationBuilder);
+            this.generateMusicDiscTranslations(translationBuilder);
             this.generateSpawnEggTranslations(translationBuilder);
             this.generateFlawlessClothingTranslations(translationBuilder);
             this.generateSoundEventTranslations(translationBuilder);
@@ -143,6 +146,15 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
 
         private void generateMaterialTranslations(TranslationBuilder translationBuilder) {
             translationBuilder.add(MineLittleFlawlessItems.ROTTEN_SUGAR.get(), "Rotten Sugar");
+        }
+
+        private void generateMusicDiscTranslations(TranslationBuilder translationBuilder) {
+            this.generateMusicDiscTranslation(translationBuilder, MineLittleFlawlessItems.MUSIC_DISC_WISHLESS_RESONANCE, "bonzi - Wishless Resonance");
+        }
+
+        private void generateMusicDiscTranslation(TranslationBuilder translationBuilder, RegistrySupplier<RecordItem> musicDisc, String title) {
+            translationBuilder.add(musicDisc.get(), "Music Disc");
+            translationBuilder.add(musicDisc.getId().toLanguageKey("item", "desc"), title);
         }
 
         private void generateSpawnEggTranslations(TranslationBuilder translationBuilder) {
@@ -554,6 +566,14 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
                             Items.PUMPKIN_PIE,
                             Items.DRIED_KELP,
                             Items.BEETROOT);
+
+            this.getOrCreateTagBuilder(ItemTags.MUSIC_DISCS)
+                    .add(
+                            MineLittleFlawlessItems.MUSIC_DISC_WISHLESS_RESONANCE.get());
+
+            this.getOrCreateTagBuilder(ItemTags.CREEPER_DROP_MUSIC_DISCS)
+                    .add(
+                            MineLittleFlawlessItems.MUSIC_DISC_WISHLESS_RESONANCE.get());
         }
     }
 }
