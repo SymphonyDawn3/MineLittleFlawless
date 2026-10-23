@@ -63,10 +63,15 @@ public class MineLittleFlawlessSoundEvents {
     public static final RegistrySupplier<SoundEvent> MARIONETTE_HURT = register("entity.marionette.hurt");
     public static final RegistrySupplier<SoundEvent> MARIONETTE_DEATH = register("entity.marionette.death");
 
-    // Trixiebelle
+    // Trixiebelle, English variant
     public static final RegistrySupplier<SoundEvent> TRIXIEBELLE_AMBIENT = register("entity.trixiebelle.ambient");
     public static final RegistrySupplier<SoundEvent> TRIXIEBELLE_HURT = register("entity.trixiebelle.hurt");
     public static final RegistrySupplier<SoundEvent> TRIXIEBELLE_DEATH = register("entity.trixiebelle.death");
+
+    // Trixiebelle, Spanish variant
+    public static final RegistrySupplier<SoundEvent> TRIXIEBELLE_AMBIENT_ES = register("entity.trixiebelle.ambient_es");
+    public static final RegistrySupplier<SoundEvent> TRIXIEBELLE_HURT_ES = register("entity.trixiebelle.hurt_es");
+    public static final RegistrySupplier<SoundEvent> TRIXIEBELLE_DEATH_ES = register("entity.trixiebelle.death_es");
 
     // Skywishes
     public static final RegistrySupplier<SoundEvent> SKYWISHES_AMBIENT = register("entity.skywishes.ambient");

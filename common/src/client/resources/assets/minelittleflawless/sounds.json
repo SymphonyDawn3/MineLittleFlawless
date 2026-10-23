@@ -259,6 +259,31 @@
       "minelittleflawless:mob/trixiebelle/hurt3"
     ]
   },
+  "entity.trixiebelle.ambient_es": {
+    "subtitle": "subtitles.entity.trixiebelle.ambient_es",
+    "sounds": [
+      "minelittleflawless:mob/trixiebelle/speak1_es",
+      "minelittleflawless:mob/trixiebelle/speak2_es",
+      "minelittleflawless:mob/trixiebelle/speak3_es",
+      "minelittleflawless:mob/trixiebelle/speak4_es"
+    ]
+  },
+  "entity.trixiebelle.hurt_es": {
+    "subtitle": "subtitles.entity.trixiebelle.hurt_es",
+    "sounds": [
+      "minelittleflawless:mob/trixiebelle/hurt1_es",
+      "minelittleflawless:mob/trixiebelle/hurt2",
+      "minelittleflawless:mob/trixiebelle/hurt3_es"
+    ]
+  },
+  "entity.trixiebelle.death_es": {
+    "subtitle": "subtitles.entity.trixiebelle.death_es",
+    "sounds": [
+      "minelittleflawless:mob/trixiebelle/hurt1_es",
+      "minelittleflawless:mob/trixiebelle/hurt2",
+      "minelittleflawless:mob/trixiebelle/hurt3_es"
+    ]
+  },
   "entity.skywishes.ambient": {
     "subtitle": "subtitles.entity.skywishes.ambient",
     "sounds": [

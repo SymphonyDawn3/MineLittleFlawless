@@ -238,10 +238,15 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
             translationBuilder.add("subtitles.entity.marionette.hurt", "Marionette hurts");
             translationBuilder.add("subtitles.entity.marionette.death", "Marionette dies");
 
-            // Trixiebelle
+            // Trixiebelle, English variant
             translationBuilder.add("subtitles.entity.trixiebelle.ambient", "Trixiebelle speaks");
             translationBuilder.add("subtitles.entity.trixiebelle.hurt", "Trixiebelle hurts");
             translationBuilder.add("subtitles.entity.trixiebelle.death", "Trixiebelle dies");
+
+            // Trixiebelle, Spanish variant
+            translationBuilder.add("subtitles.entity.trixiebelle.ambient_es", "Trixiebelle speaks in Spanish");
+            translationBuilder.add("subtitles.entity.trixiebelle.hurt_es", "Trixiebelle hurts in Spanish");
+            translationBuilder.add("subtitles.entity.trixiebelle.death_es", "Trixiebelle dies in Spanish");
 
             // Skywishes
             translationBuilder.add("subtitles.entity.skywishes.ambient", "Skywishes speaks");
