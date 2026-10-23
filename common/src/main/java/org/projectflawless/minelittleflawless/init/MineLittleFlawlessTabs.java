@@ -32,12 +32,17 @@ public class MineLittleFlawlessTabs {
         );
 
         append(CreativeModeTabs.TOOLS_AND_UTILITIES,
+                // Flawless clothing
                 MineLittleFlawlessItems.FLAWLESS_MAGICIAN_CLOTHING,
                 MineLittleFlawlessItems.TUXEDO,
                 MineLittleFlawlessItems.FARMER,
                 MineLittleFlawlessItems.PAJAMAS,
                 MineLittleFlawlessItems.SCHOOLGIRL,
                 MineLittleFlawlessItems.ROCKSTAR,
+                // Trixiebelle clothing
+                MineLittleFlawlessItems.TRIXIEBELLE_JESTER,
+                MineLittleFlawlessItems.TRIXIEBELLE_MEXICAN,
+                // Music Discs
                 MineLittleFlawlessItems.MUSIC_DISC_WISHLESS_RESONANCE
         );
 

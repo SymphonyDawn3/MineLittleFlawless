@@ -1,25 +1,34 @@
 package org.projectflawless.minelittleflawless.entity;
 
 import dev.architectury.registry.registries.RegistrySupplier;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.TemptGoal;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.Clothing;
+import org.projectflawless.minelittleflawless.MineLittleFlawlessTags;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
 
-public class Trixiebelle extends TamableTamersPony {
+public class Trixiebelle extends TamableTamersPony implements Shearable {
     public boolean spanishVariant = false;
 
     public Trixiebelle(EntityType<Trixiebelle> type, Level world) {
@@ -122,5 +131,52 @@ public class Trixiebelle extends TamableTamersPony {
 
     public void setSpanishVariant(boolean toggle) {
         this.spanishVariant = toggle;
+    }
+
+    @Override
+    public InteractionResult mobInteract(Player sourceentity, InteractionHand hand) {
+        ItemStack itemStack = sourceentity.getItemInHand(hand);
+        InteractionResult result;
+
+        if (itemStack.is(MineLittleFlawlessTags.TRIXIEBELLE_CLOTHING)) {
+            if (this.getClothing().equals(Clothing.NONE)) {
+                ResourceLocation trixiebelleClothing = BuiltInRegistries.ITEM.getKey(itemStack.getItem());
+                this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.HORSE_SADDLE, SoundSource.AMBIENT, 1.0f, 1.0f);
+                this.usePlayerItem(sourceentity, hand, itemStack);
+                this.setClothing(trixiebelleClothing);
+            }
+
+            result = InteractionResult.sidedSuccess(sourceentity.level().isClientSide());
+        } else if (itemStack.getItem() == Items.SHEARS) {
+            if (!this.level().isClientSide()) {
+                this.shear(SoundSource.PLAYERS);
+                this.gameEvent(GameEvent.SHEAR, sourceentity);
+                itemStack.hurtAndBreak(1, sourceentity, player -> player.broadcastBreakEvent(hand));
+                result = InteractionResult.SUCCESS;
+            } else {
+                result = InteractionResult.CONSUME;
+            }
+        } else {
+            result = super.mobInteract(sourceentity, hand);
+        }
+
+        return result;
+    }
+
+    @Override
+    public void shear(SoundSource source) {
+        this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.HORSE_SADDLE, source, 1.0f, 1.0f);
+        this.dropClothing();
+        this.setClothing(Clothing.NONE);
+    }
+
+    @Override
+    public boolean readyForShearing() {
+        return !this.getClothing().equals(Clothing.NONE);
+    }
+
+    private void dropClothing() {
+        ResourceLocation trixiebelleClothing = this.getClothing();
+        this.spawnAtLocation(BuiltInRegistries.ITEM.get(trixiebelleClothing));
     }
 }

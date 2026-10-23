@@ -11,6 +11,9 @@ public class MineLittleFlawlessTags {
     public static TagKey<Item> FLAWLESS_CLOTHING = TagKey.create(Registries.ITEM,
             new ResourceLocation(MineLittleFlawless.MOD_ID, "flawless_clothing"));
 
+    public static TagKey<Item> TRIXIEBELLE_CLOTHING = TagKey.create(Registries.ITEM,
+            new ResourceLocation(MineLittleFlawless.MOD_ID, "trixiebelle_clothing"));
+
     public static TagKey<Item> FARMER_GIFTS = TagKey.create(Registries.ITEM,
             new ResourceLocation(MineLittleFlawless.MOD_ID, "farmer_gifts"));
 
