@@ -2,6 +2,7 @@ package org.projectflawless.minelittleflawless.entity;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.Clothing;
@@ -102,11 +103,12 @@ public class Flawless extends TamableTamersPony implements Shearable {
 
         ResourceLocation flawlessClothing;
         FlawlessClothingItem randomFlawlessClothing;
+        RandomSource worldRandom = world.getRandom();
 
-        if (Math.random() < 0.5) {
+        if (worldRandom.nextFloat() < 0.5f) {
             flawlessClothing = Clothing.NONE;
         } else {
-            randomFlawlessClothing = (FlawlessClothingItem) Utils.getRandomItemFromTags(MineLittleFlawlessTags.FLAWLESS_CLOTHING);
+            randomFlawlessClothing = (FlawlessClothingItem) Utils.getRandomItemFromTags(MineLittleFlawlessTags.FLAWLESS_CLOTHING, worldRandom);
             flawlessClothing = randomFlawlessClothing.getClothing();
 
             this.wearClothing(randomFlawlessClothing);

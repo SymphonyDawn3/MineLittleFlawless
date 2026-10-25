@@ -8,8 +8,12 @@ import net.minecraft.world.item.Item;
 
 public class Utils {
     public static Item getRandomItemFromTags(TagKey<Item> tagItem) {
+        return getRandomItemFromTags(tagItem, RandomSource.create());
+    }
+
+    public static Item getRandomItemFromTags(TagKey<Item> tagItem, RandomSource randomSource) {
         Holder<Item> itemHolder = BuiltInRegistries.ITEM.getOrCreateTag(tagItem)
-                .getRandomElement(RandomSource.create()).orElseThrow();
+                .getRandomElement(randomSource).orElseThrow();
         return itemHolder.value();
     }
 }

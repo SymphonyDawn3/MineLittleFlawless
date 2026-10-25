@@ -58,7 +58,7 @@ public class Trixie extends TamableTamersPony {
 
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData spawnData, @Nullable CompoundTag dataTag) {
-        ResourceLocation randomClothing = Util.getRandom(CLOTHING_TYPES, this.getRandom());
+        ResourceLocation randomClothing = Util.getRandom(CLOTHING_TYPES, level.getRandom());
         this.setClothing(randomClothing);
 
         return super.finalizeSpawn(level, difficulty, reason, spawnData, dataTag);
