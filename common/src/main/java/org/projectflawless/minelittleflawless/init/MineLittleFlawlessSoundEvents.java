@@ -104,6 +104,9 @@ public class MineLittleFlawlessSoundEvents {
     // Wishless Resonance
     public static final RegistrySupplier<SoundEvent> MUSIC_DISC_WISHLESS_RESONANCE = register("music_disc.wishless_resonance");
 
+    // Projectiles
+    public static final RegistrySupplier<SoundEvent> LASER_BLAST = register("entity.laser.laser_blast");
+
     public static void init() {
         SOUND_EVENTS.register();
     }

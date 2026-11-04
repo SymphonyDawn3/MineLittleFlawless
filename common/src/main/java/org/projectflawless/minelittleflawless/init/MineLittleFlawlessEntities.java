@@ -11,6 +11,7 @@ import org.projectflawless.minelittleflawless.entity.*;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
+import org.projectflawless.minelittleflawless.entity.projectile.Laser;
 
 public class MineLittleFlawlessEntities {
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(MineLittleFlawless.MOD_ID, Registries.ENTITY_TYPE);
@@ -64,6 +65,13 @@ public class MineLittleFlawlessEntities {
 
     public static final RegistrySupplier<EntityType<WishFulfillment>> WISH_FULFILLMENT = registerPony("wish_fulfillment",
             WishFulfillment::new, MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT, PonySize.MEDIUM);
+
+    public static final RegistrySupplier<EntityType<Laser>> LASER = register("laser",
+            EntityType.Builder.<Laser>of(Laser::new, MobCategory.MISC)
+                    .clientTrackingRange(64)
+                    .updateInterval(3)
+                    .fireImmune()
+                    .sized(0.125f, 0.125f));
 
     public static void init() {
         ENTITIES.register();

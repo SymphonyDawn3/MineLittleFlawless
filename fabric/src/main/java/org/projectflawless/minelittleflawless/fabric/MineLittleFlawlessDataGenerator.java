@@ -288,6 +288,9 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
             translationBuilder.add("subtitles.entity.wish_fulfillment.death", "Wish Fulfillment dies");
             translationBuilder.add("subtitles.entity.wish_fulfillment.trade_accept", "Wish Fulfillment accepts offer");
             translationBuilder.add("subtitles.entity.wish_fulfillment.trade_deny", "Wish Fulfillment denies offer");
+
+            // Projectiles
+            translationBuilder.add("subtitles.entity.laser.laser_blast", "Laser blasts");
         }
         
         private void generateAdvancementTranslations(TranslationBuilder translationBuilder) {

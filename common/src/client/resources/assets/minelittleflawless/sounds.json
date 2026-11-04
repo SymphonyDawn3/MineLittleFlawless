@@ -426,5 +426,11 @@
         "stream": true
       }
     ]
+  },
+  "entity.laser.laser_blast": {
+    "subtitle": "subtitles.entity.laser.laser_blast",
+    "sounds": [
+      "minelittleflawless:projectile/laser/laser_blast"
+    ]
   }
 }

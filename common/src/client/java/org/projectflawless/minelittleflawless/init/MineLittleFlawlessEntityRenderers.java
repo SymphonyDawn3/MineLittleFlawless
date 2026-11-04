@@ -2,6 +2,7 @@ package org.projectflawless.minelittleflawless.init;
 
 import dev.architectury.registry.client.level.entity.EntityRendererRegistry;
 import org.projectflawless.minelittleflawless.client.renderer.entity.*;
+import org.projectflawless.minelittleflawless.client.renderer.entity.projectile.LaserRenderer;
 
 public class MineLittleFlawlessEntityRenderers {
 	public static void registerEntityRenderers() {
@@ -21,5 +22,8 @@ public class MineLittleFlawlessEntityRenderers {
         EntityRendererRegistry.register(MineLittleFlawlessEntities.MARIONETTE, MarionetteRenderer::new);
         EntityRendererRegistry.register(MineLittleFlawlessEntities.JACKIE_SPECTRE, JackieSpectreRenderer::new);
         EntityRendererRegistry.register(MineLittleFlawlessEntities.WISH_FULFILLMENT, WishFulfillmentRenderer::new);
+
+        // Projectiles
+        EntityRendererRegistry.register(MineLittleFlawlessEntities.LASER, LaserRenderer::new);
 	}
 }
