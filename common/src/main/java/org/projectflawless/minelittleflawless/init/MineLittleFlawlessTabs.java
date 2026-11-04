@@ -42,6 +42,8 @@ public class MineLittleFlawlessTabs {
                 // Trixiebelle clothing
                 MineLittleFlawlessItems.TRIXIEBELLE_JESTER,
                 MineLittleFlawlessItems.TRIXIEBELLE_MEXICAN,
+                // Skywishes clothing
+                MineLittleFlawlessItems.SKYWISHES_DRACULA,
                 // Music Discs
                 MineLittleFlawlessItems.MUSIC_DISC_WISHLESS_RESONANCE
         );

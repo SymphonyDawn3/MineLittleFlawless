@@ -308,6 +308,12 @@
       "minelittleflawless:mob/skywishes/hurt3"
     ]
   },
+  "entity.skywishes.clank": {
+    "subtitle": "subtitles.entity.skywishes.clank",
+    "sounds": [
+      "minelittleflawless:mob/skywishes/clank"
+    ]
+  },
   "entity.star_catcher.ambient": {
     "subtitle": "subtitles.entity.star_catcher.ambient",
     "sounds": [

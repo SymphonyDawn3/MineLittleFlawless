@@ -110,6 +110,58 @@
 		"misc.idle": {
 			"loop": true,
 			"animation_length": 1
+		},
+		"skywishes.aim_right_hoof": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.5,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5": [-90, 40, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.5": [9, -1, 2]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5": [-90, 0, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.5": [0, -1, 0]
+					}
+				}
+			}
+		},
+		"skywishes.aim_left_hoof": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.5,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5": [-90, 0, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.5": [0, -1, 0]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5": [-90, -40, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.5": [-9, -1, 2]
+					}
+				}
+			}
 		}
 	}
 }

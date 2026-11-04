@@ -24,6 +24,7 @@ import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.RecordItem;
@@ -92,6 +93,9 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
             // Trixiebelle clothing
             itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.TRIXIEBELLE_JESTER.get(), ModelTemplates.FLAT_ITEM);
             itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.TRIXIEBELLE_MEXICAN.get(), ModelTemplates.FLAT_ITEM);
+
+            // Skywishes clothing
+            itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.SKYWISHES_DRACULA.get(), ModelTemplates.FLAT_ITEM);
         }
 
         private void generateSpawnEggItemModel(RegistrySupplier<SpawnEggItem> spawnEgg) {
@@ -131,6 +135,7 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
             this.generateSpawnEggTranslations(translationBuilder);
             this.generateFlawlessClothingTranslations(translationBuilder);
             this.generateTrixiebelleClothingTranslations(translationBuilder);
+            this.generateSkywishesClothingTranslations(translationBuilder);
             this.generateSoundEventTranslations(translationBuilder);
             this.generateAdvancementTranslations(translationBuilder);
         }
@@ -197,6 +202,10 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
         private void generateTrixiebelleClothingTranslations(TranslationBuilder translationBuilder) {
             translationBuilder.add(MineLittleFlawlessItems.TRIXIEBELLE_JESTER.get(), "Trixiebelle Jester");
             translationBuilder.add(MineLittleFlawlessItems.TRIXIEBELLE_MEXICAN.get(), "Trixiebelle Mexican");
+        }
+
+        private void generateSkywishesClothingTranslations(TranslationBuilder translationBuilder) {
+            translationBuilder.add(MineLittleFlawlessItems.SKYWISHES_DRACULA.get(), "Skywishes Dracula");
         }
 
         private void generateSoundEventTranslations(TranslationBuilder translationBuilder) {
@@ -267,6 +276,7 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
             translationBuilder.add("subtitles.entity.skywishes.ambient", "Skywishes speaks");
             translationBuilder.add("subtitles.entity.skywishes.hurt", "Skywishes hurts");
             translationBuilder.add("subtitles.entity.skywishes.death", "Skywishes dies");
+            translationBuilder.add("subtitles.entity.skywishes.clank", "Skywishes clanks");
 
             // Star Catcher
             translationBuilder.add("subtitles.entity.star_catcher.ambient", "Star Catcher speaks");
@@ -412,6 +422,17 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
                     .unlockedBy("has_ingredient_2", InventoryChangeTrigger.TriggerInstance.hasItems(Items.RED_CARPET))
                     .unlockedBy("has_ingredient_3", InventoryChangeTrigger.TriggerInstance.hasItems(Items.YELLOW_CARPET))
                     .save(exporter, new ResourceLocation(MineLittleFlawless.MOD_ID, "trixiebelle_mexican"));
+
+            // Dracula Skywishes recipe
+            ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MineLittleFlawlessItems.SKYWISHES_DRACULA.get())
+                    .define('a', Items.RED_CARPET)
+                    .define('b', Items.WHITE_CARPET)
+                    .pattern("aba")
+                    .pattern("aaa")
+                    .pattern("aba")
+                    .unlockedBy("has_ingredient_0", InventoryChangeTrigger.TriggerInstance.hasItems(Items.RED_CARPET))
+                    .unlockedBy("has_ingredient_1", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHITE_CARPET))
+                    .save(exporter, new ResourceLocation(MineLittleFlawless.MOD_ID, "skywishes_dracula"));
         }
     }
 
@@ -565,6 +586,10 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
                             MineLittleFlawlessEntities.CHERRY_CHUCKLES.get(),
                             MineLittleFlawlessEntities.BIBBLEBOP.get(),
                             MineLittleFlawlessEntities.TRICOLOR_JUBILEE.get());
+
+            this.getOrCreateTagBuilder(EntityTypeTags.FALL_DAMAGE_IMMUNE)
+                    .add(
+                            MineLittleFlawlessEntities.SKYWISHES.get());
         }
     }
 
@@ -599,6 +624,10 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
                     .add(
                             MineLittleFlawlessItems.TRIXIEBELLE_JESTER.get(),
                             MineLittleFlawlessItems.TRIXIEBELLE_MEXICAN.get());
+
+            this.getOrCreateTagBuilder(MineLittleFlawlessTags.SKYWISHES_CLOTHING)
+                    .add(
+                            MineLittleFlawlessItems.SKYWISHES_DRACULA.get());
 
             this.getOrCreateTagBuilder(MineLittleFlawlessTags.FLAWLESS_FOOD)
                     .add(

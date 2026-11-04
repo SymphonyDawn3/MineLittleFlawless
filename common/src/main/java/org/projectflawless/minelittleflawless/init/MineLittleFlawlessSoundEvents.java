@@ -77,6 +77,7 @@ public class MineLittleFlawlessSoundEvents {
     public static final RegistrySupplier<SoundEvent> SKYWISHES_AMBIENT = register("entity.skywishes.ambient");
     public static final RegistrySupplier<SoundEvent> SKYWISHES_HURT = register("entity.skywishes.hurt");
     public static final RegistrySupplier<SoundEvent> SKYWISHES_DEATH = register("entity.skywishes.death");
+    public static final RegistrySupplier<SoundEvent> SKYWISHES_CLANK = register("entity.skywishes.clank");
 
     // Star Catcher
     public static final RegistrySupplier<SoundEvent> STAR_CATCHER_AMBIENT = register("entity.star_catcher.ambient");

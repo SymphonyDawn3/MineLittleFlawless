@@ -52,7 +52,7 @@ public class MineLittleFlawlessEntities {
             Trixiebelle::new, MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT, PonySize.SMALL);
 
     public static final RegistrySupplier<EntityType<Skywishes>> SKYWISHES = registerPony("skywishes",
-            Skywishes::new, MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT, PonySize.SMALL);
+            Skywishes::new, MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT, PonySize.MEDIUM);
 
     public static final RegistrySupplier<EntityType<StarCatcher>> STAR_CATCHER = registerPony("star_catcher",
             StarCatcher::new, MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT, PonySize.LARGE);

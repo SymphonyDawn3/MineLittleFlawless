@@ -53,6 +53,9 @@ public class MineLittleFlawlessItems {
     public static final RegistrySupplier<Item> TRIXIEBELLE_JESTER = register("trixiebelle_jester", () -> new Item(new Item.Properties().stacksTo(1)));
     public static final RegistrySupplier<Item> TRIXIEBELLE_MEXICAN = register("trixiebelle_mexican", () -> new Item(new Item.Properties().stacksTo(1)));
 
+    // Skywishes clothing
+    public static final RegistrySupplier<Item> SKYWISHES_DRACULA = register("skywishes_dracula", () -> new Item(new Item.Properties().stacksTo(1)));
+
     public static void init() {
         ITEMS.register();
     }

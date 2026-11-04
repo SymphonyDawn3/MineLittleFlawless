@@ -44,6 +44,9 @@ public class Clothing {
     public static ResourceLocation TRIXIEBELLE_JESTER = new ResourceLocation(MineLittleFlawless.MOD_ID, "trixiebelle_jester");
     public static ResourceLocation TRIXIEBELLE_MEXICAN = new ResourceLocation(MineLittleFlawless.MOD_ID, "trixiebelle_mexican");
 
+    // Skywishes clothing
+    public static ResourceLocation SKYWISHES_DRACULA = new ResourceLocation(MineLittleFlawless.MOD_ID, "skywishes_dracula");
+
     // Star Catcher Clothing
     public static ResourceLocation MAID = new ResourceLocation(MineLittleFlawless.MOD_ID, "maid");
 

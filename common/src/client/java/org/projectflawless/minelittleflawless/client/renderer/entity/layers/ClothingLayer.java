@@ -16,7 +16,7 @@ import software.bernie.geckolib.renderer.layer.GeoRenderLayer;
 import java.util.Optional;
 
 public class ClothingLayer<E extends TamableTamersPony, M extends TamersPonyModel<E>> extends GeoRenderLayer<E> {
-    private final AdultAndBabyPonyModel<E> model;
+    protected final AdultAndBabyPonyModel<E> model;
 
     public ClothingLayer(TamersPonyRenderer<E, M> renderer, AdultAndBabyPonyModel<E> model) {
         super(renderer);
