@@ -39,6 +39,11 @@ public class MineLittleFlawlessTabs {
                 MineLittleFlawlessItems.PAJAMAS,
                 MineLittleFlawlessItems.SCHOOLGIRL,
                 MineLittleFlawlessItems.ROCKSTAR,
+                // Trixie clothing
+                MineLittleFlawlessItems.TRIXIE_MAGICIAN,
+                MineLittleFlawlessItems.TRIXIE_BLACK_MAGICIAN,
+                MineLittleFlawlessItems.TRIXIE_SCHOOLGIRL,
+                MineLittleFlawlessItems.TRIXIE_GIR,
                 // Trixiebelle clothing
                 MineLittleFlawlessItems.TRIXIEBELLE_JESTER,
                 MineLittleFlawlessItems.TRIXIEBELLE_MEXICAN,

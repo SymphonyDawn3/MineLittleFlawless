@@ -49,6 +49,12 @@ public class MineLittleFlawlessItems {
     public static final RegistrySupplier<SchoolgirlItem> SCHOOLGIRL = register("schoolgirl", () -> new SchoolgirlItem(new Item.Properties()));
     public static final RegistrySupplier<RockstarItem> ROCKSTAR = register("rockstar", () -> new RockstarItem(new Item.Properties()));
 
+    // Trixie clothing
+    public static final RegistrySupplier<Item> TRIXIE_MAGICIAN = register("trixie_magician", () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistrySupplier<Item> TRIXIE_BLACK_MAGICIAN = register("trixie_black_magician", () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistrySupplier<Item> TRIXIE_SCHOOLGIRL = register("trixie_schoolgirl", () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistrySupplier<Item> TRIXIE_GIR = register("trixie_gir", () -> new Item(new Item.Properties().stacksTo(1)));
+
     // Trixiebelle clothing
     public static final RegistrySupplier<Item> TRIXIEBELLE_JESTER = register("trixiebelle_jester", () -> new Item(new Item.Properties().stacksTo(1)));
     public static final RegistrySupplier<Item> TRIXIEBELLE_MEXICAN = register("trixiebelle_mexican", () -> new Item(new Item.Properties().stacksTo(1)));

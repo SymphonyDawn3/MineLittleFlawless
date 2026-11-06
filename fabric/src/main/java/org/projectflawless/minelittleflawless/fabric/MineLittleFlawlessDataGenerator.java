@@ -90,6 +90,12 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
             itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.SCHOOLGIRL.get(), ModelTemplates.FLAT_ITEM);
             itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.ROCKSTAR.get(), ModelTemplates.FLAT_ITEM);
 
+            // Trixie clothing
+            itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.TRIXIE_MAGICIAN.get(), ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.TRIXIE_BLACK_MAGICIAN.get(), ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.TRIXIE_SCHOOLGIRL.get(), ModelTemplates.FLAT_ITEM);
+            itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.TRIXIE_GIR.get(), ModelTemplates.FLAT_ITEM);
+
             // Trixiebelle clothing
             itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.TRIXIEBELLE_JESTER.get(), ModelTemplates.FLAT_ITEM);
             itemModelGenerator.generateFlatItem(MineLittleFlawlessItems.TRIXIEBELLE_MEXICAN.get(), ModelTemplates.FLAT_ITEM);
@@ -134,6 +140,7 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
             this.generateMusicDiscTranslations(translationBuilder);
             this.generateSpawnEggTranslations(translationBuilder);
             this.generateFlawlessClothingTranslations(translationBuilder);
+            this.generateTrixieClothingTranslations(translationBuilder);
             this.generateTrixiebelleClothingTranslations(translationBuilder);
             this.generateSkywishesClothingTranslations(translationBuilder);
             this.generateSoundEventTranslations(translationBuilder);
@@ -197,6 +204,13 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
             translationBuilder.add(MineLittleFlawlessItems.PAJAMAS.get(), "Pajamas");
             translationBuilder.add(MineLittleFlawlessItems.SCHOOLGIRL.get(), "Schoolgirl");
             translationBuilder.add(MineLittleFlawlessItems.ROCKSTAR.get(), "Rockstar");
+        }
+
+        private void generateTrixieClothingTranslations(TranslationBuilder translationBuilder) {
+            translationBuilder.add(MineLittleFlawlessItems.TRIXIE_MAGICIAN.get(), "Trixie Magician");
+            translationBuilder.add(MineLittleFlawlessItems.TRIXIE_BLACK_MAGICIAN.get(), "Trixie Black Magician");
+            translationBuilder.add(MineLittleFlawlessItems.TRIXIE_SCHOOLGIRL.get(), "Trixie Schoolgirl");
+            translationBuilder.add(MineLittleFlawlessItems.TRIXIE_GIR.get(), "Trixie Gir");
         }
 
         private void generateTrixiebelleClothingTranslations(TranslationBuilder translationBuilder) {
@@ -397,6 +411,54 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
                     .pattern("a a")
                     .unlockedBy("has_ingredient_0", InventoryChangeTrigger.TriggerInstance.hasItems(Items.GRAY_CARPET))
                     .save(exporter, new ResourceLocation(MineLittleFlawless.MOD_ID, "tuxedo"));
+
+            // Magician Trixie recipe
+            ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MineLittleFlawlessItems.TRIXIE_MAGICIAN.get())
+                    .define('a', Items.DIAMOND)
+                    .define('b', Items.PURPLE_CARPET)
+                    .pattern(" b ")
+                    .pattern("bab")
+                    .pattern("bbb")
+                    .unlockedBy("has_ingredient_0", InventoryChangeTrigger.TriggerInstance.hasItems(Items.DIAMOND))
+                    .unlockedBy("has_ingredient_1", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PURPLE_CARPET))
+                    .save(exporter, new ResourceLocation(MineLittleFlawless.MOD_ID, "trixie_magician"));
+
+            // Black Magician Trixie recipe
+            ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, MineLittleFlawlessItems.TRIXIE_BLACK_MAGICIAN.get())
+                    .requires(MineLittleFlawlessItems.TRIXIE_MAGICIAN.get())
+                    .requires(Items.BLACK_DYE)
+                    .requires(Items.RED_DYE)
+                    .requires(Items.SKELETON_SKULL)
+                    .unlockedBy("has_ingredient_0", InventoryChangeTrigger.TriggerInstance.hasItems(MineLittleFlawlessItems.TRIXIE_MAGICIAN.get()))
+                    .unlockedBy("has_ingredient_1", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BLACK_DYE))
+                    .unlockedBy("has_ingredient_2", InventoryChangeTrigger.TriggerInstance.hasItems(Items.SKELETON_SKULL))
+                    .save(exporter, new ResourceLocation(MineLittleFlawless.MOD_ID, "trixie_black_magician"));
+
+            // Schoolgirl Trixie recipe
+            ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MineLittleFlawlessItems.TRIXIE_SCHOOLGIRL.get())
+                    .define('a', Items.WHITE_CARPET)
+                    .define('b', Items.PURPLE_CARPET)
+                    .pattern("aaa")
+                    .pattern(" b ")
+                    .pattern(" a ")
+                    .unlockedBy("has_ingredient_0", InventoryChangeTrigger.TriggerInstance.hasItems(Items.WHITE_CARPET))
+                    .unlockedBy("has_ingredient_1", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PURPLE_CARPET))
+                    .save(exporter, new ResourceLocation(MineLittleFlawless.MOD_ID, "trixie_schoolgirl"));
+
+            // Gir Trixie recipe
+            ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MineLittleFlawlessItems.TRIXIE_GIR.get())
+                    .define('a', Items.BLACK_CARPET)
+                    .define('b', Items.LIME_WOOL)
+                    .define('c', Items.RED_CARPET)
+                    .define('d', Items.IRON_NUGGET)
+                    .pattern("aba")
+                    .pattern("bcb")
+                    .pattern("bdb")
+                    .unlockedBy("has_ingredient_0", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BLACK_CARPET))
+                    .unlockedBy("has_ingredient_1", InventoryChangeTrigger.TriggerInstance.hasItems(Items.LIME_WOOL))
+                    .unlockedBy("has_ingredient_2", InventoryChangeTrigger.TriggerInstance.hasItems(Items.RED_CARPET))
+                    .unlockedBy("has_ingredient_3", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_NUGGET))
+                    .save(exporter, new ResourceLocation(MineLittleFlawless.MOD_ID, "trixie_gir"));
 
             // Jester Trixiebelle recipe
             ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, MineLittleFlawlessItems.TRIXIEBELLE_JESTER.get())
@@ -619,6 +681,13 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
                             MineLittleFlawlessItems.SCHOOLGIRL.get(),
                             MineLittleFlawlessItems.FARMER.get(),
                             MineLittleFlawlessItems.ROCKSTAR.get());
+
+            this.getOrCreateTagBuilder(MineLittleFlawlessTags.TRIXIE_CLOTHING)
+                    .add(
+                            MineLittleFlawlessItems.TRIXIE_MAGICIAN.get(),
+                            MineLittleFlawlessItems.TRIXIE_BLACK_MAGICIAN.get(),
+                            MineLittleFlawlessItems.TRIXIE_SCHOOLGIRL.get(),
+                            MineLittleFlawlessItems.TRIXIE_GIR.get());
 
             this.getOrCreateTagBuilder(MineLittleFlawlessTags.TRIXIEBELLE_CLOTHING)
                     .add(
