@@ -1,6 +1,6 @@
 {
   "entity.flawless.ambient": {
-    "subtitle": "subtitles.entity.flawless.ambient",
+    "subtitle": "subtitles.minelittleflawless.entity.flawless.ambient",
     "sounds": [
       "minelittleflawless:mob/flawless/speak1",
       "minelittleflawless:mob/flawless/speak2",
@@ -8,21 +8,21 @@
     ]
   },
   "entity.flawless.hurt": {
-    "subtitle": "subtitles.entity.flawless.hurt",
+    "subtitle": "subtitles.minelittleflawless.entity.flawless.hurt",
     "sounds": [
       "minelittleflawless:mob/flawless/hurt1",
       "minelittleflawless:mob/flawless/hurt2"
     ]
   },
   "entity.flawless.death": {
-    "subtitle": "subtitles.entity.flawless.death",
+    "subtitle": "subtitles.minelittleflawless.entity.flawless.death",
     "sounds": [
       "minelittleflawless:mob/flawless/hurt1",
       "minelittleflawless:mob/flawless/hurt2"
     ]
   },
   "entity.fractured.ambient": {
-    "subtitle": "subtitles.entity.fractured.ambient",
+    "subtitle": "subtitles.minelittleflawless.entity.fractured.ambient",
     "sounds": [
       "minelittleflawless:mob/fractured/speak1",
       "minelittleflawless:mob/fractured/speak2",
@@ -32,7 +32,7 @@
     ]
   },
   "entity.fractured.hurt": {
-    "subtitle": "subtitles.entity.fractured.hurt",
+    "subtitle": "subtitles.minelittleflawless.entity.fractured.hurt",
     "sounds": [
       "minelittleflawless:mob/fractured/hurt1",
       "minelittleflawless:mob/fractured/hurt2",
@@ -40,35 +40,35 @@
     ]
   },
   "entity.fractured.death": {
-    "subtitle": "subtitles.entity.flawless.death",
+    "subtitle": "subtitles.minelittleflawless.entity.flawless.death",
     "sounds": [
       "minelittleflawless:mob/fractured/death1",
       "minelittleflawless:mob/fractured/death2"
     ]
   },
   "entity.twilight.ambient": {
-    "subtitle": "subtitles.entity.twilight.ambient",
+    "subtitle": "subtitles.minelittleflawless.entity.twilight.ambient",
     "sounds": [
       "minelittleflawless:mob/twilight/speak1",
       "minelittleflawless:mob/twilight/speak2"
     ]
   },
   "entity.twilight.hurt": {
-    "subtitle": "subtitles.entity.twilight.hurt",
+    "subtitle": "subtitles.minelittleflawless.entity.twilight.hurt",
     "sounds": [
       "minelittleflawless:mob/twilight/hurt1",
       "minelittleflawless:mob/twilight/hurt2"
     ]
   },
   "entity.twilight.death": {
-    "subtitle": "subtitles.entity.twilight.death",
+    "subtitle": "subtitles.minelittleflawless.entity.twilight.death",
     "sounds": [
       "minelittleflawless:mob/twilight/hurt1",
       "minelittleflawless:mob/twilight/hurt2"
     ]
   },
   "entity.trixie.ambient": {
-    "subtitle": "subtitles.entity.trixie.ambient",
+    "subtitle": "subtitles.minelittleflawless.entity.trixie.ambient",
     "sounds": [
       "minelittleflawless:mob/trixie/speak1",
       "minelittleflawless:mob/trixie/speak2",
@@ -77,27 +77,27 @@
     ]
   },
   "entity.trixie.hurt": {
-    "subtitle": "subtitles.entity.trixie.hurt",
+    "subtitle": "subtitles.minelittleflawless.entity.trixie.hurt",
     "sounds": [
       "minelittleflawless:mob/trixie/hurt1",
       "minelittleflawless:mob/trixie/hurt2"
     ]
   },
   "entity.trixie.death": {
-    "subtitle": "subtitles.entity.trixie.death",
+    "subtitle": "subtitles.minelittleflawless.entity.trixie.death",
     "sounds": [
       "minelittleflawless:mob/trixie/hurt1",
       "minelittleflawless:mob/trixie/hurt2"
     ]
   },
   "entity.clown_pony.jingle": {
-    "subtitle": "subtitles.entity.clown_pony.jingle",
+    "subtitle": "subtitles.minelittleflawless.entity.clown_pony.jingle",
     "sounds": [
       "minelittleflawless:mob/clown_pony/jingle"
     ]
   },
   "entity.arinos.ambient": {
-    "subtitle": "subtitles.entity.arinos.ambient",
+    "subtitle": "subtitles.minelittleflawless.entity.arinos.ambient",
     "sounds": [
       "minelittleflawless:mob/arinos/speak1",
       "minelittleflawless:mob/arinos/speak2",
@@ -106,21 +106,21 @@
     ]
   },
   "entity.arinos.hurt": {
-    "subtitle": "subtitles.entity.arinos.hurt",
+    "subtitle": "subtitles.minelittleflawless.entity.arinos.hurt",
     "sounds": [
       "minelittleflawless:mob/arinos/hurt1",
       "minelittleflawless:mob/arinos/hurt2"
     ]
   },
   "entity.arinos.death": {
-    "subtitle": "subtitles.entity.arinos.death",
+    "subtitle": "subtitles.minelittleflawless.entity.arinos.death",
     "sounds": [
       "minelittleflawless:mob/arinos/hurt1",
       "minelittleflawless:mob/arinos/hurt2"
     ]
   },
   "entity.last_laugh.ambient": {
-    "subtitle": "subtitles.entity.last_laugh.ambient",
+    "subtitle": "subtitles.minelittleflawless.entity.last_laugh.ambient",
     "sounds": [
       "minelittleflawless:mob/last_laugh/speak1",
       "minelittleflawless:mob/last_laugh/speak2",
@@ -129,21 +129,21 @@
     ]
   },
   "entity.last_laugh.hurt": {
-    "subtitle": "subtitles.entity.last_laugh.hurt",
+    "subtitle": "subtitles.minelittleflawless.entity.last_laugh.hurt",
     "sounds": [
       "minelittleflawless:mob/last_laugh/hurt1",
       "minelittleflawless:mob/last_laugh/hurt2"
     ]
   },
   "entity.last_laugh.death": {
-    "subtitle": "subtitles.entity.last_laugh.death",
+    "subtitle": "subtitles.minelittleflawless.entity.last_laugh.death",
     "sounds": [
       "minelittleflawless:mob/last_laugh/hurt1",
       "minelittleflawless:mob/last_laugh/hurt2"
     ]
   },
   "entity.cherry_chuckles.ambient": {
-    "subtitle": "subtitles.entity.cherry_chuckles.ambient",
+    "subtitle": "subtitles.minelittleflawless.entity.cherry_chuckles.ambient",
     "sounds": [
       "minelittleflawless:mob/cherry_chuckles/speak1",
       "minelittleflawless:mob/cherry_chuckles/speak2",
@@ -152,21 +152,21 @@
     ]
   },
   "entity.cherry_chuckles.hurt": {
-    "subtitle": "subtitles.entity.cherry_chuckles.hurt",
+    "subtitle": "subtitles.minelittleflawless.entity.cherry_chuckles.hurt",
     "sounds": [
       "minelittleflawless:mob/cherry_chuckles/hurt1",
       "minelittleflawless:mob/cherry_chuckles/hurt2"
     ]
   },
   "entity.cherry_chuckles.death": {
-    "subtitle": "subtitles.entity.cherry_chuckles.death",
+    "subtitle": "subtitles.minelittleflawless.entity.cherry_chuckles.death",
     "sounds": [
       "minelittleflawless:mob/cherry_chuckles/hurt1",
       "minelittleflawless:mob/cherry_chuckles/hurt2"
     ]
   },
   "entity.bibblebop.ambient": {
-    "subtitle": "subtitles.entity.bibblebop.ambient",
+    "subtitle": "subtitles.minelittleflawless.entity.bibblebop.ambient",
     "sounds": [
       "minelittleflawless:mob/bibblebop/speak1",
       "minelittleflawless:mob/bibblebop/speak2",
@@ -175,21 +175,21 @@
     ]
   },
   "entity.bibblebop.hurt": {
-    "subtitle": "subtitles.entity.cherry_chuckles.hurt",
+    "subtitle": "subtitles.minelittleflawless.entity.cherry_chuckles.hurt",
     "sounds": [
       "minelittleflawless:mob/bibblebop/hurt1",
       "minelittleflawless:mob/bibblebop/hurt2"
     ]
   },
   "entity.bibblebop.death": {
-    "subtitle": "subtitles.entity.bibblebop.death",
+    "subtitle": "subtitles.minelittleflawless.entity.bibblebop.death",
     "sounds": [
       "minelittleflawless:mob/bibblebop/hurt1",
       "minelittleflawless:mob/bibblebop/hurt2"
     ]
   },
   "entity.tricolor_jubilee.ambient": {
-    "subtitle": "subtitles.entity.tricolor_jubilee.ambient",
+    "subtitle": "subtitles.minelittleflawless.entity.tricolor_jubilee.ambient",
     "sounds": [
       "minelittleflawless:mob/tricolor_jubilee/speak1",
       "minelittleflawless:mob/tricolor_jubilee/speak2",
@@ -198,21 +198,21 @@
     ]
   },
   "entity.tricolor_jubilee.hurt": {
-    "subtitle": "subtitles.entity.tricolor_jubilee.hurt",
+    "subtitle": "subtitles.minelittleflawless.entity.tricolor_jubilee.hurt",
     "sounds": [
       "minelittleflawless:mob/tricolor_jubilee/hurt1",
       "minelittleflawless:mob/tricolor_jubilee/hurt2"
     ]
   },
   "entity.tricolor_jubilee.death": {
-    "subtitle": "subtitles.entity.tricolor_jubilee.death",
+    "subtitle": "subtitles.minelittleflawless.entity.tricolor_jubilee.death",
     "sounds": [
       "minelittleflawless:mob/tricolor_jubilee/hurt1",
       "minelittleflawless:mob/tricolor_jubilee/hurt2"
     ]
   },
   "entity.marionette.ambient": {
-    "subtitle": "subtitles.entity.marionette.ambient",
+    "subtitle": "subtitles.minelittleflawless.entity.marionette.ambient",
     "sounds": [
       "minelittleflawless:mob/marionette/speak1",
       "minelittleflawless:mob/marionette/speak2",
@@ -221,21 +221,21 @@
     ]
   },
   "entity.marionette.hurt": {
-    "subtitle": "subtitles.entity.marionette.hurt",
+    "subtitle": "subtitles.minelittleflawless.entity.marionette.hurt",
     "sounds": [
       "minelittleflawless:mob/marionette/hurt1",
       "minelittleflawless:mob/marionette/hurt2"
     ]
   },
   "entity.marionette.death": {
-    "subtitle": "subtitles.entity.marionette.death",
+    "subtitle": "subtitles.minelittleflawless.entity.marionette.death",
     "sounds": [
       "minelittleflawless:mob/marionette/hurt1",
       "minelittleflawless:mob/marionette/hurt2"
     ]
   },
   "entity.trixiebelle.ambient": {
-    "subtitle": "subtitles.entity.trixiebelle.ambient",
+    "subtitle": "subtitles.minelittleflawless.entity.trixiebelle.ambient",
     "sounds": [
       "minelittleflawless:mob/trixiebelle/speak1",
       "minelittleflawless:mob/trixiebelle/speak2",
@@ -244,7 +244,7 @@
     ]
   },
   "entity.trixiebelle.hurt": {
-    "subtitle": "subtitles.entity.trixiebelle.hurt",
+    "subtitle": "subtitles.minelittleflawless.entity.trixiebelle.hurt",
     "sounds": [
       "minelittleflawless:mob/trixiebelle/hurt1",
       "minelittleflawless:mob/trixiebelle/hurt2",
@@ -252,7 +252,7 @@
     ]
   },
   "entity.trixiebelle.death": {
-    "subtitle": "subtitles.entity.trixiebelle.death",
+    "subtitle": "subtitles.minelittleflawless.entity.trixiebelle.death",
     "sounds": [
       "minelittleflawless:mob/trixiebelle/hurt1",
       "minelittleflawless:mob/trixiebelle/hurt2",
@@ -260,7 +260,7 @@
     ]
   },
   "entity.trixiebelle.ambient_es": {
-    "subtitle": "subtitles.entity.trixiebelle.ambient_es",
+    "subtitle": "subtitles.minelittleflawless.entity.trixiebelle.ambient_es",
     "sounds": [
       "minelittleflawless:mob/trixiebelle/speak1_es",
       "minelittleflawless:mob/trixiebelle/speak2_es",
@@ -269,7 +269,7 @@
     ]
   },
   "entity.trixiebelle.hurt_es": {
-    "subtitle": "subtitles.entity.trixiebelle.hurt_es",
+    "subtitle": "subtitles.minelittleflawless.entity.trixiebelle.hurt_es",
     "sounds": [
       "minelittleflawless:mob/trixiebelle/hurt1_es",
       "minelittleflawless:mob/trixiebelle/hurt2",
@@ -277,7 +277,7 @@
     ]
   },
   "entity.trixiebelle.death_es": {
-    "subtitle": "subtitles.entity.trixiebelle.death_es",
+    "subtitle": "subtitles.minelittleflawless.entity.trixiebelle.death_es",
     "sounds": [
       "minelittleflawless:mob/trixiebelle/hurt1_es",
       "minelittleflawless:mob/trixiebelle/hurt2",
@@ -285,7 +285,7 @@
     ]
   },
   "entity.skywishes.ambient": {
-    "subtitle": "subtitles.entity.skywishes.ambient",
+    "subtitle": "subtitles.minelittleflawless.entity.skywishes.ambient",
     "sounds": [
       "minelittleflawless:mob/skywishes/speak1",
       "minelittleflawless:mob/skywishes/speak2",
@@ -293,7 +293,7 @@
     ]
   },
   "entity.skywishes.hurt": {
-    "subtitle": "subtitles.entity.skywishes.hurt",
+    "subtitle": "subtitles.minelittleflawless.entity.skywishes.hurt",
     "sounds": [
       "minelittleflawless:mob/skywishes/hurt1",
       "minelittleflawless:mob/skywishes/hurt2",
@@ -301,7 +301,7 @@
     ]
   },
   "entity.skywishes.death": {
-    "subtitle": "subtitles.entity.skywishes.death",
+    "subtitle": "subtitles.minelittleflawless.entity.skywishes.death",
     "sounds": [
       "minelittleflawless:mob/skywishes/hurt1",
       "minelittleflawless:mob/skywishes/hurt2",
@@ -309,13 +309,13 @@
     ]
   },
   "entity.skywishes.clank": {
-    "subtitle": "subtitles.entity.skywishes.clank",
+    "subtitle": "subtitles.minelittleflawless.entity.skywishes.clank",
     "sounds": [
       "minelittleflawless:mob/skywishes/clank"
     ]
   },
   "entity.star_catcher.ambient": {
-    "subtitle": "subtitles.entity.star_catcher.ambient",
+    "subtitle": "subtitles.minelittleflawless.entity.star_catcher.ambient",
     "sounds": [
       "minelittleflawless:mob/star_catcher/speak1",
       "minelittleflawless:mob/star_catcher/speak2",
@@ -323,28 +323,28 @@
     ]
   },
   "entity.star_catcher.hurt": {
-    "subtitle": "subtitles.entity.star_catcher.hurt",
+    "subtitle": "subtitles.minelittleflawless.entity.star_catcher.hurt",
     "sounds": [
       "minelittleflawless:mob/star_catcher/hurt1",
       "minelittleflawless:mob/star_catcher/hurt2"
     ]
   },
   "entity.star_catcher.death": {
-    "subtitle": "subtitles.entity.star_catcher.death",
+    "subtitle": "subtitles.minelittleflawless.entity.star_catcher.death",
     "sounds": [
       "minelittleflawless:mob/star_catcher/hurt1",
       "minelittleflawless:mob/star_catcher/hurt2"
     ]
   },
   "entity.star_catcher.clean_on": {
-    "subtitle": "subtitles.entity.star_catcher.clean_on",
+    "subtitle": "subtitles.minelittleflawless.entity.star_catcher.clean_on",
     "sounds": [
       "minelittleflawless:mob/star_catcher/clean1",
       "minelittleflawless:mob/star_catcher/clean2"
     ]
   },
   "entity.star_catcher.clean_off": {
-    "subtitle": "subtitles.entity.star_catcher.clean_off",
+    "subtitle": "subtitles.minelittleflawless.entity.star_catcher.clean_off",
     "sounds": [
       "minelittleflawless:mob/star_catcher/unclean1",
       "minelittleflawless:mob/star_catcher/unclean2"
@@ -356,21 +356,21 @@
     ]
   },
   "entity.star_catcher.clean_around": {
-    "subtitle": "subtitles.entity.star_catcher.clean_around",
+    "subtitle": "subtitles.minelittleflawless.entity.star_catcher.clean_around",
     "sounds": [
       "minelittleflawless:mob/star_catcher/cleanaround1",
       "minelittleflawless:mob/star_catcher/cleanaround2"
     ]
   },
   "entity.star_catcher.deny_clean": {
-    "subtitle": "subtitles.entity.star_catcher.deny_clean",
+    "subtitle": "subtitles.minelittleflawless.entity.star_catcher.deny_clean",
     "sounds": [
       "minelittleflawless:mob/star_catcher/denyclean1",
       "minelittleflawless:mob/star_catcher/denyclean2"
     ]
   },
   "entity.jackie_spectre.ambient": {
-    "subtitle": "subtitles.entity.jackie_spectre.ambient",
+    "subtitle": "subtitles.minelittleflawless.entity.jackie_spectre.ambient",
     "sounds": [
       "minelittleflawless:mob/jackie_spectre/speak1",
       "minelittleflawless:mob/jackie_spectre/speak2",
@@ -378,21 +378,21 @@
     ]
   },
   "entity.jackie_spectre.hurt": {
-    "subtitle": "subtitles.entity.jackie_spectre.hurt",
+    "subtitle": "subtitles.minelittleflawless.entity.jackie_spectre.hurt",
     "sounds": [
       "minelittleflawless:mob/jackie_spectre/hurt1",
       "minelittleflawless:mob/jackie_spectre/hurt2"
     ]
   },
   "entity.jackie_spectre.death": {
-    "subtitle": "subtitles.entity.jackie_spectre.death",
+    "subtitle": "subtitles.minelittleflawless.entity.jackie_spectre.death",
     "sounds": [
       "minelittleflawless:mob/jackie_spectre/hurt1",
       "minelittleflawless:mob/jackie_spectre/hurt2"
     ]
   },
   "entity.wish_fulfillment.ambient": {
-    "subtitle": "subtitles.entity.wish_fulfillment.ambient",
+    "subtitle": "subtitles.minelittleflawless.entity.wish_fulfillment.ambient",
     "sounds": [
       "minelittleflawless:mob/wish_fulfillment/blerp1",
       "minelittleflawless:mob/wish_fulfillment/blerp2",
@@ -401,26 +401,26 @@
     ]
   },
   "entity.wish_fulfillment.hurt": {
-    "subtitle": "subtitles.entity.wish_fulfillment.hurt",
+    "subtitle": "subtitles.minelittleflawless.entity.wish_fulfillment.hurt",
     "sounds": [
       "minelittleflawless:mob/wish_fulfillment/hurt1",
       "minelittleflawless:mob/wish_fulfillment/hurt2"
     ]
   },
   "entity.wish_fulfillment.death": {
-    "subtitle": "subtitles.entity.wish_fulfillment.death",
+    "subtitle": "subtitles.minelittleflawless.entity.wish_fulfillment.death",
     "sounds": [
       "minelittleflawless:mob/wish_fulfillment/death"
     ]
   },
   "entity.wish_fulfillment.trade_accept": {
-    "subtitle": "subtitles.entity.wish_fulfillment.trade_accept",
+    "subtitle": "subtitles.minelittleflawless.entity.wish_fulfillment.trade_accept",
     "sounds": [
       "minelittleflawless:mob/wish_fulfillment/tradeaccept"
     ]
   },
   "entity.wish_fulfillment.trade_deny": {
-    "subtitle": "subtitles.entity.wish_fulfillment.trade_deny",
+    "subtitle": "subtitles.minelittleflawless.entity.wish_fulfillment.trade_deny",
     "sounds": [
       "minelittleflawless:mob/wish_fulfillment/tradedeny"
     ]
@@ -434,7 +434,7 @@
     ]
   },
   "entity.laser.laser_blast": {
-    "subtitle": "subtitles.entity.laser.laser_blast",
+    "subtitle": "subtitles.minelittleflawless.entity.laser.laser_blast",
     "sounds": [
       "minelittleflawless:projectile/laser/laser_blast"
     ]

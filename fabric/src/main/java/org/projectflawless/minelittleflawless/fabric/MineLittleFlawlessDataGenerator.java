@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.*;
+import net.minecraft.Util;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.FrameType;
@@ -23,6 +24,7 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
@@ -35,6 +37,7 @@ import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
 import org.projectflawless.minelittleflawless.MineLittleFlawless;
 import org.projectflawless.minelittleflawless.MineLittleFlawlessTags;
 import org.projectflawless.minelittleflawless.init.MineLittleFlawlessItems;
+import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
@@ -224,97 +227,107 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
 
         private void generateSoundEventTranslations(TranslationBuilder translationBuilder) {
             // Flawless
-            translationBuilder.add("subtitles.entity.flawless.ambient", "Flawless speaks");
-            translationBuilder.add("subtitles.entity.flawless.hurt", "Flawless hurts");
-            translationBuilder.add("subtitles.entity.flawless.death", "Flawless dies");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.FLAWLESS_AMBIENT, "Flawless speaks");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.FLAWLESS_HURT, "Flawless hurts");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.FLAWLESS_DEATH, "Flawless dies");
 
             // Fractured
-            translationBuilder.add("subtitles.entity.fractured.ambient", "Fractured speaks");
-            translationBuilder.add("subtitles.entity.fractured.hurt", "Fractured hurts");
-            translationBuilder.add("subtitles.entity.fractured.death", "Fractured dies");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.FRACTURED_AMBIENT, "Fractured speaks");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.FRACTURED_HURT, "Fractured hurts");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.FRACTURED_DEATH, "Fractured dies");
 
             // Twilight
-            translationBuilder.add("subtitles.entity.twilight.ambient", "Twilight speaks");
-            translationBuilder.add("subtitles.entity.twilight.hurt", "Twilight hurts");
-            translationBuilder.add("subtitles.entity.twilight.death", "Twilight dies");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.TWILIGHT_AMBIENT, "Twilight speaks");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.TWILIGHT_HURT, "Twilight hurts");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.TWILIGHT_DEATH, "Twilight dies");
 
             // Trixie
-            translationBuilder.add("subtitles.entity.trixie.ambient", "Trixie speaks");
-            translationBuilder.add("subtitles.entity.trixie.hurt", "Trixie hurts");
-            translationBuilder.add("subtitles.entity.trixie.death", "Trixie dies");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.TRIXIE_AMBIENT, "Trixie speaks");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.TRIXIE_HURT, "Trixie hurts");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.TRIXIE_DEATH, "Trixie dies");
 
             // Generic clown pony jingle
-            translationBuilder.add("subtitles.entity.clown_pony.jingle", "Clown pony jingles");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.CLOWN_PONY_JINGLE, "Clown pony jingles");
 
             // Arinos
-            translationBuilder.add("subtitles.entity.arinos.ambient", "Arinos speaks");
-            translationBuilder.add("subtitles.entity.arinos.hurt", "Arinos hurts");
-            translationBuilder.add("subtitles.entity.arinos.death", "Arinos dies");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.ARINOS_AMBIENT, "Arinos speaks");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.ARINOS_HURT, "Arinos hurts");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.ARINOS_DEATH, "Arinos dies");
 
             // Last Laugh
-            translationBuilder.add("subtitles.entity.last_laugh.ambient", "Last Laugh speaks");
-            translationBuilder.add("subtitles.entity.last_laugh.hurt", "Last Laugh hurts");
-            translationBuilder.add("subtitles.entity.last_laugh.death", "Last Laugh dies");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.LAST_LAUGH_AMBIENT, "Last Laugh speaks");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.LAST_LAUGH_HURT, "Last Laugh hurts");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.LAST_LAUGH_DEATH, "Last Laugh dies");
 
             // Cherry Chuckles
-            translationBuilder.add("subtitles.entity.cherry_chuckles.ambient", "Cherry Chuckles speaks");
-            translationBuilder.add("subtitles.entity.cherry_chuckles.hurt", "Cherry Chuckles hurts");
-            translationBuilder.add("subtitles.entity.cherry_chuckles.death", "Cherry Chuckles dies");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.CHERRY_CHUCKLES_AMBIENT, "Cherry Chuckles speaks");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.CHERRY_CHUCKLES_HURT, "Cherry Chuckles hurts");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.CHERRY_CHUCKLES_DEATH, "Cherry Chuckles dies");
 
             // Bibblebop
-            translationBuilder.add("subtitles.entity.bibblebop.ambient", "Bibblebop speaks");
-            translationBuilder.add("subtitles.entity.bibblebop.hurt", "Bibblebop hurts");
-            translationBuilder.add("subtitles.entity.bibblebop.death", "Bibblebop dies");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.BIBBLEBOP_AMBIENT, "Bibblebop speaks");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.BIBBLEBOP_HURT, "Bibblebop hurts");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.BIBBLEBOP_DEATH, "Bibblebop dies");
 
             // Tricolor Jubilee
-            translationBuilder.add("subtitles.entity.tricolor_jubilee.ambient", "Tricolor Jubilee speaks");
-            translationBuilder.add("subtitles.entity.tricolor_jubilee.hurt", "Tricolor Jubilee hurts");
-            translationBuilder.add("subtitles.entity.tricolor_jubilee.death", "Tricolor Jubilee dies");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.TRICOLOR_JUBILEE_AMBIENT, "Tricolor Jubilee speaks");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.TRICOLOR_JUBILEE_HURT, "Tricolor Jubilee hurts");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.TRICOLOR_JUBILEE_DEATH, "Tricolor Jubilee dies");
 
             // Marionette
-            translationBuilder.add("subtitles.entity.marionette.ambient", "Marionette speaks");
-            translationBuilder.add("subtitles.entity.marionette.hurt", "Marionette hurts");
-            translationBuilder.add("subtitles.entity.marionette.death", "Marionette dies");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.MARIONETTE_AMBIENT, "Marionette speaks");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.MARIONETTE_HURT, "Marionette hurts");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.MARIONETTE_DEATH, "Marionette dies");
 
             // Trixiebelle, English variant
-            translationBuilder.add("subtitles.entity.trixiebelle.ambient", "Trixiebelle speaks");
-            translationBuilder.add("subtitles.entity.trixiebelle.hurt", "Trixiebelle hurts");
-            translationBuilder.add("subtitles.entity.trixiebelle.death", "Trixiebelle dies");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.TRIXIEBELLE_AMBIENT, "Trixiebelle speaks");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.TRIXIEBELLE_HURT, "Trixiebelle hurts");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.TRIXIEBELLE_DEATH, "Trixiebelle dies");
 
             // Trixiebelle, Spanish variant
-            translationBuilder.add("subtitles.entity.trixiebelle.ambient_es", "Trixiebelle speaks in Spanish");
-            translationBuilder.add("subtitles.entity.trixiebelle.hurt_es", "Trixiebelle hurts in Spanish");
-            translationBuilder.add("subtitles.entity.trixiebelle.death_es", "Trixiebelle dies in Spanish");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.TRIXIEBELLE_AMBIENT_ES, "Trixiebelle speaks in Spanish");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.TRIXIEBELLE_HURT_ES, "Trixiebelle hurts in Spanish");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.TRIXIEBELLE_DEATH_ES, "Trixiebelle dies in Spanish");
 
             // Skywishes
-            translationBuilder.add("subtitles.entity.skywishes.ambient", "Skywishes speaks");
-            translationBuilder.add("subtitles.entity.skywishes.hurt", "Skywishes hurts");
-            translationBuilder.add("subtitles.entity.skywishes.death", "Skywishes dies");
-            translationBuilder.add("subtitles.entity.skywishes.clank", "Skywishes clanks");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.SKYWISHES_AMBIENT, "Skywishes speaks");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.SKYWISHES_HURT, "Skywishes hurts");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.SKYWISHES_DEATH, "Skywishes dies");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.SKYWISHES_CLANK, "Skywishes clanks");
 
             // Star Catcher
-            translationBuilder.add("subtitles.entity.star_catcher.ambient", "Star Catcher speaks");
-            translationBuilder.add("subtitles.entity.star_catcher.hurt", "Star Catcher hurts");
-            translationBuilder.add("subtitles.entity.star_catcher.death", "Star Catcher dies");
-            translationBuilder.add("subtitles.entity.star_catcher.clean_on", "Star Catcher starts cleaning");
-            translationBuilder.add("subtitles.entity.star_catcher.clean_off", "Star Catcher stops cleaning");
-            translationBuilder.add("subtitles.entity.star_catcher.clean_around", "Star Catcher cleans around");
-            translationBuilder.add("subtitles.entity.star_catcher.deny_clean", "Star Catcher denies cleaning");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.STAR_CATCHER_AMBIENT, "Star Catcher speaks");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.STAR_CATCHER_HURT, "Star Catcher hurts");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.STAR_CATCHER_DEATH, "Star Catcher dies");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.STAR_CATCHER_CLEAN_ON, "Star Catcher starts cleaning");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.STAR_CATCHER_CLEAN_OFF, "Star Catcher stops cleaning");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.STAR_CATCHER_CLEAN_AROUND, "Star Catcher cleans around");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.STAR_CATCHER_DENY_CLEAN, "Star Catcher denies cleaning");
 
             // Jackie Spectre
-            translationBuilder.add("subtitles.entity.jackie_spectre.ambient", "Jackie Spectre speaks");
-            translationBuilder.add("subtitles.entity.jackie_spectre.hurt", "Jackie Spectre hurts");
-            translationBuilder.add("subtitles.entity.jackie_spectre.death", "Jackie Spectre dies");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.JACKIE_SPECTRE_AMBIENT, "Jackie Spectre speaks");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.JACKIE_SPECTRE_HURT, "Jackie Spectre hurts");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.JACKIE_SPECTRE_DEATH, "Jackie Spectre dies");
 
             // Wish Fulfillment
-            translationBuilder.add("subtitles.entity.wish_fulfillment.ambient", "Wish Fulfillment blerps");
-            translationBuilder.add("subtitles.entity.wish_fulfillment.hurt", "Wish Fulfillment hurts");
-            translationBuilder.add("subtitles.entity.wish_fulfillment.death", "Wish Fulfillment dies");
-            translationBuilder.add("subtitles.entity.wish_fulfillment.trade_accept", "Wish Fulfillment accepts offer");
-            translationBuilder.add("subtitles.entity.wish_fulfillment.trade_deny", "Wish Fulfillment denies offer");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.WISH_FULFILLMENT_AMBIENT, "Wish Fulfillment blerps");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.WISH_FULFILLMENT_HURT, "Wish Fulfillment hurts");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.WISH_FULFILLMENT_DEATH, "Wish Fulfillment dies");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.WISH_FULFILLMENT_TRADE_ACCEPT, "Wish Fulfillment accepts offer");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.WISH_FULFILLMENT_TRADE_DENY, "Wish Fulfillment denies offer");
 
             // Projectiles
-            translationBuilder.add("subtitles.entity.laser.laser_blast", "Laser blasts");
+            this.generateSoundEventTranslation(translationBuilder, MineLittleFlawlessSoundEvents.LASER_BLAST, "Laser blasts");
+        }
+
+        private void generateSoundEventTranslation(TranslationBuilder translationBuilder,
+                                                   RegistrySupplier<SoundEvent> soundEventRegistrySupplier,
+                                                   String value) {
+            translationBuilder.add(this.generateSubtitleDescriptionId(soundEventRegistrySupplier), value);
+        }
+
+        private String generateSubtitleDescriptionId(RegistrySupplier<SoundEvent> soundEventRegistrySupplier) {
+            return Util.makeDescriptionId("subtitles", soundEventRegistrySupplier.getId());
         }
         
         private void generateAdvancementTranslations(TranslationBuilder translationBuilder) {
