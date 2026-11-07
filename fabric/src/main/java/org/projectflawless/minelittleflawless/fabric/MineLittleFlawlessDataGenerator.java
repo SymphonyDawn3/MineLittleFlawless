@@ -331,16 +331,16 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
         }
         
         private void generateAdvancementTranslations(TranslationBuilder translationBuilder) {
-            translationBuilder.add("advancements.flawless_friendship.title", "Flawless Friendship!");
-            translationBuilder.add("advancements.flawless_friendship.descr", "Tame a Flawless!");
-            translationBuilder.add("advancements.fashionable_flawless.title", "Fashionable Flawless");
-            translationBuilder.add("advancements.fashionable_flawless.descr", "Dress up a tamed Flawless with any clothing!");
-            translationBuilder.add("advancements.flawless_buddies.descr", "Tame more than one Flawless!");
-            translationBuilder.add("advancements.flawless_buddies.title", "Flawless Buddies!");
-            translationBuilder.add("advancements.flawless_enchilada.title", "Flawless Enchilada!");
-            translationBuilder.add("advancements.flawless_enchilada.descr", "Tame 6 Flawlesses!");
-            translationBuilder.add("advancements.flawless_fan_club.title", "Flawless Fan Club!");
-            translationBuilder.add("advancements.flawless_fan_club.descr", "Have every tamed Flawless wear a different clothing!");
+            translationBuilder.add("advancements.minelittleflawless.flawless_friendship.title", "Flawless Friendship!");
+            translationBuilder.add("advancements.minelittleflawless.flawless_friendship.descr", "Tame a Flawless!");
+            translationBuilder.add("advancements.minelittleflawless.fashionable_flawless.title", "Fashionable Flawless");
+            translationBuilder.add("advancements.minelittleflawless.fashionable_flawless.descr", "Dress up a tamed Flawless with any clothing!");
+            translationBuilder.add("advancements.minelittleflawless.flawless_buddies.descr", "Tame more than one Flawless!");
+            translationBuilder.add("advancements.minelittleflawless.flawless_buddies.title", "Flawless Buddies!");
+            translationBuilder.add("advancements.minelittleflawless.flawless_enchilada.title", "Flawless Enchilada!");
+            translationBuilder.add("advancements.minelittleflawless.flawless_enchilada.descr", "Tame 6 Flawlesses!");
+            translationBuilder.add("advancements.minelittleflawless.flawless_fan_club.title", "Flawless Fan Club!");
+            translationBuilder.add("advancements.minelittleflawless.flawless_fan_club.descr", "Have every tamed Flawless wear a different clothing!");
         }
     }
 
@@ -523,8 +523,8 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
                     .advancement()
                     .display(
                             MineLittleFlawlessItems.FLAWLESS_MAGICIAN_CLOTHING.get(),
-                            Component.translatable("advancements.flawless_friendship.title"),
-                            Component.translatable("advancements.flawless_friendship.descr"),
+                            Component.translatable("advancements.minelittleflawless.flawless_friendship.title"),
+                            Component.translatable("advancements.minelittleflawless.flawless_friendship.descr"),
                             new ResourceLocation("block/stone"),
                             FrameType.TASK, true, true, false)
                     .addCriterion("flawless_friendship_0", new ImpossibleTrigger.TriggerInstance())
@@ -536,8 +536,8 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
                     .parent(flawlessFriendship)
                     .display(
                             MineLittleFlawlessItems.TUXEDO.get(),
-                            Component.translatable("advancements.fashionable_flawless.title"),
-                            Component.translatable("advancements.fashionable_flawless.descr"),
+                            Component.translatable("advancements.minelittleflawless.fashionable_flawless.title"),
+                            Component.translatable("advancements.minelittleflawless.fashionable_flawless.descr"),
                             null,
                             FrameType.TASK, true, true, false)
                     .addCriterion("fashionable_flawless_0", new ImpossibleTrigger.TriggerInstance())
@@ -549,8 +549,8 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
                     .parent(flawlessFriendship)
                     .display(
                             MineLittleFlawlessItems.FARMER.get(),
-                            Component.translatable("advancements.flawless_buddies.title"),
-                            Component.translatable("advancements.flawless_buddies.descr"),
+                            Component.translatable("advancements.minelittleflawless.flawless_buddies.title"),
+                            Component.translatable("advancements.minelittleflawless.flawless_buddies.descr"),
                             null,
                             FrameType.TASK, true, true, false)
                     .addCriterion("flawless_buddies_0", new ImpossibleTrigger.TriggerInstance())
@@ -562,8 +562,8 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
                     .parent(flawlessBuddies)
                     .display(
                             MineLittleFlawlessItems.FARMER.get(),
-                            Component.translatable("advancements.flawless_enchilada.title"),
-                            Component.translatable("advancements.flawless_enchilada.descr"),
+                            Component.translatable("advancements.minelittleflawless.flawless_enchilada.title"),
+                            Component.translatable("advancements.minelittleflawless.flawless_enchilada.descr"),
                             null,
                             FrameType.GOAL, true, true, false)
                     .addCriterion("flawless_enchilada_0", new ImpossibleTrigger.TriggerInstance())
@@ -575,8 +575,8 @@ public class MineLittleFlawlessDataGenerator implements DataGeneratorEntrypoint 
                     .parent(flawlessEnchilada)
                     .display(
                             MineLittleFlawlessItems.ROCKSTAR.get(),
-                            Component.translatable("advancements.flawless_fan_club.title"),
-                            Component.translatable("advancements.flawless_fan_club.descr"),
+                            Component.translatable("advancements.minelittleflawless.flawless_fan_club.title"),
+                            Component.translatable("advancements.minelittleflawless.flawless_fan_club.descr"),
                             null,
                             FrameType.CHALLENGE, true, true, false)
                     .rewards(AdvancementRewards.Builder.experience(500))
