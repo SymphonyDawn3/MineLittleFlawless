@@ -6,7 +6,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.Clothing;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
+import org.projectflawless.minelittleflawless.init.MLFSoundEvents;
 
 public class Bibblebop extends AbstractClownPony {
     public Bibblebop(EntityType<Bibblebop> type, Level world) {
@@ -17,16 +17,16 @@ public class Bibblebop extends AbstractClownPony {
 
     @Override
     protected @Nullable SoundEvent getAmbientSound() {
-        return MineLittleFlawlessSoundEvents.BIBBLEBOP_AMBIENT.get();
+        return MLFSoundEvents.BIBBLEBOP_AMBIENT.get();
     }
 
     @Override
     protected @Nullable SoundEvent getHurtSound(DamageSource damageSource) {
-        return MineLittleFlawlessSoundEvents.BIBBLEBOP_HURT.get();
+        return MLFSoundEvents.BIBBLEBOP_HURT.get();
     }
 
     @Override
     protected @Nullable SoundEvent getDeathSound() {
-        return MineLittleFlawlessSoundEvents.BIBBLEBOP_DEATH.get();
+        return MLFSoundEvents.BIBBLEBOP_DEATH.get();
     }
 }

@@ -9,18 +9,18 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.MobSpawnSettings;
-import org.projectflawless.minelittleflawless.MineLittleFlawlessMobCategory;
-import org.projectflawless.minelittleflawless.MineLittleFlawlessTags;
+import org.projectflawless.minelittleflawless.MLFMobCategory;
+import org.projectflawless.minelittleflawless.MLFTags;
 
 import java.util.function.Predicate;
 
-public class MineLittleFlawlessBiomeSpawns {
+public class MLFBiomeSpawns {
     public static void init() {
         // Flawless
         addSpawn(
                 biomeContext -> true,
-                MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT,
-                MineLittleFlawlessEntities.FLAWLESS,
+                MLFMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT,
+                MLFEntities.FLAWLESS,
                 1,
                 4,
                 4
@@ -29,8 +29,8 @@ public class MineLittleFlawlessBiomeSpawns {
         // Twilight
         addSpawn(
                 biomeContext -> true,
-                MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT,
-                MineLittleFlawlessEntities.TWILIGHT,
+                MLFMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT,
+                MLFEntities.TWILIGHT,
                 1,
                 4,
                 4
@@ -39,33 +39,33 @@ public class MineLittleFlawlessBiomeSpawns {
         // Trixie
         addSpawn(
                 biomeContext -> true,
-                MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT,
-                MineLittleFlawlessEntities.TRIXIE,
+                MLFMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT,
+                MLFEntities.TRIXIE,
                 1,
                 4,
                 4
         );
 
         // Arinos
-        clownBiomeSpawns(MineLittleFlawlessEntities.ARINOS);
+        clownBiomeSpawns(MLFEntities.ARINOS);
         
         // Last Laugh
-        clownBiomeSpawns(MineLittleFlawlessEntities.LAST_LAUGH);
+        clownBiomeSpawns(MLFEntities.LAST_LAUGH);
         
         // Cherry Chuckles
-        clownBiomeSpawns(MineLittleFlawlessEntities.CHERRY_CHUCKLES);
+        clownBiomeSpawns(MLFEntities.CHERRY_CHUCKLES);
 
         // Bibblebop
-        clownBiomeSpawns(MineLittleFlawlessEntities.BIBBLEBOP);
+        clownBiomeSpawns(MLFEntities.BIBBLEBOP);
 
         // Tricolor Jubilee
-        clownBiomeSpawns(MineLittleFlawlessEntities.TRICOLOR_JUBILEE);
+        clownBiomeSpawns(MLFEntities.TRICOLOR_JUBILEE);
 
         // Trixiebelle
         addSpawn(
-                biomeContext -> biomeContext.hasTag(MineLittleFlawlessTags.SPAWNS_TRIXIEBELLE),
-                MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT,
-                MineLittleFlawlessEntities.TRIXIEBELLE,
+                biomeContext -> biomeContext.hasTag(MLFTags.SPAWNS_TRIXIEBELLE),
+                MLFMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT,
+                MLFEntities.TRIXIEBELLE,
                 1,
                 4,
                 4
@@ -73,9 +73,9 @@ public class MineLittleFlawlessBiomeSpawns {
 
         // Skywishes
         addSpawn(
-                biomeContext -> biomeContext.hasTag(MineLittleFlawlessTags.SPAWNS_SKYWISHES),
-                MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT,
-                MineLittleFlawlessEntities.SKYWISHES,
+                biomeContext -> biomeContext.hasTag(MLFTags.SPAWNS_SKYWISHES),
+                MLFMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT,
+                MLFEntities.SKYWISHES,
                 1,
                 4,
                 4
@@ -83,9 +83,9 @@ public class MineLittleFlawlessBiomeSpawns {
 
         // Star Catcher
         addSpawn(
-                biomeContext -> biomeContext.hasTag(MineLittleFlawlessTags.SPAWNS_STAR_CATCHER),
-                MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT,
-                MineLittleFlawlessEntities.STAR_CATCHER,
+                biomeContext -> biomeContext.hasTag(MLFTags.SPAWNS_STAR_CATCHER),
+                MLFMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT,
+                MLFEntities.STAR_CATCHER,
                 1,
                 4,
                 4
@@ -93,9 +93,9 @@ public class MineLittleFlawlessBiomeSpawns {
 
         // Marionette
         addSpawn(
-                biomeContext -> biomeContext.hasTag(MineLittleFlawlessTags.SPAWNS_MARIONETTE),
-                MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT,
-                MineLittleFlawlessEntities.MARIONETTE,
+                biomeContext -> biomeContext.hasTag(MLFTags.SPAWNS_MARIONETTE),
+                MLFMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT,
+                MLFEntities.MARIONETTE,
                 1,
                 4,
                 4
@@ -103,9 +103,9 @@ public class MineLittleFlawlessBiomeSpawns {
 
         // Jackie Spectre
         addSpawn(
-                biomeContext -> biomeContext.hasTag(MineLittleFlawlessTags.SPAWNS_JACKIE_SPECTRE),
-                MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT,
-                MineLittleFlawlessEntities.JACKIE_SPECTRE,
+                biomeContext -> biomeContext.hasTag(MLFTags.SPAWNS_JACKIE_SPECTRE),
+                MLFMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT,
+                MLFEntities.JACKIE_SPECTRE,
                 1,
                 4,
                 4
@@ -114,8 +114,8 @@ public class MineLittleFlawlessBiomeSpawns {
         // Wish Fulfillment - Overworld
         addSpawn(
                 biomeContext -> true,
-                MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
-                MineLittleFlawlessEntities.WISH_FULFILLMENT,
+                MLFMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
+                MLFEntities.WISH_FULFILLMENT,
                 5,
                 4,
                 4
@@ -124,8 +124,8 @@ public class MineLittleFlawlessBiomeSpawns {
         // Wish Fulfillment - Warped Forest
         addSpawn(
                 biomeContext -> isBiome(biomeContext, Biomes.WARPED_FOREST),
-                MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
-                MineLittleFlawlessEntities.WISH_FULFILLMENT,
+                MLFMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
+                MLFEntities.WISH_FULFILLMENT,
                 5,
                 1,
                 4
@@ -134,8 +134,8 @@ public class MineLittleFlawlessBiomeSpawns {
         // Wish Fulfillment - Crimson Forest
         addSpawn(
                 biomeContext -> isBiome(biomeContext, Biomes.CRIMSON_FOREST),
-                MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
-                MineLittleFlawlessEntities.WISH_FULFILLMENT,
+                MLFMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
+                MLFEntities.WISH_FULFILLMENT,
                 5,
                 4,
                 4
@@ -144,8 +144,8 @@ public class MineLittleFlawlessBiomeSpawns {
         // Fractured
         addSpawn(
                 biomeContext -> true,
-                MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
-                MineLittleFlawlessEntities.FRACTURED,
+                MLFMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
+                MLFEntities.FRACTURED,
                 5,
                 1,
                 4
@@ -156,7 +156,7 @@ public class MineLittleFlawlessBiomeSpawns {
         // Overworld
         addSpawn(
                 biomeContext -> biomeContext.hasTag(BiomeTags.IS_OVERWORLD),
-                MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
+                MLFMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
                 entityType,
                 8,
                 4,
@@ -165,7 +165,7 @@ public class MineLittleFlawlessBiomeSpawns {
         // End
         addSpawn(
                 biomeContext -> biomeContext.hasTag(BiomeTags.IS_END),
-                MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
+                MLFMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
                 entityType,
                 8,
                 4,
@@ -175,7 +175,7 @@ public class MineLittleFlawlessBiomeSpawns {
         // Basalt Deltas
         addSpawn(
                 biomeContext -> isBiome(biomeContext, Biomes.BASALT_DELTAS),
-                MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
+                MLFMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
                 entityType,
                 8,
                 4,
@@ -185,7 +185,7 @@ public class MineLittleFlawlessBiomeSpawns {
         // Crimson Forest
         addSpawn(
                 biomeContext -> isBiome(biomeContext, Biomes.CRIMSON_FOREST),
-                MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
+                MLFMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
                 entityType,
                 8,
                 4,
@@ -195,7 +195,7 @@ public class MineLittleFlawlessBiomeSpawns {
         // Nether Wastes
         addSpawn(
                 biomeContext -> isBiome(biomeContext, Biomes.NETHER_WASTES),
-                MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
+                MLFMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
                 entityType,
                 8,
                 4,
@@ -205,7 +205,7 @@ public class MineLittleFlawlessBiomeSpawns {
         // Soul Sand Valley
         addSpawn(
                 biomeContext -> isBiome(biomeContext, Biomes.SOUL_SAND_VALLEY),
-                MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
+                MLFMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
                 entityType,
                 8,
                 1,
@@ -215,7 +215,7 @@ public class MineLittleFlawlessBiomeSpawns {
         // Warped Forest
         addSpawn(
                 biomeContext -> isBiome(biomeContext, Biomes.WARPED_FOREST),
-                MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
+                MLFMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
                 entityType,
                 8,
                 1,
@@ -223,9 +223,9 @@ public class MineLittleFlawlessBiomeSpawns {
         );
     }
 
-    private static <E extends Entity> void addSpawn(Predicate<BiomeModifications.BiomeContext> predicate, MineLittleFlawlessMobCategory category, RegistrySupplier<EntityType<E>> entityType, int weight, int minGroupSize, int maxGroupSize) {
+    private static <E extends Entity> void addSpawn(Predicate<BiomeModifications.BiomeContext> predicate, MLFMobCategory category, RegistrySupplier<EntityType<E>> entityType, int weight, int minGroupSize, int maxGroupSize) {
         BiomeModifications.addProperties(predicate, (biomeContext, mutable) -> mutable.getSpawnProperties().addSpawn(
-                MineLittleFlawlessMobCategory.getCategory(category), new MobSpawnSettings.SpawnerData(entityType.get(), weight, minGroupSize, maxGroupSize)
+                MLFMobCategory.getCategory(category), new MobSpawnSettings.SpawnerData(entityType.get(), weight, minGroupSize, maxGroupSize)
         ));
     }
 

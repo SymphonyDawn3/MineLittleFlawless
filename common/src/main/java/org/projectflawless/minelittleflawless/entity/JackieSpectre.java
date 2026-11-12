@@ -13,8 +13,8 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.Clothing;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
+import org.projectflawless.minelittleflawless.init.MLFEntities;
+import org.projectflawless.minelittleflawless.init.MLFSoundEvents;
 
 public class JackieSpectre extends TamableTamersPony {
     public JackieSpectre(EntityType<JackieSpectre> type, Level world) {
@@ -30,7 +30,7 @@ public class JackieSpectre extends TamableTamersPony {
 
     @Override
     public @Nullable AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherParent) {
-        JackieSpectre jackieSpectre = MineLittleFlawlessEntities.JACKIE_SPECTRE.get().create(level, null, null, otherParent.blockPosition(), MobSpawnType.BREEDING, false, false);
+        JackieSpectre jackieSpectre = MLFEntities.JACKIE_SPECTRE.get().create(level, null, null, otherParent.blockPosition(), MobSpawnType.BREEDING, false, false);
 
         if (jackieSpectre != null) {
             jackieSpectre.finalizeSpawn(level, level.getCurrentDifficultyAt(jackieSpectre.blockPosition()), MobSpawnType.BREEDING, null, null);
@@ -46,17 +46,17 @@ public class JackieSpectre extends TamableTamersPony {
 
     @Override
     protected @Nullable SoundEvent getAmbientSound() {
-        return MineLittleFlawlessSoundEvents.JACKIE_SPECTRE_AMBIENT.get();
+        return MLFSoundEvents.JACKIE_SPECTRE_AMBIENT.get();
     }
 
     @Override
     protected @Nullable SoundEvent getHurtSound(DamageSource damageSource) {
-        return MineLittleFlawlessSoundEvents.JACKIE_SPECTRE_HURT.get();
+        return MLFSoundEvents.JACKIE_SPECTRE_HURT.get();
     }
 
     @Override
     protected @Nullable SoundEvent getDeathSound() {
-        return MineLittleFlawlessSoundEvents.JACKIE_SPECTRE_DEATH.get();
+        return MLFSoundEvents.JACKIE_SPECTRE_DEATH.get();
     }
 
     @Override

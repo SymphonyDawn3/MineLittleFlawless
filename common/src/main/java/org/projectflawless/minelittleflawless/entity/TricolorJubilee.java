@@ -6,7 +6,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.Clothing;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
+import org.projectflawless.minelittleflawless.init.MLFSoundEvents;
 
 public class TricolorJubilee extends AbstractClownPony {
     public TricolorJubilee(EntityType<TricolorJubilee> type, Level world) {
@@ -17,16 +17,16 @@ public class TricolorJubilee extends AbstractClownPony {
 
     @Override
     protected @Nullable SoundEvent getAmbientSound() {
-        return MineLittleFlawlessSoundEvents.TRICOLOR_JUBILEE_AMBIENT.get();
+        return MLFSoundEvents.TRICOLOR_JUBILEE_AMBIENT.get();
     }
 
     @Override
     protected @Nullable SoundEvent getHurtSound(DamageSource damageSource) {
-        return MineLittleFlawlessSoundEvents.TRICOLOR_JUBILEE_HURT.get();
+        return MLFSoundEvents.TRICOLOR_JUBILEE_HURT.get();
     }
 
     @Override
     protected @Nullable SoundEvent getDeathSound() {
-        return MineLittleFlawlessSoundEvents.TRICOLOR_JUBILEE_DEATH.get();
+        return MLFSoundEvents.TRICOLOR_JUBILEE_DEATH.get();
     }
 }

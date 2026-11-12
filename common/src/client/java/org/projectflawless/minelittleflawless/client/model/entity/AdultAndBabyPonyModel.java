@@ -2,7 +2,7 @@ package org.projectflawless.minelittleflawless.client.model.entity;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import org.projectflawless.minelittleflawless.MineLittleFlawless;
+import org.projectflawless.minelittleflawless.MLF;
 import org.projectflawless.minelittleflawless.entity.TamableTamersPony;
 import software.bernie.geckolib.cache.object.GeoBone;
 import software.bernie.geckolib.constant.DataTickets;
@@ -16,12 +16,12 @@ import java.util.Optional;
 public abstract class AdultAndBabyPonyModel<E extends TamableTamersPony & GeoAnimatable> extends GeoModel<E> {
     @Override
     public ResourceLocation getModelResource(E animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "geo/tamers_pony.geo.json");
+        return ResourceLocation.tryBuild(MLF.MOD_ID, "geo/tamers_pony.geo.json");
     }
 
     @Override
     public ResourceLocation getAnimationResource(E animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "animations/tamers_pony.animation.json");
+        return ResourceLocation.tryBuild(MLF.MOD_ID, "animations/tamers_pony.animation.json");
     }
 
     @Override

@@ -8,8 +8,8 @@ import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.Clothing;
 import org.projectflawless.minelittleflawless.FlawlessAdvancements;
 import org.projectflawless.minelittleflawless.Utils;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessItems;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
+import org.projectflawless.minelittleflawless.init.MLFItems;
+import org.projectflawless.minelittleflawless.init.MLFEntities;
 
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
@@ -39,8 +39,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.nbt.CompoundTag;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
-import org.projectflawless.minelittleflawless.MineLittleFlawlessTags;
+import org.projectflawless.minelittleflawless.init.MLFSoundEvents;
+import org.projectflawless.minelittleflawless.MLFTags;
 import org.projectflawless.minelittleflawless.item.FlawlessClothingItem;
 
 import java.util.Comparator;
@@ -63,22 +63,22 @@ public class Flawless extends TamableTamersPony implements Shearable {
 
     @Override
     public SoundEvent getAmbientSound() {
-        return MineLittleFlawlessSoundEvents.FLAWLESS_AMBIENT.get();
+        return MLFSoundEvents.FLAWLESS_AMBIENT.get();
     }
 
     @Override
     public SoundEvent getHurtSound(DamageSource ds) {
-        return MineLittleFlawlessSoundEvents.FLAWLESS_HURT.get();
+        return MLFSoundEvents.FLAWLESS_HURT.get();
     }
 
     @Override
     public SoundEvent getDeathSound() {
-        return MineLittleFlawlessSoundEvents.FLAWLESS_DEATH.get();
+        return MLFSoundEvents.FLAWLESS_DEATH.get();
     }
 
     @Override
     public boolean canAttackType(EntityType<?> entityType) {
-        return !(entityType.is(MineLittleFlawlessTags.SPARKLEMOON_FAMILY));
+        return !(entityType.is(MLFTags.SPARKLEMOON_FAMILY));
     }
 
     @Override
@@ -108,7 +108,7 @@ public class Flawless extends TamableTamersPony implements Shearable {
         if (worldRandom.nextFloat() < 0.5f) {
             flawlessClothing = Clothing.NONE;
         } else {
-            randomFlawlessClothing = (FlawlessClothingItem) Utils.getRandomItemFromTags(MineLittleFlawlessTags.FLAWLESS_CLOTHING, worldRandom);
+            randomFlawlessClothing = (FlawlessClothingItem) Utils.getRandomItemFromTags(MLFTags.FLAWLESS_CLOTHING, worldRandom);
             flawlessClothing = randomFlawlessClothing.getClothing();
 
             this.wearClothing(randomFlawlessClothing);
@@ -124,7 +124,7 @@ public class Flawless extends TamableTamersPony implements Shearable {
 		ItemStack itemstack = sourceentity.getItemInHand(hand);
 		InteractionResult retval = InteractionResult.PASS;
 
-        if (itemstack.is(MineLittleFlawlessTags.FLAWLESS_CLOTHING)) {
+        if (itemstack.is(MLFTags.FLAWLESS_CLOTHING)) {
             if (this.getClothing().equals(Clothing.NONE)) {
                 ResourceLocation flawlessClothing = ((FlawlessClothingItem) itemstack.getItem()).getClothing();
                 this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.HORSE_SADDLE, SoundSource.AMBIENT, 1, 1);
@@ -175,7 +175,7 @@ public class Flawless extends TamableTamersPony implements Shearable {
 
 	@Override
 	public AgeableMob getBreedOffspring(ServerLevel serverWorld, AgeableMob ageable) {
-		Flawless retval = MineLittleFlawlessEntities.FLAWLESS.get().create(serverWorld, null, null, ageable.blockPosition(), MobSpawnType.BREEDING, false, false);
+		Flawless retval = MLFEntities.FLAWLESS.get().create(serverWorld, null, null, ageable.blockPosition(), MobSpawnType.BREEDING, false, false);
         if (retval != null) {
             retval.finalizeSpawn(serverWorld, serverWorld.getCurrentDifficultyAt(retval.blockPosition()), MobSpawnType.BREEDING, null, null);
         }
@@ -238,28 +238,28 @@ public class Flawless extends TamableTamersPony implements Shearable {
     public void wearClothing(FlawlessClothingItem clothingItem) {
         AttributeModifier modifier;
 
-        if (clothingItem == MineLittleFlawlessItems.FLAWLESS_MAGICIAN_CLOTHING.get()) {
+        if (clothingItem == MLFItems.FLAWLESS_MAGICIAN_CLOTHING.get()) {
             modifier = new AttributeModifier("clothing_power", 5, AttributeModifier.Operation.ADDITION);
             Objects.requireNonNull(this.getAttribute(Attributes.ATTACK_KNOCKBACK)).addPermanentModifier(modifier);
         }
-        if (clothingItem == MineLittleFlawlessItems.SCHOOLGIRL.get()) {
+        if (clothingItem == MLFItems.SCHOOLGIRL.get()) {
             modifier = new AttributeModifier("clothing_power", 1, AttributeModifier.Operation.ADDITION);
             Objects.requireNonNull(this.getAttribute(Attributes.KNOCKBACK_RESISTANCE)).addPermanentModifier(modifier);
         }
-        if (clothingItem == MineLittleFlawlessItems.ROCKSTAR.get()) {
+        if (clothingItem == MLFItems.ROCKSTAR.get()) {
             modifier = new AttributeModifier("clothing_power", 0.1, AttributeModifier.Operation.ADDITION);
             Objects.requireNonNull(this.getAttribute(Attributes.MOVEMENT_SPEED)).addPermanentModifier(modifier);
         }
     }
 
     private void offClothing(FlawlessClothingItem clothingItem) {
-        if (clothingItem == MineLittleFlawlessItems.FLAWLESS_MAGICIAN_CLOTHING.get()) {
+        if (clothingItem == MLFItems.FLAWLESS_MAGICIAN_CLOTHING.get()) {
             Objects.requireNonNull(this.getAttribute(Attributes.ATTACK_KNOCKBACK)).removeModifiers();
         }
-        if (clothingItem == MineLittleFlawlessItems.SCHOOLGIRL.get()) {
+        if (clothingItem == MLFItems.SCHOOLGIRL.get()) {
             Objects.requireNonNull(this.getAttribute(Attributes.KNOCKBACK_RESISTANCE)).removeModifiers();
         }
-        if (clothingItem == MineLittleFlawlessItems.ROCKSTAR.get()) {
+        if (clothingItem == MLFItems.ROCKSTAR.get()) {
             Objects.requireNonNull(this.getAttribute(Attributes.MOVEMENT_SPEED)).removeModifiers();
         }
     }
@@ -278,7 +278,7 @@ public class Flawless extends TamableTamersPony implements Shearable {
                         if (flawlessClothing.equals(Clothing.FARMER)) {
                             ItemEntity entityToSpawn = new ItemEntity(player.level(), entityiterator.getX(),
                                     entityiterator.getY(), entityiterator.getZ(), new ItemStack(
-                                    Utils.getRandomItemFromTags(MineLittleFlawlessTags.FARMER_GIFTS)));
+                                    Utils.getRandomItemFromTags(MLFTags.FARMER_GIFTS)));
                             entityToSpawn.setPickUpDelay(10);
                             playerLevel.addFreshEntity(entityToSpawn);
                         }

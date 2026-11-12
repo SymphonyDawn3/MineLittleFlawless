@@ -21,13 +21,13 @@
   "environment": "*",
   "entrypoints": {
     "fabric-datagen": [
-      "org.projectflawless.minelittleflawless.fabric.MineLittleFlawlessDataGenerator"
+      "org.projectflawless.minelittleflawless.fabric.MLFDataGenerator"
     ],
     "main": [
-      "org.projectflawless.minelittleflawless.fabric.MineLittleFlawlessFabric"
+      "org.projectflawless.minelittleflawless.fabric.MLFFabric"
     ],
     "client": [
-      "org.projectflawless.minelittleflawless.fabric.MineLittleFlawlessFabricClient"
+      "org.projectflawless.minelittleflawless.fabric.MLFFabricClient"
     ]
   },
   "depends": {

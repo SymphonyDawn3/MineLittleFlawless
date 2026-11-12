@@ -13,9 +13,9 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.Clothing;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
-import org.projectflawless.minelittleflawless.MineLittleFlawlessTags;
+import org.projectflawless.minelittleflawless.init.MLFEntities;
+import org.projectflawless.minelittleflawless.init.MLFSoundEvents;
+import org.projectflawless.minelittleflawless.MLFTags;
 
 public class Marionette extends TamableTamersPony {
     public Marionette(EntityType<Marionette> type, Level world) {
@@ -31,27 +31,27 @@ public class Marionette extends TamableTamersPony {
 
     @Override
     public boolean canAttackType(EntityType<?> entityType) {
-        return !entityType.is(MineLittleFlawlessTags.SPARKLEMOON_FAMILY);
+        return !entityType.is(MLFTags.SPARKLEMOON_FAMILY);
     }
 
     @Override
     protected SoundEvent getAmbientSound() {
-        return MineLittleFlawlessSoundEvents.MARIONETTE_AMBIENT.get();
+        return MLFSoundEvents.MARIONETTE_AMBIENT.get();
     }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource damageSource) {
-        return MineLittleFlawlessSoundEvents.MARIONETTE_HURT.get();
+        return MLFSoundEvents.MARIONETTE_HURT.get();
     }
 
     @Override
     protected SoundEvent getDeathSound() {
-        return MineLittleFlawlessSoundEvents.MARIONETTE_DEATH.get();
+        return MLFSoundEvents.MARIONETTE_DEATH.get();
     }
 
     @Override
     public @Nullable AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherParent) {
-        Marionette babyMarionette = MineLittleFlawlessEntities.MARIONETTE.get().create(level, null, null,
+        Marionette babyMarionette = MLFEntities.MARIONETTE.get().create(level, null, null,
                 otherParent.blockPosition(), MobSpawnType.BREEDING, false, false);
 
         if (babyMarionette != null)

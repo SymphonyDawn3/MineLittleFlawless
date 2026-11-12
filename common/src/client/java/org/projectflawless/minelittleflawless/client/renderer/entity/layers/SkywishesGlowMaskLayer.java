@@ -7,7 +7,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
-import org.projectflawless.minelittleflawless.MineLittleFlawless;
+import org.projectflawless.minelittleflawless.MLF;
 import org.projectflawless.minelittleflawless.client.renderer.entity.SkywishesRenderer;
 import org.projectflawless.minelittleflawless.entity.Skywishes;
 import software.bernie.geckolib.cache.object.BakedGeoModel;
@@ -20,7 +20,7 @@ public class SkywishesGlowMaskLayer extends GeoRenderLayer<Skywishes> {
 
     @Override
     public ResourceLocation getTextureResource(Skywishes animatable) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/skywishes_glowmask.png");
+        return ResourceLocation.tryBuild(MLF.MOD_ID, "textures/entity/skywishes_glowmask.png");
     }
 
     @Override

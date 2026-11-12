@@ -37,8 +37,8 @@ import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.Clothing;
 import org.projectflawless.minelittleflawless.entity.ai.behavior.GoAndThrowItems;
 import org.projectflawless.minelittleflawless.entity.ai.behavior.GoToWantedItem;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
+import org.projectflawless.minelittleflawless.init.MLFEntities;
+import org.projectflawless.minelittleflawless.init.MLFSoundEvents;
 
 import java.util.List;
 import java.util.Optional;
@@ -134,19 +134,19 @@ public class StarCatcher extends TamableTamersPony implements InventoryCarrier, 
     @Override
     protected @Nullable SoundEvent getAmbientSound() {
         if (this.canPickUpLoot())
-            return MineLittleFlawlessSoundEvents.STAR_CATCHER_CLEAN_AROUND.get();
+            return MLFSoundEvents.STAR_CATCHER_CLEAN_AROUND.get();
         else
-            return MineLittleFlawlessSoundEvents.STAR_CATCHER_AMBIENT.get();
+            return MLFSoundEvents.STAR_CATCHER_AMBIENT.get();
     }
 
     @Override
     protected @Nullable SoundEvent getHurtSound(DamageSource damageSource) {
-        return MineLittleFlawlessSoundEvents.STAR_CATCHER_HURT.get();
+        return MLFSoundEvents.STAR_CATCHER_HURT.get();
     }
 
     @Override
     protected @Nullable SoundEvent getDeathSound() {
-        return MineLittleFlawlessSoundEvents.STAR_CATCHER_DEATH.get();
+        return MLFSoundEvents.STAR_CATCHER_DEATH.get();
     }
 
     @Override
@@ -167,7 +167,7 @@ public class StarCatcher extends TamableTamersPony implements InventoryCarrier, 
 
     @Override
     public @Nullable AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherParent) {
-        StarCatcher retval = MineLittleFlawlessEntities.STAR_CATCHER.get().create(level, null, null, otherParent.blockPosition(), MobSpawnType.BREEDING, false, false);
+        StarCatcher retval = MLFEntities.STAR_CATCHER.get().create(level, null, null, otherParent.blockPosition(), MobSpawnType.BREEDING, false, false);
 
         if (retval != null) {
             retval.finalizeSpawn(level, level.getCurrentDifficultyAt(retval.blockPosition()), MobSpawnType.BREEDING, null, null);
@@ -202,15 +202,15 @@ public class StarCatcher extends TamableTamersPony implements InventoryCarrier, 
                 if (canPickUpLoot) {
                     this.consumeCleanToggle(false, sourceentity, itemStack, hand);
                 }
-                this.playSound(MineLittleFlawlessSoundEvents.STAR_CATCHER_DENY_CLEAN.get(), this.getSoundVolume(), this.getVoicePitch());
+                this.playSound(MLFSoundEvents.STAR_CATCHER_DENY_CLEAN.get(), this.getSoundVolume(), this.getVoicePitch());
 
                 return canPickUpLoot ? InteractionResult.SUCCESS : InteractionResult.CONSUME;
             }
 
             this.consumeCleanToggle(!this.canPickUpLoot(), sourceentity, itemStack, hand);
 
-            this.playSound(this.canPickUpLoot() ? MineLittleFlawlessSoundEvents.STAR_CATCHER_CLEAN_ON.get()
-                    : MineLittleFlawlessSoundEvents.STAR_CATCHER_CLEAN_OFF.get(), this.getSoundVolume(), this.getVoicePitch());
+            this.playSound(this.canPickUpLoot() ? MLFSoundEvents.STAR_CATCHER_CLEAN_ON.get()
+                    : MLFSoundEvents.STAR_CATCHER_CLEAN_OFF.get(), this.getSoundVolume(), this.getVoicePitch());
 
             return InteractionResult.SUCCESS;
         } else if (itemStack.isEmpty() && this.canPickUpLoot()) {
@@ -222,7 +222,7 @@ public class StarCatcher extends TamableTamersPony implements InventoryCarrier, 
 
     private void consumeCleanToggle(boolean toggle, Player player, ItemStack stack, InteractionHand hand) {
         this.setCanPickUpLoot(toggle);
-        this.playSound(MineLittleFlawlessSoundEvents.STAR_CATCHER_CLEAN_TOGGLE.get());
+        this.playSound(MLFSoundEvents.STAR_CATCHER_CLEAN_TOGGLE.get());
         stack.hurtAndBreak(1, player, player1 -> {
             player1.broadcastBreakEvent(hand);
             this.setCanPickUpLoot(false);

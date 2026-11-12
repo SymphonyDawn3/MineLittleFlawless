@@ -6,7 +6,7 @@ import org.projectflawless.minelittleflawless.entity.ai.sensor.FracturedSpecific
 
 import java.util.function.Supplier;
 
-public class MineLittleFlawlessSBLSensors {
+public class MLFSBLSensors {
     public static final Supplier<SensorType<FracturedSpecificSensor>> FRACTURED_SPECIFIC = SBLConstants.SBL_LOADER.registerSensorType("fractured_specific", FracturedSpecificSensor::new);
 
     public static void init() {

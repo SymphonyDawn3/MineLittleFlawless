@@ -1,12 +1,12 @@
 package org.projectflawless.minelittleflawless.client.model.entity;
 
 import net.minecraft.resources.ResourceLocation;
-import org.projectflawless.minelittleflawless.MineLittleFlawless;
+import org.projectflawless.minelittleflawless.MLF;
 import org.projectflawless.minelittleflawless.entity.CherryChuckles;
 
 public class CherryChucklesModel extends TamersPonyModel<CherryChuckles> {
     @Override
     public ResourceLocation getTextureResource(CherryChuckles cherryChuckles) {
-        return ResourceLocation.tryBuild(MineLittleFlawless.MOD_ID, "textures/entity/cherry_chuckles.png");
+        return ResourceLocation.tryBuild(MLF.MOD_ID, "textures/entity/cherry_chuckles.png");
     }
 }

@@ -46,8 +46,8 @@ import org.projectflawless.minelittleflawless.entity.ai.behavior.sblgoal2behavio
 import org.projectflawless.minelittleflawless.entity.ai.behavior.sblgoal2behaviour.SetOwnerHurtByAttackTarget;
 import org.projectflawless.minelittleflawless.entity.ai.behavior.sblgoal2behaviour.SitWhenOrderedTo;
 import org.projectflawless.minelittleflawless.entity.ai.sensor.FracturedSpecificSensor;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessItems;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
+import org.projectflawless.minelittleflawless.init.MLFItems;
+import org.projectflawless.minelittleflawless.init.MLFSoundEvents;
 
 import java.util.List;
 import java.util.Optional;
@@ -137,17 +137,17 @@ public class Fractured extends TamableTamersPony implements SmartBrainOwner<Frac
 
     @Override
     protected @Nullable SoundEvent getAmbientSound() {
-        return MineLittleFlawlessSoundEvents.FRACTURED_AMBIENT.get();
+        return MLFSoundEvents.FRACTURED_AMBIENT.get();
     }
 
     @Override
     protected @Nullable SoundEvent getHurtSound(DamageSource damageSource) {
-        return MineLittleFlawlessSoundEvents.FRACTURED_HURT.get();
+        return MLFSoundEvents.FRACTURED_HURT.get();
     }
 
     @Override
     protected @Nullable SoundEvent getDeathSound() {
-        return MineLittleFlawlessSoundEvents.FRACTURED_DEATH.get();
+        return MLFSoundEvents.FRACTURED_DEATH.get();
     }
 
     @Override
@@ -198,7 +198,7 @@ public class Fractured extends TamableTamersPony implements SmartBrainOwner<Frac
 
     @Override
     public boolean isFood(ItemStack stack) {
-        return stack.is(MineLittleFlawlessItems.ROTTEN_SUGAR.get());
+        return stack.is(MLFItems.ROTTEN_SUGAR.get());
     }
 
     @Nullable

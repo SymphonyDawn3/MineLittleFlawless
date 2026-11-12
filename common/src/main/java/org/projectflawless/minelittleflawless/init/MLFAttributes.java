@@ -7,9 +7,9 @@ import net.minecraft.world.entity.LivingEntity;
 import org.projectflawless.minelittleflawless.entity.Bartleby;
 import org.projectflawless.minelittleflawless.entity.TamableTamersPony;
 
-import static org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities.*;
+import static org.projectflawless.minelittleflawless.init.MLFEntities.*;
 
-public class MineLittleFlawlessAttributes {
+public class MLFAttributes {
     public static void registerAttributes() {
         EntityAttributeRegistry.register(BARTLEBY, Bartleby::createAttributes);
         tamableTamersPonyRegister(FLAWLESS);

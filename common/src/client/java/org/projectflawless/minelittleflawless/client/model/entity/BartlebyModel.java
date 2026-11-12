@@ -11,7 +11,7 @@ import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import org.projectflawless.minelittleflawless.MineLittleFlawless;
+import org.projectflawless.minelittleflawless.MLF;
 import org.projectflawless.minelittleflawless.entity.Bartleby;
 
 // Made with Blockbench 5.0.2
@@ -20,7 +20,7 @@ import org.projectflawless.minelittleflawless.entity.Bartleby;
 public class BartlebyModel extends HierarchicalModel<Bartleby> {
 	// This layer location should be baked with EntityRendererProvider.Context in
 	// the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(MineLittleFlawless.MOD_ID, "model_bartleby"), "main");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(MLF.MOD_ID, "model_bartleby"), "main");
 
     public final ModelPart root;
 	public final ModelPart body;

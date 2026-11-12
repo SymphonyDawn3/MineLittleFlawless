@@ -12,7 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
+import org.projectflawless.minelittleflawless.init.MLFEntities;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
@@ -34,7 +34,7 @@ public class Laser extends AbstractArrow implements GeoEntity {
     }
 
     public Laser(double x, double y, double z, Level level) {
-        super(MineLittleFlawlessEntities.LASER.get(), x, y, z, level);
+        super(MLFEntities.LASER.get(), x, y, z, level);
         this.setNoGravity(true);
         this.setSoundEvent(SoundEvents.EMPTY);
         if (this instanceof LifeExpiryModifier lifeExpiryModifier) {
@@ -44,7 +44,7 @@ public class Laser extends AbstractArrow implements GeoEntity {
     }
 
     public Laser(LivingEntity shooter, Level level) {
-        super(MineLittleFlawlessEntities.LASER.get(), shooter, level);
+        super(MLFEntities.LASER.get(), shooter, level);
         this.setNoGravity(true);
         this.setSoundEvent(SoundEvents.EMPTY);
         if (this instanceof LifeExpiryModifier lifeExpiryModifier) {

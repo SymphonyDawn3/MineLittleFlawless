@@ -5,10 +5,10 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
-import org.projectflawless.minelittleflawless.MineLittleFlawless;
+import org.projectflawless.minelittleflawless.MLF;
 
-public class MineLittleFlawlessSoundEvents {
-    public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(MineLittleFlawless.MOD_ID, Registries.SOUND_EVENT);
+public class MLFSoundEvents {
+    public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(MLF.MOD_ID, Registries.SOUND_EVENT);
     
     // Flawless
     public static final RegistrySupplier<SoundEvent> FLAWLESS_AMBIENT = register("entity.flawless.ambient");
@@ -113,7 +113,7 @@ public class MineLittleFlawlessSoundEvents {
     }
 
     private static RegistrySupplier<SoundEvent> register(String path) {
-        ResourceLocation location = new ResourceLocation(MineLittleFlawless.MOD_ID, path);
+        ResourceLocation location = new ResourceLocation(MLF.MOD_ID, path);
         return SOUND_EVENTS.register(path, () -> SoundEvent.createVariableRangeEvent(location));
     }
 }

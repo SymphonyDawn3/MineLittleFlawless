@@ -6,7 +6,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.Clothing;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
+import org.projectflawless.minelittleflawless.init.MLFSoundEvents;
 
 public class CherryChuckles extends AbstractClownPony {
     public CherryChuckles(EntityType<CherryChuckles> type, Level world) {
@@ -17,16 +17,16 @@ public class CherryChuckles extends AbstractClownPony {
 
     @Override
     protected @Nullable SoundEvent getAmbientSound() {
-        return MineLittleFlawlessSoundEvents.CHERRY_CHUCKLES_AMBIENT.get();
+        return MLFSoundEvents.CHERRY_CHUCKLES_AMBIENT.get();
     }
 
     @Override
     protected @Nullable SoundEvent getHurtSound(DamageSource damageSource) {
-        return MineLittleFlawlessSoundEvents.CHERRY_CHUCKLES_HURT.get();
+        return MLFSoundEvents.CHERRY_CHUCKLES_HURT.get();
     }
 
     @Override
     protected @Nullable SoundEvent getDeathSound() {
-        return MineLittleFlawlessSoundEvents.CHERRY_CHUCKLES_DEATH.get();
+        return MLFSoundEvents.CHERRY_CHUCKLES_DEATH.get();
     }
 }

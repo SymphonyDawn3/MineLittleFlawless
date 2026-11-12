@@ -6,7 +6,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.Clothing;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
+import org.projectflawless.minelittleflawless.init.MLFSoundEvents;
 
 public class LastLaugh extends AbstractClownPony {
     public LastLaugh(EntityType<LastLaugh> type, Level world) {
@@ -17,16 +17,16 @@ public class LastLaugh extends AbstractClownPony {
 
     @Override
     protected @Nullable SoundEvent getAmbientSound() {
-        return MineLittleFlawlessSoundEvents.LAST_LAUGH_AMBIENT.get();
+        return MLFSoundEvents.LAST_LAUGH_AMBIENT.get();
     }
 
     @Override
     protected @Nullable SoundEvent getHurtSound(DamageSource damageSource) {
-        return MineLittleFlawlessSoundEvents.LAST_LAUGH_HURT.get();
+        return MLFSoundEvents.LAST_LAUGH_HURT.get();
     }
 
     @Override
     protected @Nullable SoundEvent getDeathSound() {
-        return MineLittleFlawlessSoundEvents.LAST_LAUGH_DEATH.get();
+        return MLFSoundEvents.LAST_LAUGH_DEATH.get();
     }
 }

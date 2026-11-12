@@ -3,7 +3,7 @@ package org.projectflawless.minelittleflawless;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.world.entity.MobCategory;
 
-public enum MineLittleFlawlessMobCategory {
+public enum MLFMobCategory {
     MINELITTLEFLAWLESS_MLP_PERSISTENT("minelittleflawless_mlp_persistent", 10, true, true, 128),
     MINELITTLEFLAWLESS_MLP_NON_PERSISTENT("minelittleflawless_mlp_non_persistent", 35, true, false, 128);
 
@@ -13,7 +13,7 @@ public enum MineLittleFlawlessMobCategory {
     private final boolean isPersistent;
     private final int despawnDistance;
 
-    MineLittleFlawlessMobCategory(String name, int max, boolean isFriendly, boolean isPersistent, int despawnDistance) {
+    MLFMobCategory(String name, int max, boolean isFriendly, boolean isPersistent, int despawnDistance) {
         this.name = name;
         this.max = max;
         this.isFriendly = isFriendly;
@@ -22,7 +22,7 @@ public enum MineLittleFlawlessMobCategory {
     }
 
     @ExpectPlatform
-    public static MobCategory getCategory(MineLittleFlawlessMobCategory category) {
+    public static MobCategory getCategory(MLFMobCategory category) {
         throw new AssertionError();
     }
 

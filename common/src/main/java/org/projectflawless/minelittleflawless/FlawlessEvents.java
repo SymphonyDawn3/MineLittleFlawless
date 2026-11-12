@@ -9,7 +9,7 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import org.projectflawless.minelittleflawless.entity.Flawless;
 import org.projectflawless.minelittleflawless.event.PlayerSleepEvent;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessItems;
+import org.projectflawless.minelittleflawless.init.MLFItems;
 
 import java.util.List;
 
@@ -30,7 +30,7 @@ public class FlawlessEvents {
                                               builtin) -> {
             if (builtin && LOOT_TABLES.contains(id)) {
                 LootPool.Builder poolBuilder = LootPool.lootPool()
-                        .add(LootItem.lootTableItem(MineLittleFlawlessItems.MUSIC_DISC_WISHLESS_RESONANCE.get()))
+                        .add(LootItem.lootTableItem(MLFItems.MUSIC_DISC_WISHLESS_RESONANCE.get()))
                         .setRolls(UniformGenerator.between(0, 1));
                 context.addPool(poolBuilder);
             }

@@ -10,9 +10,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
-import org.projectflawless.minelittleflawless.MineLittleFlawlessTags;
+import org.projectflawless.minelittleflawless.init.MLFEntities;
+import org.projectflawless.minelittleflawless.init.MLFSoundEvents;
+import org.projectflawless.minelittleflawless.MLFTags;
 
 public class Twilight extends TamableTamersPony {
     public Twilight(EntityType<Twilight> type, Level world) {
@@ -28,22 +28,22 @@ public class Twilight extends TamableTamersPony {
 
     @Override
     public boolean canAttackType(EntityType<?> entityType) {
-        return !(entityType.is(MineLittleFlawlessTags.SPARKLEMOON_FAMILY));
+        return !(entityType.is(MLFTags.SPARKLEMOON_FAMILY));
     }
 
     @Override
     public SoundEvent getAmbientSound() {
-        return MineLittleFlawlessSoundEvents.TWILIGHT_AMBIENT.get();
+        return MLFSoundEvents.TWILIGHT_AMBIENT.get();
     }
 
     @Override
     public SoundEvent getHurtSound(DamageSource ds) {
-        return MineLittleFlawlessSoundEvents.TWILIGHT_HURT.get();
+        return MLFSoundEvents.TWILIGHT_HURT.get();
     }
 
     @Override
     public SoundEvent getDeathSound() {
-        return MineLittleFlawlessSoundEvents.TWILIGHT_DEATH.get();
+        return MLFSoundEvents.TWILIGHT_DEATH.get();
     }
 
     @Override
@@ -51,9 +51,9 @@ public class Twilight extends TamableTamersPony {
         TamableTamersPony retval;
 
         if (ageable instanceof Trixie)
-            retval = MineLittleFlawlessEntities.FLAWLESS.get().create(serverWorld, null, null, ageable.blockPosition(), MobSpawnType.BREEDING, false, false);
+            retval = MLFEntities.FLAWLESS.get().create(serverWorld, null, null, ageable.blockPosition(), MobSpawnType.BREEDING, false, false);
         else
-            retval = MineLittleFlawlessEntities.TWILIGHT.get().create(serverWorld, null, null, ageable.blockPosition(), MobSpawnType.BREEDING, false, false);
+            retval = MLFEntities.TWILIGHT.get().create(serverWorld, null, null, ageable.blockPosition(), MobSpawnType.BREEDING, false, false);
 
         if (retval != null) {
             retval.finalizeSpawn(serverWorld, serverWorld.getCurrentDifficultyAt(retval.blockPosition()), MobSpawnType.BREEDING, null, null);

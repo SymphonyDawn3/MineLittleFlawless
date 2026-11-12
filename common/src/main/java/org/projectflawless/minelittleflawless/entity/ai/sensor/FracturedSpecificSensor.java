@@ -9,7 +9,7 @@ import net.tslat.smartbrainlib.api.core.sensor.ExtendedSensor;
 import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.entity.Flawless;
 import org.projectflawless.minelittleflawless.entity.Fractured;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSBLSensors;
+import org.projectflawless.minelittleflawless.init.MLFSBLSensors;
 
 import java.util.Optional;
 import java.util.function.BiPredicate;
@@ -36,6 +36,6 @@ public class FracturedSpecificSensor extends EntityFilteringSensor<LivingEntity,
 
     @Override
     public SensorType<? extends ExtendedSensor<?>> type() {
-        return MineLittleFlawlessSBLSensors.FRACTURED_SPECIFIC.get();
+        return MLFSBLSensors.FRACTURED_SPECIFIC.get();
     }
 }

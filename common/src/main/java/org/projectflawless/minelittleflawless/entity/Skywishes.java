@@ -33,11 +33,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.Clothing;
-import org.projectflawless.minelittleflawless.MineLittleFlawlessTags;
+import org.projectflawless.minelittleflawless.MLFTags;
 import org.projectflawless.minelittleflawless.entity.geoanimations.MineLittleFlawlessAnimations;
 import org.projectflawless.minelittleflawless.entity.projectile.Laser;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
+import org.projectflawless.minelittleflawless.init.MLFEntities;
+import org.projectflawless.minelittleflawless.init.MLFSoundEvents;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
 import software.bernie.geckolib.core.object.Color;
@@ -124,22 +124,22 @@ public class Skywishes extends TamableTamersPony implements RangedAttackMob, She
 
     @Override
     protected void playStepSound(BlockPos pos, BlockState state) {
-        this.playSound(MineLittleFlawlessSoundEvents.SKYWISHES_CLANK.get(), 0.15f, 1.0f);
+        this.playSound(MLFSoundEvents.SKYWISHES_CLANK.get(), 0.15f, 1.0f);
     }
 
     @Override
     protected @Nullable SoundEvent getAmbientSound() {
-        return MineLittleFlawlessSoundEvents.SKYWISHES_AMBIENT.get();
+        return MLFSoundEvents.SKYWISHES_AMBIENT.get();
     }
 
     @Override
     protected @Nullable SoundEvent getHurtSound(DamageSource damageSource) {
-        return MineLittleFlawlessSoundEvents.SKYWISHES_HURT.get();
+        return MLFSoundEvents.SKYWISHES_HURT.get();
     }
 
     @Override
     protected @Nullable SoundEvent getDeathSound() {
-        return MineLittleFlawlessSoundEvents.SKYWISHES_DEATH.get();
+        return MLFSoundEvents.SKYWISHES_DEATH.get();
     }
 
     @Override
@@ -156,7 +156,7 @@ public class Skywishes extends TamableTamersPony implements RangedAttackMob, She
 
     @Override
     public @Nullable AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherParent) {
-        Skywishes skywishesBaby = MineLittleFlawlessEntities.SKYWISHES.get().create(level, null, null, otherParent.blockPosition(), MobSpawnType.BREEDING, false, false);
+        Skywishes skywishesBaby = MLFEntities.SKYWISHES.get().create(level, null, null, otherParent.blockPosition(), MobSpawnType.BREEDING, false, false);
 
         if (skywishesBaby != null)
             skywishesBaby.finalizeSpawn(level, level.getCurrentDifficultyAt(skywishesBaby.blockPosition()), MobSpawnType.BREEDING, null, null);
@@ -174,7 +174,7 @@ public class Skywishes extends TamableTamersPony implements RangedAttackMob, She
         ItemStack itemStack = sourceentity.getItemInHand(hand);
         InteractionResult result;
 
-        if (itemStack.is(MineLittleFlawlessTags.SKYWISHES_CLOTHING)) {
+        if (itemStack.is(MLFTags.SKYWISHES_CLOTHING)) {
             if (this.getClothing().equals(Clothing.NONE)) {
                 ResourceLocation skywishesClothing = BuiltInRegistries.ITEM.getKey(itemStack.getItem());
                 this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.HORSE_SADDLE, SoundSource.AMBIENT, 1.0f, 1.0f);
@@ -234,7 +234,7 @@ public class Skywishes extends TamableTamersPony implements RangedAttackMob, She
         double distZ = target.getZ() - laser.getZ();
 
         laser.shoot(distX, distY, distZ, 3.0f, 2);
-        this.playSound(MineLittleFlawlessSoundEvents.LASER_BLAST.get());
+        this.playSound(MLFSoundEvents.LASER_BLAST.get());
         this.level().addFreshEntity(laser);
 
         this.laserAmmo--;
@@ -308,14 +308,14 @@ public class Skywishes extends TamableTamersPony implements RangedAttackMob, She
         public void start() {
             super.start();
             this.skywishes.setAiming(true);
-            this.skywishes.playSound(MineLittleFlawlessSoundEvents.SKYWISHES_CLANK.get(), 0.15f, 1.0f);
+            this.skywishes.playSound(MLFSoundEvents.SKYWISHES_CLANK.get(), 0.15f, 1.0f);
         }
 
         @Override
         public void stop() {
             super.stop();
             this.skywishes.setAiming(false);
-            this.skywishes.playSound(MineLittleFlawlessSoundEvents.SKYWISHES_CLANK.get(), 0.15f, 1.0f);
+            this.skywishes.playSound(MLFSoundEvents.SKYWISHES_CLANK.get(), 0.15f, 1.0f);
         }
 
         private boolean isWithinMinimumRange(LivingEntity target) {

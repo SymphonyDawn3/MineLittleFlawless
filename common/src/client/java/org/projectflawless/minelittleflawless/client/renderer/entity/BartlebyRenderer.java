@@ -1,6 +1,6 @@
 package org.projectflawless.minelittleflawless.client.renderer.entity;
 
-import org.projectflawless.minelittleflawless.MineLittleFlawless;
+import org.projectflawless.minelittleflawless.MLF;
 import org.projectflawless.minelittleflawless.client.model.entity.BartlebyModel;
 import org.projectflawless.minelittleflawless.entity.Bartleby;
 
@@ -15,6 +15,6 @@ public class BartlebyRenderer extends MobRenderer<Bartleby, BartlebyModel> {
 
 	@Override
 	public ResourceLocation getTextureLocation(Bartleby entity) {
-		return new ResourceLocation(MineLittleFlawless.MOD_ID, "textures/entity/bartleby.png");
+		return new ResourceLocation(MLF.MOD_ID, "textures/entity/bartleby.png");
 	}
 }

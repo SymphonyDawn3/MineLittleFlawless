@@ -34,9 +34,9 @@ import net.tslat.smartbrainlib.api.core.SmartBrainProvider;
 import net.tslat.smartbrainlib.api.core.sensor.ExtendedSensor;
 import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.entity.ai.behavior.WishWithPlayer;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessItems;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
+import org.projectflawless.minelittleflawless.init.MLFEntities;
+import org.projectflawless.minelittleflawless.init.MLFItems;
+import org.projectflawless.minelittleflawless.init.MLFSoundEvents;
 
 import java.util.Comparator;
 import java.util.List;
@@ -165,7 +165,7 @@ public class WishFulfillment extends TamableTamersPony implements Merchant, Smar
 
     @Override
     public boolean canAttackType(EntityType<?> entityType) {
-        return !entityType.equals(MineLittleFlawlessEntities.WISH_FULFILLMENT.get()) || !entityType.equals(MineLittleFlawlessEntities.FLAWLESS.get());
+        return !entityType.equals(MLFEntities.WISH_FULFILLMENT.get()) || !entityType.equals(MLFEntities.FLAWLESS.get());
     }
 
     @Override
@@ -175,22 +175,22 @@ public class WishFulfillment extends TamableTamersPony implements Merchant, Smar
 
     @Override
     protected @Nullable SoundEvent getAmbientSound() {
-        return MineLittleFlawlessSoundEvents.WISH_FULFILLMENT_AMBIENT.get();
+        return MLFSoundEvents.WISH_FULFILLMENT_AMBIENT.get();
     }
 
     @Override
     protected @Nullable SoundEvent getHurtSound(DamageSource damageSource) {
-        return MineLittleFlawlessSoundEvents.WISH_FULFILLMENT_HURT.get();
+        return MLFSoundEvents.WISH_FULFILLMENT_HURT.get();
     }
 
     @Override
     protected @Nullable SoundEvent getDeathSound() {
-        return MineLittleFlawlessSoundEvents.WISH_FULFILLMENT_DEATH.get();
+        return MLFSoundEvents.WISH_FULFILLMENT_DEATH.get();
     }
 
     @Override
     public @Nullable AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherParent) {
-        WishFulfillment wishFulfillmentBaby = MineLittleFlawlessEntities.WISH_FULFILLMENT.get().create(level, null, null, otherParent.blockPosition(), MobSpawnType.BREEDING, false, false);
+        WishFulfillment wishFulfillmentBaby = MLFEntities.WISH_FULFILLMENT.get().create(level, null, null, otherParent.blockPosition(), MobSpawnType.BREEDING, false, false);
 
         if (wishFulfillmentBaby != null) {
             wishFulfillmentBaby.finalizeSpawn(level, level.getCurrentDifficultyAt(wishFulfillmentBaby.blockPosition()), MobSpawnType.BREEDING, null, null);
@@ -224,7 +224,7 @@ public class WishFulfillment extends TamableTamersPony implements Merchant, Smar
             selectedOffers.add(new MerchantOffer(new ItemStack(
                     this.itemForTrading, 1),
                     new ItemStack(
-                            MineLittleFlawlessItems.MUSIC_DISC_WISHLESS_RESONANCE.get()
+                            MLFItems.MUSIC_DISC_WISHLESS_RESONANCE.get()
                     ), 1, 18, 1.0f));
         }
 
@@ -327,7 +327,7 @@ public class WishFulfillment extends TamableTamersPony implements Merchant, Smar
     public void notifyTradeUpdated(ItemStack stack) {
         if (!this.isClientSide() && this.ambientSoundTime > -this.getAmbientSoundInterval() + 20) {
             this.ambientSoundTime = -this.getAmbientSoundInterval();
-            this.playSound(stack.isEmpty() ? MineLittleFlawlessSoundEvents.WISH_FULFILLMENT_TRADE_DENY.get() : MineLittleFlawlessSoundEvents.WISH_FULFILLMENT_TRADE_ACCEPT.get(),
+            this.playSound(stack.isEmpty() ? MLFSoundEvents.WISH_FULFILLMENT_TRADE_DENY.get() : MLFSoundEvents.WISH_FULFILLMENT_TRADE_ACCEPT.get(),
                     this.getSoundVolume(), this.getVoicePitch());
         }
     }
@@ -339,7 +339,7 @@ public class WishFulfillment extends TamableTamersPony implements Merchant, Smar
 
     @Override
     public SoundEvent getNotifyTradeSound() {
-        return MineLittleFlawlessSoundEvents.WISH_FULFILLMENT_TRADE_ACCEPT.get();
+        return MLFSoundEvents.WISH_FULFILLMENT_TRADE_ACCEPT.get();
     }
 
     @Override
@@ -366,6 +366,6 @@ public class WishFulfillment extends TamableTamersPony implements Merchant, Smar
     }
 
     private void playWishDenySound() {
-        this.playSound(MineLittleFlawlessSoundEvents.WISH_FULFILLMENT_TRADE_DENY.get(), this.getSoundVolume(), this.getVoicePitch());
+        this.playSound(MLFSoundEvents.WISH_FULFILLMENT_TRADE_DENY.get(), this.getSoundVolume(), this.getVoicePitch());
     }
 }

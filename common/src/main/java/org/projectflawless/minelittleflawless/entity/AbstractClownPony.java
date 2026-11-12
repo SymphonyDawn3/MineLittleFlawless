@@ -13,8 +13,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
-import org.projectflawless.minelittleflawless.MineLittleFlawlessTags;
+import org.projectflawless.minelittleflawless.init.MLFSoundEvents;
+import org.projectflawless.minelittleflawless.MLFTags;
 
 public class AbstractClownPony extends TamableTamersPony {
     public AbstractClownPony(EntityType<? extends AbstractClownPony> type, Level world) {
@@ -55,11 +55,11 @@ public class AbstractClownPony extends TamableTamersPony {
 
     @Override
     protected void playStepSound(BlockPos pos, BlockState state) {
-        this.playSound(MineLittleFlawlessSoundEvents.CLOWN_PONY_JINGLE.get(), 0.15f, 1.0f);
+        this.playSound(MLFSoundEvents.CLOWN_PONY_JINGLE.get(), 0.15f, 1.0f);
     }
 
     @Override
     public boolean canAttackType(EntityType<?> entityType) {
-        return !entityType.is(MineLittleFlawlessTags.CLOWN_COLLEGE);
+        return !entityType.is(MLFTags.CLOWN_COLLEGE);
     }
 }

@@ -12,40 +12,40 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraft.world.level.levelgen.Heightmap;
 
-public class MineLittleFlawlessSpawns {
+public class MLFSpawns {
     public static void init() {
-        register(MineLittleFlawlessEntities.FLAWLESS);
-        register(MineLittleFlawlessEntities.TWILIGHT);
-        register(MineLittleFlawlessEntities.TRIXIE);
-        clownSpawns(MineLittleFlawlessEntities.ARINOS);
-        clownSpawns(MineLittleFlawlessEntities.LAST_LAUGH);
-        clownSpawns(MineLittleFlawlessEntities.CHERRY_CHUCKLES);
-        clownSpawns(MineLittleFlawlessEntities.BIBBLEBOP);
-        clownSpawns(MineLittleFlawlessEntities.TRICOLOR_JUBILEE);
-        register(MineLittleFlawlessEntities.TRIXIEBELLE, (entityType,
-                                                          serverLevelAccessor,
-                                                          mobSpawnType,
-                                                          blockPos, randomSource) -> {
+        register(MLFEntities.FLAWLESS);
+        register(MLFEntities.TWILIGHT);
+        register(MLFEntities.TRIXIE);
+        clownSpawns(MLFEntities.ARINOS);
+        clownSpawns(MLFEntities.LAST_LAUGH);
+        clownSpawns(MLFEntities.CHERRY_CHUCKLES);
+        clownSpawns(MLFEntities.BIBBLEBOP);
+        clownSpawns(MLFEntities.TRICOLOR_JUBILEE);
+        register(MLFEntities.TRIXIEBELLE, (entityType,
+                                           serverLevelAccessor,
+                                           mobSpawnType,
+                                           blockPos, randomSource) -> {
             BlockState blockState = serverLevelAccessor.getBlockState(blockPos.below());
             return (blockState.is(BlockTags.ANIMALS_SPAWNABLE_ON) || blockState.is(BlockTags.SAND)
                     || blockState.is(BlockTags.BASE_STONE_OVERWORLD)) &&
                     serverLevelAccessor.getRawBrightness(blockPos, 0) > 8;
         });
-        wishCatcherSpawns(MineLittleFlawlessEntities.SKYWISHES);
-        wishCatcherSpawns(MineLittleFlawlessEntities.STAR_CATCHER);
-        register(MineLittleFlawlessEntities.MARIONETTE);
+        wishCatcherSpawns(MLFEntities.SKYWISHES);
+        wishCatcherSpawns(MLFEntities.STAR_CATCHER);
+        register(MLFEntities.MARIONETTE);
 
-        register(MineLittleFlawlessEntities.JACKIE_SPECTRE, ((entityType,
-                                                              serverLevelAccessor,
-                                                              mobSpawnType, blockPos,
-                                                              randomSource) -> {
+        register(MLFEntities.JACKIE_SPECTRE, ((entityType,
+                                               serverLevelAccessor,
+                                               mobSpawnType, blockPos,
+                                               randomSource) -> {
             BlockState blockState = serverLevelAccessor.getBlockState(blockPos.below());
             return (blockState.is(BlockTags.ANIMALS_SPAWNABLE_ON) || blockState.is(BlockTags.SAND) || blockState.is(BlockTags.BASE_STONE_OVERWORLD)) &&
                     serverLevelAccessor.getRawBrightness(blockPos, 0) > 8;
         }));
 
-        register(MineLittleFlawlessEntities.WISH_FULFILLMENT, (entityType, serverLevel,
-                                                               spawnType, pos, random)
+        register(MLFEntities.WISH_FULFILLMENT, (entityType, serverLevel,
+                                                spawnType, pos, random)
                 -> (serverLevel.getLevel().dimensionTypeId().equals(BuiltinDimensionTypes.OVERWORLD)
                 && serverLevel.getLevel().isNight()
                 && serverLevel.getMoonPhase() == 0
@@ -53,9 +53,9 @@ public class MineLittleFlawlessSpawns {
                 || (serverLevel.getLevel().dimensionTypeId().equals(BuiltinDimensionTypes.NETHER)
                 && serverLevel.getBlockState(pos.below()).is(BlockTags.NYLIUM)));
 
-        register(MineLittleFlawlessEntities.FRACTURED, (entityType,
-                                                        serverLevelAccessor, mobSpawnType,
-                                                        blockPos, randomSource) ->
+        register(MLFEntities.FRACTURED, (entityType,
+                                         serverLevelAccessor, mobSpawnType,
+                                         blockPos, randomSource) ->
                 serverLevelAccessor.getLevel().dimensionTypeId().equals(BuiltinDimensionTypes.OVERWORLD)
                         && Monster.isDarkEnoughToSpawn(serverLevelAccessor, blockPos, randomSource)
                         && serverLevelAccessor.getBlockState(blockPos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON));

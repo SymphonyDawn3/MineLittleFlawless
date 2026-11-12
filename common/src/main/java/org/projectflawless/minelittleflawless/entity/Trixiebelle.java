@@ -24,9 +24,9 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.Clothing;
-import org.projectflawless.minelittleflawless.MineLittleFlawlessTags;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
+import org.projectflawless.minelittleflawless.MLFTags;
+import org.projectflawless.minelittleflawless.init.MLFEntities;
+import org.projectflawless.minelittleflawless.init.MLFSoundEvents;
 
 public class Trixiebelle extends TamableTamersPony implements Shearable {
     public boolean spanishVariant = false;
@@ -79,15 +79,15 @@ public class Trixiebelle extends TamableTamersPony implements Shearable {
     }
 
     private RegistrySupplier<SoundEvent> getAmbientVariant() {
-        return !this.isSpanishVariant() ? MineLittleFlawlessSoundEvents.TRIXIEBELLE_AMBIENT : MineLittleFlawlessSoundEvents.TRIXIEBELLE_AMBIENT_ES;
+        return !this.isSpanishVariant() ? MLFSoundEvents.TRIXIEBELLE_AMBIENT : MLFSoundEvents.TRIXIEBELLE_AMBIENT_ES;
     }
 
     private RegistrySupplier<SoundEvent> getHurtVariant() {
-        return !this.isSpanishVariant() ? MineLittleFlawlessSoundEvents.TRIXIEBELLE_HURT : MineLittleFlawlessSoundEvents.TRIXIEBELLE_HURT_ES;
+        return !this.isSpanishVariant() ? MLFSoundEvents.TRIXIEBELLE_HURT : MLFSoundEvents.TRIXIEBELLE_HURT_ES;
     }
 
     private RegistrySupplier<SoundEvent> getDeathVariant() {
-        return !this.isSpanishVariant() ? MineLittleFlawlessSoundEvents.TRIXIEBELLE_DEATH : MineLittleFlawlessSoundEvents.TRIXIEBELLE_DEATH_ES;
+        return !this.isSpanishVariant() ? MLFSoundEvents.TRIXIEBELLE_DEATH : MLFSoundEvents.TRIXIEBELLE_DEATH_ES;
     }
 
     @Override
@@ -111,7 +111,7 @@ public class Trixiebelle extends TamableTamersPony implements Shearable {
 
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherParent) {
-        Trixiebelle retval = MineLittleFlawlessEntities.TRIXIEBELLE.get().create(level, null, null, otherParent.blockPosition(), MobSpawnType.BREEDING, false, false);
+        Trixiebelle retval = MLFEntities.TRIXIEBELLE.get().create(level, null, null, otherParent.blockPosition(), MobSpawnType.BREEDING, false, false);
 
         if (retval != null) {
             retval.finalizeSpawn(level, level.getCurrentDifficultyAt(retval.blockPosition()), MobSpawnType.BREEDING, null, null);
@@ -138,7 +138,7 @@ public class Trixiebelle extends TamableTamersPony implements Shearable {
         ItemStack itemStack = sourceentity.getItemInHand(hand);
         InteractionResult result;
 
-        if (itemStack.is(MineLittleFlawlessTags.TRIXIEBELLE_CLOTHING)) {
+        if (itemStack.is(MLFTags.TRIXIEBELLE_CLOTHING)) {
             if (this.getClothing().equals(Clothing.NONE)) {
                 ResourceLocation trixiebelleClothing = BuiltInRegistries.ITEM.getKey(itemStack.getItem());
                 this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.HORSE_SADDLE, SoundSource.AMBIENT, 1.0f, 1.0f);

@@ -12,7 +12,7 @@ import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.NaturalSpawner;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.biome.Biome;
-import org.projectflawless.minelittleflawless.MineLittleFlawlessMobCategory;
+import org.projectflawless.minelittleflawless.MLFMobCategory;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
@@ -24,7 +24,7 @@ final class NaturalSpawnerMixin {
         mobCategoryLocalRef.set(MobCategory.CREATURE);
         original.call(levelAccessor, biome, chunkPos, random);
 
-        mobCategoryLocalRef.set(MineLittleFlawlessMobCategory.getCategory(MineLittleFlawlessMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT));
+        mobCategoryLocalRef.set(MLFMobCategory.getCategory(MLFMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT));
         original.call(levelAccessor, biome, chunkPos, random);
     }
 

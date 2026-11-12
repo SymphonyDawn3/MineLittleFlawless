@@ -24,9 +24,9 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
 import org.projectflawless.minelittleflawless.Clothing;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessEntities;
-import org.projectflawless.minelittleflawless.init.MineLittleFlawlessSoundEvents;
-import org.projectflawless.minelittleflawless.MineLittleFlawlessTags;
+import org.projectflawless.minelittleflawless.init.MLFEntities;
+import org.projectflawless.minelittleflawless.init.MLFSoundEvents;
+import org.projectflawless.minelittleflawless.MLFTags;
 
 public class Trixie extends TamableTamersPony implements Shearable {
     public static final ResourceLocation[] CLOTHING_TYPES = { Clothing.NONE, Clothing.TRIXIE_MAGICIAN,
@@ -45,22 +45,22 @@ public class Trixie extends TamableTamersPony implements Shearable {
 
     @Override
     public boolean canAttackType(EntityType<?> entityType) {
-        return !(entityType.is(MineLittleFlawlessTags.SPARKLEMOON_FAMILY));
+        return !(entityType.is(MLFTags.SPARKLEMOON_FAMILY));
     }
 
     @Override
     public SoundEvent getAmbientSound() {
-        return MineLittleFlawlessSoundEvents.TRIXIE_AMBIENT.get();
+        return MLFSoundEvents.TRIXIE_AMBIENT.get();
     }
 
     @Override
     public SoundEvent getHurtSound(DamageSource ds) {
-        return MineLittleFlawlessSoundEvents.TRIXIE_HURT.get();
+        return MLFSoundEvents.TRIXIE_HURT.get();
     }
 
     @Override
     public SoundEvent getDeathSound() {
-        return MineLittleFlawlessSoundEvents.TRIXIE_DEATH.get();
+        return MLFSoundEvents.TRIXIE_DEATH.get();
     }
 
     @Override
@@ -76,9 +76,9 @@ public class Trixie extends TamableTamersPony implements Shearable {
         TamableTamersPony retval;
 
         if (ageable instanceof Twilight)
-            retval = MineLittleFlawlessEntities.FLAWLESS.get().create(serverWorld, null, null, ageable.blockPosition(), MobSpawnType.BREEDING, false, false);
+            retval = MLFEntities.FLAWLESS.get().create(serverWorld, null, null, ageable.blockPosition(), MobSpawnType.BREEDING, false, false);
         else
-            retval = MineLittleFlawlessEntities.TRIXIE.get().create(serverWorld, null, null, ageable.blockPosition(), MobSpawnType.BREEDING, false, false);
+            retval = MLFEntities.TRIXIE.get().create(serverWorld, null, null, ageable.blockPosition(), MobSpawnType.BREEDING, false, false);
 
         if (retval != null) {
             retval.finalizeSpawn(serverWorld, serverWorld.getCurrentDifficultyAt(retval.blockPosition()), MobSpawnType.BREEDING, null, null);
@@ -91,7 +91,7 @@ public class Trixie extends TamableTamersPony implements Shearable {
         ItemStack itemStack = sourceentity.getItemInHand(hand);
         InteractionResult result;
 
-        if (itemStack.is(MineLittleFlawlessTags.TRIXIE_CLOTHING)) {
+        if (itemStack.is(MLFTags.TRIXIE_CLOTHING)) {
             if (this.getClothing().equals(Clothing.NONE)) {
                 ResourceLocation trixieClothing = BuiltInRegistries.ITEM.getKey(itemStack.getItem());
                 this.level().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.HORSE_SADDLE, SoundSource.AMBIENT, 1.0f, 1.0f);

@@ -21,7 +21,7 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.projectflawless.minelittleflawless.Clothing;
-import org.projectflawless.minelittleflawless.MineLittleFlawlessTags;
+import org.projectflawless.minelittleflawless.MLFTags;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.constant.DefaultAnimations;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -179,7 +179,7 @@ public abstract class TamableTamersPony extends TamableAnimal implements GeoEnti
         ItemStack itemstack = sourceentity.getItemInHand(hand);
         InteractionResult retval = InteractionResult.PASS;
 
-        if (this.isFood(itemstack) || itemstack.is(MineLittleFlawlessTags.FLAWLESS_FOOD)) {
+        if (this.isFood(itemstack) || itemstack.is(MLFTags.FLAWLESS_FOOD)) {
             if (this.isTame() && this.isOwnedBy(sourceentity)) {
                 if (this.getHealth() < this.getMaxHealth()) {
                     FoodProperties foodproperties = itemstack.getItem().getFoodProperties();
