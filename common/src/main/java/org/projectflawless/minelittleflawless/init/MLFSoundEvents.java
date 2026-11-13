@@ -101,6 +101,11 @@ public class MLFSoundEvents {
     public static final RegistrySupplier<SoundEvent> WISH_FULFILLMENT_TRADE_ACCEPT = register("entity.wish_fulfillment.trade_accept");
     public static final RegistrySupplier<SoundEvent> WISH_FULFILLMENT_TRADE_DENY = register("entity.wish_fulfillment.trade_deny");
 
+    // Shay Meadows
+    public static final RegistrySupplier<SoundEvent> SHAY_MEADOWS_AMBIENT = register("entity.shay_meadows.ambient");
+    public static final RegistrySupplier<SoundEvent> SHAY_MEADOWS_HURT = register("entity.shay_meadows.hurt");
+    public static final RegistrySupplier<SoundEvent> SHAY_MEADOWS_DEATH = register("entity.shay_meadows.death");
+
     // Music Discs
     // Wishless Resonance
     public static final RegistrySupplier<SoundEvent> MUSIC_DISC_WISHLESS_RESONANCE = register("music_disc.wishless_resonance");

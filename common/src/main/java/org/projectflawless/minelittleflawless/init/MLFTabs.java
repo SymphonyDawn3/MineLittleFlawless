@@ -28,7 +28,8 @@ public class MLFTabs {
                 MLFItems.STAR_CATCHER_SPAWN_EGG,
                 MLFItems.MARIONETTE_SPAWN_EGG,
                 MLFItems.JACKIE_SPECTRE_SPAWN_EGG,
-                MLFItems.WISH_FULFILLMENT_SPAWN_EGG
+                MLFItems.WISH_FULFILLMENT_SPAWN_EGG,
+                MLFItems.SHAY_MEADOWS_SPAWN_EGG
         );
 
         append(CreativeModeTabs.TOOLS_AND_UTILITIES,

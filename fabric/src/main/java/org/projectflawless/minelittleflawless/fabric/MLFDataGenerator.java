@@ -26,6 +26,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
@@ -33,6 +34,7 @@ import net.minecraft.world.item.RecordItem;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.level.block.Blocks;
 import org.projectflawless.minelittleflawless.MLF;
 import org.projectflawless.minelittleflawless.init.MLFEntities;
 import org.projectflawless.minelittleflawless.MLFTags;
@@ -60,6 +62,7 @@ public class MLFDataGenerator implements DataGeneratorEntrypoint {
 
         // Generate tags
         pack.addProvider(BiomeTagGenerator::new);
+        pack.addProvider(BlockTagGenerator::new);
         pack.addProvider(EntityTypeTagGenerator::new);
         pack.addProvider(ItemTagGenerator::new);
     }
@@ -127,6 +130,7 @@ public class MLFDataGenerator implements DataGeneratorEntrypoint {
             this.generateSpawnEggItemModel(MLFItems.MARIONETTE_SPAWN_EGG);
             this.generateSpawnEggItemModel(MLFItems.JACKIE_SPECTRE_SPAWN_EGG);
             this.generateSpawnEggItemModel(MLFItems.WISH_FULFILLMENT_SPAWN_EGG);
+            this.generateSpawnEggItemModel(MLFItems.SHAY_MEADOWS_SPAWN_EGG);
         }
     }
 
@@ -167,6 +171,7 @@ public class MLFDataGenerator implements DataGeneratorEntrypoint {
             translationBuilder.add(MLFEntities.MARIONETTE.get(), "Marionette");
             translationBuilder.add(MLFEntities.JACKIE_SPECTRE.get(), "Jackie Spectre");
             translationBuilder.add(MLFEntities.WISH_FULFILLMENT.get(), "Wish Fulfillment");
+            translationBuilder.add(MLFEntities.SHAY_MEADOWS.get(), "Shay Meadows");
         }
 
         private void generateMaterialTranslations(TranslationBuilder translationBuilder) {
@@ -198,6 +203,7 @@ public class MLFDataGenerator implements DataGeneratorEntrypoint {
             translationBuilder.add(MLFItems.MARIONETTE_SPAWN_EGG.get(), "Marionette Spawn Egg");
             translationBuilder.add(MLFItems.JACKIE_SPECTRE_SPAWN_EGG.get(), "Jackie Spectre Spawn Egg");
             translationBuilder.add(MLFItems.WISH_FULFILLMENT_SPAWN_EGG.get(), "Wish Fulfillment Spawn Egg");
+            translationBuilder.add(MLFItems.SHAY_MEADOWS_SPAWN_EGG.get(), "Shay Meadows Spawn Egg");
         }
 
         private void generateFlawlessClothingTranslations(TranslationBuilder translationBuilder) {
@@ -315,6 +321,11 @@ public class MLFDataGenerator implements DataGeneratorEntrypoint {
             this.generateSoundEventTranslation(translationBuilder, MLFSoundEvents.WISH_FULFILLMENT_DEATH, "Wish Fulfillment dies");
             this.generateSoundEventTranslation(translationBuilder, MLFSoundEvents.WISH_FULFILLMENT_TRADE_ACCEPT, "Wish Fulfillment accepts offer");
             this.generateSoundEventTranslation(translationBuilder, MLFSoundEvents.WISH_FULFILLMENT_TRADE_DENY, "Wish Fulfillment denies offer");
+
+            // Shay Meadows
+            this.generateSoundEventTranslation(translationBuilder, MLFSoundEvents.SHAY_MEADOWS_AMBIENT, "Shay Meadows speaks");
+            this.generateSoundEventTranslation(translationBuilder, MLFSoundEvents.SHAY_MEADOWS_HURT, "Shay Meadows hurts");
+            this.generateSoundEventTranslation(translationBuilder, MLFSoundEvents.SHAY_MEADOWS_DEATH, "Shay Meadows dies");
 
             // Projectiles
             this.generateSoundEventTranslation(translationBuilder, MLFSoundEvents.LASER_BLAST, "Laser blasts");
@@ -637,6 +648,24 @@ public class MLFDataGenerator implements DataGeneratorEntrypoint {
                     .forceAddTag(BiomeTags.IS_DEEP_OCEAN)
                     .forceAddTag(BiomeTags.IS_RIVER)
                     .add(Biomes.STONY_SHORE);
+
+            this.getOrCreateTagBuilder(MLFTags.SPAWNS_SHAY_MEADOWS)
+                    .forceAddTag(BiomeTags.IS_JUNGLE)
+                    .add(Biomes.LUSH_CAVES);
+        }
+    }
+
+    private static class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
+        public BlockTagGenerator(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
+            super(output, completableFuture);
+        }
+
+        @Override
+        protected void addTags(HolderLookup.Provider provider) {
+            this.getOrCreateTagBuilder(MLFTags.SHAY_MEADOWS_SPAWNABLE_ON)
+                    .forceAddTag(BlockTags.ANIMALS_SPAWNABLE_ON)
+                    .add(Blocks.CLAY)
+                    .add(Blocks.MOSS_BLOCK);
         }
     }
 

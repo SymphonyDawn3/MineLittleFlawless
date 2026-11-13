@@ -27,6 +27,7 @@ public class MLFAttributes {
         tamableTamersPonyRegister(MARIONETTE);
         tamableTamersPonyRegister(JACKIE_SPECTRE);
         tamableTamersPonyRegister(WISH_FULFILLMENT);
+        tamableTamersPonyRegister(SHAY_MEADOWS);
     }
 
     private static <T extends LivingEntity> void tamableTamersPonyRegister(RegistrySupplier<EntityType<T>> type) {

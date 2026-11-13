@@ -52,4 +52,7 @@ public class Clothing {
 
     // Jackie Spectre clothing
     public static ResourceLocation SAILOR = new ResourceLocation(MLF.MOD_ID, "sailor");
+
+    // Shay Meadows clothing
+    public static ResourceLocation SHAY_MEADOWS_FARMER = new ResourceLocation(MLF.MOD_ID, "shay_meadows_farmer");
 }

@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraft.world.level.levelgen.Heightmap;
+import org.projectflawless.minelittleflawless.MLFTags;
 
 public class MLFSpawns {
     public static void init() {
@@ -59,6 +60,8 @@ public class MLFSpawns {
                 serverLevelAccessor.getLevel().dimensionTypeId().equals(BuiltinDimensionTypes.OVERWORLD)
                         && Monster.isDarkEnoughToSpawn(serverLevelAccessor, blockPos, randomSource)
                         && serverLevelAccessor.getBlockState(blockPos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON));
+
+        shayMeadowsSpawns(MLFEntities.SHAY_MEADOWS);
     }
 
     private static <T extends Mob> void register(RegistrySupplier<EntityType<T>> entityType) {
@@ -90,5 +93,12 @@ public class MLFSpawns {
             return (blockState.is(BlockTags.ANIMALS_SPAWNABLE_ON) || blockState.is(Blocks.SNOW_BLOCK)) &&
                     serverLevelAccessor.getRawBrightness(blockPos, 0) > 8;
         });
+    }
+
+    private static <E extends Mob> void shayMeadowsSpawns(RegistrySupplier<EntityType<E>> entityType) {
+        register(entityType, (entityType2, serverLevelAccessor,
+                              mobSpawnType, blockPos, randomSource) ->
+                serverLevelAccessor.getBlockState(blockPos.below()).is(MLFTags.SHAY_MEADOWS_SPAWNABLE_ON)
+                    && serverLevelAccessor.getRawBrightness(blockPos, 0) > 8);
     }
 }

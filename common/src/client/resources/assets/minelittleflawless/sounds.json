@@ -425,6 +425,26 @@
       "minelittleflawless:mob/wish_fulfillment/tradedeny"
     ]
   },
+  "entity.shay_meadows.ambient": {
+    "subtitle": "subtitles.minelittleflawless.entity.shay_meadows.ambient",
+    "sounds": [
+      "minelittleflawless:mob/shay_meadows/speak1",
+      "minelittleflawless:mob/shay_meadows/speak2",
+      "minelittleflawless:mob/shay_meadows/speak3"
+    ]
+  },
+  "entity.shay_meadows.hurt": {
+    "subtitle": "subtitles.minelittleflawless.entity.shay_meadows.hurt",
+    "sounds": [
+      "minelittleflawless:mob/shay_meadows/hurt1"
+    ]
+  },
+  "entity.shay_meadows.death": {
+    "subtitle": "subtitles.minelittleflawless.entity.shay_meadows.death",
+    "sounds": [
+      "minelittleflawless:mob/shay_meadows/death1"
+    ]
+  },
   "music_disc.wishless_resonance": {
     "sounds": [
       {

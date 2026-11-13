@@ -6,6 +6,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.block.Block;
 
 public class MLFTags {
     public static TagKey<Item> FLAWLESS_CLOTHING = TagKey.create(Registries.ITEM,
@@ -50,6 +51,11 @@ public class MLFTags {
     public static TagKey<Biome> SPAWNS_JACKIE_SPECTRE = TagKey.create(Registries.BIOME,
             new ResourceLocation(MLF.MOD_ID, "spawns_jackie_spectre"));
 
+    public static TagKey<Biome> SPAWNS_SHAY_MEADOWS = TagKey.create(Registries.BIOME,
+            new ResourceLocation(MLF.MOD_ID, "spawns_shay_meadows"));
+
+    public static TagKey<Block> SHAY_MEADOWS_SPAWNABLE_ON = TagKey.create(Registries.BLOCK,
+            new ResourceLocation(MLF.MOD_ID, "shay_meadows_spawnable_on"));
 
     public static void init() {
 

@@ -150,6 +150,16 @@ public class MLFBiomeSpawns {
                 1,
                 4
         );
+
+        // Shay Meadows
+        addSpawn(
+                biomeContext -> biomeContext.hasTag(MLFTags.SPAWNS_SHAY_MEADOWS),
+                MLFMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT,
+                MLFEntities.SHAY_MEADOWS,
+                1,
+                4,
+                4
+        );
     }
     
     public static <E extends Entity> void clownBiomeSpawns(RegistrySupplier<EntityType<E>> entityType) {

@@ -22,6 +22,7 @@ public class MLFEntityRenderers {
         EntityRendererRegistry.register(MLFEntities.MARIONETTE, MarionetteRenderer::new);
         EntityRendererRegistry.register(MLFEntities.JACKIE_SPECTRE, JackieSpectreRenderer::new);
         EntityRendererRegistry.register(MLFEntities.WISH_FULFILLMENT, WishFulfillmentRenderer::new);
+        EntityRendererRegistry.register(MLFEntities.SHAY_MEADOWS, ShayMeadowsRenderer::new);
 
         // Projectiles
         EntityRendererRegistry.register(MLFEntities.LASER, LaserRenderer::new);

@@ -66,6 +66,9 @@ public class MLFEntities {
     public static final RegistrySupplier<EntityType<WishFulfillment>> WISH_FULFILLMENT = registerPony("wish_fulfillment",
             WishFulfillment::new, MLFMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT, PonySize.MEDIUM);
 
+    public static final RegistrySupplier<EntityType<ShayMeadows>> SHAY_MEADOWS = registerPony("shay_meadows",
+            ShayMeadows::new, MLFMobCategory.MINELITTLEFLAWLESS_MLP_PERSISTENT, PonySize.MEDIUM);
+
     public static final RegistrySupplier<EntityType<Laser>> LASER = register("laser",
             EntityType.Builder.<Laser>of(Laser::new, MobCategory.MISC)
                     .clientTrackingRange(64)

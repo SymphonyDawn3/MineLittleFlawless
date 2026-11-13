@@ -40,6 +40,7 @@ public class MLFItems {
     public static final RegistrySupplier<SpawnEggItem> MARIONETTE_SPAWN_EGG = register("marionette_spawn_egg", () -> new ArchitecturySpawnEggItem(MLFEntities.MARIONETTE, 0xffffff, 0x302631, new Item.Properties()));
     public static final RegistrySupplier<SpawnEggItem> JACKIE_SPECTRE_SPAWN_EGG = register("jackie_spectre_spawn_egg", () -> new ArchitecturySpawnEggItem(MLFEntities.JACKIE_SPECTRE, 0xffefbb, 0xffe48b, new Item.Properties()));
     public static final RegistrySupplier<SpawnEggItem> WISH_FULFILLMENT_SPAWN_EGG = register("wish_fulfillment_spawn_egg", () -> new ArchitecturySpawnEggItem(MLFEntities.WISH_FULFILLMENT, 0x6bb3d0, 0x3c285f, new Item.Properties()));
+    public static final RegistrySupplier<SpawnEggItem> SHAY_MEADOWS_SPAWN_EGG = register("shay_meadows_spawn_egg", () -> new ArchitecturySpawnEggItem(MLFEntities.SHAY_MEADOWS, 0xf9f3f3, 0xb7d573, new Item.Properties()));
 
     // Flawless clothing
     public static final RegistrySupplier<FlawlessMagicianClothingItem> FLAWLESS_MAGICIAN_CLOTHING = register("flawless_magician_clothing", () -> new FlawlessMagicianClothingItem(new Item.Properties()));
