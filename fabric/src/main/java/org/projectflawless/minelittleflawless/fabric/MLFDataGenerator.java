@@ -664,7 +664,8 @@ public class MLFDataGenerator implements DataGeneratorEntrypoint {
 
             this.getOrCreateTagBuilder(EntityTypeTags.FALL_DAMAGE_IMMUNE)
                     .add(
-                            MLFEntities.SKYWISHES.get());
+                            MLFEntities.SKYWISHES.get(),
+                            MLFEntities.FRACTURED.get());
         }
     }
 
