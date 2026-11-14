@@ -2,7 +2,6 @@ package org.projectflawless.minelittleflawless.init;
 
 import dev.architectury.registry.level.biome.BiomeModifications;
 import dev.architectury.registry.registries.RegistrySupplier;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -155,9 +154,5 @@ public class MLFBiomeSpawns {
         BiomeModifications.addProperties(predicate, (biomeContext, mutable) -> mutable.getSpawnProperties().addSpawn(
                 MLFMobCategory.getCategory(category), new MobSpawnSettings.SpawnerData(entityType.get(), weight, minGroupSize, maxGroupSize)
         ));
-    }
-
-    private static boolean isBiome(BiomeModifications.BiomeContext biomeContext, ResourceKey<Biome> biomeResourceKey) {
-        return biomeContext.getKey().orElseThrow().equals(biomeResourceKey.location());
     }
 }
