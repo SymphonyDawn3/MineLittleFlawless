@@ -684,8 +684,10 @@ public class MLFDataGenerator implements DataGeneratorEntrypoint {
                     .forceAddTag(BiomeTags.IS_RIVER)
                     .add(Biomes.STONY_SHORE);
 
-            this.getOrCreateTagBuilder(MLFTags.SPAWNS_WISH_FULFILLMENT)
-                    .forceAddTag(BiomeTags.IS_OVERWORLD)
+            this.getOrCreateTagBuilder(MLFTags.SPAWNS_WISH_FULFILLMENT_AT_NIGHT)
+                    .forceAddTag(BiomeTags.IS_OVERWORLD);
+
+            this.getOrCreateTagBuilder(MLFTags.SPAWNS_WISH_FULFILLMENT_ALWAYS)
                     .add(Biomes.WARPED_FOREST)
                     .add(Biomes.CRIMSON_FOREST);
 
@@ -702,6 +704,60 @@ public class MLFDataGenerator implements DataGeneratorEntrypoint {
 
         @Override
         protected void addTags(HolderLookup.Provider provider) {
+            this.getOrCreateTagBuilder(MLFTags.SPARKLEMOON_FAMILIES_SPAWNABLE_ON)
+                    .forceAddTag(BlockTags.ANIMALS_SPAWNABLE_ON)
+                    .add(Blocks.COARSE_DIRT)
+                    .add(Blocks.PODZOL)
+                    .add(Blocks.SNOW_BLOCK);
+
+            this.getOrCreateTagBuilder(MLFTags.FLAWLESSES_SPAWNABLE_ON)
+                    .addTag(MLFTags.SPARKLEMOON_FAMILIES_SPAWNABLE_ON);
+
+            this.getOrCreateTagBuilder(MLFTags.TWILIGHTS_SPAWNABLE_ON)
+                    .addTag(MLFTags.SPARKLEMOON_FAMILIES_SPAWNABLE_ON);
+
+            this.getOrCreateTagBuilder(MLFTags.TRIXIES_SPAWNABLE_ON)
+                    .addTag(MLFTags.SPARKLEMOON_FAMILIES_SPAWNABLE_ON);
+
+            this.getOrCreateTagBuilder(MLFTags.FRACTUREDS_SPAWNABLE_ON)
+                    .addTag(MLFTags.FLAWLESSES_SPAWNABLE_ON);
+
+            this.getOrCreateTagBuilder(MLFTags.TRIXIEBELLES_SPAWNABLE_ON)
+                    .forceAddTag(BlockTags.ANIMALS_SPAWNABLE_ON)
+                    .forceAddTag(BlockTags.BASE_STONE_OVERWORLD)
+                    .forceAddTag(BlockTags.SAND)
+                    .forceAddTag(BlockTags.TERRACOTTA)
+                    .add(Blocks.COARSE_DIRT)
+                    .add(Blocks.PODZOL);
+
+            this.getOrCreateTagBuilder(MLFTags.WISHCATCHERS_SPAWNABLE_ON)
+                    .forceAddTag(BlockTags.ANIMALS_SPAWNABLE_ON)
+                    .add(Blocks.COARSE_DIRT)
+                    .add(Blocks.PODZOL)
+                    .add(Blocks.SNOW_BLOCK);
+
+            this.getOrCreateTagBuilder(MLFTags.SKYWISHES_SPAWNABLE_ON)
+                    .addTag(MLFTags.WISHCATCHERS_SPAWNABLE_ON);
+
+            this.getOrCreateTagBuilder(MLFTags.STAR_CATCHERS_SPAWNABLE_ON)
+                    .addTag(MLFTags.WISHCATCHERS_SPAWNABLE_ON);
+
+            this.getOrCreateTagBuilder(MLFTags.MARIONETTES_SPAWNABLE_ON)
+                    .forceAddTag(BlockTags.ANIMALS_SPAWNABLE_ON)
+                    .add(Blocks.COARSE_DIRT)
+                    .add(Blocks.PODZOL);
+
+            this.getOrCreateTagBuilder(MLFTags.JACKIE_SPECTRES_SPAWNABLE_ON)
+                    .forceAddTag(BlockTags.ANIMALS_SPAWNABLE_ON)
+                    .forceAddTag(BlockTags.SAND)
+                    .forceAddTag(BlockTags.BASE_STONE_OVERWORLD);
+
+            this.getOrCreateTagBuilder(MLFTags.WISH_FULFILLMENTS_SPAWNABLE_AT_NIGHT_ON)
+                    .forceAddTag(BlockTags.ANIMALS_SPAWNABLE_ON);
+
+            this.getOrCreateTagBuilder(MLFTags.WISH_FULFILLMENTS_SPAWNABLE_ALWAYS_ON)
+                    .forceAddTag(BlockTags.NYLIUM);
+
             this.getOrCreateTagBuilder(MLFTags.SHAY_MEADOWS_SPAWNABLE_ON)
                     .forceAddTag(BlockTags.ANIMALS_SPAWNABLE_ON)
                     .add(Blocks.CLAY)

@@ -109,9 +109,19 @@ public class MLFBiomeSpawns {
                 4
         );
 
-        // Wish Fulfillment
+        // Wish Fulfillment - Night
         addSpawn(
-                biomeContext -> biomeContext.hasTag(MLFTags.SPAWNS_WISH_FULFILLMENT),
+                biomeContext -> biomeContext.hasTag(MLFTags.SPAWNS_WISH_FULFILLMENT_AT_NIGHT),
+                MLFMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
+                MLFEntities.WISH_FULFILLMENT,
+                5,
+                4,
+                4
+        );
+
+        // Wish Fulfillment - Always
+        addSpawn(
+                biomeContext -> biomeContext.hasTag(MLFTags.SPAWNS_WISH_FULFILLMENT_ALWAYS),
                 MLFMobCategory.MINELITTLEFLAWLESS_MLP_NON_PERSISTENT,
                 MLFEntities.WISH_FULFILLMENT,
                 5,

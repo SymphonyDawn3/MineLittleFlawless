@@ -2,73 +2,56 @@ package org.projectflawless.minelittleflawless.init;
 
 import dev.architectury.registry.level.entity.SpawnPlacementsRegistry;
 import dev.architectury.registry.registries.RegistrySupplier;
-import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraft.world.level.levelgen.Heightmap;
 import org.projectflawless.minelittleflawless.MLFTags;
 
 public class MLFSpawns {
     public static void init() {
-        register(MLFEntities.FLAWLESS);
-        register(MLFEntities.TWILIGHT);
-        register(MLFEntities.TRIXIE);
+        register(MLFEntities.FLAWLESS, MLFTags.FLAWLESSES_SPAWNABLE_ON);
+        register(MLFEntities.TWILIGHT, MLFTags.TWILIGHTS_SPAWNABLE_ON);
+        register(MLFEntities.TRIXIE, MLFTags.TRIXIES_SPAWNABLE_ON);
         clownSpawns(MLFEntities.ARINOS);
         clownSpawns(MLFEntities.LAST_LAUGH);
         clownSpawns(MLFEntities.CHERRY_CHUCKLES);
         clownSpawns(MLFEntities.BIBBLEBOP);
         clownSpawns(MLFEntities.TRICOLOR_JUBILEE);
-        register(MLFEntities.TRIXIEBELLE, (entityType,
-                                           serverLevelAccessor,
-                                           mobSpawnType,
-                                           blockPos, randomSource) -> {
-            BlockState blockState = serverLevelAccessor.getBlockState(blockPos.below());
-            return (blockState.is(BlockTags.ANIMALS_SPAWNABLE_ON) || blockState.is(BlockTags.SAND)
-                    || blockState.is(BlockTags.BASE_STONE_OVERWORLD)) &&
-                    serverLevelAccessor.getRawBrightness(blockPos, 0) > 8;
-        });
-        wishCatcherSpawns(MLFEntities.SKYWISHES);
-        wishCatcherSpawns(MLFEntities.STAR_CATCHER);
-        register(MLFEntities.MARIONETTE);
-
-        register(MLFEntities.JACKIE_SPECTRE, ((entityType,
-                                               serverLevelAccessor,
-                                               mobSpawnType, blockPos,
-                                               randomSource) -> {
-            BlockState blockState = serverLevelAccessor.getBlockState(blockPos.below());
-            return (blockState.is(BlockTags.ANIMALS_SPAWNABLE_ON) || blockState.is(BlockTags.SAND) || blockState.is(BlockTags.BASE_STONE_OVERWORLD)) &&
-                    serverLevelAccessor.getRawBrightness(blockPos, 0) > 8;
-        }));
+        register(MLFEntities.TRIXIEBELLE, MLFTags.TRIXIEBELLES_SPAWNABLE_ON);
+        register(MLFEntities.SKYWISHES, MLFTags.SKYWISHES_SPAWNABLE_ON);
+        register(MLFEntities.STAR_CATCHER, MLFTags.STAR_CATCHERS_SPAWNABLE_ON);
+        register(MLFEntities.MARIONETTE, MLFTags.MARIONETTES_SPAWNABLE_ON);
+        register(MLFEntities.JACKIE_SPECTRE, MLFTags.JACKIE_SPECTRES_SPAWNABLE_ON);
 
         register(MLFEntities.WISH_FULFILLMENT, (entityType, serverLevel,
                                                 spawnType, pos, random)
-                -> (serverLevel.getLevel().dimensionTypeId().equals(BuiltinDimensionTypes.OVERWORLD)
+                -> (serverLevel.getBiome(pos.below()).is(MLFTags.SPAWNS_WISH_FULFILLMENT_AT_NIGHT)
                 && serverLevel.getLevel().isNight()
                 && serverLevel.getMoonPhase() == 0
-                && serverLevel.getBlockState(pos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON))
-                || (serverLevel.getLevel().dimensionTypeId().equals(BuiltinDimensionTypes.NETHER)
-                && serverLevel.getBlockState(pos.below()).is(BlockTags.NYLIUM)));
+                && serverLevel.getBlockState(pos.below()).is(MLFTags.WISH_FULFILLMENTS_SPAWNABLE_AT_NIGHT_ON))
+                || (serverLevel.getBiome(pos.below()).is(MLFTags.SPAWNS_WISH_FULFILLMENT_ALWAYS)
+                && serverLevel.getBlockState(pos.below()).is(MLFTags.WISH_FULFILLMENTS_SPAWNABLE_ALWAYS_ON)));
 
         register(MLFEntities.FRACTURED, (entityType,
                                          serverLevelAccessor, mobSpawnType,
                                          blockPos, randomSource) ->
                 serverLevelAccessor.getLevel().dimensionTypeId().equals(BuiltinDimensionTypes.OVERWORLD)
                         && Monster.isDarkEnoughToSpawn(serverLevelAccessor, blockPos, randomSource)
-                        && serverLevelAccessor.getBlockState(blockPos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON));
+                        && serverLevelAccessor.getBlockState(blockPos.below()).is(MLFTags.FRACTUREDS_SPAWNABLE_ON));
 
-        shayMeadowsSpawns(MLFEntities.SHAY_MEADOWS);
+        register(MLFEntities.SHAY_MEADOWS, MLFTags.SHAY_MEADOWS_SPAWNABLE_ON);
     }
 
-    private static <T extends Mob> void register(RegistrySupplier<EntityType<T>> entityType) {
+    private static <T extends Mob> void register(RegistrySupplier<EntityType<T>> entityType, TagKey<Block> blockTagKey) {
         register(entityType, (entityType2, world, reason,
                               pos, random)
-                -> (world.getBlockState(pos.below()).is(BlockTags.ANIMALS_SPAWNABLE_ON) &&
-                world.getRawBrightness(pos, 0) > 8));
+                -> (world.getBlockState(pos.below()).is(blockTagKey)) &&
+                world.getRawBrightness(pos, 0) > 8);
     }
 
     private static <E extends Mob> void register(RegistrySupplier<EntityType<E>> entityType, SpawnPlacements.SpawnPredicate<E> spawnPredicate) {
@@ -81,24 +64,5 @@ public class MLFSpawns {
                                                      spawnType, pos, random)
                 -> Monster.isDarkEnoughToSpawn(serverLevel, pos, random)
                 && Mob.checkMobSpawnRules(entityType2, serverLevel, spawnType, pos, random));
-    }
-
-    private static <E extends Mob> void wishCatcherSpawns(RegistrySupplier<EntityType<E>> entityType) {
-        register(entityType, (entityType2,
-                                                        serverLevelAccessor,
-                                                        mobSpawnType,
-                                                        blockPos,
-                                                        randomSource) -> {
-            BlockState blockState = serverLevelAccessor.getBlockState(blockPos.below());
-            return (blockState.is(BlockTags.ANIMALS_SPAWNABLE_ON) || blockState.is(Blocks.SNOW_BLOCK)) &&
-                    serverLevelAccessor.getRawBrightness(blockPos, 0) > 8;
-        });
-    }
-
-    private static <E extends Mob> void shayMeadowsSpawns(RegistrySupplier<EntityType<E>> entityType) {
-        register(entityType, (entityType2, serverLevelAccessor,
-                              mobSpawnType, blockPos, randomSource) ->
-                serverLevelAccessor.getBlockState(blockPos.below()).is(MLFTags.SHAY_MEADOWS_SPAWNABLE_ON)
-                    && serverLevelAccessor.getRawBrightness(blockPos, 0) > 8);
     }
 }

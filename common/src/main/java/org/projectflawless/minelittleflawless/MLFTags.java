@@ -84,11 +84,53 @@ public class MLFTags {
     public static TagKey<Biome> SPAWNS_JACKIE_SPECTRE = TagKey.create(Registries.BIOME,
             new ResourceLocation(MLF.MOD_ID, "spawns_jackie_spectre"));
 
-    public static TagKey<Biome> SPAWNS_WISH_FULFILLMENT = TagKey.create(Registries.BIOME,
-            new ResourceLocation(MLF.MOD_ID, "spawns_wish_fulfillment"));
+    public static TagKey<Biome> SPAWNS_WISH_FULFILLMENT_AT_NIGHT = TagKey.create(Registries.BIOME,
+            new ResourceLocation(MLF.MOD_ID, "spawns_wish_fulfillment_at_night"));
+
+    public static TagKey<Biome> SPAWNS_WISH_FULFILLMENT_ALWAYS = TagKey.create(Registries.BIOME,
+            new ResourceLocation(MLF.MOD_ID, "spawns_wish_fulfillment_always"));
 
     public static TagKey<Biome> SPAWNS_SHAY_MEADOWS = TagKey.create(Registries.BIOME,
             new ResourceLocation(MLF.MOD_ID, "spawns_shay_meadows"));
+
+    public static TagKey<Block> SPARKLEMOON_FAMILIES_SPAWNABLE_ON = TagKey.create(Registries.BLOCK,
+            new ResourceLocation(MLF.MOD_ID, "sparklemoon_families_spawnable_on"));
+
+    public static TagKey<Block> FLAWLESSES_SPAWNABLE_ON = TagKey.create(Registries.BLOCK,
+            new ResourceLocation(MLF.MOD_ID, "flawlesses_spawnable_on"));
+
+    public static TagKey<Block> TWILIGHTS_SPAWNABLE_ON = TagKey.create(Registries.BLOCK,
+            new ResourceLocation(MLF.MOD_ID, "twilights_spawnable_on"));
+
+    public static TagKey<Block> TRIXIES_SPAWNABLE_ON = TagKey.create(Registries.BLOCK,
+            new ResourceLocation(MLF.MOD_ID, "trixies_spawnable_on"));
+
+    public static TagKey<Block> FRACTUREDS_SPAWNABLE_ON = TagKey.create(Registries.BLOCK,
+            new ResourceLocation(MLF.MOD_ID, "fractureds_spawnable_on"));
+
+    public static TagKey<Block> TRIXIEBELLES_SPAWNABLE_ON = TagKey.create(Registries.BLOCK,
+            new ResourceLocation(MLF.MOD_ID, "trixiebelles_spawnable_on"));
+
+    public static TagKey<Block> WISHCATCHERS_SPAWNABLE_ON = TagKey.create(Registries.BLOCK,
+            new ResourceLocation(MLF.MOD_ID, "wishcatchers_spawnable_on"));
+
+    public static TagKey<Block> SKYWISHES_SPAWNABLE_ON = TagKey.create(Registries.BLOCK,
+            new ResourceLocation(MLF.MOD_ID, "skywishes_spawnable_on"));
+
+    public static TagKey<Block> STAR_CATCHERS_SPAWNABLE_ON = TagKey.create(Registries.BLOCK,
+            new ResourceLocation(MLF.MOD_ID, "star_catchers_spawnable_on"));
+
+    public static TagKey<Block> MARIONETTES_SPAWNABLE_ON = TagKey.create(Registries.BLOCK,
+            new ResourceLocation(MLF.MOD_ID, "marionettes_spawnable_on"));
+
+    public static TagKey<Block> JACKIE_SPECTRES_SPAWNABLE_ON = TagKey.create(Registries.BLOCK,
+            new ResourceLocation(MLF.MOD_ID, "jackie_spectres_spawnable_on"));
+
+    public static TagKey<Block> WISH_FULFILLMENTS_SPAWNABLE_AT_NIGHT_ON = TagKey.create(Registries.BLOCK,
+            new ResourceLocation(MLF.MOD_ID, "wish_fulfillments_spawnable_at_night_on"));
+
+    public static TagKey<Block> WISH_FULFILLMENTS_SPAWNABLE_ALWAYS_ON = TagKey.create(Registries.BLOCK,
+            new ResourceLocation(MLF.MOD_ID, "wish_fulfillments_spawnable_always_on"));
 
     public static TagKey<Block> SHAY_MEADOWS_SPAWNABLE_ON = TagKey.create(Registries.BLOCK,
             new ResourceLocation(MLF.MOD_ID, "shay_meadows_spawnable_on"));
