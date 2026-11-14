@@ -33,6 +33,39 @@ public class MLFTags {
     public static TagKey<EntityType<?>> CLOWN_COLLEGE = TagKey.create(Registries.ENTITY_TYPE,
             new ResourceLocation(MLF.MOD_ID, "clown_college"));
 
+    public static TagKey<Biome> SPAWNS_SPARKLEMOON_FAMILY = TagKey.create(Registries.BIOME,
+            new ResourceLocation(MLF.MOD_ID, "spawns_sparklemoon_family"));
+
+    public static TagKey<Biome> SPAWNS_FLAWLESS = TagKey.create(Registries.BIOME,
+            new ResourceLocation(MLF.MOD_ID, "spawns_flawless"));
+
+    public static TagKey<Biome> SPAWNS_TWILIGHT = TagKey.create(Registries.BIOME,
+            new ResourceLocation(MLF.MOD_ID, "spawns_twilight"));
+
+    public static TagKey<Biome> SPAWNS_TRIXIE = TagKey.create(Registries.BIOME,
+            new ResourceLocation(MLF.MOD_ID, "spawns_trixie"));
+
+    public static TagKey<Biome> SPAWNS_FRACTURED = TagKey.create(Registries.BIOME,
+            new ResourceLocation(MLF.MOD_ID, "spawns_fractured"));
+
+    public static TagKey<Biome> SPAWNS_CLOWNS = TagKey.create(Registries.BIOME,
+            new ResourceLocation(MLF.MOD_ID, "spawns_clowns"));
+
+    public static TagKey<Biome> SPAWNS_ARINOS = TagKey.create(Registries.BIOME,
+            new ResourceLocation(MLF.MOD_ID, "spawns_arinos"));
+
+    public static TagKey<Biome> SPAWNS_LAST_LAUGH = TagKey.create(Registries.BIOME,
+            new ResourceLocation(MLF.MOD_ID, "spawns_last_laugh"));
+
+    public static TagKey<Biome> SPAWNS_CHERRY_CHUCKLES = TagKey.create(Registries.BIOME,
+            new ResourceLocation(MLF.MOD_ID, "spawns_cherry_chuckles"));
+
+    public static TagKey<Biome> SPAWNS_BIBBLEBOP = TagKey.create(Registries.BIOME,
+            new ResourceLocation(MLF.MOD_ID, "spawns_bibblebop"));
+
+    public static TagKey<Biome> SPAWNS_TRICOLOR_JUBILEE = TagKey.create(Registries.BIOME,
+            new ResourceLocation(MLF.MOD_ID, "spawns_tricolor_jubilee"));
+
     public static TagKey<Biome> SPAWNS_TRIXIEBELLE = TagKey.create(Registries.BIOME,
             new ResourceLocation(MLF.MOD_ID, "spawns_trixiebelle"));
 
@@ -50,6 +83,9 @@ public class MLFTags {
 
     public static TagKey<Biome> SPAWNS_JACKIE_SPECTRE = TagKey.create(Registries.BIOME,
             new ResourceLocation(MLF.MOD_ID, "spawns_jackie_spectre"));
+
+    public static TagKey<Biome> SPAWNS_WISH_FULFILLMENT = TagKey.create(Registries.BIOME,
+            new ResourceLocation(MLF.MOD_ID, "spawns_wish_fulfillment"));
 
     public static TagKey<Biome> SPAWNS_SHAY_MEADOWS = TagKey.create(Registries.BIOME,
             new ResourceLocation(MLF.MOD_ID, "spawns_shay_meadows"));

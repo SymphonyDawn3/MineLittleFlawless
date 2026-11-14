@@ -603,6 +603,41 @@ public class MLFDataGenerator implements DataGeneratorEntrypoint {
 
         @Override
         protected void addTags(HolderLookup.Provider arg) {
+            this.getOrCreateTagBuilder(MLFTags.SPAWNS_SPARKLEMOON_FAMILY)
+                    .forceAddTag(BiomeTags.IS_OVERWORLD);
+
+            this.getOrCreateTagBuilder(MLFTags.SPAWNS_FLAWLESS)
+                    .addTag(MLFTags.SPAWNS_SPARKLEMOON_FAMILY);
+
+            this.getOrCreateTagBuilder(MLFTags.SPAWNS_TWILIGHT)
+                    .addTag(MLFTags.SPAWNS_SPARKLEMOON_FAMILY);
+
+            this.getOrCreateTagBuilder(MLFTags.SPAWNS_TRIXIE)
+                    .addTag(MLFTags.SPAWNS_SPARKLEMOON_FAMILY);
+
+            this.getOrCreateTagBuilder(MLFTags.SPAWNS_FRACTURED)
+                    .addTag(MLFTags.SPAWNS_SPARKLEMOON_FAMILY);
+
+            this.getOrCreateTagBuilder(MLFTags.SPAWNS_CLOWNS)
+                    .forceAddTag(BiomeTags.IS_OVERWORLD)
+                    .forceAddTag(BiomeTags.IS_NETHER)
+                    .forceAddTag(BiomeTags.IS_END);
+
+            this.getOrCreateTagBuilder(MLFTags.SPAWNS_ARINOS)
+                    .addTag(MLFTags.SPAWNS_CLOWNS);
+
+            this.getOrCreateTagBuilder(MLFTags.SPAWNS_LAST_LAUGH)
+                    .addTag(MLFTags.SPAWNS_CLOWNS);
+
+            this.getOrCreateTagBuilder(MLFTags.SPAWNS_CHERRY_CHUCKLES)
+                    .addTag(MLFTags.SPAWNS_CLOWNS);
+
+            this.getOrCreateTagBuilder(MLFTags.SPAWNS_BIBBLEBOP)
+                    .addTag(MLFTags.SPAWNS_CLOWNS);
+
+            this.getOrCreateTagBuilder(MLFTags.SPAWNS_TRICOLOR_JUBILEE)
+                    .addTag(MLFTags.SPAWNS_CLOWNS);
+
             this.getOrCreateTagBuilder(MLFTags.SPAWNS_MARIONETTE)
                     .add(
                             Biomes.CHERRY_GROVE,
@@ -648,6 +683,11 @@ public class MLFDataGenerator implements DataGeneratorEntrypoint {
                     .forceAddTag(BiomeTags.IS_DEEP_OCEAN)
                     .forceAddTag(BiomeTags.IS_RIVER)
                     .add(Biomes.STONY_SHORE);
+
+            this.getOrCreateTagBuilder(MLFTags.SPAWNS_WISH_FULFILLMENT)
+                    .forceAddTag(BiomeTags.IS_OVERWORLD)
+                    .add(Biomes.WARPED_FOREST)
+                    .add(Biomes.CRIMSON_FOREST);
 
             this.getOrCreateTagBuilder(MLFTags.SPAWNS_SHAY_MEADOWS)
                     .forceAddTag(BiomeTags.IS_JUNGLE)
